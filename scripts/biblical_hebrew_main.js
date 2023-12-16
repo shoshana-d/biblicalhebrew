@@ -96,6 +96,14 @@ document.addEventListener('DOMContentLoaded', function() {
       var thisSpec = onloadDragClass[ii];
       createFlexDragDrop(thisSpec);
    }	
+
+
+   // only in alefbet-exercises
+   var javascriptListClass = document.getElementsByClassName("javascript-cantillation");
+   for (ii = 0; ii < javascriptListClass.length; ii++) {
+ 	  var thisSpec = javascriptListClass[ii];
+      crCantillationList(thisSpec);
+   }
   
 
    // only in alefbet-exercises
@@ -107,16 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
  	  var thisSpec = javascriptListClass[ii];
       crSyllablesExercise(thisSpec);
    }
-
-
-   // only in alefbet-exercises
-   var javascriptListClass = document.getElementsByClassName("javascript-cantillation");
-   for (ii = 0; ii < javascriptListClass.length; ii++) {
- 	  var thisSpec = javascriptListClass[ii];
-      crCantillationList(thisSpec);
-   }
    
-   
+  
    // create the exercise table(s) in JS (includes event listeners) 
      // new version where click on word  in the hebrew, if correct, word is outlined 
 	 // ONLY USED IN INDIVIDUAL LESSONS
@@ -180,7 +180,7 @@ function addArrowclickEventListener(element){
     //-------- code for playing sounds --------- 
 function playSound(sound){
 	// expects sound to have directory pathname and .mp3
-	   const music = new Audio(sound);
+test(sound);  	   const music = new Audio(sound);
        music.play();
 }  
 
@@ -190,7 +190,7 @@ function playSound(sound){
 	
 function setMp3Name(thisName){
     var thisMp3 = globalAudioFolder + "/" + thisName.trim() + ".mp3";
-  
+
     return thisMp3;
 }
 
