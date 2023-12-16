@@ -33,14 +33,22 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 
 html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
 
-.w3-container{padding:0.01em 16px}
+.w3-container, .w3-container-h1{padding:0.01em 16px; }
+.w3-container{margin-left:-16px; margin-right:-16px;} /* my extras, to counteract main */
 .w3-container:after,
-.w3-container:before{content:"";display:table;clear:both}
+.w3-container:before,
+.w3-container-h1:after,
+.w3-container-h1:before
+{content:"";display:table;clear:both}
+
 .w3-card{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
 .w3-card-4{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.w3-card-4 {
+	margin-bottom: 15px;
+}	
 .w3-center{text-align:center!important}
 
-
+/* these are used in the top menu of each page */
 .w3-bar{width:100%;overflow:hidden}
 .w3-center .w3-bar{display:inline-block;width:auto}
 .w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
@@ -61,6 +69,12 @@ h1,h2,h3,h4,h5,h6{font-family:cursive;font-weight:400;margin:10px 0}
 
 /*------ redefinitions of tags-----------------------*/
 /*------ show more/ show less -----------------------*/
+html{
+  max-width:1100px;
+  max-width:1000px;
+  margin: auto;
+}
+	
 p {
    margin: 10px;
 }
@@ -93,16 +107,17 @@ nav {
 }
 main{
   /* w3-container */
-  padding:0.01em 16px
+  padding:0.01em 16px /* top/bottom right/left */
 }
 
 
 summary{
   list-style-type:none; /* get rid of default arrow pointer */
 }	
-summary >* {
+summary  {
   cursor: pointer;
   display: inline;
+  
 } 
 /*
 summary::-webkit-details-marker {
@@ -116,30 +131,35 @@ summary:before {
   float: left;
  /* width: 20px;*/
   padding: 0;
+  
+  /* specs if using +/- */
   font-size: 1.5em;
   margin-right: 10px;
   margin-top: -5px;
   
-  content: "+";
+  /* specs if using triangles */
+  font-size: 1.0em;
+  margin-right: 10px;
+  margin-top: 0px;
+  
+  content: "+"; 
+  content: "\25BD"; /* downward triangle unfilled */
+  content: "\25BC"; /* downward triangle filled */
 }
 
 details[open] summary:before {
   content: "-";
   content: "\2212"; /* minus sign */
+  content: "\25B3"; /* upward triangle unfilled */
+  content: "\25B2"; /* upward triangle filled */
 }
 
 details {
-  /*cursor: pointer;*/
- background-color: #ffffe6; /* pale yellow */
- background-color: #ede9de; /* pale brown */
- background-color: #fff7e6; /* pale brown */
- background-color: #f2f2f2; /* 95% metro darken */
-    background-color:#FAF9F6;  /*off-white */
    background-color: white;
- border-style:solid;
- border-color:#f2f2f2;
- border-width:medium;
- margin: 10px 0;
+   border-style:solid;
+   border-color:#f2f2f2;
+   border-width:medium;
+   margin: 10px ;
 }
 	
 details > div {
@@ -155,9 +175,11 @@ hr {
   margin-bottom: 1em;/* default is 0.5 */
   /*margin-left: auto;
   margin-right: auto;*/
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
-  border-color: green;
+  border-color: DarkSeaGreen;
+  border-color: DarkOrange;
+  border-color: DarkGray;
 }
 
 
@@ -200,6 +222,11 @@ hr {
 .alefbet-exercises-color{
    background-color:LightYellow;
 }  
+
+.alefbet-plus-color{
+   background-color:AliceBlue;
+}
+	
 .flex-container-arrow-selected {
 	/* arrow indicating start playing sounds */
 	color:red;
@@ -232,8 +259,6 @@ hr {
 }
 */
 .unmarked-text{
-   color: Gray;
-   color: LightGray;
    color: DarkGray;
 }
 .stressed-syllable{
@@ -246,14 +271,10 @@ hr {
 	border:dotted;
 	border-width: 2px;
 	margin-top:5px;
-    background-color:#ffe6e6; /* pale pink */
-    background-color:white; 
+     background-color:white; 
 }
 .select-letter{
-	/*border:solid;
-	border-width: 1px;
-	border-color:Aquamarine;
-    background-color:Aquamarine; */
+	/* used in javascript for consonant+vowel exercise */
 	color:red;
 }
 .example {
@@ -264,34 +285,44 @@ hr {
    font-style:italic;
 }   
 
-.h5-text{
-  /* like h5, for use within detail */
-   font-size:18px
+/*------ audio indication-----------------------*/
+.audio-indicator{
+	border-bottom:dotted;
+	border-width:3px;
+	border-color:blue;
 }	
-
 
 /*-- spacing  --*/
 /*----------------------------------------------*/
+
+   /* for <div> or <p> which needs to be max readable widht and centered */
+.readable1000{   
+   margin: auto;
+   max-width: 1000px;
+}
+
 .example-spacing{
 	padding-left:15px;
 	padding-right:15px;
 }	
 
-
-
 .indented-text{
    margin-left:25px;
    margin-right:25px;
 } 
-.alefbet-h2 {
-   margin-bottom:15px;
-}   
-
+.padding-16{
+	padding-left:16px;
+	padding-right:16px;
+}	
+.p-left-margin{
+   margin-left: 10px;
+}  
 /*-- hebrew fonts  --*/
 /*----------------------------------------------*/
 .hebrew50,
 .hebrew40,
 .hebrew35,
+.hebrew33,
 .hebrew30,
 .hebrew-in-text {
    font-family:'Times New Roman';
@@ -313,6 +344,10 @@ hr {
    font-size:35px;
 }
 	 
+.hebrew33{
+	/* used in alefbet to get list of consonants all on same line */
+   font-size:33px;
+}
 .hebrew30{
    font-size:30px;
 }
@@ -334,6 +369,12 @@ hr {
 	line-height:40px;
 }
 
+.english-emphasis{
+	/* like h3  */
+  font-size:18px;
+  font-family:cursive;
+  font-weight:400;
+}	
 
 /*--- flexbox right to left audio ------*/
 /*--------------------------------------*/
@@ -404,24 +445,37 @@ hr {
    hidden/shown for child elements with the class js-toggle
    (must be used in a <span> )
 ---------------------------------------------------------------------*/
-
-
 .button-plus,
 .button-minus{
   color: black;
-  margin:0;
   padding: 0;
-  font-size:23px;
   font-family:Verdana,sans-serif;
-}
+  
+  /* specs if using +/- */
+  font-size:23px;
+  margin:0;
+  
+    /* specs if using triangles */
+  font-size: 1.0em;
+  margin-top: 0px;
+	
+}	
 
 .button-plus::before{
   content: "+";
+  
+  content: "\25BD"; /* downward triangle unfilled */
+  content: "\25BC"; /* downward triangle filled */
+
 }
 
-.button-minus::before	{
+.button-minus::before{
   content: "-";
   content: "\2212"; /* minus sign */
+  
+  content: "\25B3"; /* upward triangle unfilled */
+  content: "\25B2"; /* upward triangle filled */
+
 }
 
 .button-plus:hover,
@@ -429,6 +483,9 @@ hr {
    cursor: pointer;
 }
 
+.button-plus-minus-tooltip{
+	 padding-top: 5px;
+}
 
 	
 
@@ -557,9 +614,7 @@ hr {
 .flex-container-cantillation:after,
 .flex-container-cantillation:before,
 .flex-container-menu-items:after,
-.flex-container-menu-items:before,
-.flex-container-menu-items-alefbetplus:after,
-.flex-container-menu-items-alefbetplus:before
+.flex-container-menu-items:before
 {
   /* w3.css container property, don't know if needed */
   content:"";
@@ -591,13 +646,11 @@ hr {
      /* used for the menu items which can be clicked to hide /show  an exercise or other item 
 	 flex-container-alefbet-exercises
 	 */
-.flex-container-menu-items,
-.flex-container-menu-items-alefbetplus{
+.flex-container-menu-items{
    padding-bottom:5px;
    margin-bottom:15px;
 }
-.flex-container-menu-items > div,
-.flex-container-menu-items-alefbetplus > div {
+.flex-container-menu-items > div {
 /* text like h3 */
   font-family:cursive;
   font-weight:400;
@@ -607,18 +660,18 @@ hr {
   margin-right: 15px; 
   margin-left: 15px; 
 }
-
-.flex-container-menu-items-alefbetplus > div {
- /*  border-style:solid;
-   border-width:thin;*/
-   background-color: LightYellow;
-   background-color: Ivory;
-   padding:5px;
-     margin-right: 20px; 
-
- /*  margin-bottom:10px;*/
-}
-
+.menu-item-alefbetplus-selected{
+    padding:5px;
+   	border:solid;
+	border-width: 2px;
+	background-color: white;
+}	
+.menu-item-alefbetplus-unselected{
+    padding:5px;
+   	border:dotted;
+	border-width: 2px;
+	background-color: LightYellow;
+}	
 
    /* marks a div which is an exercise in alefbet-exercises
     */	  
@@ -752,7 +805,8 @@ hr {
 .verb-table,
 .noun-table,
 .glasses-table,
-.kametz-table{
+.kametz-table,
+.translations-table{
 	border-collapse:collapse;
 	display:table;
 }
@@ -817,8 +871,28 @@ hr {
 .kametz-table tr {
 	margin:0;
 	padding:0;
-	border-bottom: 1px dotted green;  /* width style color */
+	border-bottom: 2px dotted blue;  /* width style color */
 }
+
+.translations-table td,
+.translations-table th{
+	display:table-cell;
+ 	padding-left:8px;
+	padding-right:8px;
+	border-bottom:1px solid #ddd;
+	vertical-align:baseline;
+}
+.translations-table td:first-child,
+.translations-table th:first-child{
+   text-align:right;
+   width:100px;
+}
+.translations-table td:nth-child(2),
+.translations-table th:nth-child(2){
+   text-align:left;
+   vertical-align: baseline;
+}
+
 /* lesson 1 exercise specific             */
 /*---------------------------------------*/
 .lesson1-scrollable{
