@@ -376,6 +376,14 @@ hr {
   font-weight:400;
 }	
 
+/*-- vowel image display  --*/
+/*----------------------------------------------*/
+.vowel-image {
+   width:40px; 
+   height:40px; 
+   margin-bottom:-10px	
+}	
+
 /*--- flexbox right to left audio ------*/
 /*--------------------------------------*/
 
