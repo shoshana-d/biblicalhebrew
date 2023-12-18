@@ -103,7 +103,7 @@ nav {
   margin-bottom:20px; /* required to make the top menu shadow visible */
 	/* same size as w3-large */
   font-size:18px;
-  font-family: cursive;
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
 }
 main{
   /* w3-container */
@@ -247,6 +247,7 @@ hr {
 	border-color:red;
 	/* padding:0px 5px;*/ /* top/bottom right/left */
 	padding:0px 5px 2px 5px; /* top right bottom left*/
+	padding:0 ; /* top right bottom left   for images*/
 	/*white-space:nowrap;*/
 }
 .highlighted-letter{
@@ -379,10 +380,50 @@ hr {
 /*-- vowel image display  --*/
 /*----------------------------------------------*/
 .vowel-image {
-   width:40px; 
-   height:40px; 
-   margin-bottom:-10px	
+   width:45px; 
+   height:45px; 
+   margin-bottom:-2px;
+   margin-left:-5px; 
+   margin-right:-5px;   
 }	
+.vowel-image-intext {
+   width:38px; 
+   height:38px; 
+   margin-top:-8px;
+   vertical-align:text-top;   
+}	
+.vowel-image-intext2 {
+   width:28px; 
+   height:28px; 
+   margin-top:-5px;
+   vertical-align:text-top;   
+}	
+
+/*-- cantillation sign image display  --*/
+/*----------------------------------------------*/
+.cantillation-image {
+   width:22px; 
+   height:45px; 
+}	
+.cantillation-image2 {
+   width:55px; 
+   height:45px; 
+}	
+.cantillation-image-intext {
+   width:16px; 
+   height:32px; 
+   margin-top:-5px;
+   vertical-align:text-top;   
+}	
+.cantillation-image2-intext {
+   width:43px; 
+   height:34px; 
+   margin-top:-5px;
+   vertical-align:text-top;   
+}	
+
+
+
 
 /*--- flexbox right to left audio ------*/
 /*--------------------------------------*/
@@ -501,8 +542,7 @@ hr {
 /*--------------------------------------------------------*/
 
 .button-exercise{
-   font-family:cursive;
-   border:none;
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;   border:none;
    background-color: white;
 	/* these are h3 */
   /*display: block;*/
@@ -642,10 +682,10 @@ hr {
 	margin:0;
 }	
 .flex-container-cantillation > div {
-  margin-top: 10px;
-  margin-right: 10px; 
-  margin-bottom: 10px;
-  margin-left: 10px; 
+  margin-top: 5px;
+  margin-right: 15px; 
+  margin-bottom: 5px;
+  margin-left: 15px; 
   text-align: center;
   /*line-height:35px;*/
   /* margin-top:50px; */
@@ -660,8 +700,7 @@ hr {
 }
 .flex-container-menu-items > div {
 /* text like h3 */
-  font-family:cursive;
-  font-weight:400;
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;  font-weight:400;
   font-size:18px;
   margin-top: 5px;
   margin-bottom: 0px;
