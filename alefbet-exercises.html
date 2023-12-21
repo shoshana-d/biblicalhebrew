@@ -1,5 +1,6 @@
 <!-- this is a comment -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -32,9 +33,9 @@
 
 
 <!-- testing section --> 
-<!--  <p>Temporary testing section</p>
+<!-- <p>Temporary testing section</p>
  <p>TEST</p>
- <p id="mytest">test</p>--> 
+ <p id="mytest">test</p> --> 
 <!--END testing section --> 
 
  
@@ -47,7 +48,7 @@
   <li>Pronounce each item and click on the item to check </li>
   <li>Click on the arrow and say each item with the audio</li>
 </ul>
-<p>With the drag-and-drop exercises, be sure to drag and drop the last item (there's a small "reward"). </p>
+<p>With the matching exercises, be sure to match the last item (there's a small "reward"). </p>
 
 <!-- CONSONANTS--> 
 
@@ -74,9 +75,9 @@
 <div id="consonants1" class="alefbet-exercise  hidden">
 
 <h3>Consonant sounds</h3> 
-  <p id="consonants-plus-sounds" class="hidden">א:silence| בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch| ך:ch| ל : l
+  <p id="consonants-hebrew-and-sounds" class="hidden">א:silence| בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch| ך:ch| ל : l
 |מ: m|ם :m| נ: n|ן:n| ס:s| ע  :silence| פּ:p| פ:f| ף: f|צ:ts| ץ:ts| ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p>
-  <p id="cr-consonants-list" class="javascript-list  hidden ">source: consonants-plus-sounds |id: consonants-list|arrow
+  <p id="cr-consonants-list" class="javascript-list  hidden ">source: consonants-hebrew-and-sounds |id: consonants-list|arrow
   | colorClass: consonant-color  |audio: alefbet_consonants_and_vowels </p>
   
   <p>
@@ -301,58 +302,56 @@
    <div id="show-vowels5" class="showhidemenuitem"><span class="ear"></span>Match vowels with their sounds (harder)</div>
 </div>
 <p></p>
-
+ 
+ 
 <div id="vowels1" class="alefbet-exercise hidden">
   <h3>Vowel sounds</h3> 
-  <p id="vowels-hebrew-and-sound" class="hidden">   &thinsp; &#1463; :a | &thinsp; &#1458; : a | &thinsp; &#1464; : a_or_o 
-   |  &thinsp; &#1459; : o | &thinsp; &#1465; : o | &#1493;&#1465;  : o |   &thinsp; &#1461;  : ei 
-   | &#1497; &#1461; : ei | &thinsp; &#1462; : e | &thinsp; &#1457; : e |  &#1497; &#1462; :  e  | &thinsp; &#1460; : i  
-   |    &#1497; &#1460; : i  |  &thinsp; &#1467; : u  | &#1493;&#1468; : u  | &thinsp; &#1456; :  uh_or_silent
-   |  &#1497; &#1463; : ie | &#1497; &#1464; : ie | &#1493;&#1465;&#1497; : oi  | &#1493;&#1468;&#1497; : ui </p>
-  <p id="cr-vowel-sounds1" class="javascript-list hidden">source: vowels-hebrew-and-sound| id: vowel-sounds1| arrow
-| colorClass: vowel-color|audio: alefbet_consonants_and_vowels </p>
+  <p id="vowels-hebrew-and-sounds" class="hidden">  a1:a | a2 : a | a_or_o: a_or_o 
+   |  o1 : o | o2 : o | o3  : o |  ei1  : ei 
+   | ei2 : ei | e1 : e | e2 : e |  e3 :  e  | i1 : i  
+   |    i2 : i  | u1 : u  | u2 : u  | uh_or_silent :  uh_or_silent
+   |  ie1 : ie | ie2 : ie | oi : oi  | ui : ui </p>
+  <p id="cr-vowel-sounds1" class="javascript-list hidden">source: vowels-hebrew-and-sounds| id: vowel-sounds1| arrow
+    | colorClass: vowel-color|audio: alefbet_consonants_and_vowels 
+	| hebrewinimage: vowels | hebrewclass: vowel-image-select-exercise |containerclass: flex-container-heb-cv
+ </p>
   <p>
   <span class="button-exercise" onclick="shuffleJavascriptList('vowel-sounds1')">Shuffle </span>
   </p>
 </div>  
- 
-   
-<div id="vowels2" class="alefbet-exercise hidden ">
 
+   
+
+ 
+<div id="vowels2" class="alefbet-exercise hidden ">
 <h3>Match vowels with their sound</h3>
  <p>Drag each vowel (or vowels) in the top row to the correct box in the bottom row. 
 <br> (You can click on a vowel to hear its sound.)</p>
+  <p id="vowels-hebrew2" class="hidden"> a1 a2 | a_or_o | o1 o2 o3 |  ei1 ei2 | e1 e2 e3 | i1 i2 | u1 u2
+  | ie1 | ie2 |oi  | ui  | uh_or_silent
+  </p>
   <p id="vowels-sounds" class="hidden">a |a_or_o| o| ei | e |i | u| ie|ie_or_a|oi|ui|uh_or_silent </p>
   <p id="vowels-sounds-questions" class="hidden">a |a or o| o| ei | e |i | u| ie|ie or a|oi|ui|uh or silent </p>
-  <p id="vowels-hebrew2" class="hidden">&thinsp; &#1463;     &thinsp; &#1458; |&thinsp; &#1464; |
-&thinsp; &#1459;    &thinsp; &#1465;     &#1493;&#1465;  |   &thinsp; &#1461;      &#1497; &#1461; |
- &thinsp; &#1462;     &thinsp; &#1457;     &#1497; &#1462; |&thinsp; &#1460;     &#1497; &#1460; |
-&thinsp; &#1467;      &#1493;&#1468;|&#1497; &#1463; |&#1497; &#1464; |&#1493;&#1465;&#1497;  |
-&#1493;&#1468;&#1497;  |&thinsp; &#1456;
-  </p>
+
   <p id="cr-vowel-sounds2" class="onload-flex-drag-drop  hidden ">id:vowel-sounds2
-  |questions:vowels-sounds-questions 
-  | answers: vowels-hebrew2| sounds:vowels-sounds 
-  |questionclass:flex-drag-drop-english |audio: alefbet_consonants_and_vowels| colorClass: vowel-color | selection:7</p>
+  |questions:vowels-sounds-questions |questionclass:flex-drag-drop-english 
+  | answers: vowels-hebrew2 	| answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds |audio: alefbet_consonants_and_vowels| colorClass: vowel-color | selection:7</p>
   <p>
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds2')">Practise again</span>
   </p>
- 
-</div>
+</div> 
 
 <div id="vowels3" class="alefbet-exercise  hidden">
    <h3>Match vowels with their sound</h3>
    <p>Drag each vowel in the top row to the correct box in the bottom row. 
    <br>(You can click on a vowel to hear its sound.)</p>
-     <p id="vowels-hebrew3" class="hidden">&#8201; &#1463;:&#8201; &#1458;|&#8201; &#1464;
-|&#8201; &#1459;:&#8201; &#1465;:&#1493;&#1465;|&#8201; &#1461;:&#1497; &#1461;
-|&#8201; &#1462;:&#8201; &#1457;:&#1497; &#1462;|&#8201; &#1460;:&#1497; &#1460;
-|&#8201; &#1467;:&#1493;&#1468;|&#1497; &#1463;|&#1497; &#1464;|&#1493;&#1465;&#1497;
-|&#1493;&#1468;&#1497;|&#8201; &#1456;</p>
-  <p id="cr-vowel-sounds3" class="onload-flex-drag-drop  hidden ">id:vowel-sounds3
-  |questions:vowels-sounds-questions 
-  | answers: vowels-hebrew3| sounds:vowels-sounds 
-  |questionclass:flex-drag-drop-english |audio: alefbet_consonants_and_vowels| colorClass: vowel-color |selection:7</p>
+  <p id="vowels-hebrew3" class="hidden"> a1:a2 | a_or_o | o1:o2:o3 |  ei1:ei2 | e1:e2:e3 | i1:i2 | u1:u2
+  | ie1 | ie2 |oi  | ui  | uh_or_silent
+   <p id="cr-vowel-sounds3" class="onload-flex-drag-drop  hidden ">id:vowel-sounds3
+  |questions:vowels-sounds-questions |questionclass:flex-drag-drop-english 
+  | answers: vowels-hebrew3 	| answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds |audio: alefbet_consonants_and_vowels| colorClass: vowel-color | selection:7</p>
    <p>
    <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds3')">Practise again</span>
    </p>
@@ -367,8 +366,9 @@
  Drag each vowel (or vowels) in the top row to the correct box in the bottom row. 
  <br>(You can click on a vowel to hear its sound.)</p>
   <p id="cr-vowel-sounds4" class="onload-flex-drag-drop  hidden ">id:vowel-sounds4
-  | answers: vowels-hebrew2| sounds:vowels-sounds   |audio: alefbet_consonants_and_vowels
-  | colorClass: vowel-color | selection:7  | questionclass: ear | matchsounds </p>
+  | questionclass: ear | matchsounds
+  | answers: vowels-hebrew2 | answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds   |audio: alefbet_consonants_and_vowels  | colorClass: vowel-color | selection:7   </p>
   <p>
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds4')">Practise again</span>
   </p>
@@ -381,8 +381,10 @@
    Drag each vowel in the top row to the correct box in the bottom row. <br>
    (You can click on a vowel to hear its sound.)</p>
    <p id="cr-vowel-sounds5" class="onload-flex-drag-drop  hidden ">id:vowel-sounds5
-  | answers: vowels-hebrew3| sounds:vowels-sounds   |audio: alefbet_consonants_and_vowels| colorClass: vowel-color 
-  |selection:7 | questionclass: ear | matchsounds</p>
+  | questionclass: ear | matchsounds
+  | answers: vowels-hebrew3 | answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds   |audio: alefbet_consonants_and_vowels| colorClass: vowel-color 
+  |selection:7 </p>
    <p>
    <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds5')">Practise again</span>
    </p>
@@ -398,31 +400,24 @@
 <!-- end of vowels -->
 
 
-<!-- CONSONANT PLUS VOWEL    --> 
 
-
- <h2 class="w3-container w3-card    showhidenextsiblingclick"> Practise Biblical Hebrew consonant + vowel </h2>
- <div class="hidden">
- 
-<p id="consonants-cpv" class="hidden">א: silence | בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch|  ל : l
-|מ: m| נ: n| ס:s| ע  :silence| פּ:p| פ:f| צ:ts|  ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p>
 <p id="vowels-cpv"  class="hidden" >&thinsp; &#1463;:a |&thinsp; &#1458;: a |&thinsp; &#1464;: a_or_o 
    |&thinsp; &#1459;: o | &thinsp; &#1465; : o | &#1493;&#1465;  : o |   &thinsp; &#1461;  : ei 
    | &#1497; &#1461; : ei | &thinsp; &#1462; : e | &thinsp; &#1457; : e |  &#1497; &#1462; :  e  | &thinsp; &#1460; : i  
    |    &#1497; &#1460; : i  |  &thinsp; &#1467; : u  | &#1493;&#1468; : u  | &thinsp; &#1456; :  uh
    |  &#1497; &#1463; : ie | &#1497; &#1464; : ie | &#1493;&#1465;&#1497; : oi  | &#1493;&#1468;&#1497; : ui </p>
-   
-<!--<p id="vowels-sounds-cpv" class="hidden" >a |a_or_o| o| ei | e |i | u| ie|ie_or_a|oi|ui|uh </p>
- <p id="consonants-sounds-cpv" class="hidden">| b| v| g| d| h| z| ch| t| y| k| l| m| n| s| p| f| ts| r| sh </p>
  
-<p id="vowels-groups-cpv" class="hidden" >&thinsp; &#1463;   :  &thinsp; &#1458; |&thinsp; &#1464; |
-&thinsp; &#1459;  :  &thinsp; &#1465;  :   &#1493;&#1465;  |   &thinsp; &#1461;   :   &#1497; &#1461; |
- &thinsp; &#1462;  :   &thinsp; &#1457;  :   &#1497; &#1462; |&thinsp; &#1460;  :   &#1497; &#1460; |
-&thinsp; &#1467;   :   &#1493;&#1468;|&#1497; &#1463; |&#1497; &#1464; |&#1493;&#1465;&#1497;  |
-&#1493;&#1468;&#1497;  |&thinsp; &#1456; </p>
- <div id="consonants-groups-cpv" class="hidden"><p>א:ע</p><p>בּ</p><p>ב:ו</p><p>ג</p><p>ד</p><p>ה</p><p>ז</p><p>ח:כ</p>
-<p>ט:ת</p><p>י</p><p>כּ:ק</p><p>ל</p><p>מ</p><p>נ</p><p>ס:שׂ</p><p>פּ</p><p>פ</p><p>צ</p><p>ר</p><p>שׁ</p>
-</div>-->
+
+
+
+
+<!-- CONSONANT PLUS VOWEL    --> 
+
+
+ <h2 class="w3-container w3-card    showhidenextsiblingclick"> Practise Biblical Hebrew consonant + vowel </h2>
+
+ <div class="hidden">
+
 <p id="yod" class="hidden">י</p>
 <p id="half-vowels"  class="hidden" >&thinsp; &#1458; |&thinsp; &#1459; |&thinsp; &#1457; </p>
 <p id="schwah" class="hidden">&thinsp; &#1456;</p>
@@ -433,23 +428,40 @@
 <p id="consonants-with-ui" class="hidden">ז | ט | ל  | נ | ס |  פּ | פ | צ | ק |  שׂ  </p>
 <p id="oy" class="hidden" >&#1493;&#1465;&#1497;</p>
 <p id="consonants-with-oy" class="hidden">א | ג |  ה </p>
-
- 
+<p id="vowels-images-key" class="hidden"  >
+     &#1463; : a1 | &#1458; : a2 | &#1464;: a_or_o 
+   | &#1459; : o1 | &#1465; : o2 | &#1493;&#1465;  : o3 
+   | &#1461; : ei1 | &#1497; &#1461; : ei2 
+   | &#1462; : e1 | &#1457; : e2 |  &#1497; &#1462; :  e3  
+   | &#1460; : i1  |    &#1497; &#1460; : i2  
+   | &#1467; : u1  | &#1493;&#1468; : u2  
+   | &#1456; :  uh_or_silent
+   |  &#1497; &#1463; : ie1 | &#1497; &#1464; : ie2 
+   | &#1493;&#1465;&#1497; : oi  | &#1493;&#1468;&#1497; : ui 
+</p>
+<p id="consonants-cpv" class="hidden">א: silence | בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch|  ל : l
+|מ: m| נ: n| ס:s| ע  :silence| פּ:p| פ:f| צ:ts|  ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p> 
 <div  class="alefbet-exercise">
 
 <h3>Select one or more <span class="consonant-color">consonants</span> and one or 
-more <span class="vowel-color2">vowels</span> to practise.
-  Click on a consonant or vowel to select or unselect. </h3>
+more <span class="vowel-color2">vowels</span> to practise, then click on "Create exercises" below.<br>
+  (Click on a consonant or vowel to select or unselect) </h3>
   <span class="button-exercise"  onclick="selectAll('select-consonant')">Select all consonants</span>&emsp;
-   <span class="button-exercise"  onclick="selectAll('select-vowel')">Select all vowels</span>&emsp;&emsp;
- <span class="button-exercise" onclick="unSelectAll('select-consonant')">Unselect all consonants</span>&emsp;
-   <span class="button-exercise" onclick="unSelectAll('select-vowel')">Unselect all vowels</span>
+  <span class="button-exercise"  onclick="selectAll('select-vowel')">Select all vowels</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="unSelectAll('select-consonant')">Unselect all consonants</span>&emsp;
+  <span class="button-exercise" onclick="unSelectAll('select-vowel')">Unselect all vowels</span>
+ 
  <p  class="javascript-list  hidden">id: select-consonant|source: consonants-cpv | colorClass: consonant-color
   |selectletterclick |containerclass:flex-container-heb-cv</p>
- <p  class="javascript-list  hidden">id: select-vowel|source: vowels-cpv | colorClass: vowel-color2
-  |selectletterclick |containerclass:flex-container-heb-cv</p>
+    
+ <p  class="javascript-list hidden">id: select-vowel|source: vowels-hebrew-and-sounds| colorClass: vowel-color2
+    |selectletterclick |containerclass: flex-container-heb-cv
+	| hebrewinimage: vowels | hebrewclass: vowel-image-select-exercise 
+ </p>
+
  <p></p>
- <span class="button-exercise"  onclick="crConsonantPlusVowelExercises('select-consonant', 'select-vowel')">
+ 
+ <span class="button-exercise"  onclick="crConsonantPlusVowelExercises('select-consonant', 'select-vowel','vowels-images-key')">
  Create exercises with selected consonant(s) and vowel(s)</span>
   <p></p>
  </div>  
