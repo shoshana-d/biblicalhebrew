@@ -10,7 +10,7 @@
 	  	 //thisP = thisP.split(/\s+/); split by one or more spaces
 		 
 var globalAudioFolder = "audio";
-//var globalCVAudioSubfolder = "consonants_and_vowels";
+var globalImagesFolder = "images"
 
 // characters used for dividing lists into components
 var globalDivider1 = "|";
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var ii;
 	var i;
 	var j;
-	  	
+  	
 	// sigh.. not used any more (sfter all that work)
   // create the table of contents
   //const tocSidenav = document.getElementById("TOCSidenav");
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
      //  (ii required, i doesn't work, seems to get reset in function that's called)
      //  June 2022. Was because i was not declared in called function so became global
 	 //  Now using "use strict;" everywhere to avoid this happening again
-  
+ 
    var javascriptListClass = document.getElementsByClassName("javascript-list");
    for (ii = 0; ii < javascriptListClass.length; ii++) {
-   
+	  
  	  var thisSpec = javascriptListClass[ii];
       createJavascriptList(thisSpec); 
    }
@@ -180,10 +180,21 @@ function addArrowclickEventListener(element){
     //-------- code for playing sounds --------- 
 function playSound(sound){
 	// expects sound to have directory pathname and .mp3
-test(sound);  	   const music = new Audio(sound);
+ 	   const music = new Audio(sound);
        music.play();
 }  
 
+
+   //-------- utility function to add sub-directory pathname where soundfile located to name of soundfile
+   //  called from createJavascriptListFlexbox etc
+function addAudioDirToSoundName(thisName, audioDir){
+
+	if (audioDir == null) { var thisAudio =  thisName.trim(); }
+    else                  { var thisAudio = audioDir.trim() + "/" + thisName.trim();}
+
+    return thisAudio;
+}
+	
    //-------- utility function to set pathname and add .mp3 to name of soundfile
    //                (name already includes sub-directory where soundfile located)
    //  called from playConsonants2 and addsoundclickEventListener
@@ -194,17 +205,18 @@ function setMp3Name(thisName){
     return thisMp3;
 }
 
-   //-------- utility function to add sub-directory pathname where soundfile located to name of soundfile
-   //  called from createJavascriptListFlexbox
-function addAudioDirToSoundName(thisName, audioDir){
-	
-   //var thisAudio = audioDir + "/" + thisName;
- 	
-	if (audioDir == null) { var thisAudio =  thisName.trim(); }
-    else                  { var thisAudio = audioDir.trim() + "/" + thisName.trim();}
-
-    return thisAudio;
-}	
+function crAudioSpan(thisSoundWithDir){
+   // thisSoundWithDir should be the filename of the .mp3 file with the subdirectory name
+   // for example, if the file is  audio/words/w003_lach.mp3 should be words/w003_lach
+   //              audio/ and .mp3 are added at runtime with setMp3Name
+   // use addAudioDirToSoundName to add subdirectory name before calling this function
+   var text2= document.createTextNode(thisSoundWithDir);
+   var span2 = document.createElement("span");
+   span2.classList.add("hidden");
+   span2.appendChild(text2);
+   
+   return span2;
+}
 
        
    //------ play sounds in order after clicking arrow at start of flexlist---
@@ -260,6 +272,19 @@ function playConsonants3(thisArrow,audioItems,  itemNumber){
    }	 
 } 
 
+   //-------- utility function to set pathname and add .jpg to name of imagefile
+   //  called from exercises which include vowels image files
+	
+function setJpgName(thisName, imageDir){
+	
+	var thisImage =  thisName.trim();
+	
+	if (!(imageDir == null)) {  thisImage = imageDir.trim() + "/" + thisImage;}
+	
+    var thisJpg = globalImagesFolder + "/" + thisImage + ".jpg";
+
+    return thisJpg;
+}
 
 
 

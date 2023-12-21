@@ -99,6 +99,8 @@ function createJavascriptList(thisSpecElement){
    var cantillation = false;       // add cantillation marks to Hebrew. Requires hebrewInSyllables 
    var hebrewGroupStressedSyllable = null;     // in cantillation specification:one value for each sourceHebrewId, values "last" "secondlast"
    
+   var hebrewInImage = false;  // if true, the Hebrew input is the name of the image file; used for standalone vowel marks
+   var imagesDir = null;        // if hebrewInImage, the name of the subdirectory of /images where the image files are located
    
    var tooltips = false;
    var tooltipsSourceIds = null;
@@ -167,6 +169,10 @@ function createJavascriptList(thisSpecElement){
 			cantillation = true; 
 		    //hebrewStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
 		    hebrewGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
+
+		 } else if (thisP0 == "hebrewinimage"){
+			hebrewInImage = true; 
+		    imagesDir = thisP[1].trim();
 			
 		 } else if (thisP0 == "tooltips"){
 			tooltips=true;
@@ -402,56 +408,6 @@ function createJavascriptList(thisSpecElement){
 	   
 	  }
 		   
-    // if (selection | randomOrder){  // need to shuffle list 
-
-    //     var selectionList = shuffleArray(createIntegerArray(0, hebrew0.length -1));
-    //     var tempHebrew = cloneArray(hebrew0);
-     //    var tempSound = cloneArray(sound0);
- 	//	 if (cantillation) { var tempHebrewStressedSyllable = cloneArray(hebrewStressedSyllable0);    }  
-    //     if (tooltips) {
-	//		 var tempTooltips = cloneArray(tips0);
-	//		 if (tooltipsShowStress) {var tempTooltipsStressedSyllable = cloneArray(tooltipsStressedSyllable0);}
-	//	 }
-
-	//	 for (i=0; i < hebrew0.length; i++) { 
-	//        hebrew0[i] = tempHebrew[selectionList[i]];
-	//        sound0[i] = tempSound[selectionList[i]];
-	//		if (cantillation){hebrewStressedSyllable0[i] = tempHebrewStressedSyllable[selectionList[i]];}
-	//	        if (tooltips) {
-	//			tips0[i] = tempTooltips[selectionList[i]];
-	//			if (tooltipsShowStress) {tooltipsStressedSyllable0[i] = tempTooltipsStressedSyllable[selectionList[i]]; }
-
-	//		}
-	//	 }
-	// }
-
-
-	// var hebrew = cloneArray(hebrew0);
-	// var sound = cloneArray(sound0);
-	// if (cantillation){ var hebrewStressedSyllable = cloneArray(hebrewStressedSyllable0);}
-	// if (tooltips) {  
-	//    var tips = cloneArray(tips0);
-    //    if (tooltipsShowStress) {var tooltipsStressedSyllable = cloneArray(tooltipsStressedSyllable0); }		
-	//}
-   
-	// if (selection){
-	   // select first nSelection items	 
-	//	if (nSelection < hebrew0.length){
-	//		hebrew.splice(nSelection, hebrew0.length-nSelection); 
-    //        sound.splice(nSelection, hebrew0.length-nSelection); 
-	//		if (cantillation){ hebrewStressedSyllable.splice(nSelection, hebrew0.length-nSelection); }
-	//		if (tooltips) {
-	//			tips.splice(nSelection, hebrew0.length-nSelection);
-
-	//			if (tooltipsShowStress) {
-	//				tooltipsStressedSyllable.splice(nSelection, hebrew0.length-nSelection);
-	 
-	//			}	
-	//		} 
-	//	}
-	// } 
-  
-
   
        // now create the new flexbox
 	   //---------------------------
@@ -499,7 +455,8 @@ function createJavascriptList(thisSpecElement){
 				var span1 = crTextClickSpan(thisHebrew[j], hebrewClass, "soundclick");
  		        celldiv.appendChild(span1);
 		  
-		        var span2 = crAudioSpan(thisSound[j],audioDir);
+		        var span2 = crAudioSpan(addAudioDirToSoundName(thisSound[j], audioDir));
+
 		        celldiv.appendChild(span2);
 		   
 		        var text3= document.createTextNode(" ");
@@ -525,11 +482,17 @@ function createJavascriptList(thisSpecElement){
 	            }
 			 }	
 			  
-			 if (selectLetterClick) {var span1 = crTextClickSpan(thisHebrew, hebrewClass, "selectletterclick");}
-		     else {var span1 = crTextClickSpan(thisHebrew, hebrewClass, "soundclick");}
-		     celldiv.appendChild(span1);
-		  
-		     var span2 = crAudioSpan(thisSound,audioDir);
+			 if (hebrewInImage){
+			    if (selectLetterClick) {var img1 =  crImageClick(thisHebrew, imagesDir, hebrewClass, "selectletterclick");}
+		        else                   {var img1 =  crImageClick(thisHebrew, imagesDir, hebrewClass, "soundclick");}
+		        celldiv.appendChild(img1);
+             } else {
+			    if (selectLetterClick) {var span1 = crTextClickSpan(thisHebrew, hebrewClass, "selectletterclick");}
+		        else                   {var span1 = crTextClickSpan(thisHebrew, hebrewClass, "soundclick");}
+		        celldiv.appendChild(span1);
+		     }
+			 
+			 var span2 = crAudioSpan(addAudioDirToSoundName(thisSound, audioDir));
 		     celldiv.appendChild(span2);
 	
 		     if (tooltips) {
@@ -613,6 +576,14 @@ function createJavascriptList(thisSpecElement){
    if (randomOrder) {shuffleJavascriptList(targetId);}
 
 }
+function crImageClick(imageName, imageDir, imgClass, clickType){
+	var image1 = document.createElement("img");
+	image1.src = setJpgName(imageName, imageDir);
+	image1.classList.add(imgClass);
+	image1.classList.add(clickType);
+ 	
+	return image1;
+}
 
 function crTextClickSpan(thisText, hebrewClass, clickType){
 	var text1= document.createTextNode(thisText);
@@ -622,15 +593,6 @@ function crTextClickSpan(thisText, hebrewClass, clickType){
  	span1.appendChild(text1);
 	
 	return span1;
-}
-function crAudioSpan(thisSound,audioDir){
-   var thisSoundWithDir = addAudioDirToSoundName(thisSound, audioDir);
-   var text2= document.createTextNode(thisSoundWithDir);
-   var span2 = document.createElement("span");
-   span2.classList.add("hidden");
-   span2.appendChild(text2);
-   
-   return span2;
 }
 //----------------------------------------------------------
 
@@ -656,6 +618,9 @@ function crAudioSpan(thisSound,audioDir){
 	var soundclicks = container.getElementsByClassName("soundclick");
 	if (soundclicks.length == 0) {return;}
 	
+	var imageList = false;
+	if (soundclicks[0].tagName.trim().toLowerCase() == "img"){imageList = true;}
+	
 	var tooltipMarkers = container.getElementsByClassName("tooltip-marker");
 
 	if (tooltipMarkers.length == 0) { var hasTooltips = false; }
@@ -665,7 +630,11 @@ function crAudioSpan(thisSound,audioDir){
 	}	
 	
     for (i=0; i < soundclicks.length; i++){
-       hebrew0[i] = soundclicks[i].innerHTML;
+	   if (imageList) {
+          hebrew0[i] = soundclicks[i].src;
+       } else {		   
+          hebrew0[i] = soundclicks[i].innerHTML;
+	   }	  
 	   sound0[i] = soundclicks[i].nextSibling.innerHTML
 	   if (hasTooltips) { tooltips0[i] = tooltipMarkers[i].innerHTML; }
 	}
@@ -682,7 +651,11 @@ function crAudioSpan(thisSound,audioDir){
 
 	
     for (i=0; i < soundclicks.length; i++){
-	   soundclicks[i].innerHTML = hebrew[i];
+	   if (imageList) {
+ 	      soundclicks[i].src = hebrew[i];
+       } else {		   
+	      soundclicks[i].innerHTML = hebrew[i];
+	   }	  
 	   soundclicks[i].nextSibling.innerHTML = sound[i] ;
 	   if (hasTooltips){tooltipMarkers[i].innerHTML = tooltips[i];  } 
 	}

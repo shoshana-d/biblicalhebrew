@@ -35,7 +35,7 @@ function showHideMenuItem(element){
 	         if (!(thisExercise.classList.contains("hidden"))) {thisExercise.classList.add("hidden");}
 	      }
 	   }
-	   
+    
 		
 	} else{
 		// this exercise not currently selected

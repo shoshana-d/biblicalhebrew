@@ -77,7 +77,7 @@ function hideExerciseDiv(){
 	
 //------- function selected by clicking "create exercise" Button --------
 	
-function crConsonantPlusVowelExercises(consonantListId, vowelListId){
+function crConsonantPlusVowelExercises(consonantListId, vowelListId, vowelsImagesKeyId){
 	
 	// consonantListId, vowelListId ids of flexbox lists that user selects consonants and vowels from
  
@@ -95,7 +95,7 @@ function crConsonantPlusVowelExercises(consonantListId, vowelListId){
    
    // set global consonant and vowels from the selected letters in flexboxes consonantListId and vowelListId
    setGlobalSelectedConsonants(consonantListId);
-   setGlobalSelectedVowels(vowelListId);
+   setGlobalSelectedVowels(vowelListId, vowelsImagesKeyId);
    
    if (globalSelectedConsonants.length == 0 | globalSelectedVowels.length == 0){
       consonantVowelModal("Please select at least one consonant and at least one vowel");
@@ -153,23 +153,41 @@ function setGlobalSelectedConsonants(listId){
    }
 }	
 
-function setGlobalSelectedVowels(listId){
+function setGlobalSelectedVowels(listId,vowelsImagesKeyId){
 //var globalSelectedVowels = [];
 //var globalSelectedVowelsSounds = [];
    var i;
+   var j;
   
+   var keyListElement = document.getElementById(vowelsImagesKeyId);
+   if ( keyListElement == null){ return; } 
+
+   var keyList = keyListElement.innerHTML.split(globalDivider1);
+     // vowel and image file name pairs
+
+   
    var lettersList = document.getElementById(listId);
- 
-   if ( lettersList == null){ 
-      return;
-   } else {
-	  var letterClass = lettersList.getElementsByClassName("select-letter");
-      for (i = 0; i < letterClass.length; i++) {
-         globalSelectedVowels[i] = letterClass[i].innerHTML;
-         globalSelectedVowelsSounds[i] = letterClass[i].nextSibling.innerHTML;
-	  }	
+   if ( lettersList == null){ return;} 
+   
+   var letterClass = lettersList.getElementsByClassName("select-letter");
+   for (i = 0; i < letterClass.length; i++) {
+	  // vowels are images, need to get the image file name 
+	  var imgFileName = letterClass[i].src;
+	  var imgName = imgFileName.slice(imgFileName.lastIndexOf("/")+1, imgFileName.lastIndexOf("."));
+	  
+	  for (j = 0; j < keyList.length; j++) {
+		  var thisPair = keyList[j].split(globalDivider2);
+		  if (imgName == thisPair[1].trim()) {
+			 globalSelectedVowels[i] = thisPair[0];
+			 break;
+		  }	 
+	  }	  
+	  
+      globalSelectedVowelsSounds[i] = letterClass[i].nextSibling.innerHTML;
    }
+
 }	
+
 function setGlobalFlexlistConsonantPlusVowel(){
    // inputs
 //var globalSelectedConsonants = [];
