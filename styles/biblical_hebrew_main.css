@@ -109,21 +109,21 @@ main{
   /* w3-container */
   padding:0.01em 16px /* top/bottom right/left */
 }
-
-
-summary{
-  list-style-type:none; /* get rid of default arrow pointer */
-}	
-summary  {
-  cursor: pointer;
-  display: inline;
-  
-} 
 /*
 summary::-webkit-details-marker {
   display: none
 }
 */
+summary{
+  list-style-type:none; /* get rid of default arrow pointer */
+}	
+
+summary  {
+  cursor: pointer;
+  display: inline;
+  
+} 
+
 summary:before {
   /*border-radius: 5px;*/
  /* text-align: center;*/
@@ -274,10 +274,7 @@ hr {
 	margin-top:5px;
      background-color:white; 
 }
-.select-letter{
-	/* used in javascript for consonant+vowel exercise */
-	color:red;
-}
+
 .example {
 	font-style: italic;
 	color:gray;
@@ -380,11 +377,13 @@ hr {
 /*-- vowel image display  --*/
 /*----------------------------------------------*/
 .vowel-image {
+	/* in main alefbet list */
    width:45px; 
    height:45px; 
    margin-bottom:-2px;
    margin-left:-5px; 
    margin-right:-5px;   
+  vertical-align:text-top;   
 }	
 .vowel-image-intext {
    width:38px; 
@@ -397,6 +396,13 @@ hr {
    height:28px; 
    margin-top:-5px;
    vertical-align:text-top;   
+}	
+.vowel-image-select-exercise {
+   width:33px; 
+   height:33px; 
+   margin-top:-5px;
+   vertical-align:text-top; 
+
 }	
 
 /*-- cantillation sign image display  --*/
@@ -602,10 +608,24 @@ hr {
 }	
  
 .flex-container-heb-cv > div{
-  margin: 10px 0 10px 10px; /* top right bottom left */
+  margin: 10px 4px 10px 4px; /* top right bottom left */
   text-align: center;
+  
 }	
+.select-letter{
+	/* used in javascript for consonant+vowel exercise */
+	/*color:red;*/
+	/* text-border */
+	border-style:solid;
+	border-color:red;
+	/* padding:0px 5px;*/ /* top/bottom right/left */
+	padding:0px 5px 2px 5px; /* top right bottom left*/
+	padding:2px; ; /* top right bottom left   for images*/
+	/*white-space:nowrap;*/
+	
+	border-width:2px;
 
+}
 .flex-container-heb-with-tooltips > div {
   margin: 3px 10px 3px 25px; /* top right bottom left */
   text-align: center;
@@ -719,7 +739,6 @@ hr {
 	border-width: 2px;
 	background-color: LightYellow;
 }	
-
    /* marks a div which is an exercise in alefbet-exercises
     */	  
 .alefbet-exercise{
@@ -789,7 +808,7 @@ hr {
    font-family:'Times New Roman';
    font-size:35px;
    /*line-height:30px;*/
-	padding: 0 5px 6px;
+	padding: 0 5px 6px; /* top right/left bottom */
 }
 .flex-drag-drop-english{
   font-size:20px;
@@ -797,6 +816,16 @@ hr {
   padding: 4px 5px 2px;
 }
 	
+.vowel-image-drag-drop {
+	border-style:solid;
+	border-width: 1px;
+   width:42px; 
+   height:42px; 
+   display:inline-block; 
+	vertical-align: middle;
+	margin-top:-8px;
+  
+}	
 
 .flex-drag-drop-content{
 	/* used for individual spans within a div */
