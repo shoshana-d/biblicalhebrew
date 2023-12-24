@@ -313,7 +313,7 @@ hr {
 .english-emphasis{
 	/* like h3  */
   font-size:18px;
-  font-family:cursive;
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
   font-weight:400;
 }	
 
@@ -379,7 +379,7 @@ hr {
 
 .arrow,
 .play-audio-left{
-   font-family:'Times New Roman';
+   font-family:'Times New Roman','Times Roman','Times',serif;
    font-size:45px;
    line-height:30px;
    direction:rtl;
@@ -403,7 +403,7 @@ hr {
 /*------ ear emoji (used in alefbet-exercises to flag some exercises)---*/
 /*---------------------------------------------------------------------*/
 .ear{
-   font-family:'Times New Roman';
+   font-family:'Times New Roman','Times Roman','Times',serif;
    font-size:20px;
    padding: 5px 5px 3px;
 }	
@@ -425,7 +425,7 @@ hr {
 /*------ arrow used inline in alefbet-exercises---*/
 /*---------------------------------------------------------------------*/
 .arrow-inline{
-   font-family:'Times New Roman';
+   font-family:'Times New Roman','Times Roman','Times',serif;
    font-size:35px;
    line-height:5px;
 }
@@ -615,7 +615,7 @@ hr {
    padding:5px;
 }
 .flex-container-heb30-tooltip{
-   font-family:'Times New Roman';
+   font-family:'Times New Roman','Times Roman','Times',serif;
    direction:rtl;
    line-height:30px;
    white-space:nowrap;
@@ -783,7 +783,7 @@ hr {
 }
 
 .flex-drag-drop-hebrew {
-   font-family:'Times New Roman';
+   font-family:'Times New Roman','Times Roman','Times',serif;
    font-size:35px;
    /*line-height:30px;*/
 	padding: 0 5px 6px; /* top right/left bottom */
