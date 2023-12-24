@@ -373,18 +373,17 @@ hr {
 
 
 
-
 /*--- flexbox right to left audio ------*/
 /*--------------------------------------*/
 
 .arrow,
 .play-audio-left{
-  /* font-family:'Times New Roman','Times Roman','Times',serif;*/\
-  font-family:Verdana,sans-serif;
+   font-family:'Times New Roman','Times Roman','Times',serif;
    font-size:45px;
    line-height:30px;
    direction:rtl;
 }
+
     /*------ arrow indicating read right to left---*/
 .arrow::after{
   content:"\21E6"; 
@@ -427,7 +426,7 @@ hr {
 /*---------------------------------------------------------------------*/
 .arrow-inline{
    font-family:'Times New Roman','Times Roman','Times',serif;
-   font-size:35px;
+   font-size:30px;
    line-height:5px;
 }
 .arrow-inline::after{
