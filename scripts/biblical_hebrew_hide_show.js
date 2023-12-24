@@ -9,6 +9,14 @@ function addShowHideMenuItemEventListener(element){
      );
 }
 
+function addShowHideMenuItemAlefbetPlusEventListener(element){  
+
+	 // when item clicked, shows or hides the items in the next <div>
+   element.addEventListener("click", 
+           function () {  showHideMenuItemAlefbetPlus(this) ;}
+     );
+}
+
 
 
 function showHideMenuItem(element){
@@ -19,76 +27,108 @@ function showHideMenuItem(element){
 	
 	var j;	
  	var prefix = "show-";
-    var thisExerciseId = element.id.slice(prefix.length);
-    var thisExercise = document.getElementById(thisExerciseId);
-	
-	var menuItemParent = element.parentElement;
-	var inAlefbetplus = (menuItemParent.id == "alefbetplus-contents");
+    var thisMenuItemTextId = element.id.slice(prefix.length);
+    var thisMenuItemText = document.getElementById(thisMenuItemTextId);
 
 	if (element.classList.contains("menu-item-selected")){
-		// if in Alefbetplus do nothing
-	   if (!(inAlefbetplus)) {	
-	     // otherwise, this exercise has already been selected, unselect it and remove border
+		
+	     //  this exercise has already been selected, flag unselected,  remove border and set button to plus
          element.classList.remove("menu-item-selected");
          element.classList.remove("dotted-border");
-         if (!(thisExercise == null)) { 
-	         if (!(thisExercise.classList.contains("hidden"))) {thisExercise.classList.add("hidden");}
+		 
+		 var thisPlusMinusButton = element.firstElementChild;
+         thisPlusMinusButton.classList.toggle("button-minus");
+         thisPlusMinusButton.classList.toggle("button-plus");   
+		 
+		 // hide text
+         if (!(thisMenuItemText == null)) { 
+	         if (!(thisMenuItemText.classList.contains("hidden"))) {thisMenuItemText.classList.add("hidden");}
 	      }
-	   }
-    
+   
 		
 	} else{
 		// this exercise not currently selected
 		
-		// remove dotted border (if any) from previous selection
 		// if previous selection, unselect it
-	    var selected = menuItemParent.getElementsByClassName("menu-item-selected");
+	    var selected = element.parentElement.getElementsByClassName("menu-item-selected");
 		if (selected.length > 0) {
+			var prevSelected = selected[0];
 			// hide previous selected item content
- 		    var selectedExerciseId = selected[0].id.slice(prefix.length);
+ 		    var selectedExerciseId = prevSelected.id.slice(prefix.length);
 	        var selectedExercise = document.getElementById(selectedExerciseId);
             if (!(selectedExercise == null)) { 
 	           if (!(selectedExercise.classList.contains("hidden"))) {selectedExercise.classList.add("hidden");}
 			}
 			// remove formatting showing selected from menu item
-	        if (inAlefbetplus) {
-				selected[0].classList.remove("menu-item-alefbetplus-selected");
-				selected[0].classList.add("menu-item-alefbetplus-unselected");
-			}
-			else {
-				selected[0].classList.remove("dotted-border");
-			}
-			
-            selected[0].classList.remove("menu-item-selected");			
+			prevSelected.classList.remove("dotted-border");
+			// remove selected flag
+            prevSelected.classList.remove("menu-item-selected");			
+			// set button to plus
+            prevSelected.firstElementChild.classList.toggle("button-minus");
+            prevSelected.firstElementChild.classList.toggle("button-plus");   
+
 	    }
 
 		// select exercise referred to by this selection
-	    if (!(thisExercise == null)) { thisExercise.classList.remove("hidden");}
+	    if (!(thisMenuItemText == null)) { thisMenuItemText.classList.remove("hidden");}
 	   
 	   	// flag menu item as selected
         element.classList.add("menu-item-selected");
-		
-        if (inAlefbetplus) {
-			element.classList.add("menu-item-alefbetplus-selected");
-			element.classList.remove("menu-item-alefbetplus-unselected");
-		}
-		else {
-			element.classList.add("dotted-border");
-		}
-			
-
-		// deal with special case of Contents in alefbetplus 
-	    if (inAlefbetplus) {
-		   var contents = menuItemParent.previousElementSibling;
-		  // make sure the minus/plus sign is visible 
-		   contents.firstElementChild.classList.remove("hidden");
-		  // "clicks" minus sign on Contents to remove display of menu items
-		   ShowHideNextSibling(contents);
-	    }
-	   
+		element.classList.add("dotted-border");
+			// set button to plus
+        element.firstElementChild.classList.toggle("button-minus");
+        element.firstElementChild.classList.toggle("button-plus");   
+  
     }	
 	
-	
+}	
+
+
+function showHideMenuItemAlefbetPlus(element){
+
+    // in order to click a menu item the menu must be visible (obviously)
+	// on clicking
+	// - use id of element to show the appropriate text item by removing "hidden" class
+	// - set menu to hidden
+	// - add plus sign and clickable to contents
+	// When Contents clicked:
+	//  if menu is visible, do nothing
+	//  if menu is not visible
+	//    - set all text items to "hidden"
+	//    - make menu visible
+	//    - remove plus sign and Clickable from Contents
+
+	var i;
+
+	   // has the user clicked on "Contents"?
+	if (!(element.parentElement.classList.contains("flex-container-menu-items-alefbetplus"))){
+          // yes
+		  // only need to do something if the menu is not visible
+	   if (element.nextElementSibling.classList.contains("hidden")) {
+		   // set the current item contents to hidden
+	       var selected = document.getElementsByClassName("alefbet-detail-item");
+		   for (i=0; i < selected.length; i++) {
+              if (!(selected[i].classList.contains("hidden"))) {selected[i].classList.add("hidden");}
+		   }
+           // set menu to visible
+           element.nextElementSibling.classList.remove("hidden");
+		   // remove + sign and clickable from "Contents"
+		   element.firstElementChild.classList.remove("button-plus");
+       }
+
+    } else {
+       // user has clicked on a menu item	
+	   // show appropriate menu item text
+ 	    var prefix = "show-";
+        var thisExerciseId = element.id.slice(prefix.length);
+        var thisExercise = document.getElementById(thisExerciseId);
+	    if (!(thisExercise == null)) { thisExercise.classList.remove("hidden");}
+        // hide menu
+        element.parentElement.classList.add("hidden");
+	    //  remove plus sign and Clickable from Contents
+        element.parentElement.previousElementSibling.firstElementChild.classList.add("button-plus");
+
+    }	   
 }	
 
 //----------------------------------------------------------------------------------------------
@@ -102,10 +142,7 @@ function addShowHideNextSiblingEventListener(element){
 function ShowHideNextSibling(element){
     var nextSib =  element.nextElementSibling;
     nextSib.classList.toggle("hidden"); 
-  //  if (element.classList.contains("plus") || element.classList.contains("minus")){
-  //      element.classList.toggle("minus");
-  //      element.classList.toggle("plus");   
-  //  }	
+
     var nextChild = element.firstElementChild;  
 	if (!( nextChild == null)) {
       if (nextChild.classList.contains("button-plus") || nextChild.classList.contains("button-minus")){

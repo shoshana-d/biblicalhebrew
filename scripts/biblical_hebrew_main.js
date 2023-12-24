@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var ii;
 	var i;
 	var j;
-  	
+
 	// sigh.. not used any more (sfter all that work)
   // create the table of contents
   //const tocSidenav = document.getElementById("TOCSidenav");
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	   addArrowclickEventListener(soundclickClass[j]);
    }
 	
-                // only in alefbet
+     	               // only in alefbet
   // var soundclickClass = document.getElementsByClassName("arrowbyorderclick");
   // for (j = 0; j < soundclickClass.length; j++) {
   //  // add order to each div which has "soundclick" class
@@ -63,14 +63,27 @@ document.addEventListener('DOMContentLoaded', function() {
   
    var soundclickClass = document.getElementsByClassName("showhidenextsiblingclick");
    for (j = 0; j < soundclickClass.length; j++) {
-	   addShowHideNextSiblingEventListener(soundclickClass[j]);
+	  var span = document.createElement("span");
+	  span.classList.add("button-plus");
+      soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
+      addShowHideNextSiblingEventListener(soundclickClass[j]);
    }
 
    // add event listeners to the headings in alefbet-exercises to show/hide selected exercise
   
-   var soundclickClass = document.getElementsByClassName("showhidemenuitem");
+   var soundclickClass = document.getElementsByClassName("showhidemenuitemclick");
    for (j = 0; j < soundclickClass.length; j++) {
+	  var span = document.createElement("span");
+	  span.classList.add("button-plus");
+      soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
         addShowHideMenuItemEventListener(soundclickClass[j]);
+	}
+	
+  // add event listeners to the menu items in alefbet+ to hide/show an item
+
+   var soundclickClass = document.getElementsByClassName("alefbetplusmenuclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+      addShowHideMenuItemAlefbetPlusEventListener(soundclickClass[j]);
 	}
 
    //------ code creating content----------------------------------------
