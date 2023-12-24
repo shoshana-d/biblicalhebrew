@@ -426,7 +426,8 @@ hr {
 /*---------------------------------------------------------------------*/
 .arrow-inline{
    font-family:'Times New Roman','Times Roman','Times',serif;
-   font-size:30px;
+   font-family:'Helvetica',sans-serif;
+   font-size:35px;
    line-height:5px;
 }
 .arrow-inline::after{
