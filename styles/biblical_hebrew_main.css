@@ -109,64 +109,7 @@ main{
   /* w3-container */
   padding:0.01em 16px /* top/bottom right/left */
 }
-/*
-summary::-webkit-details-marker {
-  display: none
-}
-*/
-summary{
-  list-style-type:none; /* get rid of default arrow pointer */
-}	
 
-summary  {
-  cursor: pointer;
-  display: inline;
-  
-} 
-
-summary:before {
-  /*border-radius: 5px;*/
- /* text-align: center;*/
-  color: black;
-  float: left;
- /* width: 20px;*/
-  padding: 0;
-  
-  /* specs if using +/- */
-  font-size: 1.5em;
-  margin-right: 10px;
-  margin-top: -5px;
-  
-  /* specs if using triangles */
-  font-size: 1.0em;
-  margin-right: 10px;
-  margin-top: 0px;
-  
-  content: "+"; 
-  content: "\25BD"; /* downward triangle unfilled */
-  content: "\25BC"; /* downward triangle filled */
-}
-
-details[open] summary:before {
-  content: "-";
-  content: "\2212"; /* minus sign */
-  content: "\25B3"; /* upward triangle unfilled */
-  content: "\25B2"; /* upward triangle filled */
-}
-
-details {
-   background-color: white;
-   border-style:solid;
-   border-color:#f2f2f2;
-   border-width:medium;
-   margin: 10px ;
-}
-	
-details > div {
-   margin-left:25px;
-   margin-right:25px;
-   padding-bottom:5px;
-}	
 
 /* ---- horizontal line dividing sections--------*/
 hr {
@@ -272,7 +215,7 @@ hr {
 	border:dotted;
 	border-width: 2px;
 	margin-top:5px;
-     background-color:white; 
+    background-color:white; 
 }
 
 .example {
@@ -502,34 +445,36 @@ hr {
 ---------------------------------------------------------------------*/
 .button-plus,
 .button-minus{
-  color: black;
-  padding: 0;
-  font-family:Verdana,sans-serif;
-  
-  /* specs if using +/- */
-  font-size:23px;
-  margin:0;
-  
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
+   
     /* specs if using triangles */
+  /*padding: 0;*/
   font-size: 1.0em;
-  margin-top: 0px;
+  /*margin-top: 0px;*/
+  color: black;
+ 
+  /* specs if using +/- */
+  line-height:1;
+  font-size:30px;
+  color: Gray;
 	
 }	
 
 .button-plus::before{
-  content: "+";
-  
+ 
   content: "\25BD"; /* downward triangle unfilled */
   content: "\25BC"; /* downward triangle filled */
-
+  
+  content: "\002B"; /* plus sign */
 }
 
 .button-minus::before{
-  content: "-";
-  content: "\2212"; /* minus sign */
-  
+ 
   content: "\25B3"; /* upward triangle unfilled */
   content: "\25B2"; /* upward triangle filled */
+  
+  content: "-";
+  content: "\2212"; /* minus sign */
 
 }
 
@@ -549,7 +494,15 @@ hr {
 
 .button-exercise{
   font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;   border:none;
+   background-color:WhiteSmoke;
+   background-color:LightGreen;
+  background-color:PaleGreen;
+  background-color:#d3f8d3;
    background-color: white;
+  
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
 	/* these are h3 */
   /*display: block;*/
   /*font-size: 1.17em;*/
@@ -558,8 +511,13 @@ hr {
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
+  padding-left:5px;
+  padding-right:5px;
+  border-radius:5px;
   /*font-weight: bold;*/
   white-space: nowrap;
+  
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
 }
 .button-exercise:hover{
    text-decoration: underline;
@@ -577,7 +535,8 @@ hr {
    for words from Jewish life, people/places in Torah (more horizontal space between words)*/
 .flex-container-heb,
 .flex-container-heb-cv,
-.flex-container-heb-with-tooltips{
+.flex-container-heb-with-tooltips,
+.flex-container-heb-vowel-names{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -598,6 +557,7 @@ hr {
   
 .flex-container-heb > div {
   margin: 3px 0 3px 15px; /* top right bottom left */
+  margin: 3px 0 3px 13px; /* top right bottom left */
   text-align: center;
  }
 .flex-container-heb > div p{
@@ -635,6 +595,11 @@ hr {
 	margin-top:-5px;
 }	
  
+ .flex-container-heb-vowel-names > div {
+   margin: 10px 0 3px 11px; /* top right bottom left */
+  text-align: center;
+ }
+
 .flex-container-spacer:after{
 	/* used to create extra space between items, for grouping items in the list */
    content: "  ";
@@ -682,7 +647,9 @@ hr {
 .flex-container-cantillation:after,
 .flex-container-cantillation:before,
 .flex-container-menu-items:after,
-.flex-container-menu-items:before
+.flex-container-menu-items:before,
+.flex-container-menu-items-alefbetplus:after,
+.flex-container-menu-items-alefbetplus:before,
 {
   /* w3.css container property, don't know if needed */
   content:"";
@@ -716,8 +683,8 @@ hr {
 	 */
 .flex-container-menu-items{
    padding-bottom:5px;
-   margin-bottom:15px;
-}
+   margin-bottom:5px;
+ }
 .flex-container-menu-items > div {
 /* text like h3 */
   font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;  font-weight:400;
@@ -726,19 +693,30 @@ hr {
   margin-bottom: 0px;
   margin-right: 15px; 
   margin-left: 15px; 
+    margin-top: 0;
+
 }
-.menu-item-alefbetplus-selected{
-    padding:5px;
-   	border:solid;
-	border-width: 2px;
-	background-color: white;
-}	
-.menu-item-alefbetplus-unselected{
-    padding:5px;
+
+.flex-container-menu-items-alefbetplus{
+   padding-bottom:5px;
+   margin-bottom:5px;
+ }
+
+.flex-container-menu-items-alefbetplus > div {
+/* text like h3 */
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;  font-weight:400;
+  font-size:18px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-right:5px;
+     padding:5px;
    	border:dotted;
 	border-width: 2px;
 	background-color: LightYellow;
-}	
+	/*min-height:50px;*/
+ 
+}
+
    /* marks a div which is an exercise in alefbet-exercises
     */	  
 .alefbet-exercise{
@@ -748,7 +726,7 @@ hr {
 	padding-left:5px;
 	padding-right:5px;
 	padding-bottom:5px;
-	margin-bottom:30px;
+	margin-bottom:5px;
 	
 	background-color:Gold;
     background-color:LightYellow;
@@ -812,7 +790,7 @@ hr {
 }
 .flex-drag-drop-english{
   font-size:20px;
-  font-family:"Comic Sans MS"; 
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif; 
   padding: 4px 5px 2px;
 }
 	
@@ -841,7 +819,7 @@ hr {
 .flex-drag-drop-query,
 .lesson1-flex-drag-drop-query{
     font-size:20px;
-    font-family:"Comic Sans MS"; 
+    font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
 	border-style:dotted;
 	display: inline-block;
 }
@@ -1101,7 +1079,8 @@ hr {
 .arrowbyclassclick, 
 .selectletterclick, 
 .showhidenextsiblingclick,
-.showhidemenuitem
+.showhidemenuitemclick,
+.alefbetplusmenuclick
 {
  /* 
   these classes are used to flag clickable items 
