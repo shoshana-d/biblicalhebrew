@@ -266,8 +266,12 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
  	  
 
 	// add audio directory
-   for (i=0; i < sounds.length; i++) { sounds[i] = addAudioDirToSoundName(sounds[i], audioDir);}
-
+   if (includeSounds) {
+	   for (i=0; i < sounds.length; i++) {
+		   sounds[i] = addAudioDirToSoundName(sounds[i], audioDir);
+		}
+   }
+   
    // if only require some of the questions/answers/sounds, randomly select required number
    if (selection & nSelection < answers.length){
       var selectionList = shuffleArray(createIntegerArray(0, answers.length-1));
@@ -286,7 +290,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 }
 
 function createFlexDragDrop(thisSpecElement){
-	
+
 	// thisSpecElement is the paragraph containing the instructions for creating the flexbox
 
    var i;
@@ -380,7 +384,7 @@ function createFlexDragDrop(thisSpecElement){
           var span2 = crAudioSpan(globalDragDropSounds[i]);
 		  celldiv.appendChild(span2);
 	   }
-		 
+	 
 	   var span3 = document.createElement("span");
        span3.classList.add("flex-drag-drop-query");
   	   span3.setAttribute("id", questionsFlexId + "-" +  i);
@@ -588,8 +592,15 @@ function shuffleFlexDragDrop(thisId) {
   } 
  // in questions section, make query boxes visible and answers invisible, and then shuffle them
   for ( i = 0; i < nCells; i++) {
-	questionsCells[i].children[2].classList.remove("hidden");
-	questionsCells[i].children[3].classList.add("hidden");
+	if ( questionsCells[i].children.length == 5 ){
+       // sounds are included		
+	   questionsCells[i].children[2].classList.remove("hidden");
+	   questionsCells[i].children[3].classList.add("hidden");
+    } else {
+       // sounds are not included		
+	   questionsCells[i].children[1].classList.remove("hidden");
+	   questionsCells[i].children[2].classList.add("hidden");
+    }		
   } 
   var shuffleOrder = shuffleArray(createIntegerArray(0, nCells-1));
   for ( i = 0; i < nCells; i++) {

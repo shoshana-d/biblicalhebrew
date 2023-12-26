@@ -246,12 +246,13 @@ function playConsonants1(thisArrow){
        audioItems[i] = audioItemsCollection[i];
    }	  
    
-   if (thisArrow.classList.contains("flex-container-arrow-selected")){
+   if (thisArrow.classList.contains("stop-audio")){
         // arrow has already been clicked, second click stops playing
  	 thisArrow.classList.add("stop-sound");
    }else{
         // start
-    thisArrow.classList.toggle("flex-container-arrow-selected");
+    thisArrow.classList.toggle("start-audio");
+    thisArrow.classList.toggle("stop-audio");
     audioItems[0].classList.toggle("text-border");
     playConsonants2(thisArrow,audioItems, 0);
    }	
@@ -273,7 +274,8 @@ function playConsonants3(thisArrow,audioItems,  itemNumber){
    audioItems[itemNumber].classList.toggle("text-border");
    if (thisArrow.classList.contains("stop-sound")){// the arrow at the beginning
       thisArrow.classList.remove("stop-sound");
-      thisArrow.classList.remove("flex-container-arrow-selected"); 
+      thisArrow.classList.toggle("start-audio");
+      thisArrow.classList.toggle("stop-audio");
    }else{
 	 itemNumber++;
      if (itemNumber < audioItems.length) {

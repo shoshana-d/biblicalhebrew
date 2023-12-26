@@ -8,7 +8,7 @@ var globalFlexlistSound = [];
 
 function turnOffArrowSound(){
    var j;
-   var arrow = document.getElementsByClassName("flex-container-arrow-selected");
+   var arrow = document.getElementsByClassName("stop-audio");
    for (j = 0; j < arrow.length; j++) {
 	   // arrow has already been clicked, second click stops playing
  	   arrow[j].classList.add("stop-sound");
@@ -82,7 +82,7 @@ function createJavascriptList(thisSpecElement){
    var j;
    var i;
 
-   var containerClass = "flex-container-heb";  // specifies size of gap between items , default
+   var containerClass = "flex-container-heb";  // specifies size of gap between items, default
    var hebrewClass = "hebrew35";  // default								   
    var tooltipsClass = "flex-container-heb-tooltip"; // default
    var colorClass = null;
@@ -420,11 +420,9 @@ function createJavascriptList(thisSpecElement){
   
        // add arrow at start if requested
    if (arrow ){
-	        //var text1= document.createTextNode("\u21e6"); //http://slayeroffice.com/tools/unicode_lookup/
-        //span.appendChild(text1);
         var span = document.createElement("span");
-        span.classList.add("hebrew35");
-        span.classList.add("arrow");
+        //span.classList.add("hebrew35");
+        span.classList.add("start-audio");
 		span.classList.add("arrowclick");
 		
 		var celldiv = document.createElement("div");
@@ -602,14 +600,8 @@ function crTextClickSpan(thisText, hebrewClass, clickType){
     const container = document.getElementById(thisId);
 	if (container == null){ return;}
 
-	//const divs = container.children;  
-	
 	// turn off sound if playing because of arrow click
-    var arrow = document.getElementsByClassName("flex-container-arrow-selected");
-    for (i = 0; i < arrow.length; i++) {
-	        // arrow has already been clicked, second click stops playing
- 	       arrow[i].classList.add("stop-sound");
-	}   
+    turnOffArrowSound()
 
     var hebrew0 = [];
 	var sound0 = [];
