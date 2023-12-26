@@ -266,7 +266,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
  	  
 
 	// add audio directory
-   if (includeSounds) {
+   if (includeSounds | sourceGlobalCPV) {
 	   for (i=0; i < sounds.length; i++) {
 		   sounds[i] = addAudioDirToSoundName(sounds[i], audioDir);
 		}
@@ -297,7 +297,7 @@ function createFlexDragDrop(thisSpecElement){
    var j;
 
    setGlobalDragDropQuestionsAnswersSounds(thisSpecElement);
-
+ ; 
    var nAnswers = globalDragDropAnswers.length; 
    if (nAnswers == 0){return;}
    var anySounds = globalDragDropSounds.length > 0;
@@ -539,7 +539,7 @@ function reCreateFlexDragDrop(thisId){
     // thisId is the id of the paragraph with the parameters for the drag-drop div
    var i;
    var j;
-   
+ 
    var thisSpecElement = document.getElementById(thisId);
    if (thisSpecElement == null){ return;}
 
