@@ -43,13 +43,37 @@
 <!-- reference lists --> 
 <!--   need to create lists in Word, with left-to-right, then cut and paste into Notepad -->
 <!-- don't need to use:style="unicode-bidi: bidi-override; direction:ltr" -->
-<p>Suggestions for different ways you could use the <span class="arrow" style='font-size:30px'></span> practice exercises:</p>
+<p>Suggestions for different ways you could use the <span class="start-audio"></span> practice exercises:</p>
 <ul>
   <li>Click on the arrow and listen as each item is spoken</li>
   <li>Pronounce each item and click on the item to check </li>
   <li>Click on the arrow and say each item with the audio</li>
 </ul>
 <p>With the matching exercises, be sure to match the last item (there's a small "reward"). </p>
+
+<p class="showhidenextsiblingclick" style="margin-top:-15px;">How do I drag and drop in the matching exercises?</p>
+<div class="alefbet-exercise hidden">
+<p>On ipad or other touch screen, touch and hold the answer until it turns green and lifts up. 
+Keeping your finger on the screen, drag the answer. Lift your finger to drop the answer.
+</p>
+<p>With non-touchscreen,  left-click the answer and hold the left mouse or touchpad button (the answer will turn green).
+Move your mouse pointer to drag the answer. 
+Release the left mouse button to drop the answer.</p>
+
+<p>The answer is "droppable" where the question box with dotted border
+<span style="border:dotted;font-size:25px;padding-top:4px;padding-bottom:4px;padding-left:10px;padding-right:10px;">?</span> 
+turns bright yellow (on ipad, a small + also appears). </p>
+<p>Note that "droppable" doesn't necessarily mean that the answer is correct - try dropping Answer 2 on Question 1</p>
+  <div id="example-questions-source" class="hidden"><p>Question 1</p> <p>Question 2</p> </div>
+  <div id="example-answers-source" class="hidden"><p>Answer 1</p> <p>Answer 2</p> </div>
+  <p id="cr-example-drag-drop" class="onload-flex-drag-drop  hidden ">id:example-drag-drop
+       |questions:example-questions-source   | answers: example-answers-source
+	   | questionsseparateparas |answersseparateparas
+	  |questionclass:flex-drag-drop-english |answerclass:flex-drag-drop-english 
+	  |colorClass: consonant-color</p>
+  <p>	  
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-example-drag-drop')">Refresh</span>
+</div>
 
 <!-- CONSONANTS--> 
 
@@ -59,17 +83,17 @@
 <div class="hidden">
 
 <div class="flex-container-menu-items alefbet-exercises-color">
-   <div id="show-consonants1" class="showhidemenuitemclick"> Consonant sounds<span class="arrow-inline"></span></div>
+   <div id="show-consonants1" class="showhidemenuitemclick"> Consonant sounds<span class="start-audio"></span></div>
    <div id="show-consonants2" class="showhidemenuitemclick"> Match consonants with their sounds</div>
    <div id="show-consonants3" class="showhidemenuitemclick"> Match consonants with their sounds (harder)</div>
    <div id="show-consonants4" class="showhidemenuitemclick"> Match consonants with their sounds<span class="ear"></span></div>
    <div id="show-consonants5" class="showhidemenuitemclick"> Match consonants with their sounds (harder)<span class="ear"></span></div>
-   <div id="show-consonants6" class="showhidemenuitemclick"> Consonants which look similar but have different sounds<span class="arrow-inline"></span></div>
-   <div id="show-consonants7" class="showhidemenuitemclick"> Dots in consonants<span class="arrow-inline"></span></div>
+   <div id="show-consonants6" class="showhidemenuitemclick"> Consonants which look similar but have different sounds<span class="start-audio"></span></div>
+   <div id="show-consonants7" class="showhidemenuitemclick"> Dots in consonants<span class="start-audio"></span></div>
    <div id="show-consonants8" class="showhidemenuitemclick"> Match final consonants</div>
    <div id="show-consonants9" class="showhidemenuitemclick"> Match consonants with the same sound</div>
    <div id="show-consonants10" class="showhidemenuitemclick"> Match consonants with the same sound</div>
-   <div id="show-consonants11" class="showhidemenuitemclick"> Consonant letter names<span class="arrow-inline"></span></div>
+   <div id="show-consonants11" class="showhidemenuitemclick"> Consonant letter names<span class="start-audio"></span></div>
    <div id="show-consonants12" class="showhidemenuitemclick"> Match consonant letter names</div>
 </div>
 <p></p>
@@ -256,7 +280,7 @@
   |כ:Chaf| ך:Final_Chaf| ל : Lamed|מ: Mem|ם :Final_Mem| נ: Nun|ן:Final_Nun| ס:Samech| ע  :Ayin| פּ:Pei| פ:Fei| ף: Final_Fei
   |צ:Tzadi| ץ:Final_Tzadi| ק:Kuf| ר: Resh|שׁ:Shin| שׂ:Sin| ת :Tav  </p>
   <p  id="cr-C4" class="javascript-list  hidden ">source: consonants-names |id: C4| tooltips:allconsonants-letternames| arrow
-  |audio:alefbet_consonants_and_vowels |colorClass: consonant-color </p>
+  |audio:alefbet_consonants_and_vowels |colorClass: consonant-color | containerclass: flex-container-heb-with-tooltips2</p>
   <p>
    <span class="button-exercise" onclick="shuffleJavascriptList('C4')">Shuffle</span>&emsp;&emsp;
    <span class="button-exercise" onclick="reCreateJavascriptList('cr-C4')">Alefbet order</span>
@@ -297,7 +321,7 @@
  <div class="hidden">
  
 <div class="flex-container-menu-items alefbet-exercises-color">
-   <div id="show-vowels1" class="showhidemenuitemclick"> Vowel sounds<span class="arrow-inline"></span></div>
+   <div id="show-vowels1" class="showhidemenuitemclick"> Vowel sounds<span class="start-audio"></span></div>
    <div id="show-vowels2" class="showhidemenuitemclick"> Match vowels with their sounds</div>
    <div id="show-vowels3" class="showhidemenuitemclick"> Match vowels with their sounds (harder)</div>
    <div id="show-vowels4" class="showhidemenuitemclick"> Match vowels with their sounds<span class="ear"></span></div>
@@ -614,10 +638,10 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  Practise pronouncing words which occur frequently in the Tanakh </h2>
  <div class="hidden">
   <div class="flex-container-menu-items alefbet-exercises-color">
-   <div id="show-frequent1" class="showhidemenuitemclick"> Words with only one syllable<span class="arrow-inline"></span> </div>
-   <div id="show-frequent2" class="showhidemenuitemclick"> Words with stress on final syllable<span class="arrow-inline"></span></div>
-   <div id="show-frequent3" class="showhidemenuitemclick"> Words with stress on second-last syllable<span class="arrow-inline"></span> </div>
-   <div id="show-frequent4" class="showhidemenuitemclick"> Words with stress indicated by cantillation mark<span class="arrow-inline"></span> </div>
+   <div id="show-frequent1" class="showhidemenuitemclick"> Words with only one syllable<span class="start-audio"></span> </div>
+   <div id="show-frequent2" class="showhidemenuitemclick"> Words with stress on final syllable<span class="start-audio"></span></div>
+   <div id="show-frequent3" class="showhidemenuitemclick"> Words with stress on second-last syllable<span class="start-audio"></span> </div>
+   <div id="show-frequent4" class="showhidemenuitemclick"> Words with stress indicated by cantillation mark<span class="start-audio"></span> </div>
    <div id="show-frequent5" class="showhidemenuitemclick"> Match words with their pronunciation<span class="ear"></span> </div>
    <div id="show-frequent6" class="showhidemenuitemclick"> Match words with their pronunciation<span class="ear"></span>  
    (with cantillation marks)</div>
@@ -703,7 +727,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  <p> אֵ לָיו </p>   <p> אֵ לָי </p>   <p> אֲ שֶׁר </p>   <p> וְ כָל־ הָ עָם </p>   <p> מִ כָּל־ בָּ נָיו </p>  
  <p> מִ כָּל־ הָ עָם </p>   <p> אָ מַר </p>   <p> וַ יֹּאמְ רוּ </p>   <p> אָ מַרְתְּ </p>   <p> אָֽ מְ רוּ  </p>  
  <p> בָּ נִים </p>   <p> בְּ נֵי </p>   <p> וּ בָ נִים </p>   <p> לְ בָ נָיו </p>   <p> הָ יָה </p>  
- <p> וַֽ יְ הִי </p>   <p> הָֽ יְ תָה </p>   <p> הָ יוּ </p>   <p> יִהְיֶה </p>   <p> כּֽ͏ַ אֲ שֶׁר </p>  
+ <p> וַֽ יְ הִי </p>   <p> הָֽ יְ תָה </p>   <p> הָ יוּ </p>   <p>יִהְ יֶה</p>   <p> כּֽ͏ַ אֲ שֶׁר </p>  
  <p> עָ שָׂה </p>   <p> וַ יַּ עֲ שׂוּ </p>   <p> אֱ לֹ הִים </p>   <p> אֱ לֹ הֵי  </p>   <p> וֵא לֹ הֵי </p> 
   <p> וַ יָּ בֹא </p>   <p> וּ בָא </p>   <p> מְ לָ כִים </p>   <p> מַלְ כֵי  </p>   <p> יָ מִים </p>  
  <p> יְ מֵי </p>   <p> יָ מָיו </p>   <p> אֲ נָ שִׁים </p>   <p> אַנְ שֵׁי </p>   <p>  פָּ נִים </p>  
@@ -861,9 +885,9 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  <h2 class="w3-container w3-card    showhidenextsiblingclick"> Practise names of people and places in the Tanakh </h2>
  <div class="hidden">
   <div class="flex-container-menu-items alefbet-exercises-color">
-   <div id="show-people1" class="showhidemenuitemclick"> Names of people in the Torah<span class="arrow-inline"></span> </div>
-   <div id="show-people2" class="showhidemenuitemclick"> Names of people in later books<span class="arrow-inline"></span> </div>
-   <div id="show-people3" class="showhidemenuitemclick"> Names of places<span class="arrow-inline"></span> </div>
+   <div id="show-people1" class="showhidemenuitemclick"> Names of people in the Torah<span class="start-audio"></span> </div>
+   <div id="show-people2" class="showhidemenuitemclick"> Names of people in later books<span class="start-audio"></span> </div>
+   <div id="show-people3" class="showhidemenuitemclick"> Names of places<span class="start-audio"></span> </div>
    <div id="show-people4" class="showhidemenuitemclick"> Match names and places</div>
    <div id="show-people6" class="showhidemenuitemclick"> Match names and places<span class="ear"></span></div>
    <div id="show-people5" class="showhidemenuitemclick"> Match names and places<span class="ear"></span></div>
