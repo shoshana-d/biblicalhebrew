@@ -170,10 +170,6 @@ hr {
    background-color:AliceBlue;
 }
 	
-.flex-container-arrow-selected {
-	/* arrow indicating start playing sounds */
-	color:red;
-}
 .flex-draggable:hover{
 	/*background-color:red;*/
     background-color: #d3e39c; /* lighter version of metro light green */
@@ -266,7 +262,7 @@ hr {
 .hebrew33,
 .hebrew30,
 .hebrew-in-text {
-   font-family:'Times New Roman';
+   font-family:'Times New Roman',serif;
    direction:rtl;
    line-height:30px;
    white-space:nowrap;
@@ -372,33 +368,29 @@ hr {
 }	
 
 
-
-/*--- flexbox right to left audio ------*/
-/*--------------------------------------*/
-
-.arrow,
-.play-audio-left{
-   font-family:'Times New Roman','Times Roman','Times',serif;
-   font-size:45px;
-   line-height:30px;
-   direction:rtl;
+/*--------- play/stop audio --------------*/
+/*----------------------------------------*/
+         /* previously called arrow, still referred to as arrow in flexboxlist js code */
+.start-audio {
+   /*font-family:'Times New Roman','Times Roman','Times',serif;
+    direction:rtl;*/
+    line-height:30px;
+    font-size:30px;
+ }
+.start-audio::after{	
+  content: "\23F5"; /* standard audio start symbol, points to the right */
 }
 
-    /*------ arrow indicating read right to left---*/
-.arrow::after{
-  content:"\21E6"; 
+.stop-audio{
+   line-height:30px;
+  font-size:20px;
+}
+
+.stop-audio::after{
+  content: "\23F9"; /* standard audio stop symbol */
 }	
 
-  /*------ triangle to click for audio---*/
-   /* used in alefbet vowels and alefbet cantillation */
-.play-audio-left{
-   color: black;
-   color: gray;
-   font-size:30px;
-}
-.play-audio-left::after{
-  content:"\25C4"; 
-}
+	
 
 /*------ ear emoji (used in alefbet-exercises to flag some exercises)---*/
 /*---------------------------------------------------------------------*/
@@ -422,18 +414,6 @@ hr {
 .tick::after{
   content:"\2713"; 
 }	
-/*------ arrow used inline in alefbet-exercises---*/
-/*---------------------------------------------------------------------*/
-.arrow-inline{
-   font-family:'Times New Roman','Times Roman','Times',serif;
-   font-family:'Helvetica',sans-serif;
-   font-size:35px;
-   line-height:5px;
-}
-.arrow-inline::after{
-  content:"\21E6"; 
-}
-	
 
 /*------------------------------------------------------------------- 
    plus and minus signs used optionally with js class showhidenextsiblingclick
@@ -533,10 +513,13 @@ hr {
 /* flex-container-heb is default in javascript flexbox list */
 /* flex-container-heb-cv used in alefbet for consonants and vowels lists, more vertical space between divs when wrapping */
 /* flex-container-heb-with-tooltips used in alefbet-exercises 
-   for words from Jewish life, people/places in Torah (more horizontal space between words)*/
+   for people/places in Torah (more horizontal space between words)
+   flex-container-heb-with-tooltips2 used in alefbet-exercises for consonant names (less horizontal space)
+   */
 .flex-container-heb,
 .flex-container-heb-cv,
 .flex-container-heb-with-tooltips,
+.flex-container-heb-with-tooltips2,
 .flex-container-heb-vowel-names{
   display: flex;
   flex-wrap: wrap;
@@ -549,7 +532,9 @@ hr {
 .flex-container-heb-cv:after,
 .flex-container-heb-cv:before,
 .flex-container-heb-with-tooltips:after,
-.flex-container-heb-with-tooltips:before{
+.flex-container-heb-with-tooltips:before,
+.flex-container-heb-with-tooltips2:after,
+.flex-container-heb-with-tooltips2:before{
   /* w3.css container property - not sure what it does*/
   content:"";
   display:table;
@@ -592,13 +577,19 @@ hr {
   text-align: center;
  }
 
-.flex-container-heb-with-tooltips > div p {
+.flex-container-heb-with-tooltips2 > div{
+  margin: 3px 0 3px 0px; /* top right bottom left */
+  text-align: center;
+ }
+
+.flex-container-heb-with-tooltips > div p ,
+.flex-container-heb-with-tooltips2 > div p {
 	margin-top:-5px;
 }	
  
  .flex-container-heb-vowel-names > div {
    margin: 10px 0 3px 11px; /* top right bottom left */
-  text-align: center;
+   text-align: center;
  }
 
 .flex-container-spacer:after{
@@ -611,11 +602,13 @@ hr {
        /* "tooltips" */
       /*-------------------*/	   
 .flex-container-heb-tooltip{
+	/* default, tooltip is not hebrew */
    border-style:dotted;
    border-width:2px;
    padding:5px;
 }
 .flex-container-heb30-tooltip{
+	/* used in alefbet exercises frequent Tanakh words to show hebrew divided into syllables */
    font-family:'Times New Roman','Times Roman','Times',serif;
    direction:rtl;
    line-height:30px;
