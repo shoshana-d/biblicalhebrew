@@ -395,6 +395,7 @@ function createFlexDragDrop(thisSpecElement){
 		 var jpgFiles = globalDragDropAnswers[i].trim().split(/\s+/); //split by one or more spaces
 	     for (j=0; j < jpgFiles.length; j++){
 		    var element4 = document.createElement("img");
+			element4.classList.add("questionsRowAnswer");
 		    element4.classList.add(answerClass);
             element4.classList.add("hidden");
             element4.classList.add("flex-drag-drop-content");
@@ -414,6 +415,7 @@ function createFlexDragDrop(thisSpecElement){
 		 
 	  }  else {
 		  var element4 = document.createElement("span");
+		  element4.classList.add("questionsRowAnswer");
           element4.classList.add(answerClass);
           element4.classList.add("hidden");
           element4.classList.add("flex-drag-drop-content");
@@ -591,17 +593,13 @@ function shuffleFlexDragDrop(thisId) {
 	answersCells[i].style.order = shuffleOrder[i];
   } 
  // in questions section, make query boxes visible and answers invisible, and then shuffle them
-  for ( i = 0; i < nCells; i++) {
-	if ( questionsCells[i].children.length == 5 ){
-       // sounds are included		
-	   questionsCells[i].children[2].classList.remove("hidden");
-	   questionsCells[i].children[3].classList.add("hidden");
-    } else {
-       // sounds are not included		
-	   questionsCells[i].children[1].classList.remove("hidden");
-	   questionsCells[i].children[2].classList.add("hidden");
-    }		
-  } 
+  var questionMarks = questionsContainer.getElementsByClassName("flex-drag-drop-query");
+  for (i=0; i < questionMarks.length; i++) { questionMarks[i].classList.remove("hidden");}
+  
+  var answers = questionsContainer.getElementsByClassName("questionsRowAnswer");
+  for (i=0; i < answers.length; i++) { answers[i].classList.add("hidden");}
+
+  
   var shuffleOrder = shuffleArray(createIntegerArray(0, nCells-1));
   for ( i = 0; i < nCells; i++) {
 	questionsCells[i].style.order = shuffleOrder[i];
