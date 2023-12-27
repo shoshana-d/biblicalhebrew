@@ -232,11 +232,6 @@ hr {
 /*-- spacing  --*/
 /*----------------------------------------------*/
 
-   /* for <div> or <p> which needs to be max readable width and centered */
-.readable1000{   
-   margin: auto;
-   max-width: 1000px;
-}
 
 .example-spacing{
 	padding-left:15px;
@@ -306,12 +301,6 @@ hr {
 	line-height:40px;
 }
 
-.english-emphasis{
-	/* like h3  */
-  font-size:18px;
-  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
-  font-weight:400;
-}	
 
 /*-- vowel image display  --*/
 /*----------------------------------------------*/
@@ -372,17 +361,17 @@ hr {
 /*----------------------------------------*/
          /* previously called arrow, still referred to as arrow in flexboxlist js code */
 .start-audio {
-   /*font-family:'Times New Roman','Times Roman','Times',serif;
-    direction:rtl;*/
-    line-height:30px;
-    font-size:30px;
+   font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif; 
+   line-height:30px;
+   font-size:30px;
  }
 .start-audio::after{	
   content: "\23F5"; /* standard audio start symbol, points to the right */
 }
 
 .stop-audio{
-   line-height:30px;
+  font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif; 
+  line-height:30px;
   font-size:20px;
 }
 
@@ -1074,7 +1063,8 @@ hr {
 .selectletterclick, 
 .showhidenextsiblingclick,
 .showhidemenuitemclick,
-.alefbetplusmenuclick
+.alefbetplusmenuclick,
+.showhidespecifiedidclick
 {
  /* 
   these classes are used to flag clickable items 
