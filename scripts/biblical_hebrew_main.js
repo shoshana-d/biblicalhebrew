@@ -86,6 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
       addShowHideMenuItemAlefbetPlusEventListener(soundclickClass[j]);
 	}
 
+  // add event listeners to show/hide element with specified id
+
+   var soundclickClass = document.getElementsByClassName("showhidespecifiedidclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+      addShowHideSpecifiedIdEventListener(soundclickClass[j]);
+	}
+
    //------ code creating content----------------------------------------
    //-------------------------------------------------------------------
      // create the clickable flexbox lists in JS  (includes event listeners)  
@@ -227,7 +234,7 @@ function crAudioSpan(thisSoundWithDir){
    var span2 = document.createElement("span");
    span2.classList.add("hidden");
    span2.appendChild(text2);
-   
+test(thisSoundWithDir);   
    return span2;
 }
 

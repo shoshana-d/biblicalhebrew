@@ -17,6 +17,14 @@ function addShowHideMenuItemAlefbetPlusEventListener(element){
      );
 }
 
+function addShowHideSpecifiedIdEventListener(element){  
+
+	 // when item clicked, shows or hides the items in the element with id=XXX
+	 // element has id show-XXX
+   element.addEventListener("click", 
+           function () {  showHideSpecifiedId(this) ;}
+     );
+}
 
 
 function showHideMenuItem(element){
@@ -173,6 +181,25 @@ function showHideJsToggle(elementId, buttonId){
     button.classList.toggle("button-minus");  
 	
 }	
+
+
+
+function showHideSpecifiedId(element){
+ // toggles classes button-plus and button minus in element's first child
+ // element has id show-XXX
+ // toggles class hidden in element with id XXX
+	
+	var j;	
+ 	var prefix = "show-";
+    var thisShowHideItemId = element.id.slice(prefix.length);
+    var thisShowHideItem = document.getElementById(thisShowHideItemId);
+test(element.id);	
+	element.firstElementChild.classList.toggle("button-plus");
+	element.firstElementChild.classList.toggle("button-minus");
+	thisShowHideItem.classList.toggle("hidden");
+
+}	
+
 
 //-----------------------------------------------------------------------------------
 
