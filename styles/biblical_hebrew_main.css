@@ -367,6 +367,8 @@ hr {
  }
 .start-audio::after{	
   content: "\23F5"; /* standard audio start symbol, points to the right */
+  content:url("../images/play_circle_FILL0_wght400_GRAD0_opsz24.png");
+
 }
 
 .stop-audio{
@@ -377,6 +379,7 @@ hr {
 
 .stop-audio::after{
   content: "\23F9"; /* standard audio stop symbol */
+  content:url("../images/stop_circle_FILL0_wght400_GRAD0_opsz24.png");
 }	
 
 	
@@ -1022,7 +1025,7 @@ hr {
 }
 /*--- Close button ---------*/
 /*--------------------------*/
-  /* used in toc and modal popup */
+  /* used in  modal popup */
 .btn-close{
   color: black;
   /*float: right;*/
