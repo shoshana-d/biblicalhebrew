@@ -193,7 +193,7 @@ function showHideSpecifiedId(element){
  	var prefix = "show-";
     var thisShowHideItemId = element.id.slice(prefix.length);
     var thisShowHideItem = document.getElementById(thisShowHideItemId);
-test(element.id);	
+	
 	element.firstElementChild.classList.toggle("button-plus");
 	element.firstElementChild.classList.toggle("button-minus");
 	thisShowHideItem.classList.toggle("hidden");
