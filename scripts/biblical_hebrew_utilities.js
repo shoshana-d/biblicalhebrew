@@ -146,7 +146,9 @@ function playConsonants3(thisArrow,audioItems,  itemNumber){
        audioItems[itemNumber].classList.toggle("text-border");
        playConsonants2(thisArrow,audioItems,  itemNumber);
      }else{
-       thisArrow.classList.remove("flex-container-arrow-selected"); // the arrow at the beginning
+       //thisArrow.classList.remove("flex-container-arrow-selected"); // the arrow at the beginning
+        thisArrow.classList.toggle("start-audio");
+        thisArrow.classList.toggle("stop-audio");
      } 
    }	 
 } 
