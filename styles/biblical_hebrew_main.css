@@ -156,7 +156,11 @@ hr {
      background-color:Gold;
 	 background-color:Khaki;
 
-}   
+}  
+.vocab-word-color{ 
+  /* in Lessons */
+ background-color:#ffffcc;  /* w3-yellow */
+}
 .vocab-color {
    background-color:#f1f1f1; /* w3-light-gray */
    background-color:#FAF9F6;  /*off-white */
@@ -218,6 +222,7 @@ hr {
 	font-style: italic;
 	color:gray;
 }
+  /* only used in lessons */
 .biblical-reference{
    font-style:italic;
 }   
@@ -256,11 +261,19 @@ hr {
 .hebrew35,
 .hebrew33,
 .hebrew30,
+.hebrew30-wrap,
 .hebrew-in-text {
    font-family:'Times New Roman',serif;
    direction:rtl;
    line-height:30px;
-   white-space:nowrap;
+}
+.hebrew50,
+.hebrew40,
+.hebrew35,
+.hebrew33,
+.hebrew30,
+.hebrew-in-text {
+    white-space:nowrap;
 }
 
 .hebrew50 {
@@ -280,7 +293,8 @@ hr {
 	/* used in alefbet to get list of consonants all on same line */
    font-size:33px;
 }
-.hebrew30{
+.hebrew30,
+.hebrew30-wrap{
    font-size:30px;
 }
 
@@ -343,6 +357,17 @@ hr {
    width:55px; 
    height:45px; 
 }	
+.cantillation-image-lesson {
+   width:18px; 
+   height:36px; 
+   vertical-align:text-top; 
+   margin-left:3px;   
+}	
+.cantillation-image2-lesson {
+   width:41px; 
+   height:32px; 
+   vertical-align:text-top;   
+}	
 .cantillation-image-intext {
    width:16px; 
    height:32px; 
@@ -368,6 +393,7 @@ hr {
 .start-audio::after{	
   content: "\23F5"; /* standard audio start symbol, points to the right */
   content:url("../images/play_circle_FILL0_wght400_GRAD0_opsz24.png");
+  content:url("../images/arrow_circle_left_FILL0_wght400_GRAD0_opsz24.png"); /*  points to the left */
 
 }
 
@@ -507,12 +533,14 @@ hr {
 /* flex-container-heb-with-tooltips used in alefbet-exercises 
    for people/places in Torah (more horizontal space between words)
    flex-container-heb-with-tooltips2 used in alefbet-exercises for consonant names (less horizontal space)
+   flex-container-heb-lessons used in reference lists of consonants and vowels at the start of each lesson
    */
 .flex-container-heb,
 .flex-container-heb-cv,
 .flex-container-heb-with-tooltips,
 .flex-container-heb-with-tooltips2,
-.flex-container-heb-vowel-names{
+.flex-container-heb-vowel-names,
+.flex-container-heb-lessons{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -526,7 +554,10 @@ hr {
 .flex-container-heb-with-tooltips:after,
 .flex-container-heb-with-tooltips:before,
 .flex-container-heb-with-tooltips2:after,
-.flex-container-heb-with-tooltips2:before{
+.flex-container-heb-with-tooltips2:before,
+.flex-container-heb-lessons:after,
+.flex-container-heb-lessons:before,
+{
   /* w3.css container property - not sure what it does*/
   content:"";
   display:table;
@@ -590,6 +621,21 @@ hr {
    white-space: pre;   
 } 
 
+.flex-container-heb-lessons {
+    justify-content:center;
+	border-bottom:solid; 
+	border-bottom-width:1px; 
+	border-bottom-color:gray;
+	border-top:solid; 
+	border-top-width:1px; 
+	border-top-color:gray;
+ }
+.flex-container-heb-lessons > div {
+  margin: 6px 0 3px 5px; /* top right bottom left */
+  text-align: center;
+ }
+
+
  
        /* "tooltips" */
       /*-------------------*/	   
@@ -619,6 +665,7 @@ hr {
        and cantillation marks exercise  */
 .flex-container-examples ,
 .flex-container-cantillation,
+.flex-container-cantillation-lessons ,
 .flex-container-menu-items,
 .flex-container-menu-items-alefbetplus{
   display: inline-flex;
@@ -632,6 +679,8 @@ hr {
 .flex-container-examples:before,
 .flex-container-cantillation:after,
 .flex-container-cantillation:before,
+.flex-container-cantillation-lessons :after,
+.flex-container-cantillation-lessons :before,
 .flex-container-menu-items:after,
 .flex-container-menu-items:before,
 .flex-container-menu-items-alefbetplus:after,
@@ -663,6 +712,25 @@ hr {
   /*line-height:35px;*/
   /* margin-top:50px; */
 }
+
+.flex-container-cantillation-lessons {
+	/* like flex-container-heb-lessons but ltr */
+	display:flex;
+    justify-content:center;
+	border-bottom:solid; 
+	border-bottom-width:1px; 
+	border-bottom-color:gray;
+	border-top:solid; 
+	border-top-width:1px; 
+	border-top-color:gray;
+ }
+.flex-container-cantillation-lessons > div {
+	/* like flex-container-heb-lessons but ltr */
+  margin: 0px 0 0px 4px; /* top right bottom left */
+  text-align: center;
+
+ }
+
 
      /* used for the menu items which can be clicked to hide /show  an exercise or other item 
 	 flex-container-alefbet-exercises
@@ -839,59 +907,22 @@ hr {
 
 /* glasses-table has space for glasses or similar in col 1 and content in col2, no borders */
 /* kametz-table used in alefbet+ in kametz a or o section, no borders */
+/* translations-table used in alefbet+ */
+/* lessons-toc-table used in lessons */
+/* exercise-table, verb-table, noun-table, example-table used in individual lessons */
 
 
+.glasses-table,
+.kametz-table,
+.translations-table,
+.lessons-toc-table,
 .exercise-table,
 .verb-table,
 .noun-table,
-.glasses-table,
-.kametz-table,
-.translations-table{
+.tanakh-example-table
+{
 	border-collapse:collapse;
 	display:table;
-}
-.exercise-table,
-.verb-table,
-.noun-table{
-	width:100%;
-}
-.exercise-table td,
-.exercise-table th,
-.verb-table td,
-.verb-table th,
-.noun-table td,
-.noun-table th {
-    padding:8px 8px;
-	display:table-cell;
-	vertical-align:top;
-	border-bottom:1px solid #ddd;
-}
-.exercise-table td:first-child,
-.exercise-table th:first-child,
-.verb-table td:first-child,
-.verb-table th:first-child,
-.noun-table td:first-child,
-.noun-table th:first-child {
-   padding-left:16px
-}
-
-.exercise-table td:first-child,
-.exercise-table th:first-child{
-   text-align:left;
-   width:50%;
-}
-.exercise-table td:nth-child(2),
-.exercise-table th:nth-child(2){
-   text-align: right;
-}
-.verb-table td:first-child,
-.verb-table th:first-child{
-   width:100px;
-   border-right:1px solid #ddd; /* width style color */
-}
-.verb-table td:nth-child(2),
-.verb-table th:nth-child(2){
-   text-align: left;
 }
 
 .glasses-table td:first-child{
@@ -933,6 +964,105 @@ hr {
    vertical-align: baseline;
 }
 
+          /* tables used in lessons */
+.lessons-toc-table,		  
+.exercise-table,
+.verb-table,
+.noun-table{
+	width:100%;
+}
+
+.lessons-toc-table{
+	margin-right:10px;
+}	
+.lessons-toc-table tr td:first-child{
+	width:15%;
+	padding-right:15px;
+	vertical-align: baseline;
+	text-align: right;
+}
+.lessons-toc-table tr {
+	margin:0;
+	padding:0;
+	border-bottom: 2px dotted gray;  /* width style color */
+}
+
+.exercise-table td,
+.exercise-table th,
+.verb-table td,
+.verb-table th,
+.noun-table td,
+.noun-table th {
+    padding:8px 8px;
+	display:table-cell;
+	vertical-align:top;
+	border-bottom:1px solid #ddd;
+}
+.exercise-table td:first-child,
+.exercise-table th:first-child,
+.verb-table td:first-child,
+.verb-table th:first-child,
+.noun-table td:first-child,
+.noun-table th:first-child {
+   padding-left:16px
+}
+
+.exercise-table td:first-child,
+.exercise-table th:first-child{
+   text-align:left;
+   width:50%;
+}
+.exercise-table td:nth-child(2),
+.exercise-table th:nth-child(2){
+   text-align: right;
+}
+.verb-table td:first-child,
+.verb-table th:first-child{
+   width:100px;
+   border-right:1px solid #ddd; /* width style color */
+}
+.verb-table td:nth-child(2),
+.verb-table th:nth-child(2){
+   text-align: left;
+}
+
+.tanakh-example-table{
+   margin-left:25px;
+   margin-right:25px;
+}
+.tanakh-example-table td{
+    padding:0 10px 0 0; /* Only right padding*/
+	vertical-align:top;
+	background-color: #eff4ff; /* metro light blue , consonant-color*/
+background-color:Lavender;
+background-color:Beige;
+background-color:PaleGreen;	
+background-color:Aquamarine;	
+background-color:HoneyDew;	
+
+
+}
+.tanakh-example-table td:first-child{
+	/* biblical reference */
+	text-align:right;
+	font-style:italic;
+}	
+.tanakh-example-table td:nth-child(2){
+	/* translation */
+	text-align:left;
+}	
+.tanakh-example-table td:nth-child(3){
+	/* hebrew30 */
+   font-family:'Times New Roman',serif;
+   direction:rtl;
+   line-height:30px;
+   font-size:30px;
+   
+}	
+.tanakh-example-table td:nth-child(4){
+    /* audio arrow */
+	text-align:left;
+}
 /* lesson 1 exercise specific             */
 /*---------------------------------------*/
 .lesson1-scrollable{
