@@ -85,7 +85,9 @@ function crCantillationList(thisSpecElement){
   
    var whichList = "all"
    var audioDir = "words";  
-   var containerClass = "flex-container-cantillation";  
+
+   var flexboxClass = "flex-container-ltr"; // used for all example flexboxes
+   var containerClass = "flex-container-examples";  
    var hebrewClass = "hebrew35"; 
    var syllablesClass = "hebrew35";
    var colorClass = "vocab-color";
@@ -160,6 +162,7 @@ function crCantillationList(thisSpecElement){
 
     const flexdiv = document.createElement("div");
    
+	flexdiv.classList.add(flexboxClass);
 	flexdiv.classList.add(containerClass);
     flexdiv.setAttribute("id", targetId);
     if (!(colorClass == null)) {flexdiv.classList.add(colorClass);}
@@ -209,7 +212,7 @@ function crCantillationList(thisSpecElement){
 	         para4.appendChild(span00);
 				   
           }
-		  para4.classList.add("flex-container-heb-tooltip"); // dotted border
+		  para4.classList.add("flex-container-tooltip"); // dotted border
 		  if (!(syllablesClass == null)){para4.classList.add(syllablesClass);}
 
           celldiv.appendChild(para4);

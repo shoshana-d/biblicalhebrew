@@ -11,21 +11,21 @@ function closeRewardModal(){
 function rewardModal(rewardText){
 
    const modal = document.createElement("div");
-   modal.classList.add("reward-modal");
+   modal.classList.add("reward-modal-background");
    modal.setAttribute("id", "rewardModal");
 
    const modalContent = document.createElement("div");
-   modalContent.classList.add("reward-modal-content");
+   modalContent.classList.add("reward-modal-box");
    
-   //const closeBtn = document.createElement("span");
    const closeBtn = document.createElement("span");
    closeBtn.classList.add("btn-close");
    closeBtn.addEventListener("click",function(){closeRewardModal();});
    modalContent.appendChild(closeBtn);
 
    const modalSpan = document.createElement("span");
+   modalSpan.classList.add("reward-modal-content");
    modalSpan.classList.add("blink");
-   modalSpan.font = "Courier";
+   //modalSpan.font = "Courier";
    
    var randomIndex1 = Math.floor(Math.random() * 5);
    switch (randomIndex1){
@@ -72,9 +72,10 @@ function rewardModal(rewardText){
 
    //thisImage.width = 80;
    //thisImage.height = 80;
-   thisImage.width = 60;
-   thisImage.height = 80;
-   thisImage.style.float = "left";
+   //thisImage.width = 60;
+   //thisImage.height = 80;
+   //thisImage.style.float = "left";
+   thisImage.classList.add("flower-img");
    modalContent.appendChild(thisImage);
  
    modal.appendChild(modalContent);
@@ -98,11 +99,11 @@ function closeSyllablesModal(){
 function syllablesModal(correctAnswer){
 
    const modal = document.createElement("div");
-   modal.classList.add("syllables-modal");
+   modal.classList.add("syllables-modal-background");
    modal.setAttribute("id", "syllablesModal");
 
    const modalContent = document.createElement("div");
-   modalContent.classList.add("syllables-modal-content");
+   modalContent.classList.add("syllables-modal-box");
 
    //const closeBtn = document.createElement("span");
    const closeBtn = document.createElement("span");
@@ -161,11 +162,11 @@ function closeConsonantVowelModal(){
 function consonantVowelModal(message){
 
    const modal = document.createElement("div");
-   modal.classList.add("syllables-modal");
+   modal.classList.add("syllables-modal-background");
    modal.setAttribute("id", "consonantVowelModal");
 
    const modalContent = document.createElement("div");
-   modalContent.classList.add("syllables-modal-content");
+   modalContent.classList.add("syllables-modal-box");
 
    //const closeBtn = document.createElement("span");
    const closeBtn = document.createElement("span");
@@ -175,7 +176,7 @@ function consonantVowelModal(message){
 
 
    const para1 = document.createElement("p");
-   
+  
    const span1 = document.createElement("span");
    const text1 = document.createTextNode(message); 
    span1.appendChild(text1);

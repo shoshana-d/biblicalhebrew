@@ -13,32 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // create the table of contents
   //const tocSidenav = document.getElementById("TOCSidenav");
   //if (!(tocSidenav == null)) {   createTOC();}.
-	
-  //--------- code relating to content created in HTML ------------------------	
-  //---------------------------------------------------------------------------
+  
+  //--------- startup common to all pages --------------------------------------
+  //----------------------------------------------------------------------------
+ 
+      //--------- code relating to content created in HTML ------------------------	
+      //---------------------------------------------------------------------------
   
   // add event listeners to the lists which have been created in HTML 
   // (event listeners for lists created in JS are added when the list is created)
 
-                // in alefbet, alefbet+, not in alefbet-exercises
    var soundclickClass = document.getElementsByClassName("soundclick");
    for (j = 0; j < soundclickClass.length; j++) {addsoundclickEventListener(soundclickClass[j]);}
  
-                // only in alefbet
-   var soundclickClass = document.getElementsByClassName("arrowclick");
-   for (j = 0; j < soundclickClass.length; j++) {
-	   addArrowclickEventListener(soundclickClass[j]);
-   }
-	
-     	               // only in alefbet
-  // var soundclickClass = document.getElementsByClassName("arrowbyorderclick");
-  // for (j = 0; j < soundclickClass.length; j++) {
-  //  // add order to each div which has "soundclick" class
-  //      // This is required to make the arrow work
-//	   addOrderToFlexdiv(soundclickClass[j].parentElement.parentElement);
-//	   addArrowclickEventListener(soundclickClass[j],"arrowbyorder");
-  // }
-
  
   // add event listeners to the headings to show/hide following div
   
@@ -49,33 +36,81 @@ document.addEventListener('DOMContentLoaded', function() {
       soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
       addShowHideNextSiblingEventListener(soundclickClass[j]);
    }
-
-   // add event listeners to the headings in alefbet-exercises to show/hide selected exercise
-  
+	
+    // add event listeners to  menu items 
+   //    menu flexbox to show/hide selected div specified by id
+   //-------------------------------------------------------------------------
+   // element with event listener has id "show-xx"
+   // when clicked, div with id "xx" is hidden/unhidden
+ 
+ 
+  // optional header, when menu hidden has + which can be clicked to show menu
+   var soundclickClass = document.getElementsByClassName("showhidemenuclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+	  var span = document.createElement("span");
+      soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
+      addShowHideMenuEventListener(soundclickClass[j]);
+   }
+   
+	// if menu item is already selected (menu-item-selected and content visible) 
+	//       sets to unselected and hides content
+	// if menu item is not already selected
+	//       checks whether any other menu item selected, if so, unselects (removes menu-item-selected and hides content)
+	//       sets item to selected (uses the id of the element to show the appropriate content)
+	
+	// doesn't hide menu
    var soundclickClass = document.getElementsByClassName("showhidemenuitemclick");
    for (j = 0; j < soundclickClass.length; j++) {
 	  var span = document.createElement("span");
 	  span.classList.add("button-plus");
       soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
-        addShowHideMenuItemEventListener(soundclickClass[j]);
+ 	  addShowHideMenuItemEventListener(soundclickClass[j]);
 	}
 	
-  // add event listeners to the menu items in alefbet+ to hide/show an item
-
-   var soundclickClass = document.getElementsByClassName("alefbetplusmenuclick");
+	
+	// hides menu
+   var soundclickClass = document.getElementsByClassName("showhidemenuitemhidemenuclick");
    for (j = 0; j < soundclickClass.length; j++) {
-      addShowHideMenuItemAlefbetPlusEventListener(soundclickClass[j]);
+	  var span = document.createElement("span");
+	  span.classList.add("button-plus");
+      soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
+      
+	  addShowHideMenuItemHideMenuEventListener(soundclickClass[j]);
 	}
+	
+	
+  // add event listeners to the menu items in alefbet+ to hide/show an item
+  // makes the specified menu item visible, hides the menu
+
+  // var soundclickClass = document.getElementsByClassName("alefbetplusmenuclick");
+  // for (j = 0; j < soundclickClass.length; j++) {
+   //   addShowHideMenuItemAlefbetPlusEventListener(soundclickClass[j]);
+	//}
+	
+   // hides the content of the selected menu item
+   // sets the menu item to unselected
+   // sets menu to visible (may already be visible)
+   // removes + in optional header
+   var soundclickClass = document.getElementsByClassName("closebtnclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+      addMenuContentCloseBtnEventListener(soundclickClass[j]);
+   }
+
 
   // add event listeners to show/hide element with specified id
+  // doesn't seem to be used in alefbet, alefbetexercises or alefbetplus
 
-   var soundclickClass = document.getElementsByClassName("showhidespecifiedidclick");
-   for (j = 0; j < soundclickClass.length; j++) {
-      addShowHideSpecifiedIdEventListener(soundclickClass[j]);
-	}
+  // var soundclickClass = document.getElementsByClassName("showhidespecifiedidclick");
+  // for (j = 0; j < soundclickClass.length; j++) {
+//	  var span = document.createElement("span");
+//	  span.classList.add("button-plus");
+ //     soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
+ //     addShowHideSpecifiedIdEventListener(soundclickClass[j]);
+//	}
 
    //------ code creating content----------------------------------------
    //-------------------------------------------------------------------
+
      // create the clickable flexbox lists in JS  (includes event listeners)  
      //  (ii required, i doesn't work, seems to get reset in function that's called)
      //  June 2022. Was because i was not declared in called function so became global
@@ -87,6 +122,28 @@ document.addEventListener('DOMContentLoaded', function() {
  	  var thisSpec = javascriptListClass[ii];
       createJavascriptList(thisSpec); 
    }
+
+  
+  //-------- startup used only in index, alefbet, alefbet-exercises and alefbet+
+  //----------------------------------------------------------------------------
+	
+     //--------- code relating to content created in HTML ------------------------	
+     //---------------------------------------------------------------------------
+  
+  // add event listeners to the lists which have been created in HTML 
+  // (event listeners for lists created in JS are added when the list is created)
+
+ 
+                // only in alefbet 
+   var soundclickClass = document.getElementsByClassName("arrowclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+	   addArrowclickEventListener(soundclickClass[j]);
+   }
+	
+
+
+   //------ code creating content----------------------------------------
+   //-------------------------------------------------------------------
 
    // create the drag drop flexboxes in JS  (includes event listeners) 
    //  only in alefbet-exercises 

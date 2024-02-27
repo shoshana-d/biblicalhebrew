@@ -82,9 +82,10 @@ function createJavascriptList(thisSpecElement){
    var j;
    var i;
 
+   var flexboxClass = "flex-container-rtl"; // used for all hebrew flexboxes with audio
    var containerClass = "flex-container-heb";  // specifies size of gap between items, default
    var hebrewClass = "hebrew35";  // default								   
-   var tooltipsClass = "flex-container-heb-tooltip"; // default
+   var tooltipsClass = "flex-container-tooltip"; // default
    var colorClass = null;
 
    var sourceId = null;  // the id of the HTML para with the hebrew and sound combined
@@ -414,6 +415,7 @@ function createJavascriptList(thisSpecElement){
   
    var flexdiv = document.createElement("div");
 
+   flexdiv.classList.add(flexboxClass);
    flexdiv.classList.add(containerClass);
    if (!(colorClass == null)) {flexdiv.classList.add(colorClass);}
    if (!(targetId == null)) {flexdiv.setAttribute("id", targetId);}

@@ -116,6 +116,7 @@ function crSyllablesExercise(thisSpecElement){
 	
     var audioDir = "words";  
    
+    var flexboxClass = "flex-container-ltr"; // used for all example flexboxes
     var containerClass = "flex-container-examples";  
     var hebrewClass = "hebrew35"; 
     var colorClass = "vocab-color";
@@ -185,6 +186,7 @@ function crSyllablesExercise(thisSpecElement){
 	   
     const flexdiv = document.createElement("div");
     
+	flexdiv.classList.add(flexboxClass);
 	flexdiv.classList.add(containerClass);
     flexdiv.setAttribute("id", targetId);
     if (!(colorClass == null)) {flexdiv.classList.add(colorClass);}
@@ -286,7 +288,7 @@ function crSyllablesExercise(thisSpecElement){
 	         para3.appendChild(span0);
 
           para3.setAttribute("id", "syllablesProposedAnswer" + i);
-		  para3.classList.add("flex-container-heb-tooltip"); // dotted border
+		  para3.classList.add("flex-container-tooltip"); // dotted border
 		  para3.classList.add(hebrewClass);
 		  
           celldiv.appendChild(para3);
