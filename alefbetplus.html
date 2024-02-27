@@ -10,6 +10,46 @@
 
   <link rel="stylesheet" href="styles/biblical_hebrew_main.css">
   <link href='https://fonts.googleapis.com/css?family=Comic Neue' rel='stylesheet'>
+  
+   <style>
+.flex-container-heb-vowel-names > div {
+   margin: 10px 0 3px 11px; /* top right bottom left */
+   text-align: center;
+}
+  
+   
+.kametz-table{
+	margin-right:10px;
+}	
+.kametz-table tr td:first-child{
+	font-size:20px;
+	font-style:bold;
+	vertical-align: baseline;
+	text-align: center;
+}
+.kametz-table tr {
+	margin:0;
+	padding:0;
+	border-bottom: 2px dotted blue;  /* width style color */
+}
+
+.translations-table td{
+	display:table-cell;
+ 	padding-left:8px;
+	padding-right:8px;
+	border-bottom:1px solid #ddd;
+	vertical-align:baseline;
+}
+.translations-table td:first-child{
+   text-align:right;
+   width:100px;
+}
+.translations-table td:nth-child(2){
+   text-align:left;
+   vertical-align: baseline;
+}
+  </style>
+
 </head>
 
 <body>
@@ -33,38 +73,34 @@
 
 
 <!-- testing section    --> 
-<!-- <p>Temporary testing section</p>
+<!--<p>Temporary testing section</p>
  <p>TEST</p>
- <p id="mytest">test</p>  --> 
+ <p id="mytest">test</p> -->  
  <!-- END testing section --> 
 
-<h2  class="alefbetplusmenuclick"  style="margin-bottom:0;"><span> </span>Contents</h2>
-<div id="alefbetplus-contents" class="flex-container-menu-items-alefbetplus" >
-   <div id="show-alefbetplus1" class="alefbetplusmenuclick">
-                 Consonants and vowels pronunciation variations</div>
-   <div id="show-alefbetplus2" class="alefbetplusmenuclick ">
-                  Why are <span class="hebrew40">ו</span> and <span class="hebrew40">י</span> both vowels and consonants?</div>
-   <div id="show-alefbetplus3" class="alefbetplusmenuclick ">
-                  More on pronunciation of <span class="hebrew35">יהוה</span> the Tetragrammaton</div>
-  <div id="show-alefbetplus5" class="alefbetplusmenuclick "> Names of vowels</div>
-  <div id="show-alefbetplus6" class="alefbetplusmenuclick" >Hebrew names of marks</div>
-  <div id="show-alefbetplus7" class="alefbetplusmenuclick" >
-                  Some rules for when the secondlast syllable is stressed</div>
-  <div id="show-alefbetplus8" class="alefbetplusmenuclick ">
+<h2  class="showhidemenuclick"  style="margin-bottom:0;">Contents</h2>
+<div id="alefbetplus-contents" class="flex-container-ltr flex-container-menu-items " style="background-color:MintCream">
+   <div id="show-alefbetplus1" class="showhidemenuitemhidemenuclick">Consonants and vowels pronunciation variations</div>
+   <div id="show-alefbetplus2" class="showhidemenuitemhidemenuclick ">Why are <span class="hebrew40">ו</span> and 
+                              <span class="hebrew40">י</span> both vowels and consonants?</div>
+   <div id="show-alefbetplus3" class="showhidemenuitemhidemenuclick ">More on pronunciation of 
+   <span class="hebrew35">יהוה</span> the Tetragrammaton</div>
+  <div id="show-alefbetplus5" class="showhidemenuitemhidemenuclick ">Names of vowels</div>
+  <div id="show-alefbetplus6" class="showhidemenuitemhidemenuclick" >Hebrew names of marks</div>
+  <div id="show-alefbetplus7" class="showhidemenuitemhidemenuclick" >Some rules for when the secondlast syllable is stressed</div>
+  <div id="show-alefbetplus8" class="showhidemenuitemhidemenuclick ">
             <span class="hebrew40">  וּ   </span> at the start of a word</div>
-   <div id="show-alefbetplus9" class="alefbetplusmenuclick" >
-           Dividing words which contain 
+   <div id="show-alefbetplus9" class="showhidemenuitemhidemenuclick" >Dividing words which contain 
            <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > and/or 
            <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" > into syllables</div>
-  <div id="show-alefbetplus10" class="alefbetplusmenuclick" >
+  <div id="show-alefbetplus10" class="showhidemenuitemhidemenuclick" >
            <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" > "a" or "o"? 
 		   Pronunciation of the vowel kamatz</div>
-  <div id="show-alefbetplus11" class="alefbetplusmenuclick" >
+  <div id="show-alefbetplus11" class="showhidemenuitemhidemenuclick" >
           <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2"> "a" or "o"? 
        The troublesome <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" >
 		  <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" style="margin-left:-5px;"> combination</div>
-  <div id="show-alefbetplus12" class="alefbetplusmenuclick " >
-          Hebrew-English translations</div>
+  <div id="show-alefbetplus12" class="showhidemenuitemhidemenuclick " >Hebrew-English translations</div>
 </div>
 
   
@@ -73,7 +109,7 @@
 -->
  
  <div id="alefbetplus1" class="alefbet-detail-item hidden alefbet-plus-color"  >  
- <h2>Consonants and vowels pronunciation variations</h2>
+ <h2>Consonants and vowels pronunciation variations <span class="btn-close closebtnclick"></span></h2>
  <p>We don't know exactly  how Hebrew was pronounced originally but we do know that even in Biblical times there were different accents.</p>
  <p>The pronunciation guide in <a href="alefbet.html">alefbet</a> is widely accepted, but as with any language, there is not really one correct pronunciation
  (although there are often strongly held opinions!).   </p>
@@ -148,6 +184,7 @@ This may be closer to the original biblical pronunciation, which is believed to 
 
 <p> Some Ashkenazi Jews pronounce the "o" sound as "oy", for example <span class="hebrew-in-text">תוֹרָה</span> is pronounced "toy-ra".
 </p>
+
  </div>
 
 <p> </p>
@@ -158,7 +195,7 @@ This may be closer to the original biblical pronunciation, which is believed to 
 
 <div id="alefbetplus2" class="alefbet-detail-item hidden alefbet-plus-color"  >  
 <h2>Why are <span class="hebrew40">ו</span> and 
- <span class="hebrew40">י</span> both vowels and consonants? (A bit of history)</h2>
+ <span class="hebrew40">י</span> both vowels and consonants? (A bit of history)<span class="btn-close closebtnclick"></span></h2>
   <p>
  Biblical Hebrew was originally written only with consonants. This would be like writing in English "th grl pckd p hr pt".
   If you are an English speaker, you can probably figure out that this is "the girl picked up her " - but what did she pick up? 
@@ -230,7 +267,7 @@ These marks preserved the tradition of liturgical chanting of the text by indica
    more about pronouncung tetragramaton
  -->
 <div id="alefbetplus3" class="alefbet-detail-item hidden alefbet-plus-color"  >  
-<h2>More about pronunciation of <span class="hebrew35">יהוה</span> the Tetragrammaton</h2>
+<h2>More about pronunciation of <span class="hebrew35">יהוה</span> the Tetragrammaton<span class="btn-close closebtnclick"></span></h2>
 
 <p>There is a longstanding Jewish prohibition on speaking God’s name aloud.
 The origin of this taboo  — according to which, pronouncing God's name aloud is irreverent or possibly even a violation of the 
@@ -262,10 +299,10 @@ This confused form entered English usage in several translations of the Bible.
  <!--
     vowel names   
 -->
- <div id="alefbetplus5" class="alefbet-detail-item hidden alefbet-plus-color"  >  <h2>Names of vowels </h2>
+ <div id="alefbetplus5" class="alefbet-detail-item hidden alefbet-plus-color"  >  <h2>Names of vowels <span class="btn-close closebtnclick"></span></h2>
   
     <p></p>
-   <div class="flex-container-heb-vowel-names vowel-color">
+   <div class="flex-container-rtl flex-container-heb-vowel-names vowel-color">
   <div><img src="images/vowels/a1.jpg" class="soundclick vowel-image-intext"><span hidden>alefbet_consonants_and_vowels/a</span><br><span class=" consonant-vowel">&thinsp;a</span><br>&thinsp;patach</div>
   
   <div><img src="images/vowels/a_or_o.jpg" class="soundclick vowel-image-intext"><span hidden>alefbet_consonants_and_vowels/a</span><br><span class=" consonant-vowel">&thinsp;a</span><br>&thinsp;kamatz</div>
@@ -304,7 +341,7 @@ This confused form entered English usage in several translations of the Bible.
    names of marks
 -->
 <div id="alefbetplus6" class="alefbet-detail-item hidden alefbet-plus-color"  >  
-<h2>Hebrew names of marks</h2>
+<h2>Hebrew names of marks <span class="btn-close closebtnclick"></span></h2>
    
  <table  style="border-collapse:collapse;display:table;">
  <tr style="border-bottom: 2px solid DarkGray;"><td style="text-align:right;padding-right:15px;"> vowel marks</td>
@@ -341,7 +378,7 @@ This confused form entered English usage in several translations of the Bible.
    When is secondlast syllable stressed?  
 -->
   <div id="alefbetplus7" class="alefbet-detail-item hidden alefbet-plus-color" >  
-<h2>Some rules for when the secondlast syllable is stressed</h2>
+<h2>Some rules for when the secondlast syllable is stressed <span class="btn-close closebtnclick"></span></h2>
  
  <p style="margin-bottom:0">The following rules cover many of the words where the secondlast syllable is stressed. </p>
 </p>
@@ -353,11 +390,11 @@ This confused form entered English usage in several translations of the Bible.
       <p>The most frequently occurring pattern is:</p>
      <table style="margin-top:-15px;">
 	  <tr ><td style="text-align:center;">
-	  <span style="font-family:'Times New Roman';font-size:40px;">&#x25CC; </span>
+	  <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	  <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;margin-bottom:15px;">
 	  <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;"></td>
 	      <td>
-          <div class="flex-container-examples dotted-border">
+          <div class="flex-container-ltr flex-container-examples ">
           <div><span class="hebrew30 soundclick">אֶרֶץ</span><span class="hidden">words/w021_eretz </span> </div>
           <div><span class="hebrew30 soundclick"> מֶלֶךְ </span><span class="hidden">words/w020_melech </span> </div>
           <div><span class="hebrew30 soundclick">  עֶבֶד </span><span class="hidden">words/w059_eved </span> </div>
@@ -371,19 +408,19 @@ This confused form entered English usage in several translations of the Bible.
       <p></p>    
 	  <p>Other patterns are:	 </p> 
 
-	   <div class="flex-container-examples"  style="margin-top:-15px;"> 
-	     <div>  <span style="font-family:'Times New Roman';font-size:40px;">&#x25CC; </span>
+	   <div class="flex-container-ltr flex-container-examples-no-border"  style="margin-top:-15px;"> 
+	     <div>  <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	            <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 	            <img src="images/vowels/ei1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 
              <span class="hebrew30 soundclick dotted-border example-spacing"> אֵלֶּה </span><span class="hidden">words/w068_eleh </span> 
 	      </div>
-		  <div>  <span style="font-family:'Times New Roman';font-size:40px;">&#x25CC; </span>
+		  <div>  <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	            <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 	            <img src="images/vowels/o2.jpg" class=" vowel-image-intext" style="margin-left:-10px;"> 
              <span class="hebrew30 soundclick dotted-border example-spacing"> קֹדֶשׁ </span><span class="hidden">words/w108_kodesh</span>
 	      </div>
-          <div> <span style="font-family:'Times New Roman';font-size:40px;">&#x25CC; </span>
+          <div> <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	            <img src="images/vowels/a1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 	            <img src="images/vowels/a1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
              <span class="hebrew30 soundclick dotted-border example-spacing"> תַּחַת	 </span><span class="hidden">words/w095_tachat</span> 
@@ -398,7 +435,7 @@ This confused form entered English usage in several translations of the Bible.
      <table class="example-table">
 	  <tr><td>Examples:</td>
 	  <td>
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
            <div><span class="hebrew30 soundclick"> עֵינַיִם </span>
 		        <span class="hidden">words/w048_ehnayim</span> 
            </div>
@@ -435,7 +472,7 @@ This confused form entered English usage in several translations of the Bible.
       <table class="example-table">
 	  <tr><td>Examples:</td>
 	  <td>
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
            <div><span class="hebrew30 soundclick">לָּנוּ  </span>
 		        <span class="hidden">words/w003_lanu</span> 
 				<br>to us
@@ -475,7 +512,7 @@ This confused form entered English usage in several translations of the Bible.
        <table class="example-table">
 	  <tr><td>Examples:</td>
 	  <td>
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
            <div><span class="hebrew30 soundclick"> הָיִיתִי </span>
 		        <span class="hidden">words/w015_hayiti</span> 
 				<br>I was
@@ -513,7 +550,7 @@ This confused form entered English usage in several translations of the Bible.
 -->
 
 <div id="alefbetplus8" class="alefbet-detail-item hidden alefbet-plus-color"  >  
-<h2><span class="hebrew40">  וּ   </span> at the start of a word</h2>
+<h2><span class="hebrew40">  וּ   </span> at the start of a word <span class="btn-close closebtnclick"></span></h2>
  
  <p>The consonant <span class="hebrew30 soundclick"> וְ </span><span hidden>alefbet_consonants_and_vowels/v</span> 
  is often added to the beginning of a word. 
@@ -533,7 +570,7 @@ When it's added to a noun it means "and". It also often occurs as the first lett
  <span class="hebrew35 ">בּ</span></p>
  <div class="hidden" style="margin-left:30px;">
   
- <div class="flex-container-examples dotted-border">
+ <div class="flex-container-ltr flex-container-examples ">
    <div> <span class="hebrew30 soundclick">בָּנִים</span><span class="hidden">words/w013_banim </span> (sons) 
    &emsp;<span class="hebrew30 soundclick">וּבָנִים</span><span class="hidden">words/w013_uvanim </span> (and sons) 
     </div>
@@ -558,7 +595,7 @@ When it's added to a noun it means "and". It also often occurs as the first lett
 <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
  <span class="hebrew35 ">מ</span></p>
  <div class="hidden" style="margin-left:30px;">
-  <div class="flex-container-examples dotted-border">
+  <div class="flex-container-ltr flex-container-examples ">
    <div>   <span class="hebrew30 soundclick"> מַיִםָ</span><span class="hidden">words/w083_mayim</span> (water) 
    &emsp;<span class="hebrew30 soundclick">וּמַיִם    </span><span class="hidden">words/w083_umayim   </span> (and water)
     </div>
@@ -579,7 +616,7 @@ When it's added to a noun it means "and". It also often occurs as the first lett
 <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
  <span class="hebrew35 ">פּ</span></p>
  <div class="hidden" style="margin-left:30px;">
-  <div class="flex-container-examples dotted-border">
+  <div class="flex-container-ltr flex-container-examples ">
    <div>      <span class="hebrew30 soundclick">פַּרְעֹה</span><span class="hidden">alefbet_people_places/paroh </span> (pharaoh) 
    &emsp;<span class="hebrew30 soundclick">וּפַרְעֹה   </span><span class="hidden">alefbet/ufaroh    </span> (and pharaoh)
     </div>
@@ -602,7 +639,7 @@ When it's added to a noun it means "and". It also often occurs as the first lett
 <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
  <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext" style="margin-left:-5px;"></p>
  <div class="hidden" style="margin-left:30px;">
-  <div class="flex-container-examples dotted-border">
+  <div class="flex-container-ltr flex-container-examples ">
    <div>      
    <span class="hebrew30 soundclick">שְׁנַיִם</span><span class="hidden">words/w064_shnayim </span> (two) 
     &emsp;<span class="hebrew30 soundclick">וּשְׁנַיִם</span><span class="hidden">words/w064_ushnayim </span> (and two)    
@@ -633,6 +670,7 @@ When it's added to a noun it means "and". It also often occurs as the first lett
 <h2>Dividing words which contain 
   <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > and/or 
   <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" > into syllables
+  <span class="btn-close closebtnclick"></span>
  </h2>
     <p></p>
   <p>The vowel marks <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > and
@@ -656,7 +694,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		         <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > is always the <strong>vowel</strong> 
 				 in a <strong>Consonant-Vowel</strong>  syllable (short "uh" sound)</p>
  <div class="hidden" style="margin-left:30px;">
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
 	   <div><span class="hebrew30 soundclick">לְבַב</span><span class="hidden">words/w054_lvav</span> 
 	   	    <br>
        	    <span class="hebrew30">לְ</span> <span class="hebrew30 unmarked-text"> בַב</span>  
@@ -677,7 +715,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		         <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > always marks the <strong>end</strong> of a 
  				   <strong>Consonant-Vowel-Consonant</strong> syllable (no sound)</p>
  <div class="hidden" style="margin-left:30px;">
-        <div class="flex-container-examples dotted-border">
+        <div class="flex-container-ltr flex-container-examples ">
 		<div><span class="hebrew30 soundclick">מֶלֶךְ </span><span class="hidden">words/w020_melech</span>
 	   	    <br>
        	    <span class="hebrew30 unmarked-text">מֶ </span> <span class="hebrew30"> לֶךְ</span>  
@@ -694,7 +732,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
  	   <p>If there are 2 together at the
 	   end of a word <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" ><img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > , 
 	   they mark the end of a syllable that looks like Consonant-Vowel-Consonant-Consonant (both silent)
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
 		<div><span class="hebrew30 soundclick"> אָמַרְתְּ </span><span class="hidden">words/w011_amart</span>
 	   	    <br>
        	    <span class="hebrew30 unmarked-text">אָ </span> <span class="hebrew30"> מַרְתְּ</span>  
@@ -712,7 +750,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		<img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" >, 
 		the first one is the end of a Consonant-Vowel-Consonant syllable (silent) and the second one is the vowel 
 		in a Consonant-Vowel syllable (short "uh" sound). </p>	
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
 	   <div><span class="hebrew30 soundclick">יִקְרְאוּ	</span><span class="hidden">words/w070_yikruhu </span>
 	   	    <br>
        	    <span class="hebrew30">יִקְ רְ </span> <span class="hebrew30 unmarked-text"> אוּ</span>  
@@ -732,7 +770,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		<img src="images/vowels/meteg_blue.jpg" class=" vowel-image-intext2" >,
               the <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > syllable is Consonant-Vowel (short "uh"sound) </p>
 		<p>(The <img src="images/vowels/meteg_blue.jpg" class=" vowel-image-intext2" > mark indicates that a syllable is Consonant-Vowel) </p>
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
        <div><span class="hebrew30 soundclick">אָֽמְרוּ</span><span class="hidden">words/w011_amuhru  </span>
 	   	    <br>
        	    <span class="hebrew30">אָֽ מְ </span> <span class="hebrew30 unmarked-text">  רוּ </span>  
@@ -748,7 +786,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
  	   </div>
     <li><p><span class="hebrew30"> יְ </span>&thinsp; is Consonant-Vowel (short "uh" sound)
      </p>
-        <div class="flex-container-examples dotted-border">
+        <div class="flex-container-ltr flex-container-examples ">
        <div><span class="hebrew30 soundclick">וַיְהִי</span><span class="hidden">words/w015_vayhi  </span>
 	   	    <br>
  			  <span class="hebrew30 unmarked-text">וַ</span> 
@@ -789,7 +827,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
       <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2">  is pronounced "a"
    </ul>	  
          
-     <div  class="flex-container-examples dotted-border">
+     <div  class="flex-container-ltr flex-container-examples ">
       <div><span class="hebrew30 soundclick"> חָכְמָה   </span><span class="hidden">words/w271_chochma </span>
 	       <br>
              <span class="hebrew30 ">חָכְ מָה</span> 
@@ -825,6 +863,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
  -->
 <div id="alefbetplus10" class="alefbet-detail-item hidden alefbet-plus-color"  >  
 <h2 ><img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext" > "a" or "o"? Pronunciation of the vowel kamatz
+<span class="btn-close closebtnclick"></span>
   </h2>
  <p><img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" > is mostly pronounced <strong>"a"</strong> </p>
  <ul>
@@ -846,7 +885,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	          with <img src="images/vowels/meteg_blue.jpg" class=" vowel-image-intext2" ></h4>
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
         <div><span class="hebrew30 soundclick">הָֽאָדָם</span>	<span class="hidden">words/w091_haadam</span> </div>
         <div><span class="hebrew30 soundclick">הָֽאִשָּׁה</span>	<span class="hidden">words/w061_haisha</span> </div>
         <div> <span class="hebrew30 soundclick">שָֽׁמְעוּ</span><span class="hidden">words/w036_shamuhu</span>  </div>
@@ -861,7 +900,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	       One-syllable words</h4>
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
-       <div class="flex-container-examples dotted-border">
+       <div class="flex-container-ltr flex-container-examples ">
         <div><span class="hebrew30 soundclick">יָד</span>	<span class="hidden">words/w028_yad</span> </div>
         <div><span class="hebrew30 soundclick">אָב</span>	<span class="hidden">words/w034_av</span> </div>
         <div> <span class="hebrew30 soundclick"> שָׁם</span><span class="hidden">words/w057_sham</span>  </div>
@@ -875,7 +914,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <h4 class="showhidenextsiblingclick  main-color"> Stressed syllables</h4>
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
-      <div class="flex-container-examples dotted-border">
+      <div class="flex-container-ltr flex-container-examples ">
          <div><p><span class="hebrew30 soundclick">לְךָ</span> <span class="hidden">words/w003_lcha</span></p>
 	          <p><span class="hebrew30 unmarked-text">לְ</span> <span class="hebrew30">ךָ</span></p>
 	          <p><span class="unmarked-text">l'-</span><span class="stressed-syllable">cha</span></p>
@@ -915,7 +954,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <h4 class="showhidenextsiblingclick  main-color"> Consonant-Vowel syllables (almost always)</h4>
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
-      <div class="flex-container-examples dotted-border">
+      <div class="flex-container-ltr flex-container-examples ">
 	    <div><p><span class="hebrew30 soundclick">הָיָה</span><span class="hidden">words/w015_haya</span></p>
            <p><span class="hebrew30">הָ</span> <span class="hebrew30 unmarked-text">יָה</span></p> 
 	       <p><span>ha</span>-<span class="unmarked-text">ya</span></p>
@@ -965,7 +1004,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	   in a Consonant-Vowel syllable. </p>
 	  <p>This combination of vowels doesn't occur often.  </p>
 	  <span class="example">Examples:</span>
-      <div id="kamatzo" class="flex-container-examples dotted-border">
+      <div id="kamatzo" class="flex-container-ltr flex-container-examples ">
        <div><span id="btn-kamatzo" class="button-plus" onclick="showHideJsToggle('kamatzo','btn-kamatzo')"></span>
 	   </div>	   
        <div>
@@ -1016,7 +1055,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	<span class="hebrew30 main-color soundclick">כָּל־</span><span class="hidden">words/w010_kol</span> &emsp;
    </p>
    <p class="example">Some examples:</p>
-     <div class="flex-container-examples dotted-border">
+     <div class="flex-container-ltr flex-container-examples ">
      <div><span class="hebrew30 soundclick">כָּל־הָאָרֶץ</span><span class="hidden">words/w010_kol_haaretz </span><br> all the land</div>
      <div><span class="hebrew30 soundclick">וְכָל־הָעָם</span><span class="hidden">words/w010_vchol_haam</span><br> and all the people</div>
      <div><span class="hebrew30 soundclick">בְּכָל־הָאָרֶץ</span><span class="hidden">words/w010_bchol_haaretz </span><br> in all the land </div>
@@ -1029,7 +1068,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
    <p>where stress is on the second last syllable </p>
    <p>These are the most frequently occurring examples:</p>
     
-      <div id="kamatzo2" class="flex-container-examples dotted-border">
+      <div id="kamatzo2" class="flex-container-ltr flex-container-examples ">
         <div><span id="btn-kamatzo2" class="button-plus" onclick="showHideJsToggle('kamatzo2','btn-kamatzo2')"></span>
 	    </div>	   
         <div>
@@ -1108,6 +1147,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 <h2><img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext"> "a" or "o"? 
        The troublesome <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext" >
 		  <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext" style="margin-left:-5px;"> combination
+		  <span class="btn-close closebtnclick"></span>
   </h2>
  
  
@@ -1122,7 +1162,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	   <li>or 2 Consonant-Vowel syllables, in which case   <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2"> is pronounced "a"
        </ul>	  
     <div class="example-spacing"> </div>  
-    <div  class="flex-container-examples dotted-border" style="padding:0;">
+    <div  class="flex-container-ltr flex-container-examples " style="padding:0;">
       <div><p><span class="hebrew30 soundclick"> חָכְמָה   </span><span class="hidden">words/w271_chochma </span></p>
             <p><span class="hebrew30 ">חָכְ מָה</span></p> 
 	       <p>ch<strong>o</strong>ch-ma</p>  
@@ -1152,7 +1192,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	<div class="hidden">
 
 	  <span class="example">Examples:</span>
-      <div class="flex-container-examples dotted-border">
+      <div class="flex-container-ltr flex-container-examples ">
 	    <div><p><span class="hebrew30 soundclick"> וְנָתְנוּ</span><span class="hidden">words/w026_vnatuhnu</span></p>
  	       <p>they will give</p>
 	    </div>
@@ -1188,7 +1228,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	<div class="hidden">
 	 
 	 <span class="example">Examples:</span>
-      <div class="flex-container-examples dotted-border">
+      <div class="flex-container-ltr flex-container-examples ">
 	    <div><p><span class="hebrew30 soundclick"> נָתְנָה</span><span class="hidden">words/w026_natuhna</span></p>
  	       <p>she gave</p>
 	    </div>
@@ -1219,7 +1259,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
      <p>The <span class="hebrew30">&#1498;&#1464;</span> suffix on the end of a noun indicates "your".</p>
 	 
 	 <span class="example">Examples:</span>
-     <div class="flex-container-examples dotted-border">
+     <div class="flex-container-ltr flex-container-examples ">
 	    <div><p><span class="hebrew30 soundclick"> יָד</span><span class="hidden">words/w028_yad </span> </p>
  	       <p>hand</p>
            <p><span class="hebrew30 soundclick"> יָדְךָ</span><span class="hidden">words/w028_yadcha</span> </p>
@@ -1254,7 +1294,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <h4 class="showhidenextsiblingclick  main-color"> Everywhere else</h4>
 	  <div class="hidden">
 	 <span class="example">Examples:</span>
-      <div id="kamatzschwaho" class="flex-container-examples dotted-border">
+      <div id="kamatzschwaho" class="flex-container-ltr flex-container-examples ">
         <div><span id="btn-kamatzschwaho" class="button-plus" onclick="showHideJsToggle('kamatzschwaho','btn-kamatzschwaho')"></span>
 	    </div>	   
         <div><p><span class="hebrew30 soundclick">חָכְמָה</span><span class="hidden">words/w271_chochma</span></p>
@@ -1311,7 +1351,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
   translations of Hebrew example words
 -->
 <div id="alefbetplus12" class="alefbet-detail-item hidden alefbet-plus-color"  >  
-<h2>Hebrew-English translations</h2>
+<h2>Hebrew-English translations <span class="btn-close closebtnclick"></span></h2>
 <p>Please note: <br>For many Biblical Hebrew words there are several possible translations, depending on the context. 
 <br>The translations in this 
 list are by no means all the possible translations for every word.</p>
