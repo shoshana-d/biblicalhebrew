@@ -12,11 +12,26 @@
   <link href='https://fonts.googleapis.com/css?family=Comic Neue' rel='stylesheet'>
   
    <style>
-.flex-container-heb-vowel-names > div {
-   margin: 10px 0 3px 11px; /* top right bottom left */
-   text-align: center;
-}
+   .flex-container-heb-vowel-names > div {
+      margin: 10px 0 3px 11px; /* top right bottom left */
+      text-align: center;
+   }
   
+    /* marks a div which is a detail that shows when menuitem clicked in alefbet+    
+    - position relative required to make following close button position correctly'*/	  
+   .alefbetplus-detail-item{
+	  border-style:solid;
+	  border-color:Gray;
+	  border-width:1px;
+	  padding-left:5px;
+	  padding-right:5px;
+	  padding-bottom:5px;
+	  margin-bottom:30px;
+	
+	  position:relative;
+   }	
+
+
    
 .kametz-table{
 	margin-right:10px;
@@ -108,7 +123,7 @@
     consonants and vowels pronunciation variations  
 -->
  
- <div id="alefbetplus1" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+ <div id="alefbetplus1" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
  <h2>Consonants and vowels pronunciation variations <span class="btn-close closebtnclick"></span></h2>
  <p>We don't know exactly  how Hebrew was pronounced originally but we do know that even in Biblical times there were different accents.</p>
  <p>The pronunciation guide in <a href="alefbet.html">alefbet</a> is widely accepted, but as with any language, there is not really one correct pronunciation
@@ -193,7 +208,7 @@ This may be closer to the original biblical pronunciation, which is believed to 
     history of vav and yod  
  -->
 
-<div id="alefbetplus2" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus2" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2>Why are <span class="hebrew40">ו</span> and 
  <span class="hebrew40">י</span> both vowels and consonants? (A bit of history)<span class="btn-close closebtnclick"></span></h2>
   <p>
@@ -266,7 +281,7 @@ These marks preserved the tradition of liturgical chanting of the text by indica
 <!--
    more about pronouncung tetragramaton
  -->
-<div id="alefbetplus3" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus3" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2>More about pronunciation of <span class="hebrew35">יהוה</span> the Tetragrammaton<span class="btn-close closebtnclick"></span></h2>
 
 <p>There is a longstanding Jewish prohibition on speaking God’s name aloud.
@@ -299,7 +314,7 @@ This confused form entered English usage in several translations of the Bible.
  <!--
     vowel names   
 -->
- <div id="alefbetplus5" class="alefbet-detail-item hidden alefbet-plus-color"  >  <h2>Names of vowels <span class="btn-close closebtnclick"></span></h2>
+ <div id="alefbetplus5" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  <h2>Names of vowels <span class="btn-close closebtnclick"></span></h2>
   
     <p></p>
    <div class="flex-container-rtl flex-container-heb-vowel-names vowel-color">
@@ -340,7 +355,7 @@ This confused form entered English usage in several translations of the Bible.
 <!--
    names of marks
 -->
-<div id="alefbetplus6" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus6" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2>Hebrew names of marks <span class="btn-close closebtnclick"></span></h2>
    
  <table  style="border-collapse:collapse;display:table;">
@@ -377,7 +392,7 @@ This confused form entered English usage in several translations of the Bible.
 <!--
    When is secondlast syllable stressed?  
 -->
-  <div id="alefbetplus7" class="alefbet-detail-item hidden alefbet-plus-color" >  
+  <div id="alefbetplus7" class="alefbetplus-detail-item hidden alefbet-plus-color" >  
 <h2>Some rules for when the secondlast syllable is stressed <span class="btn-close closebtnclick"></span></h2>
  
  <p style="margin-bottom:0">The following rules cover many of the words where the secondlast syllable is stressed. </p>
@@ -549,7 +564,7 @@ This confused form entered English usage in several translations of the Bible.
  u at start of word  
 -->
 
-<div id="alefbetplus8" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus8" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2><span class="hebrew40">  וּ   </span> at the start of a word <span class="btn-close closebtnclick"></span></h2>
  
  <p>The consonant <span class="hebrew30 soundclick"> וְ </span><span hidden>alefbet_consonants_and_vowels/v</span> 
@@ -666,7 +681,7 @@ When it's added to a noun it means "and". It also often occurs as the first lett
     kametz/schwah words into syllables   
  -->
 
- <div id="alefbetplus9" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+ <div id="alefbetplus9" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2>Dividing words which contain 
   <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > and/or 
   <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" > into syllables
@@ -861,7 +876,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 <!--
     kametz a or o
  -->
-<div id="alefbetplus10" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus10" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2 ><img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext" > "a" or "o"? Pronunciation of the vowel kamatz
 <span class="btn-close closebtnclick"></span>
   </h2>
@@ -1143,7 +1158,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 <!--
     kametz a or o
  -->
-<div id="alefbetplus11" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus11" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2><img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext"> "a" or "o"? 
        The troublesome <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext" >
 		  <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext" style="margin-left:-5px;"> combination
@@ -1350,7 +1365,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 <!--
   translations of Hebrew example words
 -->
-<div id="alefbetplus12" class="alefbet-detail-item hidden alefbet-plus-color"  >  
+<div id="alefbetplus12" class="alefbetplus-detail-item hidden alefbet-plus-color"  >  
 <h2>Hebrew-English translations <span class="btn-close closebtnclick"></span></h2>
 <p>Please note: <br>For many Biblical Hebrew words there are several possible translations, depending on the context. 
 <br>The translations in this 
