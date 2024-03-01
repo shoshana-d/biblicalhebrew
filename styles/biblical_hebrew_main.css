@@ -197,6 +197,7 @@ table{
 
 /*------ emphasised text -----------------------*/
 .text-border{
+	/* used in flexboxes with arrow to show which word is being sounded */
 	border-style:solid;
 	border-color:red;
 	/* padding:0px 5px;*/ /* top/bottom right/left */
@@ -401,7 +402,14 @@ table{
 /*----------------------------------------------*/
 .generic-consonant-image,
 .generic-consonant-image-kamatz,
-.generic-consonant-image-chirik{
+.generic-consonant-image-chirik,
+.generic-consonant-image-kamatz-white,
+.generic-consonant-image-chirik-white,
+.generic-consonant-image-schwach-white,
+.generic-consonant-image-patach-white,
+.generic-consonant-image-segol-white,
+.generic-consonant-image-tsere-white
+{
 	width:20px;
 	height:32px;
 	vertical-align:bottom;
@@ -417,6 +425,24 @@ table{
 }
 .generic-consonant-image-chirik{
 	content:url("../images/reference_tables/consonant_chirik_large_blue_background.jpg");
+}
+.generic-consonant-image-kamatz-white{
+	content:url("../images/reference_tables/consonant_kamatz_large_white_background.jpg");
+}
+.generic-consonant-image-schwach-white{
+	content:url("../images/reference_tables/consonant_schwah_large_white_background.jpg");
+}
+.generic-consonant-image-chirik-white{
+	content:url("../images/reference_tables/consonant_chirik_large_white_background.jpg");
+}
+.generic-consonant-image-patach-white{
+	content:url("../images/reference_tables/consonant_patach_large_white_background.jpg");
+}
+.generic-consonant-image-segol-white{
+	content:url("../images/reference_tables/consonant_segol_large_white_background.jpg");
+}
+.generic-consonant-image-tsere-white{
+	content:url("../images/reference_tables/consonant_tsere_large_white_background.jpg");
 }
 
 /*--------- play/stop audio --------------*/
@@ -576,12 +602,11 @@ table{
 {
   /* w3.css container property - not sure what it does
   - appears to ensure that container is on new line - but this
-  seems to happen regardless*/*/
- /* 
- content:"";
+  seems to happen regardless*/
+  content:"";
   display:table;
   clear:both
-  */
+
 }
  
   
@@ -936,65 +961,74 @@ background-color:HoneyDew;
 	text-align:left;
 }
 
-
-.reference-table th:nth-child(2),
-.reference-table th:nth-child(3),
-.reference-table th:nth-child(4),
-.reference-table th:nth-child(5){
+.reference-table-header-cell{
 	font-weight:normal;
     border:solid; 
     border-width:1px;
     text-align:center;
    /*font-weight:bold;*/
     background-color:LemonChiffon;
+}
+.reference-table-section-heading{
+	padding-top:15px;
+	font-style:italic;
+}
+.reference-table-cell{
+	text-align:center;
+}	
+
+.possessive-suffix-table-header-cell{
+	width:150px;
+}
+	
+.verb-reference-table-header-cell{
 	width:90px;
     width:110px;
-}
+}	
 
-.reference-table td {
+.verb-reference-table td {
    border-bottom:solid; 
    border-width:1px;
    border-color:LightGray;
 }
 
-.reference-table td:nth-child(1) {
+.verb-reference-table td:nth-child(1) {
    width:25px;
 }
-
-.reference-table-section-heading{
-	padding-top:15px;
-	font-style:italic;
+.verb-reference-table td:nth-child(2) {
+   min-width:150px;
 }
+
 	
-.reference-table-hebrew-prefix,
-.reference-table-hebrew-suffix,
-.reference-table-hebrew-middle,
-.reference-table-hebrew{
+.verb-reference-table-hebrew-prefix,
+.verb-reference-table-hebrew-suffix,
+.verb-reference-table-hebrew-middle,
+.verb-reference-table-hebrew{
 	padding-bottom:5px;
 }	
-.reference-table-hebrew-prefix{
+.verb-reference-table-hebrew-prefix{
 	padding-right:10px;
 	text-align:left;
    border-right:solid; 
    border-width:1px;
 }
-.reference-table-hebrew-suffix{
+.verb-reference-table-hebrew-suffix{
 	padding-left:10px;
 	text-align:right;
    border-left:solid; 
    border-width:1px;
 }
-.reference-table-hebrew-middle{
+.verb-reference-table-hebrew-middle{
 	text-align:center;
 	width:15px;
 }
-.reference-table-hebrew{
+.verb-reference-table-hebrew{
 	/* used when not separate columne */
 	padding-right:15px;
 	text-align:right;
 	
 }	
-.reference-table-verb-root{
+.verb-reference-table-verb-root{
    /*background-color: #eff4ff;
    background-color:WhiteSmoke;*/
    background-color:LightCyan;
@@ -1004,7 +1038,7 @@ background-color:HoneyDew;
    background-color:AliceBlue;
 
 }  
-.reference-table-verb-root-different{
+.verb-reference-table-verb-root-different{
    /*background-color: #eff4ff;
    background-color:WhiteSmoke;*/
    background-color:#eff4ff; 
