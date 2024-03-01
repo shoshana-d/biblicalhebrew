@@ -100,7 +100,6 @@ function crAudioSpan(thisSoundWithDir){
    //----- play items with class "soundclick" in order in flexbox
    //------------------------------------------------------------------
 function playConsonants1(thisArrow){
-	
    var i;
    var container = thisArrow.parentElement.parentElement;
    
@@ -111,7 +110,7 @@ function playConsonants1(thisArrow){
    }	  
    
    if (thisArrow.classList.contains("stop-audio")){
-        // arrow has already been clicked, second click stops playing
+     // arrow has already been clicked, second click stops playing
  	 thisArrow.classList.add("stop-sound");
    }else{
         // start
@@ -128,13 +127,14 @@ function playConsonants2(thisArrow,audioItems,  itemNumber){
 	  var thisItem = thisElement.nextElementSibling.innerHTML;
 	  var thisMp3 = setMp3Name(thisItem);
       const music = new Audio(thisMp3);
-	  music.addEventListener("ended", function() {
+ 	  music.addEventListener("ended", function() {
         playConsonants3(thisArrow,audioItems,  itemNumber);
       },{ once: true });
       music.play();
 }
  
 function playConsonants3(thisArrow,audioItems,  itemNumber){
+test("playConsonants3 " + thisArrow.classList + " " + itemNumber + " " + audioItems.length);   
    audioItems[itemNumber].classList.toggle("text-border");
    if (thisArrow.classList.contains("stop-sound")){// the arrow at the beginning
       thisArrow.classList.remove("stop-sound");

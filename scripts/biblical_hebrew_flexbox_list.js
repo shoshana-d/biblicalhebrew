@@ -79,6 +79,7 @@ function createJavascriptList(thisSpecElement){
 	// Optional tooltips (separated by | or in separate paragraphs) always in separate source
 	//                    if tooltips in separate paras, reference id must be in a <div>, not in a <p>
 
+
    var j;
    var i;
 
@@ -203,7 +204,6 @@ function createJavascriptList(thisSpecElement){
 		    randomGroups=true;
 		 } 
    }
-
 
 	  
    // check consistency of specifications
@@ -422,12 +422,13 @@ function createJavascriptList(thisSpecElement){
   
        // add arrow at start if requested
    if (arrow ){
+		var celldiv = document.createElement("div");
+ 
         var span = document.createElement("span");
         //span.classList.add("hebrew35");
         span.classList.add("start-audio");
 		span.classList.add("arrowclick");
 		
-		var celldiv = document.createElement("div");
         celldiv.appendChild(span);
         flexdiv.appendChild(celldiv);
    }

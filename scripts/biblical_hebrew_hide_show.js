@@ -52,6 +52,8 @@ function showHideMenu(element){
 }	
 
 function menuContentCloseBtn(element){
+	// stop any audio that's playing in arrow of javascript list
+	turnOffArrowSound();  // in biblical_hebrew_flexbox_list.js
 	
 	// hide this menu item content
 	element.parentElement.parentElement.classList.add("hidden");

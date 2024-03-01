@@ -108,6 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
  //     addShowHideSpecifiedIdEventListener(soundclickClass[j]);
 //	}
 
+  
+     // only in alefbet 
+    //---------------------------------------------------------------------------
+    var soundclickClass = document.getElementsByClassName("arrowclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+	   addArrowclickEventListener(soundclickClass[j]);
+   }
+    //---------------------------------------------------------------------------
+	
    //------ code creating content----------------------------------------
    //-------------------------------------------------------------------
 
@@ -127,19 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //-------- startup used only in index, alefbet, alefbet-exercises and alefbet+
   //----------------------------------------------------------------------------
 	
-     //--------- code relating to content created in HTML ------------------------	
-     //---------------------------------------------------------------------------
-  
-  // add event listeners to the lists which have been created in HTML 
-  // (event listeners for lists created in JS are added when the list is created)
-
  
-                // only in alefbet 
-   var soundclickClass = document.getElementsByClassName("arrowclick");
-   for (j = 0; j < soundclickClass.length; j++) {
-	   addArrowclickEventListener(soundclickClass[j]);
-   }
-	
 
 
    //------ code creating content----------------------------------------
