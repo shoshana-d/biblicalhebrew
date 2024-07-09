@@ -37,21 +37,46 @@ document.addEventListener('DOMContentLoaded', function() {
       addShowHideNextSiblingEventListener(soundclickClass[j]);
    }
 	
-    // add event listeners to  menu items 
+   // add event listeners to the headings to show/hide the next item with class="nextItem"
+
+   var soundclickClass = document.getElementsByClassName("showhidenextitemclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+	  soundclickClass[j].classList.add("button-plus");
+      addShowHideNextItemEventListener(soundclickClass[j]);
+   }
+	
+   // add event listeners to  menu items 
    //    menu flexbox to show/hide selected div specified by id
    //-------------------------------------------------------------------------
    // element with event listener has id "show-xx"
    // when clicked, div with id "xx" is hidden/unhidden
  
  
-  // optional header, when menu hidden has + which can be clicked to show menu
+  // optional header ("Contents"), when menu hidden has + which can be clicked to show menu
+  // only in alefbetplus
    var soundclickClass = document.getElementsByClassName("showhidemenuclick");
    for (j = 0; j < soundclickClass.length; j++) {
 	  var span = document.createElement("span");
       soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
       addShowHideMenuEventListener(soundclickClass[j]);
    }
-   
+  	// if menu item is already selected (menu-item-selected and content visible) 
+	//       sets to unselected and hides content
+	// if menu item is not already selected
+	//       checks whether any other menu item selected, if so, unselects (removes menu-item-selected and hides content)
+	//       sets item to selected (uses the id of the element to show the appropriate content)
+	
+	// hides menu (only used in alefbetplus)
+   var soundclickClass = document.getElementsByClassName("showhidemenuitemhidemenuclick");
+   for (j = 0; j < soundclickClass.length; j++) {
+	  var span = document.createElement("span");
+	  span.classList.add("button-plus");
+      soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
+      
+	  addShowHideMenuItemHideMenuEventListener(soundclickClass[j]);
+	}
+		
+ 
 	// if menu item is already selected (menu-item-selected and content visible) 
 	//       sets to unselected and hides content
 	// if menu item is not already selected
@@ -67,25 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
  	  addShowHideMenuItemEventListener(soundclickClass[j]);
 	}
 	
-	
-	// hides menu
-   var soundclickClass = document.getElementsByClassName("showhidemenuitemhidemenuclick");
-   for (j = 0; j < soundclickClass.length; j++) {
-	  var span = document.createElement("span");
-	  span.classList.add("button-plus");
-      soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
-      
-	  addShowHideMenuItemHideMenuEventListener(soundclickClass[j]);
-	}
-	
-	
-  // add event listeners to the menu items in alefbet+ to hide/show an item
-  // makes the specified menu item visible, hides the menu
 
-  // var soundclickClass = document.getElementsByClassName("alefbetplusmenuclick");
-  // for (j = 0; j < soundclickClass.length; j++) {
-   //   addShowHideMenuItemAlefbetPlusEventListener(soundclickClass[j]);
-	//}
 	
    // hides the content of the selected menu item
    // sets the menu item to unselected
@@ -96,17 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
       addMenuContentCloseBtnEventListener(soundclickClass[j]);
    }
 
-
-  // add event listeners to show/hide element with specified id
-  // doesn't seem to be used in alefbet, alefbetexercises or alefbetplus
-
-  // var soundclickClass = document.getElementsByClassName("showhidespecifiedidclick");
-  // for (j = 0; j < soundclickClass.length; j++) {
-//	  var span = document.createElement("span");
-//	  span.classList.add("button-plus");
- //     soundclickClass[j].insertBefore(span,soundclickClass[j].firstChild );
- //     addShowHideSpecifiedIdEventListener(soundclickClass[j]);
-//	}
 
   
      // only in alefbet 
