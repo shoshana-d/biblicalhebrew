@@ -7,6 +7,15 @@ function addShowHideNextSiblingEventListener(element){
      );
 }
 
+function addShowHideNextItemEventListener(element){ 
+
+	 // when item clicked, shows or hides the items in the next element with class = "nextItem"
+   element.addEventListener("click", 
+           function () {  ShowHideNextItem(this) ;}
+     );
+}
+
+
 function addShowHideMenuEventListener(element){
 	// when "Contents" clicked, makes menu items visible
    element.addEventListener("click", 
@@ -39,7 +48,8 @@ function addMenuContentCloseBtnEventListener(element){
 //-------------------------------------------------------------------------------
 
 function showHideMenu(element){
-	// relates to the "Contents" header at the top of the menu items
+	// relates to the optional  "Contents" header at the top of the menu items
+	// only used in alefbetplus
 	
 	// if the menu contents are visible, don't do anything
 	// if the menu contents are not visible, show them and remove + button
@@ -53,7 +63,8 @@ function showHideMenu(element){
 
 function menuContentCloseBtn(element){
 	// stop any audio that's playing in arrow of javascript list
-	turnOffArrowSound();  // in biblical_hebrew_flexbox_list.js
+	var arrowClick = document.getElementsByClassName("arrowclick");
+    if (arrowClick.length > 0){	turnOffArrowSound();}  // in biblical_hebrew_flexbox_list.js
 	
 	// hide this menu item content
 	element.parentElement.parentElement.classList.add("hidden");
@@ -168,6 +179,29 @@ function ShowHideNextSibling(element){
 	}	
 }	
 
+//----------------------------------------------------------------------------------------------
+
+function ShowHideNextItem(element){
+
+	var i;
+    var docElements = document.getElementsByTagName("*");
+	var afterElement = false;
+    for (i=0; i < docElements.length; i++){
+	  if (docElements[i] == element) {afterElement = true; }
+      if (afterElement){
+        if (docElements[i].classList.contains("nextItem")) {
+            docElements[i].classList.toggle("hidden"); 
+            if (element.classList.contains("button-plus") || element.classList.contains("button-minus")){
+                element.classList.toggle("button-minus");
+                element.classList.toggle("button-plus");   
+            }	
+			break;
+		 }	 
+	  }		 
+    }		 
+}	
+
+
 
 //-------------------------------------------------------------------------
 
@@ -207,71 +241,7 @@ function JumpToHidden(id1, id2){
    window.scrollTo(0, document.getElementById(id2).offsetTop);
 }
 
-function oldaddShowHideMenuItemAlefbetPlusEventListener(element){  
 
-	 // when item clicked, shows or hides the items in the next <div>
-   element.addEventListener("click", 
-           function () {  showHideMenuItemAlefbetPlus(this) ;}
-     );
-}
-
-function oldshowHideMenuItemAlefbetPlus(element){
-
-    // in order to click a menu item the menu must be visible (obviously)
-	// on clicking
-	// - use id of element to show the appropriate text item by removing "hidden" class
-	// - set menu to hidden
-	// - add plus sign and clickable to contents
-	// When Contents clicked:
-	//  if menu is visible, do nothing
-	//  if menu is not visible
-	//    - set all text items to "hidden"
-	//    - make menu visible
-	//    - remove plus sign and Clickable from Contents
-
-	var i;
-
-	   // has the user clicked on "Contents"?
-	if (!(element.parentElement.classList.contains("flex-container-menu-items-alefbetplus"))){
-          // yes
-		  // only need to do something if the menu is not visible
-	   if (element.nextElementSibling.classList.contains("hidden")) {
-		   // set the current item contents to hidden
-	       var selected = document.getElementsByClassName("alefbet-detail-item");
-		   for (i=0; i < selected.length; i++) {
-              if (!(selected[i].classList.contains("hidden"))) {selected[i].classList.add("hidden");}
-		   }
-           // set menu to visible
-           element.nextElementSibling.classList.remove("hidden");
-		   // remove + sign and clickable from "Contents"
-		   element.firstElementChild.classList.remove("button-plus");
-       }
-
-    } else {
-       // user has clicked on a menu item	
-	   // show appropriate menu item text
- 	    var prefix = "show-";
-        var thisExerciseId = element.id.slice(prefix.length);
-        var thisExercise = document.getElementById(thisExerciseId);
-	    if (!(thisExercise == null)) { thisExercise.classList.remove("hidden");}
-        // hide menu
-        element.parentElement.classList.add("hidden");
-	    //  add plus sign and Clickable to Contents
-        element.parentElement.previousElementSibling.firstElementChild.classList.add("button-plus");
-
-    }	   
-}	
-
-// is this used???
-
-function oldaddShowHideSpecifiedIdEventListener(element){  
-
-	 // when item clicked, shows or hides the items in the element with id=XXX
-	 // element has id show-XXX
-   element.addEventListener("click", 
-           function () {  showHideSpecifiedId(this) ;}
-     );
-}
 
 function oldshowHideSpecifiedId(element){
  // toggles classes button-plus and button minus in element's first child
