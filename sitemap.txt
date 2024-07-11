@@ -1,5 +1,5 @@
-https://github.com/shoshana-d/biblicalhebrew/blob/main/index.html
-https://github.com/shoshana-d/biblicalhebrew/blob/main/alefbet.html
-https://github.com/shoshana-d/biblicalhebrew/blob/main/alefbet-exercises.html
-https://github.com/shoshana-d/biblicalhebrew/blob/main/alefbetplus.html
-https://github.com/shoshana-d/biblicalhebrew/blob/main/resources.html
+https://shoshana-d.github.io/biblicalhebrew/index.html
+https://shoshana-d.github.io/biblicalhebrew/alefbet.html
+https://shoshana-d.github.io/biblicalhebrew/alefbet-exercises.html
+https://shoshana-d.github.io/biblicalhebrew/alefbetplus.html
+https://shoshana-d.github.io/biblicalhebrew/resources.html
