@@ -194,6 +194,13 @@ table{
   background-color: yellow;
   /* border-style: solid; */
 }
+  /*- in lessons index */
+.verb-color{
+   background-color:Yellow;
+}	
+.noun-color{
+   background-color:LightBlue;
+}	
 
 /*------ emphasised text -----------------------*/
 .text-border{
@@ -238,7 +245,8 @@ table{
   /* only used in lessons */
 .biblical-reference{
    font-style:italic;
-}   
+}  
+ 
 
 /*------ audio indication-----------------------*/
 .audio-indicator{
@@ -302,6 +310,7 @@ table{
 .hebrew35 {
 	 /* used in JS created flex lists*/
    font-size:35px;
+
 }
 	 
 .hebrew33{
@@ -405,7 +414,7 @@ table{
 .generic-consonant-image-chirik,
 .generic-consonant-image-kamatz-white,
 .generic-consonant-image-chirik-white,
-.generic-consonant-image-schwach-white,
+.generic-consonant-image-schwah-white,
 .generic-consonant-image-patach-white,
 .generic-consonant-image-segol-white,
 .generic-consonant-image-tsere-white
@@ -429,7 +438,7 @@ table{
 .generic-consonant-image-kamatz-white{
 	content:url("../images/reference_tables/consonant_kamatz_large_white_background.jpg");
 }
-.generic-consonant-image-schwach-white{
+.generic-consonant-image-schwah-white{
 	content:url("../images/reference_tables/consonant_schwah_large_white_background.jpg");
 }
 .generic-consonant-image-chirik-white{
@@ -700,7 +709,7 @@ table{
   flex-wrap: wrap;
   align-items: baseline;
   
-  position:relative; /* need to specify this to get following close button to position propoerly */
+  position:relative; /* need to specify this to get following close button to position properly */
 }	
 .flex-container-ltr:after,
 .flex-container-ltr:before
@@ -807,16 +816,27 @@ table{
   padding: 4px 5px 2px;
 }
 	
-.vowel-image-drag-drop {
+.vowel-image-drag-drop, 
+.vowel-image2-drag-drop, 
+.vowel-image3-drag-drop {
 	border-style:solid;
 	border-width: 1px;
-   width:42px; 
-   height:42px; 
-   display:inline-block; 
+    height:42px; 
+    display:inline-block; 
 	vertical-align: middle;
 	margin-top:-8px;
   
 }	
+.vowel-image-drag-drop{
+   width:42px; 
+}
+.vowel-image2-drag-drop{
+   width:84px; 
+}	
+.vowel-image3-drag-drop {
+   width:126px; 
+}	
+
 
 .flex-drag-drop-content{
 	/* used for individual spans within a div */
@@ -868,21 +888,18 @@ table{
 /* lessons-toc-table used in lessons */
 /* exercise-table, verb-table, noun-table, example-table used in individual lessons */
 
-
 .glasses-table td:first-child{
 	width: 80px;
 	text-align:center;
 }	
 
-
-          /* tables used in lessons */
+       /* tables used in lessons */
   
 .exercise-table,
 .verb-table,
 .noun-table{
 	width:100%;
 }
-
 
 .exercise-table td,
 .exercise-table th,
@@ -961,6 +978,20 @@ background-color:HoneyDew;
 	text-align:left;
 }
 
+  /* reference tables */
+  
+.reference-table td {
+   border-bottom:solid; 
+   border-width:1px;
+   border-color:LightGray;
+}
+.reference-table td:nth-child(1) {
+   width:25px;
+}
+.reference-table td:nth-child(2) {
+   min-width:150px;
+}
+
 .reference-table-header-cell{
 	font-weight:normal;
     border:solid; 
@@ -969,35 +1000,29 @@ background-color:HoneyDew;
    /*font-weight:bold;*/
     background-color:LemonChiffon;
 }
-.reference-table-section-heading{
-	padding-top:15px;
-	font-style:italic;
-}
-.reference-table-cell{
-	text-align:center;
-}	
 
 .possessive-suffix-table-header-cell{
 	width:150px;
+}
+.object-suffix-table-header-cell{
+	width:100px;
 }
 	
 .verb-reference-table-header-cell{
 	width:90px;
     width:110px;
+}
+	
+.reference-table-section-heading{
+	padding-top:15px;
+	font-style:italic;
+}
+
+.reference-table-cell{
+	text-align:right;
+	padding-right:30px;
 }	
 
-.verb-reference-table td {
-   border-bottom:solid; 
-   border-width:1px;
-   border-color:LightGray;
-}
-
-.verb-reference-table td:nth-child(1) {
-   width:25px;
-}
-.verb-reference-table td:nth-child(2) {
-   min-width:150px;
-}
 
 	
 .verb-reference-table-hebrew-prefix,
