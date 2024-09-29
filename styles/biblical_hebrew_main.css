@@ -184,16 +184,6 @@ table{
 .alefbet-plus-color{
    background-color:AliceBlue;
 }
-	
-.flex-draggable:hover{
-	/*background-color:red;*/
-    background-color: #d3e39c; /* lighter version of metro light green */
-}
-
-.flex-drag-drop-droppable{
-  background-color: yellow;
-  /* border-style: solid; */
-}
   /*- in lessons index */
 .verb-color{
    background-color:Yellow;
@@ -769,6 +759,7 @@ table{
 
 /* -- drag drop flexboxes - left to right---*/
 /*------------------------------------------*/
+
 .exercise-container {
   /* background-color:#f1f1f1; */
    padding: 1px;
@@ -849,6 +840,18 @@ table{
 .flex-draggable{
 	cursor: pointer;
 }
+	
+/*.flex-draggable:hover,*/
+.flex-drag-drop-selected{
+	/*background-color:red;*/
+    background-color: #d3e39c; /* lighter version of metro light green */
+}
+
+.flex-drag-drop-droppable{
+  background-color: yellow;
+  /* border-style: solid; */
+}
+
 .flex-drag-drop-query,
 .lesson1-flex-drag-drop-query{
     font-size:20px;
@@ -1203,7 +1206,8 @@ background-color:HoneyDew;
 .showhidenextsiblingclick,
 .showhidemenuitemclick,
 .alefbetplusmenuclick,
-.showhidespecifiedidclick
+.showhidespecifiedidclick,
+.selectdragdropclick
 {
  /* 
   these classes are used to flag clickable items 
