@@ -71,9 +71,9 @@
 
 
 <!-- testing section  --> 
-<!-- <p>Temporary testing section</p>
+<p>Temporary testing section</p>
  <p>TEST</p>
- <p id="mytest">test</p>  --> 
+ <p id="mytest">test</p> 
 <!--  END testing section --> 
 
  
@@ -184,8 +184,8 @@ turns bright yellow (on ipad, a small + also appears). </p>
   | answers: consonant-answers-source1| sounds:consonant-sounds |answersseparateparas
   |questionclass:flex-drag-drop-english |audio: alefbet_consonants_and_vowels| colorClass: consonant-color|selection:7</p>
   <p>
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('match-consonants1')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants1')">New selection</span>
+  <!--  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-consonants1')">Shuffle</span>&emsp;&emsp; -->
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants1')">Practise again</span>
   </p>
  
 </div>
@@ -204,8 +204,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
   | answers: consonant-answers-source2 | sounds:consonant-sounds |answersseparateparas
   |questionclass:flex-drag-drop-english |selection:7|audio: alefbet_consonants_and_vowels| colorClass: consonant-color</p>
   <p>
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('match-consonants2')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants2')">New selection</span>
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants2')">Practise again</span>
   </p>
  
 </div>
@@ -219,8 +218,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
            | answersseparateparas|sounds:consonant-sounds  | answerclass:flex-drag-drop-hebrew |selection:7|audio: alefbet_consonants_and_vowels
 		  | colorClass: consonant-color | questionclass: ear | matchsounds</p>
    <p>		  
-   <span class="button-exercise" onclick="shuffleFlexDragDrop('match-consonants3')">Shuffle</span>&emsp;&emsp;
-   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants3')">New selection</span>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants3')">Practise again</span>
    </p>
  
  
@@ -235,8 +233,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
   | answersseparateparas|sounds:consonant-sounds | answerclass:flex-drag-drop-hebrew 
   |audio: alefbet_consonants_and_vowels  | colorClass: consonant-color | questionclass: ear | matchsounds|selection:7</p>
    <p>		  
-   <span class="button-exercise" onclick="shuffleFlexDragDrop('match-consonants4')">Shuffle</span>&emsp;&emsp;
-   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants4')">New selection</span>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants4')">Practise again</span>
    </p>
  
  
@@ -286,7 +283,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
       | answers: final-letters-answers-source| sounds:final-letters-sounds-source|questionsseparateparas|answersseparateparas
 	  |audio: alefbet_consonants_and_vowels| colorClass: consonant-color</p>
   <p>	  
-   <span class="button-exercise" onclick="shuffleFlexDragDrop('final-letters1')">Practise again</span>
+   <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('final-letters1')">Practise again</span>
    </p>
  
 </div>
@@ -359,8 +356,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
   |questionsseparateparas   | answers: allconsonants-letternames |sounds:allconsonants-sounds 
    |answerclass:flex-drag-drop-english |selection:7 |audio: alefbet_consonants_and_vowels| colorClass: consonant-color</p>
    <p>
-   <span class="button-exercise" onclick="shuffleFlexDragDrop('letter-names')">Shuffle</span>&emsp;&emsp;
-   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-letter-names')">New selection</span>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-letter-names')">Practise again</span>
    </p>
   
   
@@ -595,7 +591,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  <p id="cr-syllables-exercise" class="javascript-syllables hidden"> id:syllables-exercise|
                  | sourcesound:one-syllable-sounds: syllables-final-sounds : syllables-penultimate-sounds  | stress: last : secondlast
                  | sourcesyllables: one-syllable-hebrew : syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
-  <p><span class="button-exercise" onclick="reCreateSyllablesExercise('cr-syllables-exercise')">New selection</span></p>
+  <p><span class="button-exercise" onclick="reCreateSyllablesExercise('cr-syllables-exercise')">Practise again</span></p>
 
   
 
@@ -659,7 +655,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  <p id="cr-cantillation-all" class="javascript-cantillation hidden"> id:cantillation-all| whichlist: all 
                  | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
                  | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
-  <p><span class="button-exercise" onclick="reCreateCantillationList('cr-cantillation-all')">New selection</span></p>
+  <p><span class="button-exercise" onclick="reCreateCantillationList('cr-cantillation-all')">Practise again</span></p>
 
 </div>
  
@@ -678,7 +674,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  <p id="cr-cantillation-pashta-kadma" class="javascript-cantillation hidden">id:cantillation-pashta-kadma |whichlist: pashta-kadma 
                  | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
                  | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
-  <p><span class="button-exercise" onclick="reCreateCantillationList('cr-cantillation-pashta-kadma')">New selection</span></p>
+  <p><span class="button-exercise" onclick="reCreateCantillationList('cr-cantillation-pashta-kadma')">Practise again</span></p>
 
 
 </div>
@@ -735,7 +731,7 @@ w003_lo | w003_lah | w003_lach | w003_li | w004_bo | w004_bah | w004_bach | w004
   |id: one-syllable| arrow|colorClass: vocab-color|audio: words | selection:10 </p>
   <p>
   <span class="button-exercise" onclick="shuffleJavascriptList('one-syllable')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateJavascriptList('cr-one-syllable')">Select again</span>
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-one-syllable')">New selection</span>
   </p>
 
 </div> 
@@ -821,7 +817,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   |audio: words | selection:10</p>
   <p>
   <span class="button-exercise" onclick="shuffleJavascriptList('syllables-final')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-final')">Select again</span>
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-final')">New selection</span>
   </p>
 
 </div> 
@@ -867,7 +863,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   |audio: words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
   <p>
   <span class="button-exercise" onclick="shuffleJavascriptList('syllables-penultimate')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-penultimate')">Select again</span>
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-penultimate')">New selection</span>
   </p>
 
 </div> 
@@ -887,7 +883,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   |audio: words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
   <p>
   <span class="button-exercise" onclick="shuffleJavascriptList('syllables-cantillation')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-cantillation')">Select again</span>
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-cantillation')">New selection</span>
   </p>
 
 </div> 
@@ -905,7 +901,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   |answersinsyllables   | answersseparateparas   | answerclass:flex-drag-drop-hebrew 
    |audio: words   | colorClass: vocab-color | questionclass: ear |matchsounds |noduplicatesounds | selection:10</p>
    <p>		  
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('match-words')">Shuffle</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-words')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-words')">New selection</span>
   </p>
 
@@ -924,7 +920,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   | cantillation:last:last:secondlast
    |audio: words   | colorClass: vocab-color | questionclass: ear |matchsounds |noduplicatesounds | selection:10</p>
    <p>		  
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('match-words2')">Shuffle</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-words2')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-words2')">New selection</span>
   </p>
 
@@ -1040,7 +1036,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
    |answerclass:flex-drag-drop-hebrew |questionclass:flex-drag-drop-english     |selection:7|audio: alefbet_people_places
    | colorClass: vocab-color</p>
    <p>
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('names-and-places')">Shuffle</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('names-and-places')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-names-and-places')">New selection</span>
   </p>
 
@@ -1060,7 +1056,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
    | colorClass: vocab-color | questionclass: ear | matchsounds</p>
  <p>
    <p>
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('names-and-places2')">Shuffle</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('names-and-places2')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-names-and-places2')">New selection</span>
   </p>
 
@@ -1082,7 +1078,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
    | colorClass: vocab-color | questionclass: ear | matchsounds</p>
  <p>
    <p>
-  <span class="button-exercise" onclick="shuffleFlexDragDrop('names-and-places3')">Shuffle</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('names-and-places3')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-names-and-places3')">New selection</span>
   </p>
 
