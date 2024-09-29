@@ -476,7 +476,7 @@ function createFlexDragDrop(thisSpecElement){
 	thisSpecElement.parentNode.insertBefore(overallFlexdiv, thisSpecElement);
 	
 	// finally, shuffle
-	shuffleFlexDragDrop(flexId)
+	shuffleNewFlexDragDrop(flexId)
 }
 
 function  createAnswersFlexbox(answersFlexId, answerClass, anySounds,answerInImage, imagesDir){
@@ -578,8 +578,9 @@ function reCreateFlexDragDrop(thisId){
 }
 
 
-function shuffleFlexDragDrop(thisId) {
+function shuffleNewFlexDragDrop(thisId) {
     // thisId is the id of the flexbox (not the id of the paragraph with the parameters for the flexbox)
+	// this function shuffles a newly created drag drop exercise
   var i;
   var answersId = thisId + "-answers";
   var questionsId = thisId + "-questions";
@@ -591,27 +592,49 @@ function shuffleFlexDragDrop(thisId) {
   const questionsCells = questionsContainer.children;  
   const nCells = answersContainer.childElementCount ;
 
- // make answers visible and then shuffle them
-  for ( i = 0; i < nCells; i++) {
-	answersCells[i].children[0].classList.remove("hidden");
-  } 
   var shuffleOrder = shuffleArray(createIntegerArray(0, nCells-1));
   for ( i = 0; i < nCells; i++) {
 	answersCells[i].style.order = shuffleOrder[i];
   } 
- // in questions section, make query boxes visible and answers invisible, and then shuffle them
-  var questionMarks = questionsContainer.getElementsByClassName("flex-drag-drop-query");
-  for (i=0; i < questionMarks.length; i++) { questionMarks[i].classList.remove("hidden");}
-  
-  var answers = questionsContainer.getElementsByClassName("questionsRowAnswer");
-  for (i=0; i < answers.length; i++) { answers[i].classList.add("hidden");}
-
   
   var shuffleOrder = shuffleArray(createIntegerArray(0, nCells-1));
   for ( i = 0; i < nCells; i++) {
 	questionsCells[i].style.order = shuffleOrder[i];
   } 
 
+}
+
+
+function shuffleExistingFlexDragDrop(thisId) {
+    // thisId is the id of the flexbox (not the id of the paragraph with the parameters for the flexbox)
+  var i;
+  var answersId = thisId + "-answers";
+  var questionsId = thisId + "-questions";
+  const answersContainer = document.getElementById(answersId);
+   if (answersContainer == null){ return;}
+  const questionsContainer = document.getElementById(questionsId);
+   if (questionsContainer == null){ return;}
+  //const nCells = answersContainer.childElementCount ;
+
+   // unselect any selected answers
+   var selected = answersContainer.getElementsByClassName("flex-drag-drop-selected");
+   for (i=0; i < selected.length; i++) {	setUnselected(selected[i]);	}
+	   
+ // make answers visible 
+  var answers = answersContainer.getElementsByClassName("flex-drag-drop-content");
+  for ( i = 0; i < answers.length; i++) {
+	answers[i].classList.remove("hidden");
+  } 
+    
+   // in questions section, make query boxes visible and answers invisible
+  var questionMarks = questionsContainer.getElementsByClassName("flex-drag-drop-query");
+  for (i=0; i < questionMarks.length; i++) { questionMarks[i].classList.remove("hidden");}
+  
+  var correctAnswers = questionsContainer.getElementsByClassName("questionsRowAnswer");
+  for (i=0; i < correctAnswers.length; i++) { correctAnswers[i].classList.add("hidden");}
+
+
+  shuffleNewFlexDragDrop(thisId);
 }
 
 //------ point and click functions ------------------
@@ -647,7 +670,8 @@ function checkAnswer(ev) {
 	if (thisAnswer.classList.contains("flex-drag-drop-selected")){
         ev.target.classList.add("hidden"); //make the query box invisible
         ev.target.nextElementSibling.classList.remove("hidden"); // make answer box visible
-	    document.getElementById(answerId).parentElement.classList.add("hidden"); 
+	    //document.getElementById(answerId).parentElement.classList.add("hidden"); 
+	    document.getElementById(answerId).classList.add("hidden"); 
 	            // remove the answer from the possible answers
 
 	   var finished = dragDropFinished(ev.target);
@@ -710,10 +734,10 @@ function handleDrop(ev) {
   // var actualAnswer = ev.target.nextElementSibling.innerHTML;
    
    var questionId = ev.target.id;
-test(answerId + "---" + questionId);    
 
    if (answerId.slice(answerId.lastIndexOf("-")) == questionId.slice(questionId.lastIndexOf("-"))){
   
+      ev.target.classList.remove("flex-drag-drop-droppable");
       ev.target.classList.add("hidden"); //make the query box invisible
       ev.target.nextElementSibling.classList.remove("hidden"); // make answer box visible
 	  
@@ -725,7 +749,8 @@ test(answerId + "---" + questionId);
 	 // if (ev.target.previousElementSibling.previousElementSibling.classList.contains("ear")) {
 	//	  ev.target.previousElementSibling.previousElementSibling.classList.add("hidden");
 	 // }	  
-	  document.getElementById(answerId).parentElement.classList.add("hidden"); 
+	  //document.getElementById(answerId).parentElement.classList.add("hidden"); 
+	  document.getElementById(answerId).classList.add("hidden"); 
 	            // remove the answer from the possible answers
 
 	  var finished = dragDropFinished(ev.target);
