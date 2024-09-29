@@ -1,4 +1,5 @@
 
+
 "use strict";
 
 var globalDragDropQuestions = [];
@@ -307,7 +308,7 @@ function createFlexDragDrop(thisSpecElement){
    var parameters = thisSpecElement.innerHTML.split(globalDivider1);
    var flexId = null;
    var answerClass = "flex-drag-drop-hebrew";
-   var questionClass = "flex-drag-drop-hebrew";
+   var questionClass = "flex-drag-drop-hebrew"; // "ear" when matching sounds
    var colorClass = "vocab-color";
    var matchSounds = false;
    
@@ -372,7 +373,7 @@ function createFlexDragDrop(thisSpecElement){
        span1.classList.add("flex-drag-drop-content");
        if (anySounds) { span1.classList.add("soundclick");  }
 	  
-	   if (!(matchSounds)) {
+	   if (!(matchSounds)) {    // if matchSounds, questionclass is "ear" which puts the ear image in this span
          var text1= document.createTextNode(globalDragDropQuestions[i]);
 	     span1.appendChild(text1);
 	   }	 
@@ -452,12 +453,19 @@ function createFlexDragDrop(thisSpecElement){
 	   //} else if (thisClassList.contains("soundclick-cv")) {
 		//   addsoundclickEventListener(thisElement, true);
        }
+
+       if (thisClassList.contains("selectdragdropclick")) {
+           thisElement.addEventListener("click", function(){selectAnswer(event);});
+       }
 	   
 	   if (thisClassList.contains("flex-drag-drop-query")) {
            thisElement.addEventListener("drop", function(){handleDrop(event);});
 		   thisElement.addEventListener("dragenter",function(){handleDragEnter(event);});
 		   thisElement.addEventListener("dragleave",function(){handleDragLeave(event);});
 		   thisElement.addEventListener("dragover",function(){handleDragOver(event);});
+		   
+		   thisElement.addEventListener("click", function(){checkAnswer(event);});
+
 	   } 
 	   if (thisClassList.contains("flex-draggable")) {
           thisElement.addEventListener("dragstart",function(){handleDragStart(event);});
@@ -516,8 +524,10 @@ function  createAnswersFlexbox(answersFlexId, answerClass, anySounds,answerInIma
 	  
       answerElement.classList.add("flex-drag-drop-content");
       answerElement.classList.add("flex-draggable");
+      answerElement.classList.add("selectdragdropclick");
  	  answerElement.setAttribute("draggable", true);
-      if (anySounds) { answerElement.classList.add("soundclick");  }
+     // if (anySounds) { answerElement.classList.add("soundclick");  }  // now using click event to select answer
+	                                                                    // clicking selected answer gives sound
 		  
 	  celldiv.appendChild(answerElement);
 		  
@@ -604,13 +614,78 @@ function shuffleFlexDragDrop(thisId) {
 
 }
 
+//------ point and click functions ------------------
+//------------------------------------------------
+function selectAnswer(ev) {
+	var i;
+
+    // already selected? if so, play sound
+	if (ev.target.classList.contains("flex-drag-drop-selected")){
+       var thisLetter =  ev.target.nextElementSibling.innerHTML;
+	   var thisSound = setMp3Name(thisLetter);
+	   playSound(thisSound);
+	   
+    } else {
+	   // first, unselect any answers that are selected
+       var selected = ev.target.parentElement.parentElement.getElementsByClassName("flex-drag-drop-selected");
+	   for (i=0; i < selected.length; i++) {	setUnselected(selected[i]);	}
+
+       // now flag this answer as selected
+	   setSelected(ev.target);
+	}   
+}	
+
+function checkAnswer(ev) {
+	// when user clicks on "?" box
+	
+	var questionId = ev.target.id;
+	var questionNum = questionId.slice(questionId.lastIndexOf("-")+1);
+	var answerId = questionId.slice(0,questionId.lastIndexOf("-questions")) + "-answers-" + questionNum;
+    //test(questionId + " " + answerId);
+	
+	var thisAnswer = document.getElementById(answerId);
+	if (thisAnswer.classList.contains("flex-drag-drop-selected")){
+        ev.target.classList.add("hidden"); //make the query box invisible
+        ev.target.nextElementSibling.classList.remove("hidden"); // make answer box visible
+	    document.getElementById(answerId).parentElement.classList.add("hidden"); 
+	            // remove the answer from the possible answers
+
+	   var finished = dragDropFinished(ev.target);
+	  
+	   if (finished) {
+	     rewardModal("Well done!"); 
+       }	  
+	} 	
+}
+	
+function setSelected(thisAnswer){
+	thisAnswer.classList.add("flex-drag-drop-selected"); 
+	if (thisAnswer.tagName == 'IMG'){
+		thisAnswer.src = thisAnswer.src.replace(".jpg", "_selected.jpg");
+	}	
+}
+function setUnselected(thisAnswer){
+	thisAnswer.classList.remove("flex-drag-drop-selected");
+	if (thisAnswer.tagName == 'IMG') {
+		thisAnswer.src = thisAnswer.src.replace("_selected.jpg",".jpg");
+	}	
+}	
 
 //------ drag and drop functions ------------------
 //------------------------------------------------
 
 function handleDragStart(ev) {
-	//test("hi");
+	var i;
 	//test(ev.target.id);
+	if (!(ev.target.classList.contains("flex-drag-drop-selected"))){
+	   // first, unselect any answers that are selected
+       var selected = ev.target.parentElement.parentElement.getElementsByClassName("flex-drag-drop-selected");
+	   for (i=0; i < selected.length; i++) {	setUnselected(selected[i]);	}
+
+       // now flag this answer as selected
+	   setSelected(ev.target);
+	}   
+   
    ev.dataTransfer.setData("text", ev.target.id);
 }
 function handleDragEnter(ev) {
@@ -627,38 +702,42 @@ function handleDragOver(ev) {
 }
 
 function handleDrop(ev) {
-	var i;
+   var i;
    ev.preventDefault();
-   var finished = false;
+   
    var answerId = ev.dataTransfer.getData("text");
    //var proposedAnswer = document.getElementById(answerId).innerHTML;
   // var actualAnswer = ev.target.nextElementSibling.innerHTML;
    
    var questionId = ev.target.id;
-//test(answerId + "---" + questionId);    
+test(answerId + "---" + questionId);    
 
    if (answerId.slice(answerId.lastIndexOf("-")) == questionId.slice(questionId.lastIndexOf("-"))){
   
       ev.target.classList.add("hidden"); //make the query box invisible
       ev.target.nextElementSibling.classList.remove("hidden"); // make answer box visible
 	  
+	  // dont need this any more cos all vowels merged into one image
 	  // make all images (vowel marks) if any in this div visible
-	  var images = ev.target.parentElement.getElementsByTagName("img");
-	  for (i=0; i < images.length; i++) {images[i].classList.remove("hidden");}
-	     // if matching on sounds, remove ear symbol
+	  //var images = ev.target.parentElement.getElementsByTagName("img");
+	  //for (i=0; i < images.length; i++) {images[i].classList.remove("hidden");}
+	     // if matching on sounds, remove ear symbol - not doing this now
 	 // if (ev.target.previousElementSibling.previousElementSibling.classList.contains("ear")) {
 	//	  ev.target.previousElementSibling.previousElementSibling.classList.add("hidden");
 	 // }	  
 	  document.getElementById(answerId).parentElement.classList.add("hidden"); 
 	            // remove the answer from the possible answers
 
-	  finished = dragDropFinished(ev.target);
-   }	 
-   ev.target.classList.remove("flex-drag-drop-droppable"); 
+	  var finished = dragDropFinished(ev.target);
+	  
+	  if (finished) {
+	     rewardModal("Well done!"); 
+      }	  
+
+   } else {	 
+        ev.target.classList.remove("flex-drag-drop-droppable"); 
                 // this removes visual cue due to hovering for attempted drop 
-   if (finished) {
-	   rewardModal("Well done!"); 
-   }	  
+   }				
 }
 
 function dragDropFinished(thisSpec){
