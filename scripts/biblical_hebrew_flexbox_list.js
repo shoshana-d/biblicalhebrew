@@ -120,7 +120,6 @@ function createJavascriptList(thisSpecElement){
                              // global variables globalHebrew and globalSound
 							 // (ie, not in sourceId in the HTML section)
 							 // only used in alefbet-exercises consonant+vowel
- 	
            //---------------------------------------------------------------
    var selection =  false;
    var nSelection = 0;
@@ -409,7 +408,7 @@ function createJavascriptList(thisSpecElement){
 	   
 	  }
 		   
-  
+ 
        // now create the new flexbox
 	   //---------------------------
   
@@ -501,11 +500,11 @@ function createJavascriptList(thisSpecElement){
 		       if (!(tooltipsShow)) {
                //var text3= document.createTextNode(" ");
                  var para3 = document.createElement("p");
-		         para3.classList.add("showhidenextsiblingclick");
-		         para3.classList.add("button-plus-minus-tooltip");
+		         para3.classList.add("button-plus-minus-tooltip"); // puts some padding at the top of the para
 	             var span3 = document.createElement("span");
 			   // span3.appendChild(text3);
 		         span3.classList.add("button-plus");
+		         span3.classList.add("tooltip-button-marker"); // no CSS, just a marker
 			     para3.appendChild(span3);
 			     celldiv.appendChild(para3);
 		       } 
@@ -543,7 +542,7 @@ function createJavascriptList(thisSpecElement){
           } // only 1 item
 	  }	// not "-"  
    }	  
-
+ 
    // finished creating the celldiv with the flexbox items
    
     // add order to each div 
@@ -556,7 +555,7 @@ function createJavascriptList(thisSpecElement){
 		 addsoundclickEventListener(flexdivElements[i]);
 	
 	  } else if (flexdivElements[i].classList.contains("selectletterclick")) {
-		   addSelectLetterEventListener(flexdivElements[i]);
+		   addSelectLetterEventListener(flexdivElements[i]);  // defined in biblical_hebrew_consonant_plus_vowel_exercise.js
 		  
 	  } else if (flexdivElements[i].classList.contains("arrowclick")) {
 		 addArrowclickEventListener(flexdivElements[i]);
@@ -564,8 +563,9 @@ function createJavascriptList(thisSpecElement){
 	  }
 		  
 	    // tooltips
-      if (flexdivElements[i].classList.contains("showhidenextsiblingclick")) {
-           addShowHideNextSiblingEventListener(flexdivElements[i]);
+      if (flexdivElements[i].classList.contains("tooltip-button-marker")) {
+           //addShowHideNextSiblingEventListener(flexdivElements[i]);
+           flexdivElements[i].addEventListener("click", function(){ShowHideParentNextSibling(event.target)});
       }
 
     } 
@@ -660,71 +660,7 @@ function crTextClickSpan(thisText, hebrewClass, clickType){
 	
 }	
  
- function oldshuffleJavascriptList(thisId){
-	var i;
-	var j;
 
-    const container = document.getElementById(thisId);
-	if (container == null){ return;}
-	
-	const divs = container.children;  
-	
-	// turn off sound if playing because of arrow click
-    var arrow = document.getElementsByClassName("flex-container-arrow-selected");
-    for (j = 0; j < arrow.length; j++) {
-	        // arrow has already been clicked, second click stops playing
- 	       arrow[j].classList.add("stop-sound");
-	}   
-
-
-	var hebrew0 = [];
-	var sound0 = [];
-	var tooltips0 = [];
-	
-	var index = 0;
-    for (i=0; i < divs.length; i++){
-	   var soundclicks = divs[i].getElementsByClassName("soundclick");
-	   if (soundclicks.length > 0){
-		   hebrew0[index] = soundclicks[0].innerHTML;
-		   sound0[index] = soundclicks[0].nextSibling.innerHTML
-		   
-	       var hasTooltip = divs[i].getElementsByClassName("tooltip-marker");
-		   if (hasTooltip.length > 0) {
-			   tooltips0[index] = hasTooltip[0].innerHTML;
-		   }
-   
-		   index++;
-	   }   
-	}
-    var shuffleOrder = shuffleArray(createIntegerArray(0, hebrew0.length - 1));	
-	var hebrew = [];
-	var sound = [];
-	var tooltips = [];
-    for (index=0; index < hebrew0.length; index++){
-		hebrew[index] = hebrew0[shuffleOrder[index]];
-		sound[index] = sound0[shuffleOrder[index]];
-		tooltips[index] = tooltips0[shuffleOrder[index]];
-	}	
-	var index = 0;
-    for (i=0; i < divs.length; i++){
-	   var soundclicks = divs[i].getElementsByClassName("soundclick");
-	   if (soundclicks.length > 0){
-		   soundclicks[0].innerHTML = hebrew[index];
-		   soundclicks[0].nextSibling.innerHTML = sound[index] 
-
-	       var hasTooltip = divs[i].getElementsByClassName("tooltip-marker"); //tooltips
-	       if (hasTooltip.length > 0){
-		      hasTooltip[0].innerHTML = tooltips[index];
-	       } 
-
-		   index++;
-	   }   
-	}
-	
-  hideTooltips(thisId);
-  changeUpArrowToDown(thisId);
-	
-}	
 //------------------------------------------------------------------
 
 function hideTooltips(thisId){
@@ -750,12 +686,12 @@ function changeUpArrowToDown(thisId){
   var container = document.getElementById(thisId);
   if (container == null){ return;}
   
-  var plusminus = container.getElementsByClassName("showhidenextsiblingclick");
+  var plusminus = container.getElementsByClassName("tooltip-button-marker");
 
   for (i=0; i < plusminus.length; i++ ) {
-    if (plusminus[i].firstElementChild.classList.contains("button-minus")){
-	   plusminus[i].firstElementChild.classList.toggle("button-minus");
-       plusminus[i].firstElementChild.classList.toggle("button-plus");  
+    if (plusminus[i].classList.contains("button-minus")){
+	   plusminus[i].classList.toggle("button-minus");
+       plusminus[i].classList.toggle("button-plus");  
     }
   }	
   

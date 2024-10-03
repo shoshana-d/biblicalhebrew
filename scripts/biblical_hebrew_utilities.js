@@ -134,7 +134,7 @@ function playConsonants2(thisArrow,audioItems,  itemNumber){
 }
  
 function playConsonants3(thisArrow,audioItems,  itemNumber){
-test("playConsonants3 " + thisArrow.classList + " " + itemNumber + " " + audioItems.length);   
+//test("playConsonants3 " + thisArrow.classList + " " + itemNumber + " " + audioItems.length);   
    audioItems[itemNumber].classList.toggle("text-border");
    if (thisArrow.classList.contains("stop-sound")){// the arrow at the beginning
       thisArrow.classList.remove("stop-sound");

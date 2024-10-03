@@ -39,7 +39,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 
    var questionsAnswersSame = false;  // questions and answers specified in pairs, randomly assigned to question or answer
  
-   var includeSounds = false;
+   var soundsSpecified = false;
    var soundsSourceId = null;
    var audioDir = null;
    
@@ -81,7 +81,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
  	 } else if (thisP0 == "sounds"){
 		//soundsSourceId = thisP[1].trim();
 		soundsSourceId = removeFirstItem(thisParameterSpec);  // now allowing for possibly multiple sources
-	    includeSounds = true;
+	    soundsSpecified = true;
 	 } else if (thisP0 == "audio"){
 		audioDir = thisP[1].trim();
 		
@@ -99,7 +99,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
    }
 
    // some checks
-   if ( noDuplicateSounds  & !includeSounds) {return;}
+   if ( noDuplicateSounds  & !soundsSpecified) {return;}
    if (cantillation ){
 		if (!(answersInSyllables)) { return;}
 		if (answersGroupStressedSyllable == null) { return;}
@@ -113,7 +113,8 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
    var sounds = [];
    if (cantillation) {var answersStressedSyllable = [];}
  
-   if (sourceGlobalCPV) {
+   if (sourceGlobalCPV) {   // consonant + vowel exercises
+	   
  	   if (globalFlexlistHebrew.length > 0) {
 	      setGlobalDragDropConsonantPlusVowel();  // in biblical_hebrew_consonant_plus_vowel.js
 	      answers = globalDragDropCPVHebrew;  // no questions if c+v, audio is the question
@@ -139,57 +140,52 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 	  }	
  
 
-   } else if (questionsSourceId != null | answersSourceId != null) {
-	    // if matching audio sounds, no questions only answers, audio is the question
+   //} else if (questionsSourceId != null | answersSourceId != null) {
+   } else if ( answersSourceId != null) {
 		
-	// allows for questions from multiple sources
-       if (questionsSourceId != null) {
-		  var  idsArray =  questionsSourceId.split(globalDivider2);
+ 	// allows for answers from multiple sources
+	   var idsArray = answersSourceId.split(globalDivider2);
+	   if (cantillation){ var stressedSyllableArray = answersGroupStressedSyllable.split(globalDivider2); }
+  
+	   for (i=0; i < idsArray.length; i++) { 
+		  var temp1 = getFromHTML(idsArray[i].trim(), answersSeparateParas);
+	      answers = answers.concat(temp1);
+				 
+		  if (cantillation) {
+             var temp2 = [];
+			 for (j=0; j < temp1.length; j++) {
+				temp2[j] = stressedSyllableArray[i];
+			 }
+		     answersStressedSyllable = answersStressedSyllable.concat(temp2);	
+		  }	   
+	   }  
+	      // if more than one item for an answer, select one randomly (can't be combined with cantillation)
+       for (i=0; i < answers.length; i++) { 
+		  var items = answers[i].split(globalDivider2);
+          answers[i] = items[getRandomInteger(0,items.length-1)]; 
+	   }
+		  
+			
+       if (questionsSourceId != null) {   // NB if matching audio sounds, no questions only answers, audio is the question
+	          // allows for questions from multiple sources
+	       var  idsArray =  questionsSourceId.split(globalDivider2);
 	  
-		  for (i=0; i < idsArray.length; i++) {
+		   for (i=0; i < idsArray.length; i++) {
 			 var temp1 = getFromHTML(idsArray[i].trim(), questionsSeparateParas);
 	         questions = questions.concat(temp1);
-		  }	  
+		   }	  
 			  
 	      // if more than one item for a question, select one randomly 
-          for (i=0; i < questions.length; i++) { 
+           for (i=0; i < questions.length; i++) { 
 		     var items = questions[i].split(globalDivider2);
              questions[i] = items[getRandomInteger(0,items.length-1)]; 
-	      }
+	       }
 		  
 	   }
 
 
- 	// allows for answers from multiple sources
-       if (answersSourceId != null) {
-		  var idsArray = answersSourceId.split(globalDivider2);
-	 	  if (cantillation){ var stressedSyllableArray = answersGroupStressedSyllable.split(globalDivider2); }
-  
-	      for (i=0; i < idsArray.length; i++) { 
-		     var temp1 = getFromHTML(idsArray[i].trim(), answersSeparateParas);
-	         answers = answers.concat(temp1);
-				 
-		     if (cantillation) {
-	    
-                var temp2 = [];
-			    for (j=0; j < temp1.length; j++) {
-				   temp2[j] = stressedSyllableArray[i];
-			    }
-			
-		        answersStressedSyllable = answersStressedSyllable.concat(temp2);	
-				
-		     }	   
-			 
-	      }  
-	      // if more than one item for an answer, select one randomly (can't be combined with cantillation)
-          for (i=0; i < answers.length; i++) { 
-		     var items = answers[i].split(globalDivider2);
-             answers[i] = items[getRandomInteger(0,items.length-1)]; 
-	      }
-		  
-	   }
-
-       if (questions.length > 0 & answers.length > 0) {
+       //if (questions.length > 0 & answers.length > 0) {
+       if (questions.length > 0 ) {
              if (questions.length !=  answers.length ) { return;}
 	   }
 
@@ -200,7 +196,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 
 	 // is there a list of sounds? if so, get them and check that correct number of items
 	 // ( if sourceGlobalCPV sounds are already set )
-   if (includeSounds ) { 
+   if (soundsSpecified ) { 
    	   var idsArray = soundsSourceId.split(globalDivider2);
  	   for (i=0; i < idsArray.length; i++) { 
 	      var temp = getFromHTML(idsArray[i].trim(), false);
@@ -250,7 +246,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
               }			   
 	      }	 
 	   }	// noDuplicateSounds	
-   } // includeSounds  
+   } // soundsSpecified  
      
    // combine syllables into words if required
    if (answersInSyllables){ 
@@ -267,7 +263,7 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
  	  
 
 	// add audio directory
-   if (includeSounds | sourceGlobalCPV) {
+   if (soundsSpecified | sourceGlobalCPV) {
 	   for (i=0; i < sounds.length; i++) {
 		   sounds[i] = addAudioDirToSoundName(sounds[i], audioDir);
 		}
@@ -279,13 +275,13 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 	  for (i=0; i < nSelection; i++) { 
 	     globalDragDropAnswers[i] = answers[selectionList[i]];
 	     if (questions.length > 0 ) {globalDragDropQuestions[i] = questions[selectionList[i]];}
-	     if (includeSounds || sourceGlobalCPV) {globalDragDropSounds[i] = sounds[selectionList[i]];}
+	     if (soundsSpecified || sourceGlobalCPV) {globalDragDropSounds[i] = sounds[selectionList[i]];}
 	  }	 
    } else {		 
 	  for (i=0; i < answers.length; i++) { 
          globalDragDropAnswers[i] = answers[i];
          if (questions.length > 0 ) {globalDragDropQuestions[i] = questions[i];}
-	     if (includeSounds || sourceGlobalCPV) {globalDragDropSounds[i] = sounds[i];}
+	     if (soundsSpecified || sourceGlobalCPV) {globalDragDropSounds[i] = sounds[i];}
 	  }
    } 
 }
@@ -304,17 +300,19 @@ function createFlexDragDrop(thisSpecElement){
    var anySounds = globalDragDropSounds.length > 0;
 
    // get the specifications for displaying flexbox questions, answers and sounds
+     // set defaults
+   var matchSoundsQuestionClass = "ear" ;
    
-   var parameters = thisSpecElement.innerHTML.split(globalDivider1);
    var flexId = null;
    var answerClass = "flex-drag-drop-hebrew";
-   var questionClass = "flex-drag-drop-hebrew"; // "ear" when matching sounds
+   var questionClass = "flex-drag-drop-hebrew"; 
    var colorClass = "vocab-color";
    var matchSounds = false;
    
    var answerInImage = false; // if true, the answers input is the name of the image file(s); used for standalone vowel marks
    var imagesDir = null;        // if answerInImage, the name of the subdirectory of /images where the image files are located
    
+   var parameters = thisSpecElement.innerHTML.split(globalDivider1);
    for (j = 0; j < parameters.length; j++) {
       var thisP = parameters[j].split(globalDivider2);
 	  var thisP0 = thisP[0].toLowerCase().trim();
@@ -336,7 +334,7 @@ function createFlexDragDrop(thisSpecElement){
    }
    
    if (flexId == null  ) { return;  }	// have to specify a target id
-   
+   if (matchSounds){ questionClass = matchSoundsQuestionClass;}
 
 	// now create the new flexboxes
    var answersFlexId = flexId + "-answers";
@@ -393,6 +391,7 @@ function createFlexDragDrop(thisSpecElement){
 	   celldiv.appendChild(span3);
 	   
 	   if (answerInImage){ 
+	     // these are the vowels
 	     // now not allowing multiple images, vowels with the same sound have each been combined into a single image
 		 //var jpgFiles = globalDragDropAnswers[i].trim().split(/\s+/); //split by one or more spaces
 	    // for (j=0; j < jpgFiles.length; j++){
@@ -443,35 +442,51 @@ function createFlexDragDrop(thisSpecElement){
 	 // add questionsflexbox to overall container
     overallFlexdiv.appendChild(questionsFlexdiv);
 
-     // add event listeners to flexbox
-    var flexdivElements =  overallFlexdiv.getElementsByTagName("*");
+     // add event listeners and attributes to flexbox
+	 //-----------------------------------------------
+    // answers
+    var flexdivElements =  answersFlexdiv.getElementsByClassName("flex-drag-drop-content");
     for (i=0; i < flexdivElements.length; i++){
 	   var thisElement = flexdivElements[i];	
-	   var thisClassList = flexdivElements[i].classList;	
+
+       if (matchSounds){
+          thisElement.addEventListener("click", function(){checkMatchSoundsAnswer(event);});
+		  thisElement.classList.add("clickable");
+		  
+	   } else {
+          thisElement.addEventListener("click", function(){selectAnswer(event);});
+          thisElement.addEventListener("dragstart",function(){handleDragStart(event);});
+ 	      thisElement.setAttribute("draggable", true);
+       }		   
+	   
+    } 
+	// questions
+    var flexdivElements =  questionsFlexdiv.getElementsByTagName("*");
+    for (i=0; i < flexdivElements.length; i++){
+	   var thisElement = flexdivElements[i];	
+	   var thisClassList = flexdivElements[i].classList;
+	   
        if (thisClassList.contains("soundclick")) {
 		   addsoundclickEventListener(thisElement, false);
-	   //} else if (thisClassList.contains("soundclick-cv")) {
-		//   addsoundclickEventListener(thisElement, true);
        }
 
-       if (thisClassList.contains("selectdragdropclick")) {
-           thisElement.addEventListener("click", function(){selectAnswer(event);});
-       }
-	   
-	   if (thisClassList.contains("flex-drag-drop-query")) {
-           thisElement.addEventListener("drop", function(){handleDrop(event);});
-		   thisElement.addEventListener("dragenter",function(){handleDragEnter(event);});
-		   thisElement.addEventListener("dragleave",function(){handleDragLeave(event);});
-		   thisElement.addEventListener("dragover",function(){handleDragOver(event);});
+       if (matchSounds){
+		  if (thisClassList.contains(questionClass)){
+              thisElement.addEventListener("click", function(){selectMatchSoundsQuestion(event);});
+		  }	  
+	   } else {	   
+	      if (thisClassList.contains("flex-drag-drop-query")) {
+              thisElement.addEventListener("drop", function(){handleDrop(event);});
+		      thisElement.addEventListener("dragenter",function(){handleDragEnter(event);});
+		      thisElement.addEventListener("dragleave",function(){handleDragLeave(event);});
+		      thisElement.addEventListener("dragover",function(){handleDragOver(event);});
 		   
-		   thisElement.addEventListener("click", function(){checkAnswer(event);});
+		      thisElement.addEventListener("click", function(){checkAnswer(event);});
 
-	   } 
-	   if (thisClassList.contains("flex-draggable")) {
-          thisElement.addEventListener("dragstart",function(){handleDragStart(event);});
-       }		   
+	      } 
+	   }	  
     }   
-      
+     
 	// add overall flexbox to document	
 	thisSpecElement.parentNode.insertBefore(overallFlexdiv, thisSpecElement);
 	
@@ -516,16 +531,12 @@ function  createAnswersFlexbox(answersFlexId, answerClass, anySounds,answerInIma
 	      answerElement.appendChild(text1);
 		  
           answerElement.classList.add(answerClass);
-		  
 	  
 	  }
           
 	  answerElement.setAttribute("id", answersFlexId + "-" +  i);
 	  
       answerElement.classList.add("flex-drag-drop-content");
-      answerElement.classList.add("flex-draggable");
-      answerElement.classList.add("selectdragdropclick");
- 	  answerElement.setAttribute("draggable", true);
      // if (anySounds) { answerElement.classList.add("soundclick");  }  // now using click event to select answer
 	                                                                    // clicking selected answer gives sound
 		  
@@ -679,6 +690,45 @@ function checkAnswer(ev) {
 	   if (finished) {
 	     rewardModal("Well done!"); 
        }	  
+	} 	
+}
+
+function selectMatchSoundsQuestion(ev){
+	// when user clicks on ear image (on the left of box with "?")
+	var i;
+
+	// first, unselect any answers that are selected
+    var selected = ev.target.parentElement.parentElement.getElementsByClassName("flex-drag-drop-selected");
+	for (i=0; i < selected.length; i++) {	setUnselected(selected[i]);	}
+
+     // now flag this answer as selected
+	 setSelected(ev.target);
+	
+}	
+
+
+function checkMatchSoundsAnswer(ev) {
+	// when user clicks an answer box when matching by audio
+	
+	var answerId = ev.target.id;
+	var answerNum = answerId.slice(answerId.lastIndexOf("-")+1);
+	var questionId = answerId.slice(0,answerId.lastIndexOf("-answers")) + "-questions-" + answerNum; // query box
+
+	
+	var thisQuestion = document.getElementById(questionId); // query box
+	if (thisQuestion.parentElement.firstChild.classList.contains("flex-drag-drop-selected")){
+        thisQuestion.classList.add("hidden"); //make the query box invisible
+        thisQuestion.nextElementSibling.classList.remove("hidden"); // make answer box visible
+	    //document.getElementById(answerId).parentElement.classList.add("hidden"); 
+	    document.getElementById(answerId).classList.add("hidden"); 
+	            // remove the answer from the possible answers
+        thisQuestion.parentElement.firstChild.classList.remove("flex-drag-drop-selected")
+		
+	    var finished = dragDropFinished(thisQuestion);
+	  
+	    if (finished) {
+	       rewardModal("Well done!"); 
+        }	  
 	} 	
 }
 	
