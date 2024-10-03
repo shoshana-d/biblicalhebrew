@@ -1186,47 +1186,35 @@ background-color:HoneyDew;
    font-weight: bold;
    font-size:30px;
    font-family:Verdana,sans-serif;
+   cursor:pointer;
  }
  
 .btn-close:after{
   content:"\00d7"; /* \00d7 = &times; */
 }	
-.btn-close:hover, .btn-close:focus{
-  /*text-decoration: none;*/
-  cursor: pointer;
-}
 
 
 /* ---- flagging clickable items --------*/
 /*-----------------------------------------*/
-.soundclick, 
-.arrowclick, 
-.arrowbyclassclick, 
-.selectletterclick, 
-.showhidenextsiblingclick,
-.showhidemenuitemclick,
-.alefbetplusmenuclick,
-.showhidespecifiedidclick,
-.selectdragdropclick
-{
+
  /* 
   these classes are used to flag clickable items 
-  these classes always have event listeners added 
-  soundlick: next sibling contains audio reference including relative pathname, played when clicked
-  arrowclick: when click on right arrow in flexbox list, audio for each item sounds sequentially (based on soundclick) 
-  letterclick: only used in consonant+vowels in alefbet-exercises, when clicked new list is created 
-  showhidenextsiblingclick:  used in alefbet and alefbet-exercises instead of toc
-                               when clicked, content in next <div> is shown or hidden 
+  These classes are defined in html and always have event listeners added in Javascript
+    soundlick: next sibling contains audio reference including relative pathname, played when clicked
+    arrowclick: when click on right arrow in flexbox list, audio for each item sounds sequentially (based on soundclick)
+  
+  This class is used in the flexbox created in biblical_hebrew_consonant_plus_vowel_exercise.js
+  selectletterclick: only used in consonant+vowels in alefbet-exercises
 */
+	
+ .soundclick, 
+ .arrowclick,
+ .selectletterclick {
    cursor: pointer;
-}
+ }
 
-.showhidemenuitem:hover{
-   text-decoration: underline;
-}
-
-/* this one doesn't have an event listener, used in cantillation exercise created in js*/
-.clickable:hover{
+ /* this one doesn't have an event listener, used in cantillation exercise created in js*/
+.clickable{
    cursor:pointer;
 }
 
