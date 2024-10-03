@@ -18,7 +18,7 @@
 
 
   /* marks a div which is a detail that shows when menuitem clicked in alefbet    
-    - position relative required to make following close button position correctly'*/	  
+    - position relative required to make following close button position correctly */	  
    .alefbet-detail-item{
 	  border-style:solid;
 	  border-color:Gray;
@@ -56,11 +56,13 @@
 <!-- main body of text -->
 <main class="main-color">
 
-<!-- testing section  
- <p>Temporary testing section</p>
+<!-- testing section   --> 
+<!-- 
+<p>Temporary testing section</p>
  <p>TEST</p>
  <p id="mytest">test</p>
-  END testing section --> 
+ -->
+<!--  END testing section -->
 
 
 <!-- INTRO -->
@@ -74,20 +76,20 @@ In this website you can click on any Hebrew word to hear how it is pronounced.</
  CONSONANTS 
 -->
 
- <h2  class="w3-container w3-card-4  showhidenextsiblingclick"  ></span> Biblical Hebrew Consonants - the alefbet</h2>
+ <h2  class="w3-container w3-card-4"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Biblical Hebrew Consonants - the alefbet</h2>
  <div class="hidden">
  <p><img src="images/alefbet4.png" alt="old textbook cover" style="float:right;width:290px;height:140px;"></p>
 
 <ul>
-<li>The Hebrew alphabet is called the <strong>alefbet</strong> - the names of the first 2 letters <br><span class="hebrew-in-text">א</span> (alef) and <span class="hebrew-in-text">בּ</span> (bet).
-<li>In English, the alphabet includes both 
+<li>The Hebrew alphabet is called the <strong>alefbet</strong> - the names of the first 2 letters <br><span class="hebrew-in-text">א</span> (alef) and <span class="hebrew-in-text">בּ</span> (bet).</li>
+<li>In English, the alphabet includes both </li>
    <ul>
-     <li>consonants (b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,y,z) and
-     <li>vowels (a,e,i,o,u)
+     <li>consonants (b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,y,z) and </li>
+     <li>vowels (a,e,i,o,u)</li>
    </ul>
-<li>The Hebrew <strong>alefbet includes only consonants</strong>.  
-<li><strong>English</strong> reads from left to right <span style="font-size:30px;font-weight:900; line-height:.8">&#8594;</span>
-<li><strong>Hebrew</strong> reads from right to left <span style="font-size:30px;font-weight:900; line-height:.8">&#8592;</span>
+<li>The Hebrew <strong>alefbet includes only consonants</strong>.  </li>
+<li><strong>English</strong> reads from left to right <span style="font-size:30px;font-weight:900; line-height:.8">&#8594;</span></li>
+<li><strong>Hebrew</strong> reads from right to left <span style="font-size:30px;font-weight:900; line-height:.8">&#8592;</span></li>
 </ul>
 <p>Click on a Hebrew letter to hear its sound.
 Click on <span class="start-audio"></span> below to hear all sounds. (Click on <span class="stop-audio"></span> to stop)</p>
@@ -135,19 +137,18 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 <p> Some people pronounce some of the consonants differently- see 
 <a href="alefbetplus.html#pronunciationvariations">alefbet+</a> for alternative pronunciation of some consonants.</p>
 
-<h3 class="showhidemenuclick">More about consonants:</h3>
+<h3>More about consonants:</h3>
 <div class="flex-container-ltr flex-container-menu-items consonant-color" >
-   <div id="show-consonants2" class="showhidemenuitemclick"> Final consonants</div>
-   <div id="show-consonants3" class="showhidemenuitemclick"> Consonants with the same sound</div>
-   <div id="show-consonants1" class="showhidemenuitemclick"> Dots in consonants</div>
-   <div id="show-consonants4" class="showhidemenuitemclick"> Consonants that look similar but have different sounds</div>
-   <div id="show-consonants5" class="showhidemenuitemclick"> <span class="hebrew30">ה</span> is sometimes silent</div>
+   <div id="show-consonants2" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>  Final consonants</div>
+   <div id="show-consonants3" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>  Consonants with the same sound</div>
+   <div id="show-consonants1" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>  Dots in consonants</div>
+   <div id="show-consonants4" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>  Consonants that look similar but have different sounds</div>
+   <div id="show-consonants5" ><span class="button-plus" onclick="showHideMenuItem(this)"></span> <span class="hebrew30">ה</span> is sometimes silent</div>
 </div>
 <p></p>
 
-
  <div id="consonants1" class="alefbet-detail-item consonant-color2 hidden" >
- <h3>Dots in consonants <span class="btn-close closebtnclick"></span></h3>
+ <h3>Dots in consonants <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
 
  <p id="dots-in-consonants" class="hidden">בּ:b|ב:v|-:-|כּ:k|כ:ch|-:-|פּ:p|פ:f</p>
  <p  class="javascript-list  hidden">source: dots-in-consonants |arrow| colorClass: consonant-color
@@ -179,7 +180,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
  
  
  <div id="consonants2" class="alefbet-detail-item consonant-color2 hidden" >
-  <h3>Final consonants <span class="btn-close closebtnclick"></span></h3>
+  <h3>Final consonants <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>These 5 consonants are written differently when they come at the end of a word.</p>
  
  <div class="flex-container-rtl flex-container-heb consonant-color">
@@ -243,7 +244,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 </div>
   
  <div id="consonants3" class="alefbet-detail-item consonant-color2 hidden" > 
-  <h3>Consonants with the same sound <span class="btn-close closebtnclick"></span></h3> 
+  <h3>Consonants with the same sound <span class="btn-close "  onclick="menuContentClose(this)"></span></h3> 
   
  <div  class="flex-container-rtl flex-container-heb consonant-color">
   <div><span class="arrowclick start-audio" ></span></div> 
@@ -286,7 +287,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 
   
   <div id="consonants4" class="alefbet-detail-item consonant-color2 hidden" >  
-  <h3>Consonants that look similar but have different sounds <span class="btn-close closebtnclick"></span></h3>
+  <h3>Consonants that look similar but have different sounds <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Some consonants look very similar to other consonants.</p>
   <p id="consonants-looksimilar" class="hidden">
   (:( |א:silent|צ:ts| ):)  |  (:( |ב:v|כ:ch| ):)  |  (:( |ד:d|ך:ch|ן:n| ):)  |  (:( |ג:g|נ:n| ):)  |  (:( |ט:t|מ:m| ):)   
@@ -303,7 +304,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
  heh Consonant or vowel marker? 
 -->
   <div id="consonants5" class="alefbet-detail-item consonant-color2 hidden" >  
-  <h3> <span class="hebrew30">ה</span> is sometimes silent <span class="btn-close closebtnclick"></span></h3>
+  <h3> <span class="hebrew30">ה</span> is sometimes silent <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  
    <p>At the <strong>end</strong> of a word, if <span class="hebrew30">ה</span> has no dot  or vowel  (see next section), then it's silent</p> 
 	 
@@ -327,7 +328,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
  VOWELS 
  -->
 
- <h2  class="w3-container w3-card-4      showhidenextsiblingclick "></span> Biblical Hebrew Vowels</h2>
+ <h2  class="w3-container w3-card-4  "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Biblical Hebrew Vowels</h2>
   <div class="hidden">
 <!--  --> 
 <p>Vowels are shown by adding dots and dashes below or beside consonants.<br>
@@ -435,12 +436,12 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 <p></p>
 <h3>More about vowels:</h3>
 <div class="flex-container-ltr flex-container-menu-items vowel-color">
-   <div id="show-vowels1" class="showhidemenuitemclick"> <span class="hebrew40">ו</span> Consonant or vowel?</div>
-   <div id="show-vowels2" class="showhidemenuitemclick"> <span class="hebrew40">י </span>Consonant or part of vowel?</div>
-   <div id="show-vowels3" class="showhidemenuitemclick"> <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext">uh or silent</div>
-   <div id="show-vowels4" class="showhidemenuitemclick"> <img src="images/vowels/a_or_o.jpg" class="vowel-image-intext"> a or o </div>
-   <div id="show-vowels5" class="showhidemenuitemclick"> <img src="images/vowels/ie2.jpg" class="vowel-image-intext"> ie or a</div>
-   <div id="show-vowels6" class="showhidemenuitemclick"> <span class="hebrew35">&#1493;&#1465;&#1497;</span> and 
+   <div id="show-vowels1" ><span class="button-plus" onclick="showHideMenuItem(this)"></span><span class="hebrew40">ו</span> Consonant or vowel?</div>
+   <div id="show-vowels2" ><span class="button-plus" onclick="showHideMenuItem(this)"></span> <span class="hebrew40">י </span>Consonant or part of vowel?</div>
+   <div id="show-vowels3" ><span class="button-plus" onclick="showHideMenuItem(this)"></span> <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext">uh or silent</div>
+   <div id="show-vowels4" ><span class="button-plus" onclick="showHideMenuItem(this)"></span> <img src="images/vowels/a_or_o.jpg" class="vowel-image-intext"> a or o </div>
+   <div id="show-vowels5" ><span class="button-plus" onclick="showHideMenuItem(this)"></span> <img src="images/vowels/ie2.jpg" class="vowel-image-intext"> ie or a</div>
+   <div id="show-vowels6" ><span class="button-plus" onclick="showHideMenuItem(this)"></span> <span class="hebrew35">&#1493;&#1465;&#1497;</span> and 
    <span class="hebrew35">&#1493;&#1468;&#1497;</span> </div>
 </div>
 <p></p>
@@ -450,7 +451,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 -->
 
  <div id="vowels1" class="alefbet-detail-item vowel-color hidden" >  
-  <h3> <span class="hebrew40">ו</span> Consonant or vowel?<span class="btn-close closebtnclick"></span></h3>
+  <h3> <span class="hebrew40">ו</span> Consonant or vowel?<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   
   <p><span class="hebrew40">ו </span> is sometimes pronounced as a vowel ("o" or "u") and sometimes as a consonant ("v").  </p>
   <p><span class="hebrew40">ו </span> is  a consonant (<strong>"v"</strong>) when </p>
@@ -526,7 +527,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 -->
 
  <div id="vowels2" class="alefbet-detail-item vowel-color hidden" >  
-  <h3> <span class="hebrew40">י </span>Consonant or part of vowel?<span class="btn-close closebtnclick"></span></h3>
+  <h3> <span class="hebrew40">י </span>Consonant or part of vowel?<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    
   <p><span class="hebrew30">י </span> is sometimes a consonant (pronounced "y") and 
   sometimes part of a vowel (not pronounced "y").  </p>
@@ -566,7 +567,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 -->
 
  <div id="vowels3" class="alefbet-detail-item vowel-color hidden" >  
- <h3 id="schwah"> <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext">uh or silent<span class="btn-close closebtnclick"></span></h3>
+ <h3 id="schwah"> <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext">uh or silent<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
 
    <p>In Biblical Hebrew, the same <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext"> mark is used for 
       2 quite different things. This is confusing!</p>
@@ -583,7 +584,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
   </tr></table>
 
     
-   <p class="showhidenextsiblingclick" > at the <strong>beginning</strong> of a word 
+   <p ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> at the <strong>beginning</strong> of a word 
 	<img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext">
 	     is always pronounced with a <strong>short "uh" sound</strong></p>  
      <div class = "alefbet-detail-item hidden"  style="border:none; padding-left:35px;"> 
@@ -601,7 +602,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
   
    
    
-    <p class="showhidenextsiblingclick" >   at the <strong>end</strong> of a word 
+    <p><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>  at the <strong>end</strong> of a word 
 		         <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext"> is always <strong>silent</strong></p>  
 	 <div class = "alefbet-detail-item hidden"  style="border:none; padding-left:35px;"> 
      <span class="example">examples:</span>
@@ -621,7 +622,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
  	  </div>
 	</div>
 	
-    <p class="showhidenextsiblingclick" > in the <strong>middle</strong> of a word 
+    <p><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> in the <strong>middle</strong> of a word 
 		         <img src="images/vowels/uh_or_silent.jpg" class="vowel-image-intext"> 
 				 is sometimes silent and sometimes pronounced "uh"</p> 
      <div class = "alefbet-detail-item hidden"  style="border:none; padding-left:35px;"> 
@@ -684,7 +685,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 
   
  <div id="vowels4" class="alefbet-detail-item vowel-color hidden" >  
- <h3><img src="images/vowels/a_or_o.jpg" class="vowel-image-intext"> a or o <span class="btn-close closebtnclick"></span></h3>
+ <h3><img src="images/vowels/a_or_o.jpg" class="vowel-image-intext"> a or o <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>The vowel <img src="images/vowels/a_or_o.jpg" class="vowel-image-intext">  is usually pronounced <strong>"a"</strong> 
   but there are some words   in which it is pronounced <strong>"o"</strong>. 
   <br>Sometimes there is a small vertical line <img src="images/vowels/meteg.jpg" class="vowel-image-intext"> to the left of the vowel  
@@ -755,7 +756,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
  av at end of word  
 -->
  <div id="vowels5" class="alefbet-detail-item vowel-color hidden" >  
-   <h3><img src="images/vowels/ie2.jpg" class="vowel-image-intext"> ie or a<span class="btn-close closebtnclick"></span></h3>
+   <h3><img src="images/vowels/ie2.jpg" class="vowel-image-intext"> ie or a<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    
   <ul>
     <li><p><img src="images/vowels/ie2.jpg" class="vowel-image-intext2">  is pronounced <strong>"a"</strong> when the combination
@@ -795,7 +796,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 -->
   <div id="vowels6" class="alefbet-detail-item vowel-color hidden" >  
    <h3><span class="hebrew35">&#1493;&#1465;&#1497;</span> and 
-   <span class="hebrew35">&#1493;&#1468;&#1497;</span> <span class="btn-close closebtnclick"></span></h3>
+   <span class="hebrew35">&#1493;&#1468;&#1497;</span> <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    <p>These vowels occur much less frequently than the other vowels.</p>
 	
   </div>	
@@ -810,7 +811,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 <!--
 tetragrammaton 
 -->
- <h2  id="tetragrammaton" class="w3-container w3-card-4      showhidenextsiblingclick "></span>
+ <h2  id="tetragrammaton" class="w3-container w3-card-4 "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
 How to pronounce <span class="hebrew35">יְהוָה</span> the Tetragrammaton
   </h2>
  <div class="hidden padding-16" style="background-color:Ivory;">
@@ -857,7 +858,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 <!--
  Syllables and stress
 -->
- <h2  id="syllables"  class="w3-container w3-card-4  showhidenextsiblingclick"></span>
+ <h2  id="syllables"  class="w3-container w3-card-4 "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  Syllables in Biblical Hebrew words
  </h2>
 <div class="hidden padding-16" style="background-color:Lavender;">
@@ -865,7 +866,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
  <p>A syllable is the smallest grouping of sounds in a word that can be pronounced as a single unit. 
  Dividing a word into syllables and saying them one after another helps you to pronounce the word correctly.
  </p>
-  <p class="showhidenextsiblingclick"> In <strong>English</strong> there are  <strong>many types of syllable</strong>. </p>
+  <p><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> In <strong>English</strong> there are  <strong>many types of syllable</strong>. </p>
    <div class="hidden" style="margin-left:30px;">
    <p>The consonants (<strong>C</strong>) are:b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,y,z 
  and the vowels (<strong>V</strong>) are: a,e,i,o,u .
@@ -873,12 +874,12 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 "get-ting start-ed in Bib-lic-al He-brew"
  we see that an English syllable can be:</p>
   <ul>
-  <li> Consonant-Vowel (CV) (He)
-  <li> Vowel-Consonant (VC) (ed, in, al)
-  <li> Consonant-Vowel-Consonant (CVC) (get, bib, lic)
-  <li> CVCC (ting)
-  <li> CCVC (brew)
-  <li> CCVCC (start)
+  <li> Consonant-Vowel (CV) (He)</li>
+  <li> Vowel-Consonant (VC) (ed, in, al)</li>
+  <li> Consonant-Vowel-Consonant (CVC) (get, bib, lic)</li>
+  <li> CVCC (ting)</li>
+  <li> CCVC (brew)</li>
+  <li> CCVCC (start)</li>
   </ul>
  There are lots of other possibilities, for example,: CVV (bee, too), CVVC (main, hour), CCCVVC (school), VVCC (each) 
   </div>
@@ -887,7 +888,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
   <p style="margin-top:20px;margin-bottom:0" >In <strong>Biblical Hebrew</strong> there are only 
   <strong>3 types of syllable</strong>: </p>
 
- <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> <strong>Consonant-Vowel syllable</strong></p>
+ <p style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> <strong>Consonant-Vowel syllable</strong></p>
  <div class="hidden" style="margin-left:30px;">
     <div class="flex-container-ltr flex-container-examples ">
      <div><p><span class="hebrew30 soundclick">בּוֹ</span><span class="hidden">words/w004_bo</span></p>
@@ -935,7 +936,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 </div>
 
 
- <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> <strong>Consonant-Vowel-Consonant syllable</strong></p>
+ <p style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> <strong>Consonant-Vowel-Consonant syllable</strong></p>
  <div class="hidden" style="margin-left:30px;">
      <div class="flex-container-ltr flex-container-examples ">
      <div><p><span class="hebrew30 soundclick">כֺּל</span><span class="hidden">words/w010_kol</span></p>
@@ -997,7 +998,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 	   the silent <span class="hebrew30"> &thinsp; &#1456; </span>&thinsp; marking the end of the syllable </p>
  </div>
  
- <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
+ <p  style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> 
  <strong><span class="hebrew30">  וּ   </span> at the start of a word </strong></p>
  <div class="hidden" style="margin-left:30px;">
         <p> This is always a separate syllable. The next consonant in the word is the beginning of the next syllable.
@@ -1050,7 +1051,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 <!--
  stressed syllable 
 -->
- <h2  id="stress" class="w3-container w3-card-4      showhidenextsiblingclick"></span>
+ <h2  id="stress" class="w3-container w3-card-4  "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  Which syllable is stressed (emphasised) in Biblical Hebrew?
  </h2>
 <div class="hidden padding-16" style="background-color:Lavender;">
@@ -1058,7 +1059,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
   <p>When there is more than one syllable, usually one syllable is emphasised more than the other syllables. </p>
   <p style="margin-bottom:15px;">We call this the <strong>stressed syllable</strong>. </p>
 
- <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
+ <p  style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  In <strong>English</strong>, <strong>any</strong> syllable can be stressed.</p>
  <div class="hidden" style="margin-left:30px;">
   <ul>
@@ -1082,7 +1083,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
   
   <p style="margin-top:20px;margin-bottom:0">In <strong>Biblical Hebrew</strong> the stress is always on the <strong>last</strong> or <strong>second last</strong> syllable. </p>
 
- <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
+ <p  style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  Stress is <strong>usually</strong> on the <strong>last</strong> syllable of a word.</p>
  <div class="hidden" style="margin-left:30px;">
      <div class="flex-container-ltr flex-container-examples ">
@@ -1126,7 +1127,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
  </div>  
 
  
- <p class="showhidenextsiblingclick" style="margin-top:0;margin-bottom:0"> 
+ <p  style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> 
  But quite often the stress is on the <strong>second last</strong> syllable.</p>
  <div class="hidden" style="margin-left:30px;">
         <div class="flex-container-ltr flex-container-examples ">
@@ -1172,7 +1173,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
  Tricky pronunciations: Jerusalem layla
 <-->
 
- <h2  class="w3-container w3-card-4    showhidenextsiblingclick"></span>
+ <h2  class="w3-container w3-card-4  "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  A few words with tricky pronunciation</h2>
   <div class="hidden" style="background-color:MistyRose; border:none">
 
@@ -1192,7 +1193,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
  <li><span class="hebrew-in-text soundclick"> הִוא</span><span class="hidden">  words/w104_hi</span> (she)
   is pronounced "hi".
  </ul>
- <p class="showhidenextsiblingclick"> <span class="hebrew30">חַ</span> at the end of a word is pronounced "ach"</p>
+ <p ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> <span class="hebrew30">חַ</span> at the end of a word is pronounced "ach"</p>
     <div class="hidden indented-text">
  	<p> Usually a vowel is pronounced AFTER its consonant, but when <span class="hebrew30">חַ</span> 
 	occurs at the <strong>end</strong> of a word  it is pronounced "ach", not "cha". 
@@ -1225,7 +1226,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 CANTILLATION MARKS 
 -->
 
-  <h2  id="cantillation" class="w3-container w3-card-4    showhidenextsiblingclick"></span>
+  <h2  id="cantillation" class="w3-container w3-card-4 "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
   Biblical Hebrew cantillation marks (trope)</h2>
   <div class="hidden  padding-16 readable1000" style="background-color:FloralWhite;">
  
@@ -1333,7 +1334,7 @@ but a few always occur at the beginning (before the first letter) or at the end 
 the stressed syllable.</p>
   
     
-    <h3 class="showhidenextsiblingclick" style="background-color:white;"></span>
+    <h3  style="background-color:white;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
 	Example: Each of the cantillation marks on a word which is stressed on its final syllable</h3>
 	
 	<div class="hidden" style="background-color:white;">
@@ -1371,7 +1372,7 @@ the stressed syllable.</p>
    </div>
 
 
-   <h3 class="showhidenextsiblingclick" style="background-color:white;"></span>
+   <h3  style="background-color:white;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
    Example: Each of the cantillation marks on a word which is
    stressed on its secondlast syllable</h3> 
    
@@ -1413,20 +1414,20 @@ the stressed syllable.</p>
 
 <h3 class="p-left-margin" style="margin-top:30px; ">Tricky cantillation marks</h3>
 <div class="flex-container-ltr flex-container-menu-items p-left-margin" style="background-color:White; margin-bottom:0;">
-   <div id="show-cantillation1" class="showhidemenuitemclick">
+   <div id="show-cantillation1" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>
    <img src="images/vowels/sofpasuk.jpg" class="cantillation-image" style="vertical-align:text-bottom;"></div>
   <div class="flex-container-spacer"></div>
-   <div id="show-cantillation2" class="showhidemenuitemclick">
+   <div id="show-cantillation2" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>
        <img src="images/vowels/kadma.jpg" class="cantillation-image" style="vertical-align:text-bottom;">
        <img src="images/vowels/pashta.jpg" class="cantillation-image2" style="vertical-align:text-bottom;"></div>
   <div class="flex-container-spacer"></div>
-   <div id="show-cantillation3" class="showhidemenuitemclick">
+   <div id="show-cantillation3" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>
         <img src="images/vowels/segol.jpg" class="cantillation-image2" style="vertical-align:text-bottom;" >
          <img src="images/vowels/zarka.jpg" class="cantillation-image2" style="vertical-align:text-bottom;">
 		 <img src="images/vowels/tlisha_ktana.jpg" class="cantillation-image2" style="vertical-align:text-bottom;">
           </div>
   <div class="flex-container-spacer"></div>
-   <div id="show-cantillation4" class="showhidemenuitemclick">
+   <div id="show-cantillation4" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>
        <img src="images/vowels/tlisha_gdola.jpg" class="cantillation-image2" style="vertical-align:text-bottom;"></div>
 </div>
 
@@ -1472,7 +1473,7 @@ the stressed syllable.</p>
 	         &emsp;e-lo-<span class="stressed-syllable">him</span>
 		    </div> 
           </div>		 
-	  
+	  </li>
 	  <li><img src="images/vowels/pashta.jpg" class="cantillation-image2-intext">
 	      If there's only one mark and it's at the end of the word, the final syllable is stressed. 
 	       <br>
@@ -1483,6 +1484,7 @@ the stressed syllable.</p>
 	        &emsp;e-lo-<span class="stressed-syllable">him</span>
 		  </div> 
 		  </div>
+	  </li>	  
 	  <li><img src="images/vowels/pashta.jpg" class="cantillation-image2-intext">
 	      If there are 2 marks, the stress is on the secondlast syllable, the first mark indicates the stressed syllable.  
 	     <br>	
@@ -1493,6 +1495,7 @@ the stressed syllable.</p>
 	       &emsp;ha-<span class="stressed-syllable">a</span>-retz  
 		 </div> 
 		 </div>
+	  </li>	 
 	  </ul>	 
 
 </div>
@@ -1536,19 +1539,19 @@ the stressed syllable.</p>
 
 <!--- Other marks -->
 
- <h2  class="w3-container w3-card-4  showhidenextsiblingclick"></span> Other marks in Biblical Hebrew</h2>
+ <h2  class="w3-container w3-card-4 "><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Other marks in Biblical Hebrew</h2>
  <div class="hidden">
 
 <div class="flex-container-ltr flex-container-menu-items consonant-color" >
-   <div id="show-othermarks1" class="showhidemenuitemclick"> <span class="hebrew30">&#1470;</span> joining 2 words</div>
-   <div id="show-othermarks2" class="showhidemenuitemclick"><img src="images/vowels/meteg_blue.jpg" class="vowel-image-intext"> </div>
-   <div id="show-othermarks3" class="showhidemenuitemclick"> <span class="hebrew30"> &#1475;</span> at the end of each verse </div>
-   <div id="show-othermarks4" class="showhidemenuitemclick"><span class="hebrew30"> |</span> between 2 words </div>
+   <div id="show-othermarks1" ><span class="button-plus" onclick="showHideMenuItem(this)"></span>The mark <span class="hebrew30">&#1470;</span> joining 2 words</div>
+   <div id="show-othermarks2" ><span class="button-plus" onclick="showHideMenuItem(this)"></span><img src="images/vowels/meteg_blue.jpg" class="vowel-image-intext"> </div>
+   <div id="show-othermarks3" ><span class="button-plus" onclick="showHideMenuItem(this)"></span><span class="hebrew30"> &#1475;</span> at the end of each verse </div>
+   <div id="show-othermarks4" ><span class="button-plus" onclick="showHideMenuItem(this)"></span><span class="hebrew30"> |</span> between 2 words </div>
 </div>
 <p></p>
 
   <div id="othermarks1" class="alefbet-detail-item consonant-color2 hidden" >
-  <h3> <span class="hebrew30">&#1470;</span> joining 2 words<span class="btn-close closebtnclick"></span></h3>
+  <h3>The mark <span class="hebrew30">&#1470;</span> joining 2 words<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>This mark joins a short word to the word that follows it. It's just like a hyphen. 
  In terms of the stress, the joined words are like a single word - there is only one stressed syllable.
  The stress always falls on last word, usually on the last syllable. There are no stressed syllables in the first word
@@ -1567,18 +1570,18 @@ the stressed syllable.</p>
  
  
   <div id="othermarks2" class="alefbet-detail-item consonant-color2 hidden" >
-  <h3><img src="images/vowels/meteg_blue.jpg" class="vowel-image-intext"><span class="btn-close closebtnclick"></span>  </h3>
+  <h3><img src="images/vowels/meteg_blue.jpg" class="vowel-image-intext"><span class="btn-close"  onclick="menuContentClose(this)"></span>  </h3>
   <p>Confusingly, this mark has 2 different functions, depending on which word it's in:</p>
   <ul>
   <li><p>In the <strong>last</strong> word in every verse, <br>
-  this mark is a <a href="#cantillation">cantillation mark</a> and indicates which syllable is stressed.</p>
+  this mark is a <a href="#cantillation">cantillation mark</a> and indicates which syllable is stressed.</p></li>
    
   
-  <li><p>In any word <strong>except</strong> the last word in a verse:</p>
+  <li><p>In any word <strong>except</strong> the last word in a verse:</p></li>
     
 	<ul >
 	<li><p>With the vowel <img src="images/vowels/a_or_o.jpg" class="vowel-image-intext2">  this mark indicates 
-	that the vowel is pronounced "a" </p>
+	that the vowel is pronounced "a" </p></li>
 	 <div class="flex-container-ltr flex-container-examples ">
 	 <div><p><span class="hebrew30 soundclick">נָֽתְנוּ</span><span class="hidden">words/w026_natuhnu  </span>&thinsp;
 	   	  </p>
@@ -1598,7 +1601,7 @@ the stressed syllable.</p>
      <li><p>Otherwise, in Biblical Hebrew, in some words with several syllables where the main accent is on the last syllable, 
 	there is a secondary accent on an earlier syllable. 
      This is the sign that indicates a secondary accent. 
-     It says "Don't skip over pronouncing this syllable" and tells you that this is a consonant-vowel syllable.</p>
+     It says "Don't skip over pronouncing this syllable" and tells you that this is a consonant-vowel syllable.</p></li>
 	 <div class="flex-container-ltr flex-container-examples ">
 	 <div><p><span class="hebrew30 soundclick">הַֽכְּנַעֲנִי</span><span class="hidden">alefbet/haknaani  </span>&thinsp; 
 	   	  </p>
@@ -1620,14 +1623,14 @@ the stressed syllable.</p>
 
  
   <div id="othermarks3" class="alefbet-detail-item consonant-color2 hidden" >
-  <h3>	<span class="hebrew30"> &#1475;</span> at the end of each verse<span class="btn-close closebtnclick"></span> </h3>
+  <h3>	<span class="hebrew30"> &#1475;</span> at the end of each verse<span class="btn-close"  onclick="menuContentClose(this)"></span> </h3>
   	<p>The last word in every verse has the mark 	<span class="hebrew30"> ׃</span>  at the end of the word.
    This sign indicates the end of a verse. It is not pronounced.</p>
  </div>
 
  
   <div id="othermarks4" class="alefbet-detail-item consonant-color2 hidden" >
-  <h3>	| between 2 words <span class="btn-close closebtnclick"></span></h3>
+  <h3>	| between 2 words <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   	<p>This is a cantillation mark which usually occurs between 2 words which each have the 
 	   <img src="images/vowels/munach.jpg" class="cantillation-image" style="vertical-align:text-bottom;"> cantillation mark. 
 	  It indicates which trope melody should be used for each of the

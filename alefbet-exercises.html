@@ -71,9 +71,9 @@
 
 
 <!-- testing section  --> 
-<!--<p>Temporary testing section</p>
+<!-- <p>Temporary testing section</p>
  <p>TEST</p>
- <p id="mytest">test</p> --> 
+ <p id="mytest">test</p>  --> 
 <!--  END testing section --> 
 
  
@@ -89,7 +89,7 @@
 </ul>
 <p>With the matching exercises, you can either drag and drop, or point and click. Drag and drop may not work on all devices.</p>
 
-<p class="showhidenextsiblingclick" style="margin-top:-15px;">How do I drag and drop in the matching exercises?</p>
+<p style="margin-top:-15px;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>How do I drag and drop in the matching exercises?</p>
 <div class="alefbet-exercise hidden">
 <p>On ipad or other touch screen, touch and hold the answer until it lifts up (the answer will turn green) . 
 Keeping your finger on the screen, drag the answer. Lift your finger to drop the answer.
@@ -114,7 +114,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-example-drag-drop')">Refresh</span>
 </div>
 
-<p class="showhidenextsiblingclick" style="margin-top:-15px;">How do I point and click in the matching exercises?</p>
+<p style="margin-top:-15px;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>How do I point and click in the matching exercises?</p>
 <div class="alefbet-exercise hidden">
 <p>Select an answer by clicking or touching. The answer will turn green.</p>
 <p>Select the corresponding question by clicking or touching</p>
@@ -133,29 +133,29 @@ turns bright yellow (on ipad, a small + also appears). </p>
 <!-- CONSONANTS--> 
 
 
-<h2 class="w3-container w3-card    showhidenextsiblingclick" >
+<h2 class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  Practise Biblical Hebrew consonants </h2>
 <div class="hidden" >
 
 <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
-   <div id="show-consonants1" class="showhidemenuitemhidemenuclick"> Consonant sounds<span class="start-audio"></span></div>
-   <div id="show-consonants2" class="showhidemenuitemhidemenuclick"> Match consonants with their sounds</div>
-   <div id="show-consonants3" class="showhidemenuitemhidemenuclick"> Match consonants with their sounds (harder)</div>
-   <div id="show-consonants4" class="showhidemenuitemhidemenuclick"> Match consonants with their sounds<span class="ear"></span></div>
-   <div id="show-consonants5" class="showhidemenuitemhidemenuclick"> Match consonants with their sounds (harder)<span class="ear"></span></div>
-   <div id="show-consonants6" class="showhidemenuitemhidemenuclick"> Consonants which look similar but have different sounds<span class="start-audio"></span></div>
-   <div id="show-consonants7" class="showhidemenuitemhidemenuclick"> Dots in consonants<span class="start-audio"></span></div>
-   <div id="show-consonants8" class="showhidemenuitemhidemenuclick"> Match final consonants</div>
-   <div id="show-consonants9" class="showhidemenuitemhidemenuclick"> Match consonants with the same sound</div>
-   <div id="show-consonants10" class="showhidemenuitemhidemenuclick"> Match consonants with the same sound</div>
-   <div id="show-consonants11" class="showhidemenuitemhidemenuclick"> Consonant letter names<span class="start-audio"></span></div>
-   <div id="show-consonants12" class="showhidemenuitemhidemenuclick"> Match consonant letter names</div>
+   <div id="show-consonants1"><span class="button-plus" onclick="showHideMenuItem(this,true)"></span> Consonant sounds<span class="start-audio"></span></div>
+   <div id="show-consonants2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds</div>
+   <div id="show-consonants3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds (harder)</div>
+   <div id="show-consonants4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds<span class="ear"></span></div>
+   <div id="show-consonants5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds (harder)<span class="ear"></span></div>
+   <div id="show-consonants6"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Consonants which look similar but have different sounds<span class="start-audio"></span></div>
+   <div id="show-consonants7"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Dots in consonants<span class="start-audio"></span></div>
+   <div id="show-consonants8"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match final consonants</div>
+   <div id="show-consonants9"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with the same sound</div>
+   <div id="show-consonants10"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with the same sound</div>
+   <div id="show-consonants11"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Consonant letter names<span class="start-audio"></span></div>
+   <div id="show-consonants12"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonant letter names</div>
 </div>
 <p></p>
 
 <div id="consonants1" class="alefbet-exercise  hidden">
 
-<h3 >Consonant sounds <span class="btn-close closebtnclick"></span></h3> 
+<h3 >Consonant sounds <span class="btn-close"  onclick="menuContentClose(this)"></span></h3> 
 
   <p id="consonants-hebrew-and-sounds" class="hidden">א:silence| בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch| ך:ch| ל : l
 |מ: m|ם :m| נ: n|ן:n| ס:s| ע  :silence| פּ:p| פ:f| ף: f|צ:ts| ץ:ts| ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p>
@@ -172,9 +172,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants2" class="alefbet-exercise hidden">
 
-<h3>Match consonants with their sounds<span class="btn-close closebtnclick"></span></h3>
+<h3>Match consonants with their sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each consonant (or consonants) in the top row to the correct box in the bottom row.
- <br> (You can click on a consonant to hear its sound.)</p>
+ <br>OR Select a consonant in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
 <div id="consonant-answers-source1" class="hidden"><p>א ע</p><p>בּ</p><p>ב ו</p><p>ג</p>
 <p>ד</p><p>ה</p><p>ז</p><p>ח כ ך</p><p>ט ת</p><p>י</p><p>כּ ק</p><p>ל</p><p>מ ם</p><p>נ ן</p>
 <p>ס שׂ</p><p>פּ</p><p>פ ף</p><p>צ ץ</p><p>ר</p><p>שׁ</p>
@@ -193,9 +194,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants3" class="alefbet-exercise hidden">
 
-<h3>Match consonants with their sounds (harder)<span class="btn-close closebtnclick"></span></h3>
+<h3>Match consonants with their sounds (harder)<span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>Drag each consonant in the top row to the correct box in the bottom row. 
-<br> (You can click on a consonant to hear its sound.)</p>
+ <br>OR Select a consonant in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
 <div id="consonant-answers-source2" class="hidden"><p>א:ע</p><p>בּ</p><p>ב:ו</p><p>ג</p><p>ד</p><p>ה</p>
 <p>ז</p><p>ח:כ:ך</p><p>ט:ת</p><p>י</p><p>כּ:ק</p><p>ל</p><p>מ:ם</p><p>נ:ן</p><p>ס:שׂ</p>
 <p>פּ</p><p>פ:ף</p><p>צ:ץ</p><p>ר</p><p>שׁ</p>
@@ -211,9 +213,9 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants4" class="alefbet-exercise hidden">
 
-<h3><span class="ear"></span> Match consonants with their sounds<span class="btn-close closebtnclick"></span></h3>
+<h3><span class="ear"></span> Match consonants with their sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the sound of the consonant. <br>
- Drag the corresponding consonant (or consonants) in the top row to the ? box in the bottom row. <br>  (You can click on a consonant to hear its sound.)</p>
+ Then click on the box with the corresponding consonant (or consonants) in the top row.</p>
  <p id="cr-match-consonants3" class="onload-flex-drag-drop  hidden ">id:match-consonants3| answers: consonant-answers-source1 
            | answersseparateparas|sounds:consonant-sounds  | answerclass:flex-drag-drop-hebrew |selection:7|audio: alefbet_consonants_and_vowels
 		  | colorClass: consonant-color | questionclass: ear | matchsounds</p>
@@ -226,9 +228,9 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants5" class="alefbet-exercise hidden">
 
-<h3><span class="ear"></span> Match consonants with their sounds (harder)<span class="btn-close closebtnclick"></span></h3>
+<h3><span class="ear"></span> Match consonants with their sounds (harder)<span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the sound of the consonant. <br>
- Drag the corresponding consonant in the top row to the ? box in the bottom row. <br>  (You can click on a consonant to hear its sound.)</p>
+ Then click on the corresponding consonant in the top row.</p>
  <p id="cr-match-consonants4" class="onload-flex-drag-drop  hidden ">id:match-consonants4| answers: consonant-answers-source2
   | answersseparateparas|sounds:consonant-sounds | answerclass:flex-drag-drop-hebrew 
   |audio: alefbet_consonants_and_vowels  | colorClass: consonant-color | questionclass: ear | matchsounds|selection:7</p>
@@ -241,7 +243,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants6" class="alefbet-exercise hidden">
 
-<h3>Consonants which look similar but have different sounds<span class="btn-close closebtnclick"></span></h3>
+<h3>Consonants which look similar but have different sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <!-- must have no spaces -->
   <p id="consonants-looksimilar" class="hidden">(:(|צ:ts|א:silent|):)|(:(|ב:v|כ:ch|):)|(:(|ד:d|ך:ch|ן:n|):)
   |(:(|ג:g|נ:n|):)|(:(|ט:t|מ:m|):)|(:(|י:y|ו:v|ז:z|):)|(:(|ה:h|ח:ch|ת:t|):)|(:(|כ:ch|נ:n|):)
@@ -257,7 +259,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants7" class="alefbet-exercise hidden">
 
-<h3>Dots in consonants<span class="btn-close closebtnclick"></span></h3>
+<h3>Dots in consonants<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p id="consonants-with-dots" class="hidden">
 בּ:b|ב:v|  גּ: g|ג: g|דּ:d |ד:d| זּ:z|ז:z| טּ :t|ט :t| יּ:y|י:y| כּ: k|כ: ch|
    לּ : l|ל : l|מּ: m|מ: m|נּ : n|נ : n|סּ:s |ס:s|פּ:p|פ:f|צּ:ts|צ:ts|קּ:k|ק:k| שּׁ:sh|שׁ:sh|שּׂ:s|שׂ:s|תּ:t |ת:t
@@ -273,9 +275,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants8" class="alefbet-exercise hidden">
 
-<h3>Match final consonants<span class="btn-close closebtnclick"></span></h3>
-<p>Drag each letter in the top row to the correct box in the bottom row. 
-<br>  (You can click on a consonant to hear its sound.)</p>
+<h3>Match final consonants<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+<p>Drag each consonant in the top row to the correct box in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
   <div id="final-letters-questions-source" class="hidden"><p>כ</p> <p>מ</p> <p>נ</p> <p>פ</p> <p>צ</p></div>
   <div id="final-letters-answers-source" class="hidden"><p>ך</p> <p>ם</p> <p>ן</p> <p>ף</p> <p>ץ</p></div>
   <p id="final-letters-sounds-source" class="hidden">ch| m| n| f| ts</p>
@@ -290,9 +293,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants9" class="alefbet-exercise hidden">
 
-<h3>Match consonants with the same sound (including final forms of letters)<span class="btn-close closebtnclick"></span></h3>
- <p>Drag each letter in the top row to the correct box in the bottom row. 
-<br> (You can click on a consonant to hear its sound.)</p>
+<h3>Match consonants with the same sound (including final forms of letters)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Drag each consonant in the top row to the correct box in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
   <div id="same-sounds-source" class="hidden"><p>א:ע </p> <p>ב:ו</p> <p>ח:כ:ך</p> <p>ט:ת</p> <p>כּ:ק</p> <p>מ:ם</p> <p>נ:ן</p>
   <p>ס:שׂ</p> <p>פ:ף</p> <p>צ:ץ</p></div>
   <p id="same-sounds-sounds-source" class="hidden">silent|v|ch|t|k|m|n|s|f| tst</p>
@@ -306,9 +310,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 <div id="consonants10" class="alefbet-exercise hidden">
 
-<h3>Match consonants with the same sound (excluding final forms of letters)<span class="btn-close closebtnclick"></span></h3>
+<h3>Match consonants with the same sound (excluding final forms of letters)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each letter in the top row to the correct box in the bottom row. 
-<br> (You can click on a consonant to hear its sound.)</p>
+ <br>OR Select a consonant in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
   <div id="same-sounds2-source" class="hidden"><p>א:ע</p> <p>ב:ו</p> <p>ח:כ</p> <p>ט:ת</p> <p>כּ:ק</p> <p>ס:שׂ</p></div>
   <p id="same-sounds2-sounds-source" class="hidden">silent|v|ch|t|k| s</p>
   <p id="cr-same-sounds2" class="onload-flex-drag-drop  hidden ">id:same-sounds2|questionsanswers:same-sounds2-source 
@@ -327,7 +332,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants11" class="alefbet-exercise hidden">	
 
-<h3>Consonant letter names<span class="btn-close closebtnclick"></span></h3>
+<h3>Consonant letter names<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
 <p>Click on <span class="button-plus"></span> under a letter to see its name</p>
   <p id="consonants-names" class="hidden">  א:alef| בּ:bet| ב:vet| ג: gimel|ד:dalet| ה: heh|ו:vav| ז:zayin| ח:chet| ט :tet|י:yod| כּ: kaf
   |כ:chaf| ך:final_chaf| ל : lamed|מ: mem|ם :final_mem| נ: nun|ן:final_nun| ס:samech| ע  :ayin| פּ:pei| פ:fei| ף: final_fei
@@ -343,9 +348,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
 <div id="consonants12" class="alefbet-exercise hidden">
 
-<h3>Match consonant letter names<span class="btn-close closebtnclick"></span></h3>
+<h3>Match consonant letter names<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each letter in the top row to the correct box in the bottom row. 
-<br> (You can click on a consonant to hear its sound.)</p>
+ <br>OR Select a consonant in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
   <div id="allconsonants" class="hidden"><p>א </p><p> בּ  </p><p> ב  </p><p> ג  </p><p> ד  </p><p> ה </p><p> ו  </p>
   <p> ז  </p><p> ח </p><p> ט  </p><p> י  </p><p> כּ  </p><p> כ </p><p> ך </p><p> ל  </p><p> מ  </p><p> ם  </p>
   <p> נ  </p><p> ן  </p><p> ס </p><p> ע  </p><p> פּ </p><p> פ  </p><p> ף  </p><p> צ </p><p> ץ </p><p> ק  </p>
@@ -369,21 +375,21 @@ turns bright yellow (on ipad, a small + also appears). </p>
 <!-- VOWELS    --> 
 
 
- <h2 class="w3-container w3-card    showhidenextsiblingclick"> Practise Biblical Hebrew vowels </h2>
+ <h2 class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise Biblical Hebrew vowels </h2>
  <div class="hidden">
  
 <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
-   <div id="show-vowels1" class="showhidemenuitemhidemenuclick"> Vowel sounds<span class="start-audio"></span></div>
-   <div id="show-vowels2" class="showhidemenuitemhidemenuclick"> Match vowels with their sounds</div>
-   <div id="show-vowels3" class="showhidemenuitemhidemenuclick"> Match vowels with their sounds (harder)</div>
-   <div id="show-vowels4" class="showhidemenuitemhidemenuclick"> Match vowels with their sounds<span class="ear"></span></div>
-   <div id="show-vowels5" class="showhidemenuitemhidemenuclick"> Match vowels with their sounds (harder)<span class="ear"></span></div>
+   <div id="show-vowels1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Vowel sounds<span class="start-audio"></span></div>
+   <div id="show-vowels2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds</div>
+   <div id="show-vowels3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds (harder)</div>
+   <div id="show-vowels4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds<span class="ear"></span></div>
+   <div id="show-vowels5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds (harder)<span class="ear"></span></div>
 </div>
 <p></p>
  
  
 <div id="vowels1" class="alefbet-exercise hidden">
-  <h3>Vowel sounds<span class="btn-close closebtnclick"></span></h3> 
+  <h3>Vowel sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3> 
   <p id="vowels-hebrew-and-sounds" class="hidden">  a1:a | a2 : a | a_or_o: a_or_o 
    |  o1 : o | o2 : o | o3  : o |  ei1  : ei 
    | ei2 : ei | e1 : e | e2 : e |  e3 :  e  | i1 : i  
@@ -402,9 +408,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 
  
 <div id="vowels2" class="alefbet-exercise hidden ">
-<h3>Match vowels with their sound<span class="btn-close closebtnclick"></span></h3>
- <p>Drag each vowel (or vowels) in the top row to the correct box in the bottom row. 
-<br> (You can click on a vowel to hear its sound.)</p>
+<h3>Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+  <p>Drag each vowel in the top row to the correct box in the bottom row. 
+ <br>OR Select a vowel in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected vowel to hear its sound.)</p>
   <p id="vowels-hebrew2" class="hidden"> a1_and_a2 | a_or_o | o1_and_o2_and_o3 |  ei1_and_ei2 | e1_and_e2_and_e3 | i1_and_i2 | u1_and_u2
   | ie1 | ie2 |oi  | ui  | uh_or_silent
   </p>
@@ -421,9 +428,10 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div> 
 
 <div id="vowels3" class="alefbet-exercise  hidden">
-   <h3>Match vowels with their sound<span class="btn-close closebtnclick"></span></h3>
+   <h3>Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    <p>Drag each vowel in the top row to the correct box in the bottom row. 
-   <br>(You can click on a vowel to hear its sound.)</p>
+<br>OR Select a vowel in the top row and then select the corresponding "?" box.
+ <br> (You can click on a selected vowel to hear its sound.)</p>
   <p id="vowels-hebrew3" class="hidden"> a1:a2 | a_or_o | o1:o2:o3 |  ei1:ei2 | e1:e2:e3 | i1:i2 | u1:u2
   | ie1 | ie2 |oi  | ui  | uh_or_silent
    <p id="cr-vowel-sounds3" class="onload-flex-drag-drop  hidden ">id:vowel-sounds3
@@ -439,10 +447,9 @@ turns bright yellow (on ipad, a small + also appears). </p>
    
 <div id="vowels4" class="alefbet-exercise hidden ">
 
-<h3><span class="ear"></span> Match vowels with their sound<span class="btn-close closebtnclick"></span></h3>
+<h3><span class="ear"></span> Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the sound of the vowel. <br>
- Drag each vowel (or vowels) in the top row to the correct box in the bottom row. 
- <br>(You can click on a vowel to hear its sound.)</p>
+ Then click on the box with the corresponding vowel (or vowels) in the top row. </p>
   <p id="cr-vowel-sounds4" class="onload-flex-drag-drop  hidden ">id:vowel-sounds4
   | questionclass: ear | matchsounds
   | answers: vowels-hebrew2 | answerinimage: vowels | answerclass: vowel-image-drag-drop
@@ -454,10 +461,9 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 
 <div id="vowels5" class="alefbet-exercise  hidden">
-   <h3><span class="ear"></span> Match vowels with their sound (harder)<span class="btn-close closebtnclick"></span></h3>
+   <h3><span class="ear"></span> Match vowels with their sound (harder)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    <p>Click on <span class="ear"></span>to hear the sound of the vowel. <br>
-   Drag each vowel in the top row to the correct box in the bottom row. <br>
-   (You can click on a vowel to hear its sound.)</p>
+   Then click on the corresponding vowel in the top row.</p>
    <p id="cr-vowel-sounds5" class="onload-flex-drag-drop  hidden ">id:vowel-sounds5
   | questionclass: ear | matchsounds
   | answers: vowels-hebrew3 | answerinimage: vowels | answerclass: vowel-image-drag-drop
@@ -492,7 +498,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 <!-- CONSONANT PLUS VOWEL    --> 
 
 
- <h2 class="w3-container w3-card    showhidenextsiblingclick"> Practise Biblical Hebrew consonant + vowel </h2>
+ <h2 class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise Biblical Hebrew consonant + vowel </h2>
 
  <div class="hidden">
 
@@ -557,7 +563,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
    <div id="cpv-exercises2" class="alefbet-exercise hidden">
  <h3><span class="ear"></span>Match consonant+vowel with its sound</h3>
  <p>Click on <span class="ear"></span>to hear the sound of the consonant+vowel. <br>
- Drag each consonant+vowel in the top row to the correct box in the bottom row. <br>(You can click on a consonant+vowel to hear its sound.)</p>
+ Then click on the corresponding consonant+vowel in the top row.</p>
   <p id="cr-consonant-vowel2"  class="onload-flex-drag-drop  hidden">id: consonant-vowel2  |sourceglobalcpv |matchsounds
   | colorClass: vocab-color  | answerclass:flex-drag-drop-hebrew| questionclass: ear
   |audio: alefbet_consonant_plus_vowel | selection:10 </p>
@@ -578,7 +584,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
 <!-- SYLLABLES  --> 
 
 
- <h2 id="syllables" class="w3-container w3-card    showhidenextsiblingclick"> Practise dividing  Biblical Hebrew words into syllables </h2>
+ <h2 id="syllables" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise dividing  Biblical Hebrew words into syllables </h2>
  <div class="alefbet-exercise hidden">
   
  <p>Divide each word in the dotted boxes into syllables by inserting a space between letters.
@@ -602,7 +608,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
 <!-- CANTILLATION MARKS --> 
 
 
- <h2 id="cantillation" class="w3-container w3-card    showhidenextsiblingclick"> Practise  Biblical Hebrew cantillation marks indicating stressed syllable</h2>
+ <h2 id="cantillation" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise  Biblical Hebrew cantillation marks indicating stressed syllable</h2>
  <div class="hidden">
 
  
@@ -641,15 +647,15 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  
  <p></p>
  <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
-   <div id="show-cantillation1" class="showhidemenuitemclick"> Practise all cantillation marks</div>
-   <div id="show-cantillation2" class="showhidemenuitemclick"> Practise 
+   <div id="show-cantillation1"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Practise all cantillation marks</div>
+   <div id="show-cantillation2"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Practise 
    <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only</div>
  </div>
 <p></p>
 
 <div id="cantillation1" class="alefbet-exercise hidden">
 
-<h3>All cantillation marks <span class="btn-close closebtnclick"></span></h3>
+<h3>All cantillation marks <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>For each word in the dotted boxes, click on the stressed syllable.
  <br> You can click on the word to hear the pronunciation.</p>
  <p id="cr-cantillation-all" class="javascript-cantillation hidden"> id:cantillation-all| whichlist: all 
@@ -661,8 +667,8 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  
 <div id="cantillation2" class="alefbet-exercise hidden">
 
-  <h3>Practise    <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only  <span class="btn-close closebtnclick"></span></h3>
-  <p class="showhidenextsiblingclick"> Hints</p>
+  <h3>Practise    <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only  <span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
+  <p  ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Hints</p>
   <p class="hidden main-color">When <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> is before the last letter in a word, 
   this indicates the first letter of the stressed syllable.
  <br>When <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> is at the end of a word, and there is no other 
@@ -686,22 +692,22 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
 <!-- FREQUENT WORDS  --> 
 
 
- <h2 id="frequentwords" class="w3-container w3-card    showhidenextsiblingclick"></span> 
+ <h2 id="frequentwords" class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  Practise pronouncing words which occur frequently in the Tanakh </h2>
  <div class="hidden">
   <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
-   <div id="show-frequent1" class="showhidemenuitemhidemenuclick"> Words with only one syllable<span class="start-audio"></span> </div>
-   <div id="show-frequent2" class="showhidemenuitemhidemenuclick"> Words with stress on final syllable<span class="start-audio"></span></div>
-   <div id="show-frequent3" class="showhidemenuitemhidemenuclick"> Words with stress on second-last syllable<span class="start-audio"></span> </div>
-   <div id="show-frequent4" class="showhidemenuitemhidemenuclick"> Words with stress indicated by cantillation mark<span class="start-audio"></span> </div>
-   <div id="show-frequent5" class="showhidemenuitemhidemenuclick"> Match words with their pronunciation<span class="ear"></span> </div>
-   <div id="show-frequent6" class="showhidemenuitemhidemenuclick"> Match words with their pronunciation<span class="ear"></span>  
+   <div id="show-frequent1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with only one syllable<span class="start-audio"></span> </div>
+   <div id="show-frequent2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress on final syllable<span class="start-audio"></span></div>
+   <div id="show-frequent3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress on second-last syllable<span class="start-audio"></span> </div>
+   <div id="show-frequent4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress indicated by cantillation mark<span class="start-audio"></span> </div>
+   <div id="show-frequent5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match words with their pronunciation<span class="ear"></span> </div>
+   <div id="show-frequent6"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match words with their pronunciation<span class="ear"></span>  
    (with cantillation marks)</div>
  </div>
 
 <div id="frequent1" class="alefbet-exercise hidden">
 
- <h3> Words with only one syllable<span class="btn-close closebtnclick"></span></h3>
+ <h3> Words with only one syllable<span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
   <div id="one-syllable-hebrew" class="hidden">
 <p>
 לּוֹ</p> <p>לָהּ </p> <p>לָךְ </p> <p>לִּי </p> <p>בּוֹ </p> <p>בָּהּ </p> <p>בָּךְ </p> <p>בִּי </p> 
@@ -738,7 +744,7 @@ w003_lo | w003_lah | w003_lach | w003_li | w004_bo | w004_bah | w004_bach | w004
 
 <div id="frequent2" class="alefbet-exercise hidden">
 
- <h3> Words with stress on final syllable<span class="btn-close closebtnclick"></span></h3>
+ <h3> Words with stress on final syllable<span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables</p>
   <p id="syllables-final-sounds" class="hidden">
 w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w005_vuhet   |  w005_oto 
@@ -824,7 +830,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 <div id="frequent3" class="alefbet-exercise hidden">
 
- <h3> Words with stress on second-last syllable <span class="btn-close closebtnclick"></span> </h3>
+ <h3> Words with stress on second-last syllable <span class="btn-close "  onclick="menuContentClose(this)"></span> </h3>
  <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables</p>
  <div id="syllables-penultimate-hebrew" class="hidden">
    <p>לָּ נוּ</p>     <p>אֹ תָ נוּ</p>     <p>מִ מֶּ נּוּ</p>     <p>כָּל־ הָ אָ רֶץ</p>     <p>בְּ כָל־ הָ אָ רֶץ</p>     
@@ -870,7 +876,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  
  <div id="frequent4" class="alefbet-exercise hidden">
 
-<h3> Words with stress indicated by cantillation mark<span class="btn-close closebtnclick"></span></h3>
+<h3> Words with stress indicated by cantillation mark<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables and which syllable is stressed.</p>
  <p id="cr-syllables-cantillation" class="javascript-list  hidden ">id: syllables-cantillation
    |sourcehebrew: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
@@ -892,9 +898,9 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  
 <div id="frequent5" class="alefbet-exercise hidden">
 
- <h3>Match words with their pronunciation<span class="btn-close closebtnclick"></span></h3>
+ <h3>Match words with their pronunciation<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the pronunciation of the word. <br>
- Drag the corresponding word in the top row to the ? box in the bottom row.</p>
+ Then click on the corresponding word in the top row.</p>
    <p id="cr-match-words" class="onload-flex-drag-drop  hidden ">id:match-words
    | answers: one-syllable-hebrew :syllables-final-hebrew: syllables-penultimate-hebrew 
     |sounds:one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds  
@@ -910,9 +916,9 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  
 <div id="frequent6" class="alefbet-exercise hidden">
 
- <h3>Match words with their pronunciation (with cantillation marks)<span class="btn-close closebtnclick"></span></h3>
+ <h3>Match words with their pronunciation (with cantillation marks)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the pronunciation of the word.<br> 
- Drag the corresponding word in the top row to the ? box in the bottom row.</p>
+ Then click on the corresponding word in the top row.</p>
    <p id="cr-match-words2" class="onload-flex-drag-drop  hidden ">id:match-words2
    | answers: one-syllable-hebrew :syllables-final-hebrew: syllables-penultimate-hebrew 
     |sounds:one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds  
@@ -934,21 +940,21 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 <!-- PEOPLE AND PLACES  --> 
 
 
- <h2 class="w3-container w3-card    showhidenextsiblingclick"> Practise names of people and places in the Tanakh </h2>
+ <h2 class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise names of people and places in the Tanakh </h2>
  <div class="hidden">
   <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
-   <div id="show-people1" class="showhidemenuitemhidemenuclick"> Names of people in the Torah<span class="start-audio"></span> </div>
-   <div id="show-people2" class="showhidemenuitemhidemenuclick"> Names of people in later books<span class="start-audio"></span> </div>
-   <div id="show-people3" class="showhidemenuitemhidemenuclick"> Names of places<span class="start-audio"></span> </div>
-   <div id="show-people4" class="showhidemenuitemhidemenuclick"> Match names and places</div>
-   <div id="show-people6" class="showhidemenuitemhidemenuclick"> Match names and places<span class="ear"></span></div>
-   <div id="show-people5" class="showhidemenuitemhidemenuclick"> Match names and places<span class="ear"></span></div>
+   <div id="show-people1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of people in the Torah<span class="start-audio"></span> </div>
+   <div id="show-people2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of people in later books<span class="start-audio"></span> </div>
+   <div id="show-people3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of places<span class="start-audio"></span> </div>
+   <div id="show-people4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match names and places</div>
+   <div id="show-people6"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match names and places<span class="ear"></span></div>
+   <div id="show-people5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match names and places<span class="ear"></span></div>
  </div>
 
 
 <div id="people1" class="alefbet-exercise hidden">
 
-  <h3>Names of people in the Torah<span class="btn-close closebtnclick"></span></h3>
+  <h3>Names of people in the Torah<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Click on <span class="button-plus"></span> under a word to see the name</p>
 
   <div id="torah-names-hebrew"  class="hidden"><p>  אָדָם </p><p>    חַוָּה     </p><p> קַיִן      </p><p>  הֶבֶל </p><p>    נֹחַ     </p><p>  שֵׁם </p>
@@ -974,7 +980,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 <div id="people2" class="alefbet-exercise hidden">
 
-<h3>Names of people in later books<span class="btn-close closebtnclick"></span></h3>
+<h3>Names of people in later books<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
 <p>Click on <span class="button-plus"></span> under a word to see the name</p>
   <div id="later-names-hebrew"  class="hidden">
    <p>  דְּבוֹרָה</p><p>   חַנָּה</p><p>  שְׁמוּאֵל</p><p>  שָׁאוּל</p><p>  יוֹנָתָן</p><p>דָּוִד</p><p>גָּלְיָת  </p><p>   נָתָן</p>
@@ -1001,7 +1007,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 <div id="people3" class="alefbet-exercise hidden">
 
-  <h3>Names of places<span class="btn-close closebtnclick"></span></h3>
+  <h3>Names of places<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Click on <span class="button-plus"></span> under a word to see the name of the place</p>
   <div id="places-hebrew"  class="hidden">
   <p> גַן־עֵדֶן </p> <p> בָּבֶל </p> <p> כְּנָעַן </p> <p> הַנֶּגֶב </p> <p> מִצְרַיִם </p><p> סְדֹם </p> <p> עֲמֹרָה </p> <p> בֵּֽית־לֶחֶם </p>
@@ -1025,9 +1031,10 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  
 <div id="people4" class="alefbet-exercise hidden">
 
- <h3>Match names and places<span class="btn-close closebtnclick"></span></h3>
+ <h3>Match names and places<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Drag each Hebrew word in the top row to the correct box in the bottom row.
-<br>  You can hear the pronunciation by clicking on the Hebrew word.</p>
+<br>OR Select a Hebrew word in the top row and then select the corresponding "?" box.
+<br>  You can hear the pronunciation by clicking on the selected Hebrew word.</p>
    <p id="cr-names-and-places" class="onload-flex-drag-drop  hidden ">id:names-and-places
    |questions:torah-names-tooltips :later-names-tooltips : places-tooltips
    | answers:torah-names-hebrew : later-names-hebrew :places-hebrew
@@ -1045,9 +1052,9 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 <div id="people5" class="alefbet-exercise hidden">
 
-<h3><span class="ear"></span> Match names and places <span class="btn-close closebtnclick"></span></h3>
+<h3><span class="ear"></span> Match names and places <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the name or place. <br>
- Drag the corresponding name or place in the top row to the ? box in the bottom row.   </p>
+ Then click on the corresponding name or place in the top row. </p>
  
  <p id="cr-names-and-places2" class="onload-flex-drag-drop  hidden ">id:names-and-places2
    |answers:torah-names-tooltips :later-names-tooltips : places-tooltips
@@ -1066,9 +1073,9 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 <div id="people6" class="alefbet-exercise hidden">
 
-<h3><span class="ear"></span> Match names and places <span class="btn-close closebtnclick"></span></h3>
+<h3><span class="ear"></span> Match names and places <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the name or place. <br>
- Drag the corresponding name or place in the top row to the ? box in the bottom row.   </p>
+ Then click on the corresponding name or place in the top row.</p>
  
  <p id="cr-names-and-places3" class="onload-flex-drag-drop  hidden ">id:names-and-places3
    |answers:torah-names-hebrew :later-names-hebrew : places-hebrew
