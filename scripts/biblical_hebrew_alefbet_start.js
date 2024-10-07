@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	   addArrowclickEventListener(thisClass[j]);
     }
     //---------------------------------------------------------------------------
-	
+
 
    //------ code creating content----------------------------------------
    //-------------------------------------------------------------------
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
  	  var thisSpec = javascriptListClass[ii];
       createJavascriptList(thisSpec); 
    }
-   
+	   
    //------ code creating content----------------------------------------
    
    //      only in alefbet-exercises 
@@ -60,18 +60,24 @@ document.addEventListener('DOMContentLoaded', function() {
       createFlexDragDrop(thisSpec);
    }	
 
-   var javascriptListClass = document.getElementsByClassName("javascript-cantillation");
-   for (ii = 0; ii < javascriptListClass.length; ii++) {
- 	  var thisSpec = javascriptListClass[ii];
-      crCantillationList(thisSpec);
-   }
-  
-   var javascriptListClass = document.getElementsByClassName("javascript-syllables");
+    var javascriptListClass = document.getElementsByClassName("javascript-syllables");
    for (ii = 0; ii < javascriptListClass.length; ii++) {
  	  var thisSpec = javascriptListClass[ii];
       crSyllablesExercise(thisSpec);
    }
+
+   var javascriptListClass = document.getElementsByClassName("javascript-cantillation-list");
+   for (ii = 0; ii < javascriptListClass.length; ii++) {
+ 	  var thisSpec = javascriptListClass[ii];
+      crCantillationJavascriptList(thisSpec);
+   }
    
+   var javascriptListClass = document.getElementsByClassName("javascript-cantillation-exercise");
+   for (ii = 0; ii < javascriptListClass.length; ii++) {
+ 	  var thisSpec = javascriptListClass[ii];
+      crCantillationExercise(thisSpec);
+   }
+    
 //---------------------------------------------------------------------------
 
 })

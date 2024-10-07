@@ -34,8 +34,8 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
    var answersSeparateParas = false;
    var answersInSyllables = false;  // indicate whether have to be combined into a whole word
                                     // for drag drop matching sounds for words in Tanakh exercise
-   var cantillation = false;       // add cantillation marks to Hebrew. Requires answersInSyllables 
-   var answersGroupStressedSyllable = null;     // in cantillation specification:one value for each sourceHebrewId, values "last" "secondlast"
+  // var cantillation = false;       // add cantillation marks to Hebrew. Requires answersInSyllables 
+  // var answersGroupStressedSyllable = null;     // in cantillation specification:one value for each sourceHebrewId, values "last" "secondlast"
 
    var questionsAnswersSame = false;  // questions and answers specified in pairs, randomly assigned to question or answer
  
@@ -70,9 +70,9 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
         answersSeparateParas = true;
 	 } else if (thisP0 == "answersinsyllables"){
 		answersInSyllables = true;
-	 } else if (thisP0 == "cantillation"){
-		cantillation = true; 
-		answersGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
+	// } else if (thisP0 == "cantillation"){
+	//	cantillation = true; 
+	//	answersGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
 		
 	 } else if (thisP0 == "questionsanswers"){
 		questionsAnswersSame = true;
@@ -100,10 +100,10 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 
    // some checks
    if ( noDuplicateSounds  & !soundsSpecified) {return;}
-   if (cantillation ){
-		if (!(answersInSyllables)) { return;}
-		if (answersGroupStressedSyllable == null) { return;}
-	}	
+ //  if (cantillation ){
+//		if (!(answersInSyllables)) { return;}
+//		if (answersGroupStressedSyllable == null) { return;}
+//	}	
   
   
    // now get contents
@@ -145,19 +145,19 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
 		
  	// allows for answers from multiple sources
 	   var idsArray = answersSourceId.split(globalDivider2);
-	   if (cantillation){ var stressedSyllableArray = answersGroupStressedSyllable.split(globalDivider2); }
+	 //  if (cantillation){ var stressedSyllableArray = answersGroupStressedSyllable.split(globalDivider2); }
   
 	   for (i=0; i < idsArray.length; i++) { 
 		  var temp1 = getFromHTML(idsArray[i].trim(), answersSeparateParas);
 	      answers = answers.concat(temp1);
 				 
-		  if (cantillation) {
-             var temp2 = [];
-			 for (j=0; j < temp1.length; j++) {
-				temp2[j] = stressedSyllableArray[i];
-			 }
-		     answersStressedSyllable = answersStressedSyllable.concat(temp2);	
-		  }	   
+	//	  if (cantillation) {
+     //        var temp2 = [];
+	//		 for (j=0; j < temp1.length; j++) {
+	//			temp2[j] = stressedSyllableArray[i];
+	//		 }
+	//	     answersStressedSyllable = answersStressedSyllable.concat(temp2);	
+	//	  }	   
 	   }  
 	      // if more than one item for an answer, select one randomly (can't be combined with cantillation)
        for (i=0; i < answers.length; i++) { 
@@ -250,13 +250,13 @@ function setGlobalDragDropQuestionsAnswersSounds(thisSpecElement) {
      
    // combine syllables into words if required
    if (answersInSyllables){ 
-       if (cantillation){
-		  for (i=0; i < answers.length; i++){
-             var stressedSyllableNumber =  getStressedSyllableNumber(answers[i], answersStressedSyllable[i]);
-             answers[i] = addCantillationToStressedSyllable(answers[i], stressedSyllableNumber, sounds[i],"all");
-			                   // in biblical_hebrew_cantillation_exercise.js
-          }
-	   }	  
+   //    if (cantillation){
+	//	  for (i=0; i < answers.length; i++){
+   //          var stressedSyllableNumber =  getStressedSyllableNumber(answers[i], answersStressedSyllable[i]);
+   //          answers[i] = addCantillationToStressedSyllable(answers[i], stressedSyllableNumber, sounds[i],"all");
+	//		                   // in biblical_hebrew_cantillation_exercise.js
+   //       }
+	//   }	  
     
        for (i=0; i < answers.length; i++) { answers[i] = wordFromSyllables(answers[i]);}
    }

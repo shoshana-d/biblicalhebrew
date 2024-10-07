@@ -164,7 +164,15 @@ function menuContentClose(element){
 
 //-------------------------------------------------------------------------
 
+   // when called from Javascript
+function JSshowHideJsToggle(ev){
+	var buttonId = ev.target.id;
 
+ 	var prefix = "btn-";
+    var elementId = buttonId.slice(prefix.length);
+	showHideJsToggle(elementId, buttonId);
+}
+	
 function showHideJsToggle(elementId, buttonId){
 	// only used with onclick
 	// hides/shows child elements with class list "js-toggle" in the specified element

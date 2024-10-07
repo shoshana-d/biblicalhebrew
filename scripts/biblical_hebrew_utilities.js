@@ -63,7 +63,7 @@ function playSound(sound){
 
 
    //-------- utility function to add sub-directory pathname where soundfile located to name of soundfile
-   //  called from createJavascriptListFlexbox etc
+   //  called from biblicalhebrew_flexbox_list.js, biblical_hebrew_drag_drop.js, exercises code
 function addAudioDirToSoundName(thisName, audioDir){
 
 	if (audioDir == null) { var thisAudio =  thisName.trim(); }
@@ -83,6 +83,8 @@ function setMp3Name(thisName){
 }
 
 function crAudioSpan(thisSoundWithDir){
+   //  called from biblicalhebrew_flexbox_list.js, biblical_hebrew_drag_drop.js, exercises code
+
    // thisSoundWithDir should be the filename of the .mp3 file with the subdirectory name
    // for example, if the file is  audio/words/w003_lach.mp3 should be words/w003_lach
    //              audio/ and .mp3 are added at runtime with setMp3Name
@@ -93,6 +95,16 @@ function crAudioSpan(thisSoundWithDir){
    span2.appendChild(text2);
 //test(thisSoundWithDir);   
    return span2;
+}
+
+//--- when recreating a flexbox list need to make sure that the sound from the existing list stops
+function turnOffArrowSound(){
+   var j;
+   var arrow = document.getElementsByClassName("stop-audio");
+   for (j = 0; j < arrow.length; j++) {
+	   // arrow has already been clicked, second click stops playing
+ 	   arrow[j].classList.add("stop-sound");
+   }   
 }
 
        
@@ -304,8 +316,7 @@ function getFromHTML( HTMLId, separateParas){
    return items;
 }
 
-// used in cantillation and syllables exercise flexboxes
-//---------------------------------------------------
+
 function isConsonant(thisChar){
 	var i;
     const consonants = [ "\u05D0","\u05D1","\u05D2","\u05D3","\u05D4","\u05D5",

@@ -6,15 +6,6 @@ var globalFlexlistHebrew = [];
 var globalFlexlistSound = [];
 
 
-function turnOffArrowSound(){
-   var j;
-   var arrow = document.getElementsByClassName("stop-audio");
-   for (j = 0; j < arrow.length; j++) {
-	   // arrow has already been clicked, second click stops playing
- 	   arrow[j].classList.add("stop-sound");
-   }   
-}
-
 //---- flexboxes containing clickable lists of letters
 //----------------------------------------------------
 	
@@ -79,7 +70,8 @@ function createJavascriptList(thisSpecElement){
 	// Optional tooltips (separated by | or in separate paragraphs) always in separate source
 	//                    if tooltips in separate paras, reference id must be in a <div>, not in a <p>
 
-
+  //test("Hello from flexbox_list, thisspec=" + thisSpecElement.id );  
+	 
    var j;
    var i;
 
@@ -87,7 +79,7 @@ function createJavascriptList(thisSpecElement){
    var containerClass = "flex-container-heb";  // specifies size of gap between items, default
    var hebrewClass = "hebrew35";  // default								   
    var tooltipsClass = "flex-container-tooltip"; // default
-   var colorClass = null;
+   var colorClass = "main-color";
 
    var sourceId = null;  // the id of the HTML para with the hebrew and sound combined
    var sourceHebrewIds = null; // alternative to single source for hebrew and sound
@@ -98,8 +90,8 @@ function createJavascriptList(thisSpecElement){
    var hebrewSeparateParas = false;  // if true, Hebrew in separate paragraphs which are contained in a <div>
                                       // default, Hebrew in single paragraph separated by |
    var hebrewInSyllables = false;  // indicate whether each hebrew word has to be combined into a whole word
-   var cantillation = false;       // add cantillation marks to Hebrew. Requires hebrewInSyllables 
-   var hebrewGroupStressedSyllable = null;     // in cantillation specification:one value for each sourceHebrewId, values "last" "secondlast"
+   //var cantillation = false;       // add cantillation marks to Hebrew. Requires hebrewInSyllables 
+   //var hebrewGroupStressedSyllable = null;     // in cantillation specification:one value for each sourceHebrewId, values "last" "secondlast"
    
    var hebrewInImage = false;  // if true, the Hebrew input is the name of the image file; used for standalone vowel marks
    var imagesDir = null;        // if hebrewInImage, the name of the subdirectory of /images where the image files are located
@@ -125,7 +117,7 @@ function createJavascriptList(thisSpecElement){
    var nSelection = 0;
    var arrow = false;
    //var arrowType = null;
-   var randomOrder = false; // indicates whether items should be shuffled
+   var randomOrder = false; // indicates whether items should be shuffled (redundant if selection is true)
    var randomGroups = false; // 4/10/23 only used in alefbet-exercises Consonants which look similar but have different sounds
 							 
 							 // 18/10/23 Groups now defined by ( and ) and can only be specified 
@@ -166,10 +158,10 @@ function createJavascriptList(thisSpecElement){
 		    hebrewSeparateParas = true;
 		 } else if (thisP0 == "hebrewinsyllables"){
 		    hebrewInSyllables = true;
-		 } else if (thisP0 == "cantillation"){
-			cantillation = true; 
-		    //hebrewStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
-		    hebrewGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
+		// } else if (thisP0 == "cantillation"){
+		//	cantillation = true; 
+		 //   //hebrewStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
+		 //   hebrewGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
 
 		 } else if (thisP0 == "hebrewinimage"){
 			hebrewInImage = true; 
@@ -204,13 +196,13 @@ function createJavascriptList(thisSpecElement){
 		 } 
    }
 
-	  
+
    // check consistency of specifications
    //-----------------------------------   
-    if (cantillation ){
-		if (!(hebrewInSyllables)) { return;}
-		if (hebrewGroupStressedSyllable == null) { return;}
-	}	
+ //   if (cantillation ){
+//		if (!(hebrewInSyllables)) { return;}
+//		if (hebrewGroupStressedSyllable == null) { return;}
+//	}	
 	if (tooltips){
 		if (tooltipsShowStress) {
 		   if (tooltipsGroupStressedSyllable == null) { return;}
@@ -226,7 +218,7 @@ function createJavascriptList(thisSpecElement){
 		if (tooltipsShowStress) {var tooltipsStressedSyllable = [];}
 	}	
 	//if (cantillation) {var hebrewStressedSyllableNumber = [];}
-	if (cantillation) {var hebrewStressedSyllable = [];}
+//	if (cantillation) {var hebrewStressedSyllable = [];}
 
 
  	  // hebrew and sounds read from global variables (only used in consonant+vowel exercises)
@@ -310,19 +302,19 @@ function createJavascriptList(thisSpecElement){
    
        //-- get hebrew--
         var idsArray = sourceHebrewIds.split(globalDivider2);
-		if (cantillation){ var stressedSyllableArray = hebrewGroupStressedSyllable.split(globalDivider2);}
+	//	if (cantillation){ var stressedSyllableArray = hebrewGroupStressedSyllable.split(globalDivider2);}
 		
         for (i=0; i < idsArray.length; i++) { 
 	       var temp1 = getFromHTML(idsArray[i].trim(), hebrewSeparateParas);
 	       hebrew = hebrew.concat(temp1);
 		   
-		   if (cantillation) {
-			  var temp2 = [];
-			  for (j=0; j < temp1.length; j++) {
-				 temp2[j] = stressedSyllableArray[i];
-			  }
-              hebrewStressedSyllable = hebrewStressedSyllable.concat(temp2);			  
-		   }	   
+		//   if (cantillation) {
+		//	  var temp2 = [];
+		//	  for (j=0; j < temp1.length; j++) {
+		//		 temp2[j] = stressedSyllableArray[i];
+		//	  }
+         //     hebrewStressedSyllable = hebrewStressedSyllable.concat(temp2);			  
+		 //  }	   
 	    }  
  
    } else {
@@ -360,11 +352,11 @@ function createJavascriptList(thisSpecElement){
  
 
      // now get final contents
-	 
+ 	 
 	  if (selection) {   // need random selection of items
          var tempHebrew = cloneArray(hebrew);
          var tempSound = cloneArray(sound);
- 		 if (cantillation) { var tempHebrewStressedSyllable = cloneArray(hebrewStressedSyllable);    }  
+ 		// if (cantillation) { var tempHebrewStressedSyllable = cloneArray(hebrewStressedSyllable);    }  
          if (tooltips) {
 			 var tempTooltips = cloneArray(tips);
 			 if (tooltipsShowStress) {var tempTooltipsStressedSyllable = cloneArray(tooltipsStressedSyllable);}
@@ -389,7 +381,7 @@ function createJavascriptList(thisSpecElement){
 	   
 	     hebrew.length = 0;
 		 sound.length = 0;
-		 if (cantillation){hebrewStressedSyllable.length = 0;}
+	//	 if (cantillation){hebrewStressedSyllable.length = 0;}
 	     if (tooltips) {
 	 		 tips.length = 0;
 	 	 	 if (tooltipsShowStress) {tooltipsStressedSyllable.length = 0; }
@@ -398,7 +390,7 @@ function createJavascriptList(thisSpecElement){
 	 	 for (i=0; i < nSelection; i++) { 
             hebrew[i] = tempHebrew[selectionList[i]];
             sound[i] = tempSound[selectionList[i]];
-       	    if (cantillation){hebrewStressedSyllable[i] = tempHebrewStressedSyllable[selectionList[i]];}
+      // 	    if (cantillation){hebrewStressedSyllable[i] = tempHebrewStressedSyllable[selectionList[i]];}
 	        if (tooltips) {
 	 		   tips[i] = tempTooltips[selectionList[i]];
 	 	 	   if (tooltipsShowStress) {tooltipsStressedSyllable[i] = tempTooltipsStressedSyllable[selectionList[i]]; }
@@ -408,7 +400,7 @@ function createJavascriptList(thisSpecElement){
 	   
 	  }
 		   
- 
+
        // now create the new flexbox
 	   //---------------------------
   
@@ -416,9 +408,11 @@ function createJavascriptList(thisSpecElement){
 
    flexdiv.classList.add(flexboxClass);
    flexdiv.classList.add(containerClass);
-   if (!(colorClass == null)) {flexdiv.classList.add(colorClass);}
+   flexdiv.classList.add(colorClass);
    if (!(targetId == null)) {flexdiv.setAttribute("id", targetId);}
-  
+   
+
+
        // add arrow at start if requested
    if (arrow ){
 		var celldiv = document.createElement("div");
@@ -431,28 +425,32 @@ function createJavascriptList(thisSpecElement){
         celldiv.appendChild(span);
         flexdiv.appendChild(celldiv);
    }
- 
-   
+  
 	 // now add contents of each flexbox cell
 
    for (i=0; i < hebrew.length; i++){
+ 
      //var thisHebrew = hebrew[i].trim();
 	  var celldiv = document.createElement("div");	
  	  
       var thisHebrew = hebrew[i];
 	  var thisSound = sound[i];
-	  
  	  if (thisHebrew[0].trim() == "-"){
          celldiv.classList.add("flex-container-spacer");
          flexdiv.appendChild(celldiv);
 	  
 	  } else {
-           
+       
 		  // more than one hebrew item in this div?
 		  if (Array.isArray(thisHebrew)){
+ 	  
 			  // yes, can't have hebrew in syllables or cantillation
 		     for (j=0; j < thisHebrew.length; j++){
-				var span1 = crTextClickSpan(thisHebrew[j], hebrewClass, "soundclick");
+			    var text1= document.createTextNode(thisHebrew[j]);
+	            var span1 = document.createElement("span");
+ 	            span1.appendChild(text1);
+				span1.classList.add(hebrewClass);
+			    span1.classList.add("soundclick");
  		        celldiv.appendChild(span1);
 		  
 		        var span2 = crAudioSpan(addAudioDirToSoundName(thisSound[j], audioDir));
@@ -474,27 +472,33 @@ function createJavascriptList(thisSpecElement){
 			  
              if (hebrewInSyllables){ 
                  // combine hebrew syllables into words if required
-	            if (cantillation){
-                   var stressedSyllableNumber =  getStressedSyllableNumber(thisHebrew, hebrewStressedSyllable[i]);
-                   thisHebrew = wordFromSyllables(addCantillationToStressedSyllable(thisHebrew, stressedSyllableNumber, thisSound,"all"));
-                } else {
+	         //   if (cantillation){
+             //      var stressedSyllableNumber =  getStressedSyllableNumber(thisHebrew, hebrewStressedSyllable[i]);
+              //     thisHebrew = wordFromSyllables(addCantillationToStressedSyllable(thisHebrew, stressedSyllableNumber, thisSound,"all"));
+              //  } else {
 	               thisHebrew = wordFromSyllables(thisHebrew);
-	            }
+	           // }
 			 }	
 			  
 			 if (hebrewInImage){
-			    if (selectLetterClick) {var img1 =  crImageClick(thisHebrew, imagesDir, hebrewClass, "selectletterclick");}
-		        else                   {var img1 =  crImageClick(thisHebrew, imagesDir, hebrewClass, "soundclick");}
+			    var img1 = document.createElement("img");
+	            img1.src = setJpgName(thisHebrew, imagesDir);
+				img1.classList.add(hebrewClass);
+			    if (selectLetterClick) {img1.classList.add( "selectletterclick");}
+		        else                   {img1.classList.add("soundclick");}
 		        celldiv.appendChild(img1);
              } else {
-			    if (selectLetterClick) {var span1 = crTextClickSpan(thisHebrew, hebrewClass, "selectletterclick");}
-		        else                   {var span1 = crTextClickSpan(thisHebrew, hebrewClass, "soundclick");}
+			    var text1= document.createTextNode(thisHebrew);
+	            var span1 = document.createElement("span");
+ 	            span1.appendChild(text1);
+				span1.classList.add(hebrewClass);
+			    if (selectLetterClick) {span1.classList.add( "selectletterclick");}
+		        else                   {span1.classList.add("soundclick");}
 		        celldiv.appendChild(span1);
 		     }
-			 
 			 var span2 = crAudioSpan(addAudioDirToSoundName(thisSound, audioDir));
 		     celldiv.appendChild(span2);
-	
+		
 		     if (tooltips) {
 		 
 		       if (!(tooltipsShow)) {
@@ -577,24 +581,25 @@ function createJavascriptList(thisSpecElement){
    if (randomOrder) {shuffleJavascriptList(targetId);}
 
 }
-function crImageClick(imageName, imageDir, imgClass, clickType){
-	var image1 = document.createElement("img");
-	image1.src = setJpgName(imageName, imageDir);
-	image1.classList.add(imgClass);
-	image1.classList.add(clickType);
- 	
-	return image1;
-}
 
-function crTextClickSpan(thisText, hebrewClass, clickType){
-	var text1= document.createTextNode(thisText);
-	var span1 = document.createElement("span");
-	span1.classList.add(hebrewClass);
-	span1.classList.add(clickType);
- 	span1.appendChild(text1);
+//function crImageElement(imageName, imageDir){
+//	var image1 = document.createElement("img");
+//	image1.src = setJpgName(imageName, imageDir);
+	//image1.classList.add(imgClass);
+	//image1.classList.add(clickType);
+ 	
+//	return image1;
+//}
+
+//function crTextSpan(thisText){
+//	var text1= document.createTextNode(thisText);
+//	var span1 = document.createElement("span");
+	//span1.classList.add(hebrewClass);
+	//span1.classList.add(clickType);
+ //	span1.appendChild(text1);
 	
-	return span1;
-}
+//	return span1;
+//}
 //----------------------------------------------------------
 
  function shuffleJavascriptList(thisId){
