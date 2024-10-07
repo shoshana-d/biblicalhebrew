@@ -142,6 +142,7 @@ table{
 .main-color{
    background-color:#FAF9F6;  /*off-white */
    background-color: white;
+   
  }	
 .menu-selected-color{
 	/* navigation menu at top of page */
@@ -177,11 +178,15 @@ table{
    background-color:#FAF9F6;  /*off-white */
    background-color:#ffe6e6; /* pale pink */
 }
-.alefbet-exercises-menu-color{
+.alefbet-exercise-menu-color{
    background-color:GhostWhite;
+}  
+.alefbet-exercise-color{
+   background-color:LightYellow;
 }  
 
 .alefbet-plus-color{
+	/* used in detail items */
    background-color:AliceBlue;
 }
   /*- in lessons index */
@@ -190,6 +195,10 @@ table{
 }	
 .noun-color{
    background-color:LightBlue;
+}	
+.lessons-lists-menu-color{
+	/* menu at the top of each lesson, consonant list, vowels list, cantillation marks list */
+   background-color:FloralWhite;
 }	
 
 /*------ emphasised text -----------------------*/
@@ -263,7 +272,8 @@ table{
 }	
 .p-left-margin{
    margin-left: 10px;
-}  
+} 
+
 /*-- hebrew fonts  --*/
 /*----------------------------------------------*/
 .hebrew50,
@@ -674,6 +684,7 @@ table{
    border-width:2px;
    padding:5px;
 }
+	
 .flex-container-heb30-tooltip{
 	/* used in alefbet exercises frequent Tanakh words to show hebrew divided into syllables */
    font-family:'Times New Roman','Times Roman','Times',serif;
@@ -714,7 +725,8 @@ table{
   */
 }
 
-.flex-container-examples{
+.flex-container-examples,
+.flex-container-cantillation-exercise{
 	border:dotted;
 	border-width: 2px;
 	margin-top:5px;
@@ -722,7 +734,8 @@ table{
 }
 
 .flex-container-examples > div,
-.flex-container-examples-no-border > div {
+.flex-container-examples-no-border > div,
+ .flex-container-cantillation-exercise > div{
   margin-top: 5px;
   margin-right: 15px; 
   margin-bottom: 5px;
@@ -1191,6 +1204,23 @@ background-color:HoneyDew;
  
 .btn-close:after{
   content:"\00d7"; /* \00d7 = &times; */
+}	
+
+/*--- Div with close button ---------*/
+/*--------------------------*/
+
+  /* marks a div which is a detail that shows when + button clicked in item above   
+    - position relative required to make following close button position correctly */	  
+.detail-item{
+	  border-style:solid;
+	  border-color:Gray;
+	  border-width:1px;
+	  padding-left:5px;
+	  padding-right:5px;
+	  padding-bottom:5px;
+	  margin-bottom:30px;
+	
+	  position:relative;
 }	
 
 
