@@ -27,21 +27,6 @@
 	border-width:2px;
 	}
 	
-	   /* marks a div which is an exercise in alefbet-exercises   */	  
-   .alefbet-exercise{
-	border-style:solid;
-	border-color:Gray;
-	border-width:1px;
-	padding-left:5px;
-	padding-right:5px;
-	padding-bottom:5px;
-	margin-bottom:5px;
-	
-	background-color:Gold;
-    background-color:LightYellow;
-
-	position:relative;
-    }	
 
 	</style>
 
@@ -71,9 +56,11 @@
 
 
 <!-- testing section  --> 
-<!-- <p>Temporary testing section</p>
+<!-- 
+<p>Temporary testing section</p>
  <p>TEST</p>
- <p id="mytest">test</p>  --> 
+ <p id="mytest">test</p>
+--> 
 <!--  END testing section --> 
 
  
@@ -90,7 +77,7 @@
 <p>With the matching exercises, you can either drag and drop, or point and click. Drag and drop may not work on all devices.</p>
 
 <p style="margin-top:-15px;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>How do I drag and drop in the matching exercises?</p>
-<div class="alefbet-exercise hidden">
+<div class="detail-item alefbet-exercise-color hidden">
 <p>On ipad or other touch screen, touch and hold the answer until it lifts up (the answer will turn green) . 
 Keeping your finger on the screen, drag the answer. Lift your finger to drop the answer.
 </p>
@@ -115,7 +102,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 
 <p style="margin-top:-15px;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>How do I point and click in the matching exercises?</p>
-<div class="alefbet-exercise hidden">
+<div class="detail-item alefbet-exercise-color hidden">
 <p>Select an answer by clicking or touching. The answer will turn green.</p>
 <p>Select the corresponding question by clicking or touching</p>
  <p id="cr-example-point-click" class="onload-flex-drag-drop  hidden ">id:example-point-click
@@ -137,7 +124,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  Practise Biblical Hebrew consonants </h2>
 <div class="hidden" >
 
-<div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
+<div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
    <div id="show-consonants1"><span class="button-plus" onclick="showHideMenuItem(this,true)"></span> Consonant sounds<span class="start-audio"></span></div>
    <div id="show-consonants2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds</div>
    <div id="show-consonants3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds (harder)</div>
@@ -153,7 +140,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 <p></p>
 
-<div id="consonants1" class="alefbet-exercise  hidden">
+<div id="consonants1" class="detail-item alefbet-exercise-color  hidden">
 
 <h3 >Consonant sounds <span class="btn-close"  onclick="menuContentClose(this)"></span></h3> 
 
@@ -170,7 +157,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 
 
-<div id="consonants2" class="alefbet-exercise hidden">
+<div id="consonants2" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Match consonants with their sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each consonant (or consonants) in the top row to the correct box in the bottom row.
@@ -192,7 +179,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 
 
-<div id="consonants3" class="alefbet-exercise hidden">
+<div id="consonants3" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Match consonants with their sounds (harder)<span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>Drag each consonant in the top row to the correct box in the bottom row. 
@@ -211,7 +198,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
 
-<div id="consonants4" class="alefbet-exercise hidden">
+<div id="consonants4" class="detail-item alefbet-exercise-color hidden">
 
 <h3><span class="ear"></span> Match consonants with their sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the sound of the consonant. <br>
@@ -226,7 +213,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
 
-<div id="consonants5" class="alefbet-exercise hidden">
+<div id="consonants5" class="detail-item alefbet-exercise-color hidden">
 
 <h3><span class="ear"></span> Match consonants with their sounds (harder)<span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the sound of the consonant. <br>
@@ -241,7 +228,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
 
-<div id="consonants6" class="alefbet-exercise hidden">
+<div id="consonants6" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Consonants which look similar but have different sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <!-- must have no spaces -->
@@ -257,7 +244,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 
 
-<div id="consonants7" class="alefbet-exercise hidden">
+<div id="consonants7" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Dots in consonants<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p id="consonants-with-dots" class="hidden">
@@ -273,7 +260,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
 
-<div id="consonants8" class="alefbet-exercise hidden">
+<div id="consonants8" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Match final consonants<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
 <p>Drag each consonant in the top row to the correct box in the bottom row. 
@@ -291,7 +278,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
 
-<div id="consonants9" class="alefbet-exercise hidden">
+<div id="consonants9" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Match consonants with the same sound (including final forms of letters)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each consonant in the top row to the correct box in the bottom row. 
@@ -308,7 +295,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
  
-<div id="consonants10" class="alefbet-exercise hidden">
+<div id="consonants10" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Match consonants with the same sound (excluding final forms of letters)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each letter in the top row to the correct box in the bottom row. 
@@ -330,7 +317,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 	<p id="allconsonants-letternames" class="hidden"> Alef|Bet|Vet|Gimmel|Dalet|Heh|Vav|Zayin|Chet|Tet|Yod| Kaf|Chaf|Final Chaf
    |Lamed|Mem|Final Mem|Nun|Final Nun|Samech|Ayin|Pei|Fei|Final Fei|Tzadi|Final Tzadi|Kuf|Resh|Shin|Sin|Tav</p>
 
-<div id="consonants11" class="alefbet-exercise hidden">	
+<div id="consonants11" class="detail-item alefbet-exercise-color hidden">	
 
 <h3>Consonant letter names<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
 <p>Click on <span class="button-plus"></span> under a letter to see its name</p>
@@ -346,7 +333,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
   
 </div>
 
-<div id="consonants12" class="alefbet-exercise hidden">
+<div id="consonants12" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Match consonant letter names<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Drag each letter in the top row to the correct box in the bottom row. 
@@ -378,7 +365,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  <h2 class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise Biblical Hebrew vowels </h2>
  <div class="hidden">
  
-<div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
+<div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
    <div id="show-vowels1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Vowel sounds<span class="start-audio"></span></div>
    <div id="show-vowels2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds</div>
    <div id="show-vowels3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds (harder)</div>
@@ -388,7 +375,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 <p></p>
  
  
-<div id="vowels1" class="alefbet-exercise hidden">
+<div id="vowels1" class="detail-item alefbet-exercise-color hidden">
   <h3>Vowel sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3> 
   <p id="vowels-hebrew-and-sounds" class="hidden">  a1:a | a2 : a | a_or_o: a_or_o 
    |  o1 : o | o2 : o | o3  : o |  ei1  : ei 
@@ -407,7 +394,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
    
 
  
-<div id="vowels2" class="alefbet-exercise hidden ">
+<div id="vowels2" class="detail-item alefbet-exercise-color hidden ">
 <h3>Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Drag each vowel in the top row to the correct box in the bottom row. 
  <br>OR Select a vowel in the top row and then select the corresponding "?" box.
@@ -427,7 +414,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
   </p>
 </div> 
 
-<div id="vowels3" class="alefbet-exercise  hidden">
+<div id="vowels3" class="detail-item alefbet-exercise-color  hidden">
    <h3>Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    <p>Drag each vowel in the top row to the correct box in the bottom row. 
 <br>OR Select a vowel in the top row and then select the corresponding "?" box.
@@ -445,7 +432,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </div>
 
    
-<div id="vowels4" class="alefbet-exercise hidden ">
+<div id="vowels4" class="detail-item alefbet-exercise-color hidden ">
 
 <h3><span class="ear"></span> Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the sound of the vowel. <br>
@@ -460,7 +447,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
  
 </div>
 
-<div id="vowels5" class="alefbet-exercise  hidden">
+<div id="vowels5" class="detail-item alefbet-exercise-color  hidden">
    <h3><span class="ear"></span> Match vowels with their sound (harder)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
    <p>Click on <span class="ear"></span>to hear the sound of the vowel. <br>
    Then click on the corresponding vowel in the top row.</p>
@@ -525,7 +512,7 @@ turns bright yellow (on ipad, a small + also appears). </p>
 </p>
 <p id="consonants-cpv" class="hidden">א: silence | בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch|  ל : l
 |מ: m| נ: n| ס:s| ע  :silence| פּ:p| פ:f| צ:ts|  ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p> 
-<div  class="alefbet-exercise">
+<div  class="detail-item alefbet-exercise-color">
 
 <h3>Select one or more <span class="consonant-color">consonants</span> and one or 
 more <span class="vowel-color2">vowels</span> to practise, then click on "Create exercises" below.<br>
@@ -550,7 +537,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
   <p></p>
  </div>  
  
-  <div id="cpv-exercises1" class="alefbet-exercise hidden" >
+  <div id="cpv-exercises1" class="detail-item alefbet-exercise-color hidden" >
   <h3> Consonant plus vowel</h3>
  <p  class=" hidden" id="cr-cpv-javascript-list">id: cpv-javascript-list| sourceglobal | colorClass: vocab-color|arrow
   |audio: alefbet_consonant_plus_vowel | selection:15  </p>
@@ -560,7 +547,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
   </p>
   </div>
   
-   <div id="cpv-exercises2" class="alefbet-exercise hidden">
+   <div id="cpv-exercises2" class="detail-item alefbet-exercise-color hidden">
  <h3><span class="ear"></span>Match consonant+vowel with its sound</h3>
  <p>Click on <span class="ear"></span>to hear the sound of the consonant+vowel. <br>
  Then click on the corresponding consonant+vowel in the top row.</p>
@@ -585,7 +572,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
 
 
  <h2 id="syllables" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise dividing  Biblical Hebrew words into syllables </h2>
- <div class="alefbet-exercise hidden">
+ <div class="detail-item alefbet-exercise-color hidden">
   
  <p>Divide each word in the dotted boxes into syllables by inserting a space between letters.
 <br> Click on a letter to insert a space to the left. 
@@ -646,26 +633,26 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
 
  
  <p></p>
- <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
+ <div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
    <div id="show-cantillation1"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Practise all cantillation marks</div>
    <div id="show-cantillation2"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Practise 
    <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only</div>
  </div>
 <p></p>
 
-<div id="cantillation1" class="alefbet-exercise hidden">
+<div id="cantillation1" class="detail-item alefbet-exercise-color hidden">
 
 <h3>All cantillation marks <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>For each word in the dotted boxes, click on the stressed syllable.
  <br> You can click on the word to hear the pronunciation.</p>
- <p id="cr-cantillation-all" class="javascript-cantillation hidden"> id:cantillation-all| whichlist: all 
+ <p id="cr-cantillation-all" class="javascript-cantillation-exercise hidden"> id:cantillation-all| whichlist: all 
                  | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
                  | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
-  <p><span class="button-exercise" onclick="reCreateCantillationList('cr-cantillation-all')">Practise again</span></p>
+  <p><span class="button-exercise" onclick="reCreateCantillationExercise('cr-cantillation-all')">Practise again</span></p>
 
 </div>
  
-<div id="cantillation2" class="alefbet-exercise hidden">
+<div id="cantillation2" class="detail-item alefbet-exercise-color hidden">
 
   <h3>Practise    <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only  <span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
   <p  ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Hints</p>
@@ -677,10 +664,10 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
   <p></p>
   <p>For each word in the dotted boxes, click on the stressed syllable.
   <br> You can click on the word to hear the pronunciation.</p>
- <p id="cr-cantillation-pashta-kadma" class="javascript-cantillation hidden">id:cantillation-pashta-kadma |whichlist: pashta-kadma 
+ <p id="cr-cantillation-pashta-kadma" class="javascript-cantillation-exercise hidden">id:cantillation-pashta-kadma |whichlist: pashta-kadma 
                  | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
                  | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
-  <p><span class="button-exercise" onclick="reCreateCantillationList('cr-cantillation-pashta-kadma')">Practise again</span></p>
+  <p><span class="button-exercise" onclick="reCreateCantillationExercise('cr-cantillation-pashta-kadma')">Practise again</span></p>
 
 
 </div>
@@ -695,17 +682,15 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  <h2 id="frequentwords" class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
  Practise pronouncing words which occur frequently in the Tanakh </h2>
  <div class="hidden">
-  <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
+  <div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
    <div id="show-frequent1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with only one syllable<span class="start-audio"></span> </div>
    <div id="show-frequent2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress on final syllable<span class="start-audio"></span></div>
    <div id="show-frequent3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress on second-last syllable<span class="start-audio"></span> </div>
    <div id="show-frequent4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress indicated by cantillation mark<span class="start-audio"></span> </div>
    <div id="show-frequent5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match words with their pronunciation<span class="ear"></span> </div>
-   <div id="show-frequent6"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match words with their pronunciation<span class="ear"></span>  
-   (with cantillation marks)</div>
  </div>
 
-<div id="frequent1" class="alefbet-exercise hidden">
+<div id="frequent1" class="detail-item alefbet-exercise-color hidden">
 
  <h3> Words with only one syllable<span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
   <div id="one-syllable-hebrew" class="hidden">
@@ -736,13 +721,12 @@ w003_lo | w003_lah | w003_lach | w003_li | w004_bo | w004_bah | w004_bach | w004
   | hebrewseparateparas|sourcesound: one-syllable-sounds | containerclass: flex-container-heb-with-tooltips
   |id: one-syllable| arrow|colorClass: vocab-color|audio: words | selection:10 </p>
   <p>
-  <span class="button-exercise" onclick="shuffleJavascriptList('one-syllable')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateJavascriptList('cr-one-syllable')">New selection</span>
+   <span class="button-exercise" onclick="reCreateJavascriptList('cr-one-syllable')">New selection</span>
   </p>
 
 </div> 
 
-<div id="frequent2" class="alefbet-exercise hidden">
+<div id="frequent2" class="detail-item alefbet-exercise-color hidden">
 
  <h3> Words with stress on final syllable<span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables</p>
@@ -822,13 +806,12 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  | containerclass: flex-container-heb-with-tooltips
   |audio: words | selection:10</p>
   <p>
-  <span class="button-exercise" onclick="shuffleJavascriptList('syllables-final')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-final')">New selection</span>
   </p>
 
 </div> 
 
-<div id="frequent3" class="alefbet-exercise hidden">
+<div id="frequent3" class="detail-item alefbet-exercise-color hidden">
 
  <h3> Words with stress on second-last syllable <span class="btn-close "  onclick="menuContentClose(this)"></span> </h3>
  <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables</p>
@@ -868,35 +851,31 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   |colorClass: vocab-color | arrow  
   |audio: words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
   <p>
-  <span class="button-exercise" onclick="shuffleJavascriptList('syllables-penultimate')">Shuffle</span>&emsp;&emsp;
   <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-penultimate')">New selection</span>
   </p>
 
 </div> 
  
- <div id="frequent4" class="alefbet-exercise hidden">
+ <div id="frequent4" class="detail-item alefbet-exercise-color hidden">
 
 <h3> Words with stress indicated by cantillation mark<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables and which syllable is stressed.</p>
- <p id="cr-syllables-cantillation" class="javascript-list  hidden ">id: syllables-cantillation
+ <p id="cr-syllables-cantillation" class="javascript-cantillation-list  hidden ">id: syllables-cantillation
    |sourcehebrew: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
-  |hebrewseparateparas  | hebrewinsyllables| cantillation: last:last:secondlast 
-  |sourcesound: one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds   
-  |tooltips: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
-  |tooltipsclass:flex-container-heb30-tooltip| tooltipsseparateparas 
-     |tooltipsshowstress: last:last:secondlast 
-  | arrow  |colorClass: vocab-color 
-  |audio: words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
+   | cantillation: last:last:secondlast 
+   |sourcesound: one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds   
+   |tooltips: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
+   |tooltipsshowstress: last:last:secondlast 
+  |audio: words| selection:10</p>
   <p>
-  <span class="button-exercise" onclick="shuffleJavascriptList('syllables-cantillation')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-cantillation')">New selection</span>
+  <span class="button-exercise" onclick="reCreateCantillationJavascriptList('cr-syllables-cantillation')">New selection</span>
   </p>
 
 </div> 
 
  
  
-<div id="frequent5" class="alefbet-exercise hidden">
+<div id="frequent5" class="detail-item alefbet-exercise-color hidden">
 
  <h3>Match words with their pronunciation<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the pronunciation of the word. <br>
@@ -914,23 +893,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 </div> 
 
  
-<div id="frequent6" class="alefbet-exercise hidden">
 
- <h3>Match words with their pronunciation (with cantillation marks)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
- <p>Click on <span class="ear"></span>to hear the pronunciation of the word.<br> 
- Then click on the corresponding word in the top row.</p>
-   <p id="cr-match-words2" class="onload-flex-drag-drop  hidden ">id:match-words2
-   | answers: one-syllable-hebrew :syllables-final-hebrew: syllables-penultimate-hebrew 
-    |sounds:one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds  
-  |answersinsyllables   | answersseparateparas   | answerclass:flex-drag-drop-hebrew 
-  | cantillation:last:last:secondlast
-   |audio: words   | colorClass: vocab-color | questionclass: ear |matchsounds |noduplicatesounds | selection:10</p>
-   <p>		  
-  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-words2')">Shuffle</span>&emsp;&emsp;
-  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-words2')">New selection</span>
-  </p>
-
-</div> 
 
  
 </div>  
@@ -942,7 +905,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
  <h2 class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise names of people and places in the Tanakh </h2>
  <div class="hidden">
-  <div class="flex-container-ltr flex-container-menu-items alefbet-exercises-menu-color">
+  <div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
    <div id="show-people1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of people in the Torah<span class="start-audio"></span> </div>
    <div id="show-people2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of people in later books<span class="start-audio"></span> </div>
    <div id="show-people3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of places<span class="start-audio"></span> </div>
@@ -952,7 +915,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
  </div>
 
 
-<div id="people1" class="alefbet-exercise hidden">
+<div id="people1" class="detail-item alefbet-exercise-color hidden">
 
   <h3>Names of people in the Torah<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Click on <span class="button-plus"></span> under a word to see the name</p>
@@ -978,7 +941,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 </div> 
 
-<div id="people2" class="alefbet-exercise hidden">
+<div id="people2" class="detail-item alefbet-exercise-color hidden">
 
 <h3>Names of people in later books<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
 <p>Click on <span class="button-plus"></span> under a word to see the name</p>
@@ -1005,7 +968,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 </div> 
 
-<div id="people3" class="alefbet-exercise hidden">
+<div id="people3" class="detail-item alefbet-exercise-color hidden">
 
   <h3>Names of places<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Click on <span class="button-plus"></span> under a word to see the name of the place</p>
@@ -1029,7 +992,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 
 </div> 
  
-<div id="people4" class="alefbet-exercise hidden">
+<div id="people4" class="detail-item alefbet-exercise-color hidden">
 
  <h3>Match names and places<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
   <p>Drag each Hebrew word in the top row to the correct box in the bottom row.
@@ -1050,7 +1013,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 </div> 
 
 
-<div id="people5" class="alefbet-exercise hidden">
+<div id="people5" class="detail-item alefbet-exercise-color hidden">
 
 <h3><span class="ear"></span> Match names and places <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the name or place. <br>
@@ -1071,7 +1034,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
 </div>
 
 
-<div id="people6" class="alefbet-exercise hidden">
+<div id="people6" class="detail-item alefbet-exercise-color hidden">
 
 <h3><span class="ear"></span> Match names and places <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Click on <span class="ear"></span>to hear the name or place. <br>
