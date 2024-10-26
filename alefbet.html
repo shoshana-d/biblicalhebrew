@@ -41,11 +41,11 @@
 <main class="main-color">
 
 <!-- testing section   --> 
-<!--
+<!-- 
 <p>Temporary testing section</p>
  <p>TEST</p>
  <p id="mytest">test</p>
- --> 
+--> 
 <!--  END testing section -->
 
 
@@ -115,7 +115,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 <p></p>
   <p id="consonants-plus-sounds" class="hidden">א:silence| בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch| ך:ch| ל : l
 |מ: m|ם :m| נ: n|ן:n| ס:s| ע  :silence| פּ:p| פ:f| ף: f|צ:ts| ץ:ts| ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p>
-  <p id="cr-consonants-list" class="javascript-list  hidden ">source: consonants-plus-sounds |id: consonants-list|arrow
+  <p id="cr-consonants-list" class="javascript-list  hidden ">source: consonants-plus-sounds |arrow
   | colorClass: consonant-color  |audio: alefbet_consonants_and_vowels | hebrewclass:hebrew33 </p>
 
 <p> Some people pronounce some of the consonants differently- see 
@@ -135,7 +135,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
  <h3>Dots in consonants <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
 
  <p id="dots-in-consonants" class="hidden">בּ:b|ב:v|-:-|כּ:k|כ:ch|-:-|פּ:p|פ:f</p>
- <p  class="javascript-list  hidden">source: dots-in-consonants |arrow| colorClass: consonant-color
+ <p class="javascript-list  hidden">source: dots-in-consonants |arrow| colorClass: consonant-color
  |audio: alefbet_consonants_and_vowels </p>
  
  <p>Consonants often have dots in them, for example 
@@ -273,14 +273,75 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
   <div id="consonants4" class="detail-item consonant-color2 hidden" >  
   <h3>Consonants that look similar but have different sounds <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
  <p>Some consonants look very similar to other consonants.</p>
-  <p id="consonants-looksimilar" class="hidden">
-  (:( |א:silent|צ:ts| ):)  |  (:( |ב:v|כ:ch| ):)  |  (:( |ד:d|ך:ch|ן:n| ):)  |  (:( |ג:g|נ:n| ):)  |  (:( |ט:t|מ:m| ):)   
-  |  (:( |ו:v|ז:z|ן:n| ):)
-  |  (:( |ה:h|ח:ch|ת:t| ):)   |  (:( |כ:ch|נ:n| ):)   |  (:( |ע:silent|צ:ts| ):)  |   (:( |ם:m|ס:s| ):)    
-  |  (:( |ד:d|ר:r| ):)|    (:( | שׁ:sh| שׂ:s  |):)</p>
-<p  class="javascript-list  hidden">source: consonants-looksimilar |arrow| colorClass: consonant-color
-|audio: alefbet_consonants_and_vowels </p>
-  
+ 
+ <div  class="flex-container-rtl flex-container-heb consonant-color">
+  <div><span class="arrowclick start-audio" ></span></div> 
+  <div>
+     <span class="hebrew35 soundclick">א</span><span class="hidden">alefbet_consonants_and_vowels/silent</span>
+     <span class="hebrew35 soundclick">צ</span><span class="hidden">alefbet_consonants_and_vowels/ts</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+   <div>
+     <span class="hebrew35 soundclick">ב</span><span class="hidden">alefbet_consonants_and_vowels/v</span>
+     <span class="hebrew35 soundclick">כ</span><span class="hidden">alefbet_consonants_and_vowels/ch</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+     <span class="hebrew35 soundclick">ד</span><span class="hidden">alefbet_consonants_and_vowels/d</span>
+     <span class="hebrew35 soundclick">ך</span><span class="hidden">alefbet_consonants_and_vowels/ch</span>
+     <span class="hebrew35 soundclick">ן</span><span class="hidden">alefbet_consonants_and_vowels/n</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+     <span class="hebrew35 soundclick">ג</span><span class="hidden">alefbet_consonants_and_vowels/g</span>
+     <span class="hebrew35 soundclick">נ</span><span class="hidden">alefbet_consonants_and_vowels/n</span>
+  </div>
+   <div class="flex-container-spacer"></div>
+  <div>
+      <span class="hebrew35 soundclick">ט</span><span class="hidden">alefbet_consonants_and_vowels/t</span>
+      <span class="hebrew35 soundclick">מ</span><span class="hidden">alefbet_consonants_and_vowels/m</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+     <span class="hebrew35 soundclick">ה</span><span class="hidden">alefbet_consonants_and_vowels/h</span>
+     <span class="hebrew35 soundclick">ח</span><span class="hidden">alefbet_consonants_and_vowels/ch</span>
+     <span class="hebrew35 soundclick">ת</span><span class="hidden">alefbet_consonants_and_vowels/t</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+     <span class="hebrew35 soundclick">ו</span><span class="hidden">alefbet_consonants_and_vowels/v</span>
+     <span class="hebrew35 soundclick">ז</span><span class="hidden">alefbet_consonants_and_vowels/z</span>
+     <span class="hebrew35 soundclick">ן</span><span class="hidden">alefbet_consonants_and_vowels/n</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+      <span class="hebrew35 soundclick">כ</span><span class="hidden">alefbet_consonants_and_vowels/ch</span>
+      <span class="hebrew35 soundclick">נ</span><span class="hidden">alefbet_consonants_and_vowels/n</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+      <span class="hebrew35 soundclick">ע</span><span class="hidden">alefbet_consonants_and_vowels/silent</span>
+      <span class="hebrew35 soundclick">צ</span><span class="hidden">alefbet_consonants_and_vowels/ts</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+      <span class="hebrew35 soundclick">ם</span><span class="hidden">alefbet_consonants_and_vowels/m</span>
+      <span class="hebrew35 soundclick">ס</span><span class="hidden">alefbet_consonants_and_vowels/s</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+      <span class="hebrew35 soundclick">ד</span><span class="hidden">alefbet_consonants_and_vowels/d</span>
+      <span class="hebrew35 soundclick">ר</span><span class="hidden">alefbet_consonants_and_vowels/r</span>
+  </div>
+  <div class="flex-container-spacer"></div>
+  <div>
+      <span class="hebrew35 soundclick">שׁ</span><span class="hidden">alefbet_consonants_and_vowels/sh</span>
+      <span class="hebrew35 soundclick">שׂ</span><span class="hidden">alefbet_consonants_and_vowels/s</span>
+  </div>
+
+ </div> <!-- flex-container-heb -->
+
+ 
    </div>
    
    
@@ -323,7 +384,7 @@ Click on <span class="start-audio"></span> below to hear all sounds. (Click on <
 </p>
 
  
- <div class="flex-container-rtl flex-container-heb-cv vowel-color" style="max-width:800px; margin:auto;">
+ <div class="flex-container-rtl flex-container-heb-cv vowel-color" style="max-width:780px; margin:auto;">
   <div><span class="arrowclick  start-audio" ></span></div>
   <div><img src="images/vowels/a1.jpg" class="soundclick vowel-image"><span hidden>alefbet_consonants_and_vowels/a</span><br><span class="consonant-vowel" >&thinsp;a</span></div>
   <div><img src="images/vowels/a2.jpg" class="soundclick vowel-image"><span hidden>alefbet_consonants_and_vowels/a</span><br><span class="consonant-vowel" >&thinsp;a</span></div>
@@ -814,7 +875,7 @@ Sometimes <span class="hebrew-in-text">יהוה</span> follows an actual written
 In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as though it were written 
 <span class="hebrew-in-text soundclick">אֱלֹהִים</span><span class="hidden">words/w018_elohim</span>, another of the names for God in the Tanakh,
  so the pronunciation is 
-<span class="hebrew-in-text soundclick">אֲדֹנָי יֱהוִה</span><span class="hidden">alefbet/adonaielohim</span>,
+<span class="hebrew-in-text soundclick" >אֲדֹנָי יֱהוִה</span><span class="hidden">alefbet/adonaielohim</span>,
  Adonai Elohim, and <span class="hebrew-in-text">יהוה</span> is pointed with the vowels of Elohim 
 <span class="hebrew-in-text soundclick">אֱלֹהִים</span><span class="hidden">words/w018_elohim</span>.</p>
 
