@@ -294,7 +294,7 @@ table{
 .hebrew35,
 .hebrew33,
 .hebrew30,
-.hebrew25
+.hebrew25,
 .hebrew-in-text {
     white-space:nowrap;
 }
@@ -499,6 +499,58 @@ table{
   content:"\2713"; 
 }	
 
+/*------ query mark (used in drag-drop exercises)---*/
+/*---------------------------------------------------------------------*/
+.query{ 
+   font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
+}
+.query::after{
+   content:"?"; 
+}
+
+.query-box-in-text{
+    border:dotted;
+	font-size:20px;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:4px;
+	padding-right:4px;
+}
+
+
+ /*------ used in lessons (not in alefbet) ---*/
+/*---------------------------------------------------------------------*/
+.ha-prefix::after{
+      content:"\05D4\05B7";
+}	
+.ha-prefix2::after{
+      content:"\05D4\05B7\05F3";
+}	
+.ha-prefix3::after{
+      content:"\2010\05D4\05B7";
+}	
+.ha-qamatz-prefix::after{
+      content:"\05D4\05B8";
+}	
+.v-prefix::after{
+      content:"\05D5\05B0";
+}
+.u-prefix::after{
+      content:"\05D5\05BC";
+}
+.l-prefix::after{
+      content:"\05DC\05B0";
+}
+.b-prefix::after{
+      content:"\05D1\05BC\05B0";
+}
+.mi-prefix::after{
+      content:"\05DE\05B4";
+}
+.k-prefix::after{
+      content:"\05DB\05BC\05B0";
+}
+
 /*------------------------------------------------------------------- 
    plus and minus signs used optionally with js class showhidenextsiblingclick
    to have same effect when content hidden/shown as detail/summary 
@@ -632,7 +684,7 @@ table{
 }	
  
 .flex-container-heb-cv > div{
-  margin: 10px 4px 10px 4px; /* top right bottom left */
+  margin: 10px 5px 10px 5px; /* top right bottom left */
   text-align: center;
 }	
 
@@ -768,7 +820,7 @@ table{
   margin-left: 15px; 
   margin-top: 0;
 }
-
+   
 
 /* -- drag drop flexboxes - left to right---*/
 /*------------------------------------------*/
@@ -777,8 +829,7 @@ table{
   /* background-color:#f1f1f1; */
    padding: 1px;
 }
-.flex-container-drag-drop ,
-.lesson1-flex-container-drag-drop {
+.flex-container-drag-drop {
   display: flex;
   flex-wrap: wrap;
   /* w3.css container property */
@@ -786,9 +837,7 @@ table{
   padding: 5px;
 }
 .flex-container-drag-drop:after,
-.flex-container-drag-drop:before,
-.lesson1-flex-container-drag-drop:after,
-.lesson1-flex-container-drag-drop:before{
+.flex-container-drag-drop:before{
   /* w3.css container property, don't know if needed */
   content:"";
   display:table;
@@ -801,12 +850,7 @@ table{
   line-height:35px;
   /* margin-top:50px; */
 }
-.lesson1-flex-container-drag-drop > div {
-  margin-right: 10px; 
-  margin-bottom: 5px;
-  text-align: center;
-  line-height:35px;
-}
+
 
 .flex-drag-drop-hebrew {
    font-family:'Times New Roman','Times Roman','Times',serif;
@@ -865,25 +909,14 @@ table{
   /* border-style: solid; */
 }
 
-.flex-drag-drop-query,
-.lesson1-flex-drag-drop-query{
+.flex-drag-drop-query-box{
     font-size:20px;
-    font-family:"Comic Sans", "Comic Sans MS", "Comic Neue",sans-serif;
 	border-style:dotted;
 	display: inline-block;
-}
-
-.flex-drag-drop-query{
 	width:50px;
 	padding:4px;
 }
-.lesson1-flex-drag-drop-query{
-	width:70px;
-}
-.flex-drag-drop-query::after,
-.lesson1-flex-drag-drop-query::after{
-   content:"?"; 
-}
+
 
 
 
@@ -1089,14 +1122,6 @@ background-color:HoneyDew;
 .table-blank-cell{
    background-color:LightGray;
   background-color:WhiteSmoke;
-}
-
-   
-/* lesson 1 exercise specific             */
-/*---------------------------------------*/
-.lesson1-scrollable{
-  height: 400px;
-  overflow: auto;
 }
 
 
