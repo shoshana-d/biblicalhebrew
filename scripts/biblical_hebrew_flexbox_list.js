@@ -1,22 +1,17 @@
 
 "use strict";
 
-// only used in alephbet-exercises for consonant+vowel
-var globalFlexlistHebrew = [];
-var globalFlexlistSound = [];
 
 
 //---- flexboxes containing clickable lists of letters
 //----------------------------------------------------
 	
-//function reCreateJavascriptList(thisSpecId, displayType){
 function reCreateJavascriptList(thisSpecId){
 	// thisSpecId is the id of the element with the flexbox specifications
 	
 	// need to use this when want to shuffle lists which have dividers
 	// or select different content for a list
   var j;
-
 	// first, delete existing list
       // get the id of the flexbox list
    var thisSpecElement = document.getElementById(thisSpecId);
@@ -45,37 +40,31 @@ function reCreateJavascriptList(thisSpecId){
     }
 
    // now create the list again
-   //createJavascriptList(thisSpecElement, displayType);
   createJavascriptList(thisSpecElement);
 	 
 }
 	
-//function createJavascriptList(thisSpecElement, displayType){
 function createJavascriptList(thisSpecElement){
 
 	// thisSpecElement is the paragraph containing the instructions for creating the flexbox
 	
-	// 3 alternative ways of specifying hebrew and sound content
+	// 2 alternative ways of specifying hebrew and sound content
 	// (i) in single source (sourceId) with hebrew:sound pairs and separated by |
 	// (ii) in 2 sources (sourceHebrewId and sourceSoundId) either
 	//        (a)separated by | in each list
 	//           or
 	//        (b)hebrew in separate paragraphs and sounds separated by |
 	//           if hebrew in separate paras, reference must be <div> that encloses them
-	// (iii) in global variables globalHebrew and globalSound which have been populated before creating the list 
-	//        (only used in consonant+vowel exercises)
 	//  All methods have  optional spacers |-| eg hebrew:sound|- :-|hebrew:sound specifying spaces between items
-	//  Method (i) has optional grouping  "(" and ")"(so that items are not divided when width of window changed)
-	//  Lists which have dividers must be recreated instead of being shuffled, spec randomgroups
 	// Optional tooltips (separated by | or in separate paragraphs) always in separate source
 	//                    if tooltips in separate paras, reference id must be in a <div>, not in a <p>
-
-  //test("Hello from flexbox_list, thisspec=" + thisSpecElement.id );  
 	 
+
+
    var j;
    var i;
 
-   var flexboxClass = "flex-container-rtl"; // used for all hebrew flexboxes with audio
+   var flexboxClass = "flex-container-rtl"; // used for all hebrew flexboxes with audio arrow
    var containerClass = "flex-container-heb";  // specifies size of gap between items, default
    var hebrewClass = "hebrew35";  // default								   
    var tooltipsClass = "flex-container-tooltip"; // default
@@ -86,12 +75,9 @@ function createJavascriptList(thisSpecElement){
    var sourceSoundIds = null; 
    var targetId = null;  // the id of the list to be created
    var audioDir = null;  //replaces above, name of sub-directory containing audio
-   
    var hebrewSeparateParas = false;  // if true, Hebrew in separate paragraphs which are contained in a <div>
                                       // default, Hebrew in single paragraph separated by |
    var hebrewInSyllables = false;  // indicate whether each hebrew word has to be combined into a whole word
-   //var cantillation = false;       // add cantillation marks to Hebrew. Requires hebrewInSyllables 
-   //var hebrewGroupStressedSyllable = null;     // in cantillation specification:one value for each sourceHebrewId, values "last" "secondlast"
    
    var hebrewInImage = false;  // if true, the Hebrew input is the name of the image file; used for standalone vowel marks
    var imagesDir = null;        // if hebrewInImage, the name of the subdirectory of /images where the image files are located
@@ -105,27 +91,13 @@ function createJavascriptList(thisSpecElement){
                                     // requires tooltips to be divided by spaces into syllables 
    var tooltipsGroupStressedSyllable = null;     // in tooltipsShowStress specification: one value for each tooltipsSourceIds, values "last" "secondlast"
 			//----------------------------------------------------------------				       
-			// these  options only used in	alephbet-exercises for consonant+vowel			 
+			// this  option only used in	alephbet-exercises for consonant+vowel			 
    var selectLetterClick = false;  // indicates whether letterclick event listener added instead of soundclick event listener
-                              // letterclick event listener
-   var sourceGlobal = false; // indicates that the content for hebrew and sounds is already in the
-                             // global variables globalHebrew and globalSound
-							 // (ie, not in sourceId in the HTML section)
-							 // only used in alefbet-exercises consonant+vowel
            //---------------------------------------------------------------
    var selection =  false;
    var nSelection = 0;
    var arrow = false;
-   //var arrowType = null;
-   var randomOrder = false; // indicates whether items should be shuffled (redundant if selection is true)
-   var randomGroups = false; // 4/10/23 only used in alefbet-exercises Consonants which look similar but have different sounds
-							 
-							 // 18/10/23 Groups now defined by ( and ) and can only be specified 
-							 // if input is combined hebrew and sound
-							 // In the created flexbox list, each group is a separate div
-							 // indicates that items within a group should appear in random order
-							 // "-" now only used for spacing (separate div in flexbox list) - these lists cannot be shuffled
-
+ 
   // get the specifications for the flexbox list
   //-----------------------------------------------
    var parameters = thisSpecElement.innerHTML.split(globalDivider1);
@@ -158,10 +130,6 @@ function createJavascriptList(thisSpecElement){
 		    hebrewSeparateParas = true;
 		 } else if (thisP0 == "hebrewinsyllables"){
 		    hebrewInSyllables = true;
-		// } else if (thisP0 == "cantillation"){
-		//	cantillation = true; 
-		 //   //hebrewStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
-		 //   hebrewGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
 
 		 } else if (thisP0 == "hebrewinimage"){
 			hebrewInImage = true; 
@@ -181,28 +149,19 @@ function createJavascriptList(thisSpecElement){
 			
 		 } else if (thisP0 == "selectletterclick"){
 		    selectLetterClick=true;
-		 } else if (thisP0 == "sourceglobal"){
-		    sourceGlobal = true;
 			   
          } else if (thisP0 == "selection"){
 	        selection = true;
 	        nSelection = thisP[1].trim();
 		 } else if (thisP0 == "arrow"){
 		    arrow=true;
-		 } else if (thisP0 == "randomorder"){
-		    randomOrder=true;
-		 } else if (thisP0 == "randomgroups"){
-		    randomGroups=true;
 		 } 
    }
 
 
+
    // check consistency of specifications
    //-----------------------------------   
- //   if (cantillation ){
-//		if (!(hebrewInSyllables)) { return;}
-//		if (hebrewGroupStressedSyllable == null) { return;}
-//	}	
 	if (tooltips){
 		if (tooltipsShowStress) {
 		   if (tooltipsGroupStressedSyllable == null) { return;}
@@ -217,81 +176,29 @@ function createJavascriptList(thisSpecElement){
 		var tips = [];
 		if (tooltipsShowStress) {var tooltipsStressedSyllable = [];}
 	}	
-	//if (cantillation) {var hebrewStressedSyllableNumber = [];}
-//	if (cantillation) {var hebrewStressedSyllable = [];}
 
-
- 	  // hebrew and sounds read from global variables (only used in consonant+vowel exercises)
-	  //-------------------------------------------------------------------------------------
-   if (sourceGlobal) {
- 
-	  // used when a Hebrew syllables and sounds already created in global variables
-	   for (i=0; i < globalFlexlistHebrew.length; i++){
-		  hebrew[i] = globalFlexlistHebrew[i];
-       }		 
-	   for (i=0; i < globalFlexlistSound.length; i++){
-		  sound[i] = globalFlexlistSound[i];
-       }		 
-
-    // read in hebrew and sounds from HTML
+     // read in hebrew and sounds from HTML
 	//---------------------------------------
-   } else if (sourceId != null){
+   if (sourceId != null){
 	  // hebrew and sounds in a single source
 	  
 	  // can't have hebrewInSyllables or hebrewStressedSyllable
 	  // no multiple sources
   	  
-	  // possibly groups indicated by ( and )
-	  // used in alefbet  and alefbet-exercises "consonants which look similar"
 	  var nGroups = 0;
-	  var groupStarted = false;
-	  var groupItemNumber = 0;
 
       var sourceElement = document.getElementById(sourceId);
 	  if (sourceElement == null) { return;}
       var source = sourceElement.innerHTML.split(globalDivider1);
       for (j = 0; j < source.length; j++) {
 		  var thisSource = source[j].split(globalDivider2);
-  
-		  if (thisSource[0].trim() == "(") {
-			  groupStarted = true;
-			  var thisGroupHebrew = [];
-			  var thisGroupSound = [];
-			  groupItemNumber = 0;
-		  } else if (thisSource[0].trim() == ")") {
-			  if (randomGroups){
-	              // only used in alefbet-exercises "Consonants which look similar but have different sounds"
-				  // randomize order in this group
-				 var nInGroup =  thisGroupHebrew.length;
-				 var order = createIntegerArray(0,nInGroup - 1 );
-                 var shuffleOrder = shuffleArray(order);
- 				 var tempHebrew = Array.from(thisGroupHebrew); //"shallow" copy
-                 var tempSound = Array.from(thisGroupSound);					
-                 for (i=0; i < nInGroup; i++){
-		             thisGroupHebrew[i] = tempHebrew[shuffleOrder[i]];
-		             thisGroupSound[i] = tempSound[shuffleOrder[i]];
-				 }
- 
-              }				 
-			  hebrew[nGroups] = thisGroupHebrew;
-			  sound[nGroups] = thisGroupSound;
-              groupStarted = false;
-              nGroups++;
-			  
-          } else if (groupStarted){
-			  thisGroupHebrew[groupItemNumber] = thisSource[0];
-			  thisGroupSound[groupItemNumber] = thisSource[1];
-			  groupItemNumber++;
-
-          } else {			  
-			  hebrew[nGroups] = thisSource[0];
-			  sound[nGroups] = thisSource[1];
-              nGroups++;
-          }
-	  }	  
+		  hebrew[nGroups] = thisSource[0];
+		  sound[nGroups] = thisSource[1];
+          nGroups++;
+ 	  }	  
 	     
    } else if (sourceHebrewIds != null &  sourceSoundIds != null){
-   // hebrew and sounds in separate sources  (no groups)
+   // hebrew and sounds in separate sources  
       
 	  //-- get sounds --
 	    var idsArray = sourceSoundIds.split(globalDivider2);
@@ -302,35 +209,25 @@ function createJavascriptList(thisSpecElement){
    
        //-- get hebrew--
         var idsArray = sourceHebrewIds.split(globalDivider2);
-	//	if (cantillation){ var stressedSyllableArray = hebrewGroupStressedSyllable.split(globalDivider2);}
 		
         for (i=0; i < idsArray.length; i++) { 
 	       var temp1 = getFromHTML(idsArray[i].trim(), hebrewSeparateParas);
 	       hebrew = hebrew.concat(temp1);
-		   
-		//   if (cantillation) {
-		//	  var temp2 = [];
-		//	  for (j=0; j < temp1.length; j++) {
-		//		 temp2[j] = stressedSyllableArray[i];
-		//	  }
-         //     hebrewStressedSyllable = hebrewStressedSyllable.concat(temp2);			  
-		 //  }	   
 	    }  
  
    } else {
        return;
    }
-
+ 
    // check that same number of items in hebrew and sound
       if (hebrew.length !=  sound.length)  { return;  }	// this is an error 
 
-   // read in tooltips (if any) from HTML (can't have tooltips if there are groups)
+   // read in tooltips (if any) from HTML 
       if (tooltips) { 
 	  	 var idsArray = tooltipsSourceIds.split(globalDivider2);
 	  
 	     if (tooltipsShowStress){
 			 var stressedSyllableArray = tooltipsGroupStressedSyllable.split(globalDivider2);
-		     //var tempStressedSyllables = [];
          }
 		 
  	     for (i=0; i < idsArray.length; i++) { 
@@ -381,7 +278,6 @@ function createJavascriptList(thisSpecElement){
 	   
 	     hebrew.length = 0;
 		 sound.length = 0;
-	//	 if (cantillation){hebrewStressedSyllable.length = 0;}
 	     if (tooltips) {
 	 		 tips.length = 0;
 	 	 	 if (tooltipsShowStress) {tooltipsStressedSyllable.length = 0; }
@@ -390,8 +286,7 @@ function createJavascriptList(thisSpecElement){
 	 	 for (i=0; i < nSelection; i++) { 
             hebrew[i] = tempHebrew[selectionList[i]];
             sound[i] = tempSound[selectionList[i]];
-      // 	    if (cantillation){hebrewStressedSyllable[i] = tempHebrewStressedSyllable[selectionList[i]];}
-	        if (tooltips) {
+ 	        if (tooltips) {
 	 		   tips[i] = tempTooltips[selectionList[i]];
 	 	 	   if (tooltipsShowStress) {tooltipsStressedSyllable[i] = tempTooltipsStressedSyllable[selectionList[i]]; }
 	 		}
@@ -410,8 +305,6 @@ function createJavascriptList(thisSpecElement){
    flexdiv.classList.add(containerClass);
    flexdiv.classList.add(colorClass);
    if (!(targetId == null)) {flexdiv.setAttribute("id", targetId);}
-   
-
 
        // add arrow at start if requested
    if (arrow ){
@@ -440,44 +333,10 @@ function createJavascriptList(thisSpecElement){
          flexdiv.appendChild(celldiv);
 	  
 	  } else {
-       
-		  // more than one hebrew item in this div?
-		  if (Array.isArray(thisHebrew)){
- 	  
-			  // yes, can't have hebrew in syllables or cantillation
-		     for (j=0; j < thisHebrew.length; j++){
-			    var text1= document.createTextNode(thisHebrew[j]);
-	            var span1 = document.createElement("span");
- 	            span1.appendChild(text1);
-				span1.classList.add(hebrewClass);
-			    span1.classList.add("soundclick");
- 		        celldiv.appendChild(span1);
-		  
-		        var span2 = crAudioSpan(addAudioDirToSoundName(thisSound[j], audioDir));
-
-		        celldiv.appendChild(span2);
-		   
-		        var text3= document.createTextNode(" ");
-		        celldiv.appendChild(text3);
-             }
-		
-		     flexdiv.appendChild(celldiv);
-	
-	         var celldiv = document.createElement("div");	
-             celldiv.classList.add("flex-container-spacer");
-             flexdiv.appendChild(celldiv);
-			 
-		  } else {
-			  // only one hebrew item in this div
-			  
+ 			  
              if (hebrewInSyllables){ 
                  // combine hebrew syllables into words if required
-	         //   if (cantillation){
-             //      var stressedSyllableNumber =  getStressedSyllableNumber(thisHebrew, hebrewStressedSyllable[i]);
-              //     thisHebrew = wordFromSyllables(addCantillationToStressedSyllable(thisHebrew, stressedSyllableNumber, thisSound,"all"));
-              //  } else {
 	               thisHebrew = wordFromSyllables(thisHebrew);
-	           // }
 			 }	
 			  
 			 if (hebrewInImage){
@@ -543,63 +402,35 @@ function createJavascriptList(thisSpecElement){
 
  		     flexdiv.appendChild(celldiv);
  		
-          } // only 1 item
 	  }	// not "-"  
    }	  
- 
-   // finished creating the celldiv with the flexbox items
-   
-    // add order to each div 
-    // addOrderToFlexdiv(flexdiv);
 
+   // finished creating the celldiv with the flexbox items
+//test("hello from createJavascriptList " + targetId);
    // add event listeners to flexbox
     var flexdivElements =  flexdiv.getElementsByTagName("*");
     for (i=0; i < flexdivElements.length; i++){
       if (flexdivElements[i].classList.contains("soundclick")) {
 		 addsoundclickEventListener(flexdivElements[i]);
-	
-	  } else if (flexdivElements[i].classList.contains("selectletterclick")) {
-		   addSelectLetterEventListener(flexdivElements[i]);  // defined in biblical_hebrew_consonant_plus_vowel_exercise.js
-		  
+      } else if (flexdivElements[i].classList.contains("selectletterclick")) {
+         addSelectLetterEventListener(flexdivElements[i]);  
 	  } else if (flexdivElements[i].classList.contains("arrowclick")) {
 		 addArrowclickEventListener(flexdivElements[i]);
- 	
 	  }
 		  
 	    // tooltips
       if (flexdivElements[i].classList.contains("tooltip-button-marker")) {
-           //addShowHideNextSiblingEventListener(flexdivElements[i]);
            flexdivElements[i].addEventListener("click", function(){ShowHideParentNextSibling(event.target)});
       }
 
     } 
 
    // add flexbox to document	
-   //thisElement.parentNode.insertBefore(flexdiv, thisElement);
    thisSpecElement.parentNode.insertBefore(flexdiv, thisSpecElement);
-   
-   if (randomOrder) {shuffleJavascriptList(targetId);}
 
 }
 
-//function crImageElement(imageName, imageDir){
-//	var image1 = document.createElement("img");
-//	image1.src = setJpgName(imageName, imageDir);
-	//image1.classList.add(imgClass);
-	//image1.classList.add(clickType);
- 	
-//	return image1;
-//}
 
-//function crTextSpan(thisText){
-//	var text1= document.createTextNode(thisText);
-//	var span1 = document.createElement("span");
-	//span1.classList.add(hebrewClass);
-	//span1.classList.add(clickType);
- //	span1.appendChild(text1);
-	
-//	return span1;
-//}
 //----------------------------------------------------------
 
  function shuffleJavascriptList(thisId){
@@ -703,7 +534,17 @@ function changeUpArrowToDown(thisId){
 
 }
 
+function addSelectLetterEventListener(element){
+    // selectletter in <span>, letter in following <p> (or <span>)
 
-  
+   element.addEventListener("click", function() {
+      this.classList.toggle("select-letter");
+      //hideExerciseDiv();
+	  //turnOffArrowSound();
+   });
+}
+
+ 
+
 
 

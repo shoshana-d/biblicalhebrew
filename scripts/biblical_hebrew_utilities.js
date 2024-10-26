@@ -46,14 +46,6 @@ function addArrowclickEventListener(element){
    });
 }
 
-  //WHERE IS THIS USED??
-//function addSoundclick4EventListener(element){
-   // soundclick in td element of table, letter in paragraph after textnode with cell text, but within td element
-//    element.addEventListener("click", function() {
-//       var thisLetter =  this.childNodes[1].innerHTML;
-//	   playSound(thisLetter);
- //  });
-//}
     //-------- code for playing sounds --------- 
 function playSound(sound){
 	// expects sound to have directory pathname and .mp3
@@ -165,6 +157,9 @@ function playConsonants3(thisArrow,audioItems,  itemNumber){
    }	 
 } 
 
+
+
+
    //-------- utility function to set pathname and add .jpg to name of imagefile
    //  called from exercises which include vowels image files
 	
@@ -251,7 +246,8 @@ function reverseArray(array){
 function shuffleArray(array) {
 	var i;
 	var j;
-	var temp;
+
+ /* Randomize array in-place using Durstenfeld shuffle algorithm */
     for ( i = array.length - 1; i > 0; i--) { 
   
        // Generate random number 
@@ -278,9 +274,9 @@ function removeFirstItem(thisString){
 	return item;
 }
 	
-function getFromHTML( HTMLId, separateParas){
+function getFromHTML( HTMLId, separateParas, trim=false){
 	// return an array of items from an HTML id
-	// items are NOT trimmed (need to leave &thinsp; in some Hebrew
+	// items are NOT trimmed by default (need to leave &thinsp; in some Hebrew - but this may not be necessary any more now that vowels are images)
 	
 	//var i;
 	var j;
@@ -308,10 +304,15 @@ function getFromHTML( HTMLId, separateParas){
 	    } else {	  
 		   // items in single paragraph
  		      //items[j + startIndex] = source[j].trim();
-		     items[j] = source[j];
+		   items[j] = source[j];
 	    }
-	  
 	}
+	
+	if (trim) {
+		for (j = 0; j < items.length; j++) {
+			items[j] = items[j].trim();
+	    }		
+	}	
 	
    return items;
 }
