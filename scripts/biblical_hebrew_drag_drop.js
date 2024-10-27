@@ -7,7 +7,8 @@
 //--------------------------------------------------
 
  function createFlexDragDrop(thisSpecElement){
-//test("hello from createFlexDragDrop, thisSpecElement id= " + thisSpecElement.id);  
+//test("hello from createFlexDragDrop, thisSpecElement id= " + thisSpecElement.id); 
+ 
 	// thisSpecElement is the paragraph containing the instructions for creating the flexbox
 
    var i;
@@ -23,7 +24,6 @@
    var answersSeparateParas = false;
    var answersInSyllables = false;  // indicate whether have to be combined into a whole word
                                     // for drag drop matching sounds for words in Tanakh exercise
-   var keepAnswer = false;       // when a correct answer has been selected, don't hide it in the list of answers
    
    var questionsAnswersSame = false;  // questions and answers specified in pairs, randomly assigned to question or answer
    var questionsAnswersSourceId = null;
@@ -72,7 +72,6 @@
 	 } else if (thisP0 == "answersinsyllables"){
 		answersInSyllables = true;
 		
-		
 	 } else if (thisP0 == "questionsanswers"){
 		questionsAnswersSame = true;
 		questionsAnswersSourceId = thisP[1].trim();  
@@ -109,12 +108,19 @@
 
    // some checks
    if (flexId == null  ) { return;  }	// have to specify a target id
-   if (questionsAnswersSame && questionsAnswersSourceId==null) { return;}
-   else if (answersSourceId==null){ return;}
    if (soundsSpecified && audioDir==null) {return;}
    if (answerInImage && imagesDir==null) {return;}
-   if ((!(questionsAnswersSame || matchSounds)) && questionsSourceId==null) {return;}
    if (matchSounds && !soundsSpecified) {return;}
+
+   if (questionsAnswersSame ){
+	   if (questionsAnswersSourceId==null) { return;}
+   } else {
+       if (answersSourceId==null){ return;}
+	   if (!(matchSounds)){
+		   if (questionsSourceId==null) {return;}
+	   }	   
+   }   
+
 
    if (matchSounds){ questionClass = matchSoundsQuestionClass;}
 
@@ -130,14 +136,16 @@
 	   // questions and answers in the same list, for each set, randomly select which is question and answer
 	   // in pairs, each pair separated by | within pairs separated by :
 	   // always only one source list
-	   var items = getFromHTML(questionsAnswersSourceId, false);
+	   var items = getFromHTML(questionsAnswersSourceId, questionsSeparateParas);
 	   for (i=0; i < items.length; i++) {
 		  // now assign one of each item to question and one to answer
 		  var thisItem = items[i].split(globalDivider2);
 		  var order = shuffleArray(createIntegerArray(0,thisItem.length - 1));
 		  questions[i] = thisItem[order[0]];
 		  answers[i] = thisItem[order[1]];
-	   }	  
+	   }
+
+    	   
    } else {
 	   // get answers
 	   answers = getInput(answersSourceId, answersSeparateParas);
@@ -163,7 +171,7 @@
 		   if (questions.length == 0) {return;}
 	   }
    }
- 
+
    // check
    if (answers.length == 0) {return;}
    if ( questions.length > 0 && !(questions.length == answers.length)) {return;}
@@ -205,9 +213,10 @@
 	// answers flexbox
 	//----------------
    
-    var answersFlexdiv = createAnswersFlexbox(answersFlexId, answers, answerClass, answerInImage, imagesDir, sounds);
+   var answersFlexdiv = createAnswersFlexbox(answersFlexId, answers, answerClass, answerInImage, imagesDir, sounds);
+
 	 // add answers flexbox to overall container
-    overallFlexdiv.appendChild(answersFlexdiv);
+   overallFlexdiv.appendChild(answersFlexdiv);
    	 // add order to each cell
    // var divs = answersFlexdiv.children;
 	//for (i=0; i < divs.length; i++){ divs[i].style.order = i; }
@@ -326,12 +335,12 @@
 		   }  
 	   } else {  
  	       if (thisClassList.contains("query")) {
-              thisElement.addEventListener("drop", function(){handleDrop(event, keepAnswer);});
+              thisElement.addEventListener("drop", function(){handleDrop(event);});
 		      thisElement.addEventListener("dragenter",function(){handleDragEnter(event);});
 		      thisElement.addEventListener("dragleave",function(){handleDragLeave(event);});
 		      thisElement.addEventListener("dragover",function(){handleDragOver(event);});
 		   
-		      thisElement.addEventListener("click", function(){checkAnswer(event, keepAnswer);});
+		      thisElement.addEventListener("click", function(){checkAnswer(event);});
 	       } 
        }		   
     }   
@@ -340,7 +349,8 @@
 	thisSpecElement.parentNode.insertBefore(overallFlexdiv, thisSpecElement);
 	
 	// finally, shuffle
-	shuffleNewFlexDragDrop(flexId);
+	shuffleNewFlexDragDropQuestions(flexId);
+	shuffleNewFlexDragDropAnswers(flexId);
 
 }
 
@@ -421,25 +431,32 @@ function reCreateFlexDragDrop(thisId){
 }
 
 
-function shuffleNewFlexDragDrop(thisId) {
+function shuffleNewFlexDragDropAnswers(thisId) {
     // thisId is the id of the flexbox (not the id of the paragraph with the parameters for the flexbox)
 	// this function shuffles a newly created drag drop exercise
   var i;
   var answersId = thisId + "-answers";
-  var questionsId = thisId + "-questions";
   const answersContainer = document.getElementById(answersId);
    if (answersContainer == null){ return;}
   const answersCells = answersContainer.children;  
-  const questionsContainer = document.getElementById(questionsId);
-   if (questionsContainer == null){ return;}
-  const questionsCells = questionsContainer.children;  
   const nCells = answersContainer.childElementCount ;
 
   var shuffleOrder = shuffleArray(createIntegerArray(0, nCells-1));
   for ( i = 0; i < nCells; i++) {
 	answersCells[i].style.order = shuffleOrder[i];
   } 
-  
+
+}
+function shuffleNewFlexDragDropQuestions(thisId) {
+    // thisId is the id of the flexbox (not the id of the paragraph with the parameters for the flexbox)
+	// this function shuffles a newly created drag drop exercise
+  var i;
+  var questionsId = thisId + "-questions";
+  const questionsContainer = document.getElementById(questionsId);
+   if (questionsContainer == null){ return;}
+  const questionsCells = questionsContainer.children;  
+  const nCells = questionsContainer.childElementCount ;
+ 
   var shuffleOrder = shuffleArray(createIntegerArray(0, nCells-1));
   for ( i = 0; i < nCells; i++) {
 	questionsCells[i].style.order = shuffleOrder[i];
@@ -447,7 +464,8 @@ function shuffleNewFlexDragDrop(thisId) {
 
 }
 
-
+//---- no longer used, not sure that this works correctly--------------------------------
+//  (may not remove droppable from last selected query box)
 function shuffleExistingFlexDragDrop(thisId) {
     // thisId is the id of the flexbox (not the id of the paragraph with the parameters for the flexbox)
   var i;
@@ -471,13 +489,17 @@ function shuffleExistingFlexDragDrop(thisId) {
     
    // in questions section, make query boxes visible and answers invisible
   var questionMarks = questionsContainer.getElementsByClassName("flex-drag-drop-query-box");
-  for (i=0; i < questionMarks.length; i++) { questionMarks[i].classList.remove("hidden");}
+  for (i=0; i < questionMarks.length; i++) { 
+     questionMarks[i].classList.remove("hidden");
+     questionMarks.classList.remove("flex-drag-drop-droppable"); 
+  }
   
   var correctAnswers = questionsContainer.getElementsByClassName("questionsRowAnswer");
   for (i=0; i < correctAnswers.length; i++) { correctAnswers[i].classList.add("hidden");}
 
 
-  shuffleNewFlexDragDrop(thisId);
+  shuffleNewFlexDragDropAnswers(thisId);
+  shuffleNewFlexDragDropQuestions(thisId);
 }
 
 //------ utility functions ------------------
@@ -596,7 +618,7 @@ function selectAnswer(ev) {
 	}   
 }	
 
-function checkAnswer(ev, keepAnswer) {
+function checkAnswer(ev) {
 
 	// when user clicks on "?" box
 	var thisElement = ev.target;
@@ -622,13 +644,10 @@ function checkAnswer(ev, keepAnswer) {
 		   //selectedElement[0] = setUnselected(selectedElement[0]);
 		   setUnselected(proposedAnswerElement);
 //test("hello from checkAnswer, selectedElement[0]=" + selectedElement[0]);          
-		   if (!keepAnswer) {
 	            // remove the answer from the possible answers
-	          proposedAnswerElement.classList.add("hidden"); 
-//test("hello from checkAnswer, keepAnswer=" + keepAnswer);          
-			  
-           }
+	       proposedAnswerElement.classList.add("hidden"); 
 	       var finished = dragDropFinished(thisElement);
+test("hello from checkAnswer, finished=" + finished);          
 	  
 	       if (finished) {
 	         rewardModal("Well done!"); 
@@ -719,7 +738,7 @@ function handleDragOver(ev) {
    ev.preventDefault();
 }
 
-function handleDrop(ev, keepAnswer) {
+function handleDrop(ev) {
    var i;
    ev.preventDefault();
    
@@ -740,9 +759,7 @@ function handleDrop(ev, keepAnswer) {
        //var selectedElement = document.getElementById(idAnswersDiv).getElementsByClassName("flex-drag-drop-selected")[0];
        var selectedElement = getChildrenWhichAreSelected(document.getElementById(idAnswersDiv))[0];
 	   setUnselected(selectedElement);
- 	   if (!keepAnswer){
-           selectedElement.classList.add("hidden"); 
-	   }
+       selectedElement.classList.add("hidden"); 
 	   var finished = dragDropFinished(thisElement);
 	  
 	   if (finished) {
@@ -755,26 +772,23 @@ function handleDrop(ev, keepAnswer) {
 }
 
 
+
 function dragDropFinished(thisSpec){
    // thisSpec is one of the query boxes in the questions flexbox
    // if all the query boxes have the class "hidden" then all the questions have been answered   
    var i;
    const questionsFlexdiv = thisSpec.parentNode.parentNode;
-   const questionsDivs = questionsFlexdiv.children;
+   var queryBoxes = questionsFlexdiv.getElementsByClassName("flex-drag-drop-query-box");
    
-   if (questionsDivs.length == 1){
-	   var finished = false;
-   } else {	
-       var finished = true;	
+   var finished = true;	
    
-       for (i=0; i < questionsDivs.length; i++) { 
-	      var spans = questionsDivs[i].children;
-          if (!(spans[2].classList.contains("hidden"))){
-		      finished = false;
-		      break;
-	      }	
-       }		  
+   for (i=0; i < queryBoxes.length; i++) { 
+      if (!(queryBoxes[i].classList.contains("hidden"))){
+		  finished = false;
+		  break;
+      }	
    }
-   return finished;
+    
+    return finished;
 
 }
