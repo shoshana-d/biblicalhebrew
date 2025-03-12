@@ -41,6 +41,19 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 /*----------------------------------------------*/
 .w3-bar{width:100%;overflow:hidden}
 .w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+
+.w3-bar .w3-bar-item-alefbet{
+	padding:8px 8px;float:left;width:auto;display:block;outline:0;
+	color:#b91d47;
+	color:Gray;
+	background-color:Ivory;}
+.w3-bar .w3-bar-item-alefbet-selected{
+	padding:8px 8px;float:left;width:auto;display:block;outline:0;
+	color:#b91d47;
+	color:Gray;
+	color:Black;
+	background-color:#ea7b98;}
+
 .w3-bar .w3-button{white-space:normal}
 .w3-bar:before,
 .w3-bar:after{content:"";display:table;clear:both}
@@ -53,7 +66,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 .w3-button{width:100%;text-align:left;padding:8px 16px} 
 /*.w3-button:hover{color:#000!important;background-color:#ccc!important}*/
 .w3-button:hover{color:#000!important;background-color:#d3e39c!important} /* lighter version of metro light green  */
-
+.w3-button:hover{color:#000!important;background-color:LightGray!important} 
 
 /*  used in headings (including top heading */
 /*------------------------------------------*/
@@ -79,6 +92,7 @@ html{overflow-x:hidden}
 html{
   max-width:1100px;
   max-width:1000px;
+  max-width:850px;
   margin: auto;
 }
 	
@@ -169,10 +183,7 @@ table{
 	 background-color:Khaki;
 
 }  
-.vocab-word-color{ 
-  /* in Lessons */
- background-color:#ffffcc;  /* w3-yellow */
-}
+
 .vocab-color {
    background-color:#f1f1f1; /* w3-light-gray */
    background-color:#FAF9F6;  /*off-white */
@@ -195,11 +206,16 @@ table{
 }	
 .noun-color{
    background-color:LightBlue;
-}	
+}
+.preposition-color{
+   background-color:LightGreen;
+}   
 .lessons-lists-menu-color{
-	/* menu at the top of each lesson, consonant list, vowels list, cantillation marks list */
+	/* menu at the top of each lesson created in JS, 
+	consonant list, vowels list, cantillation marks list */
    background-color:FloralWhite;
 }	
+
 
 /*------ emphasised text -----------------------*/
 .text-border{
@@ -209,7 +225,8 @@ table{
 	/* padding:0px 5px;*/ /* top/bottom right/left */
 	padding:0px 5px 2px 5px; /* top right bottom left*/
 	padding:0 ; /* top right bottom left   for images*/
-	/*white-space:nowrap;*/
+	
+	/* white-space:nowrap;*/
 }
 
 .unmarked-text{
@@ -241,11 +258,6 @@ table{
 	font-style: italic;
 	color:gray;
 }
-  /* only used in lessons */
-.biblical-reference{
-   font-style:italic;
-}  
- 
 
 /*------ audio indication-----------------------*/
 .audio-indicator{
@@ -363,6 +375,13 @@ table{
    width:28px; 
    height:28px; 
    margin-top:-5px;
+   vertical-align:text-top;   
+}	
+.vowel-image-intext3 {
+	/* used in lessons toc */
+   width:25px; 
+   height:25px; 
+   margin-top:-1px;
    vertical-align:text-top;   
 }	
 .vowel-image-select-exercise {
@@ -517,9 +536,102 @@ table{
 	padding-right:4px;
 }
 
-
+/*---------------------------------------------------------------------*/
  /*------ used in lessons (not in alefbet) ---*/
 /*---------------------------------------------------------------------*/
+
+.lesson-title{
+	/*
+	border:solid;
+	border-width: 2px;
+	*/
+	margin-top:20px;
+	margin-bottom:20px;
+	background-color:LightBlue;
+	background-color:LightSteelBlue;
+    background-color:white; 
+	background-color:LightPink;
+	
+}
+.lesson-synopsis{
+
+}	
+.lesson-heading{
+	border-bottom:solid;
+	border-bottom:none;
+	border-width: 2px;
+	margin-top:20px;
+	margin-bottom:20px;
+	background-color:AliceBlue;
+}	
+.lesson-heading::before{
+   content:"\25B6";
+   content:"\25C9";
+   content:"\261E";
+   content:"\2605";
+}	
+
+.lesson-section{
+	margin-left:20px;
+	margin-right:20px;
+	padding:5px;
+	background-color:Ivory;
+	background-color:WhiteSmoke;/*#f5f5f5*/
+	background-color:#f5f5f5;
+}
+
+.lesson-exercise-header{
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:10px;
+	background-color: PaleGreen;
+    background-color: LightGreen;
+}	
+.lesson-exercise-container{
+	/* from detail-item */
+	border-style:solid;
+    border-color:Gray;
+	border-width:1px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:5px;
+	margin-bottom:30px;
+
+	background-color:HoneyDew;
+	background-color:Ivory;
+	background-color:LightYellow;
+	background-color:White;
+ }
+.lesson-exercise{
+   background-color:HoneyDew; 	
+}	
+.vocab-word-color{ 
+  /* in Lessons */
+ background-color:#ffffcc;  /* w3-yellow */
+}
+
+.text-border-lesson-exercise-question{
+	/* used in flexboxes with arrow to show which word is being sounded */
+	border-style:solid;
+	border-color:red;
+	/* padding:0px 5px;*/ /* top/bottom right/left */
+	padding:0px 5px 2px 5px; /* top right bottom left*/
+	padding:0 ; /* top right bottom left   for images*/
+	
+	white-space:nowrap;
+}
+.text-border-lesson-exercise-answer{
+	/* used in lessons exercise when correct answer is selected */
+	border-style:solid;
+	border-color:red;
+	padding:0px 2px 5px 2px; /* top right bottom left*/
+}
+  
+.biblical-reference{
+   font-style:italic; /* only used in lessons */
+}  
+
+
 .ha-prefix::after{
       content:"\05D4\05B7";
 }	
@@ -546,6 +658,9 @@ table{
 }
 .mi-prefix::after{
       content:"\05DE\05B4";
+}
+.me-prefix::after{
+      content:"\05DE\05B5";
 }
 .k-prefix::after{
       content:"\05DB\05BC\05B0";
@@ -642,6 +757,7 @@ table{
 }
 
 
+
 /*-------- clickable flexbox lists - right to left---------*/
 /*---------------------------------------------------------*/                                    
 
@@ -671,7 +787,9 @@ table{
 }
  
   
-.flex-container-heb > div {
+.flex-container-heb > div,
+.flex-container-heb-lessons-exercises > div 
+{
   margin: 3px 0 3px 15px; /* top right bottom left */
   margin: 3px 0 3px 13px; /* top right bottom left */
   text-align: center;
@@ -683,6 +801,10 @@ table{
 	margin-right:0;
 }	
  
+.flex-container-heb-lessons-exercises > div p{
+	margin:0 0 2px 0;
+}
+
 .flex-container-heb-cv > div{
   margin: 10px 5px 10px 5px; /* top right bottom left */
   text-align: center;
@@ -711,7 +833,7 @@ table{
 } 
 
 
-.flex-container-heb-lessons {
+.flex-container-heb-lessons-lists {
 	/* used in lists of consonants, vowels and cantillation marks at top of each lesson */
     justify-content:center;
 	border-bottom:solid; 
@@ -721,7 +843,7 @@ table{
 	border-top-width:1px; 
 	border-top-color:gray;
  }
-.flex-container-heb-lessons > div {
+.flex-container-heb-lessons-lists > div {
   margin: 6px 0 3px 5px; /* top right bottom left */
   text-align: center;
  }
@@ -735,6 +857,13 @@ table{
    border-style:dotted;
    border-width:2px;
    padding:5px;
+ }
+
+.flex-container-lessons-tooltip{
+	/* used to show translation in lessons exercise */
+   border-style:dotted;
+   border-width:2px;
+   padding:0;
 }
 	
 .flex-container-heb30-tooltip{
@@ -934,7 +1063,6 @@ table{
 */
 
 /* glasses-table has space for glasses or similar in col 1 and content in col2, no borders */
-/* lessons-toc-table used in lessons */
 /* exercise-table, verb-table, noun-table, example-table used in individual lessons */
 
 .glasses-table td:first-child{
@@ -956,7 +1084,7 @@ table{
 .verb-table th,
 .noun-table td,
 .noun-table th {
-    padding:8px 8px;
+    padding:8px;
 	display:table-cell;
 	vertical-align:top;
 	border-bottom:1px solid #ddd;
@@ -973,12 +1101,13 @@ table{
 .exercise-table td:first-child,
 .exercise-table th:first-child{
    text-align:left;
-   width:50%;
+   width:40%;
 }
 .exercise-table td:nth-child(2),
 .exercise-table th:nth-child(2){
    text-align: right;
 }
+
 .verb-table td:first-child,
 .verb-table th:first-child{
    width:100px;
@@ -990,29 +1119,33 @@ table{
 }
 
 .tanakh-example-table{
-   margin-left:25px;
+  /* margin-left:25px;
    margin-right:25px;
+   */
+   width:100%;
 }
 .tanakh-example-table td{
     padding:0 10px 0 0; /* Only right padding*/
 	vertical-align:top;
-	background-color: #eff4ff; /* metro light blue , consonant-color*/
+	/* background-color: #eff4ff; /* metro light blue , consonant-color*/
 background-color:Lavender;
 background-color:Beige;
 background-color:PaleGreen;	
 background-color:Aquamarine;	
 background-color:HoneyDew;	
-
+background-color:white;
 
 }
 .tanakh-example-table td:first-child{
 	/* biblical reference */
 	text-align:right;
 	font-style:italic;
+	width:15%;
 }	
 .tanakh-example-table td:nth-child(2){
 	/* translation */
 	text-align:left;
+	width:40%
 }	
 .tanakh-example-table td:nth-child(3){
 	/* hebrew30 */
@@ -1020,11 +1153,13 @@ background-color:HoneyDew;
    direction:rtl;
    line-height:30px;
    font-size:30px;
+   width:40%
    
 }	
 .tanakh-example-table td:nth-child(4){
     /* audio arrow */
 	text-align:left;
+	width:5%;
 }
 
   /* reference tables */
@@ -1120,7 +1255,7 @@ background-color:HoneyDew;
 }  
 
 .table-blank-cell{
-   background-color:LightGray;
+  background-color:LightGray;
   background-color:WhiteSmoke;
 }
 
