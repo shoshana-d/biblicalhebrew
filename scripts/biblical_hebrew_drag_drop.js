@@ -2,6 +2,22 @@
 
 "use strict";
 
+// code executed on load
+//----------------------
+document.addEventListener('DOMContentLoaded', function() {
+ 	var i;
+ 
+   // create the drag drop flexboxes in JS  (includes event listeners) 
+   var onloadDragClass = document.getElementsByClassName("onload-flex-drag-drop");
+   for (i = 0; i < onloadDragClass.length; i++) {
+      var thisSpec = onloadDragClass[i];
+      createFlexDragDrop(thisSpec);
+   }	
+
+
+})
+
+
 
 //------- drag-drop flexboxes ----------------------
 //--------------------------------------------------
@@ -35,8 +51,8 @@
    var answerInImage = false; // if true, the answers input is the name of the image file(s); used for standalone vowel marks
    var imagesDir = null;        // if answerInImage, the name of the subdirectory of /images where the image files are located
 
-   var selection =  false;
-   var nSelection = 0;
+   var subset =  false;
+   var nSubset = 0;
 
    var matchSounds = false;
    
@@ -88,8 +104,8 @@
 		 imagesDir = thisP[1].trim();
 
      } else if (thisP0 == "selection"){
-	    selection = true;
-	    nSelection = thisP[1].trim();
+	    subset = true;
+	    nSubset = thisP[1].trim();
 
       } else if (thisP0 == "matchsounds"){  
          matchSounds = true;
@@ -105,6 +121,7 @@
   
 	  } 
    }
+
 
    // some checks
    if (flexId == null  ) { return;  }	// have to specify a target id
@@ -148,17 +165,11 @@
     	   
    } else {
 	   // get answers
-	   answers = getInput(answersSourceId, answersSeparateParas);
+	   answers = getDragDropInput(answersSourceId, answersSeparateParas);
 	   
 	   // if alternatives for any answers, randomly select one 
 	   // (needed when 2 Hebrew words have the same pronunciation and matching sounds)
-	   for (i=0; i < answers.length; i++){
-		   var thisAnswer = answers[i].split(globalDivider2);
-		   if (thisAnswer.length > 1) {
-		       var order = shuffleArray(createIntegerArray(0,thisAnswer.length - 1));
-			   answers[i] = thisAnswer[order[0]];
-		   }	   
-       }
+	   answers = selectAlternatives(answers);
 	 
 	   // combine syllables into words if required
        if (answersInSyllables){ 
@@ -167,7 +178,12 @@
  	   
 	  // get questions (unless matchSounds, where audio is the question
 	   if (!matchSounds) {
-		   questions = getInput(questionsSourceId, questionsSeparateParas);
+		   questions = getDragDropInput(questionsSourceId, questionsSeparateParas);
+		   
+	      // if alternatives for any questions, randomly select one 
+	      // (needed when  Hebrew word has more than one translation)
+		   questions = selectAlternatives(questions);
+
 		   if (questions.length == 0) {return;}
 	   }
    }
@@ -178,8 +194,8 @@
    
    if (soundsSpecified) {
        // get sounds
-	   sounds = getInput(soundsSourceId, false); // sounds are never in separate paras
-	   if (!(sounds.length == answers.length)) {return;}
+	   sounds = getDragDropInput(soundsSourceId, false); // sounds are never in separate paras
+       if (!(sounds.length == answers.length)) {return;}
 	   
 	   for (i=0; i < sounds.length; i++) {
 		   sounds[i] = addAudioDirToSoundName(sounds[i], audioDir);
@@ -187,13 +203,14 @@
    }
 //test("hello from createFlexDragDrop, answers= " + answers + "--");  
 
-   if (selection) {
-         // random selection of  answers, questions (if any), sounds (if any)
-	   var selection = getSelection(nSelection, answers, questions, sounds);
+   if (subset) {
+         // random subset of  answers, questions (if any), sounds (if any)
+	   var thisSubset = getSubset(nSubset, answers, questions, sounds);
+//test("hello from createFlexDragDrop, thissubset= " +thisSubset + "--");  
  
-       answers = selection[0];
-       questions = selection[1];
-       sounds = selection[2];	   
+       answers = thisSubset[0];
+       questions = thisSubset[1];
+       sounds = thisSubset[2];	   
    }
  
 
@@ -504,7 +521,7 @@ function shuffleExistingFlexDragDrop(thisId) {
 
 //------ utility functions ------------------
 //------------------------------------------------
-function getInput(sourceIdString, separateParas){
+function getDragDropInput(sourceIdString, separateParas){
 	var i;
 	var input = [];
 	var idsArray = sourceIdString.split(globalDivider2); // allows for input from multiple sources
@@ -515,29 +532,42 @@ function getInput(sourceIdString, separateParas){
     return input;	
 }
 
-function getSelection(nSelection, answers, questions, sounds){
+function getSubset(nSubset, answers, questions, sounds){
     var i;
-	var answersSelection = [];
-	var questionsSelection = [];
-	var soundsSelection = [];
-	if (answers.length > nSelection){
-	   var selectionList = shuffleArray(createIntegerArray(0, answers.length-1));
-	   for (i=0; i < nSelection; i++) { 
-          answersSelection[i] = answers[selectionList[i]];
-		  if (questions.length > 0) {questionsSelection[i] = questions[selectionList[i]];}
-		  if (sounds.length > 0) {soundsSelection[i] = sounds[selectionList[i]];}
+	var answersSubset = [];
+	var questionsSubset = [];
+	var soundsSubset = [];
+	if (answers.length > nSubset){
+	   var subsetList = shuffleArray(createIntegerArray(0, answers.length-1));
+	   for (i=0; i < nSubset; i++) { 
+          answersSubset[i] = answers[subsetList[i]];
+		  if (questions.length > 0) {questionsSubset[i] = questions[subsetList[i]];}
+		  if (sounds.length > 0) {soundsSubset[i] = sounds[subsetList[i]];}
        }
 	} else {
- 	   answersSelection = answers;
-	   questionsSelection = questions;
-	   soundsSelection = sounds;
+ 	   answersSubset = answers;
+	   questionsSubset = questions;
+	   soundsSubset = sounds;
     }		
 	
-   var selected = [answersSelection, questionsSelection, soundsSelection];
-//test("hello from getSelection " + selected + "--" );   
-   return selected;
+   var selectedSubsets = [answersSubset, questionsSubset, soundsSubset];
+//test("hello from getSubset " + selectedSubsets + "--" );   
+   return selectedSubsets;
 	
 }	
+function selectAlternatives(inputList){
+	var i;
+	var outputList = inputList;
+	
+	for (i=0; i < inputList.length; i++){
+		var thisOutput = inputList[i].split(globalDivider2);
+		if (thisOutput.length > 1) {
+		    var order = shuffleArray(createIntegerArray(0,thisOutput.length - 1));
+			outputList[i] = thisOutput[order[0]];
+		}	   
+    }
+	return outputList;
+}
 
 //--- utility functions event listeners ---------------------------
 //-------------------------------------------------------------------
@@ -604,7 +634,7 @@ function selectAnswer(ev) {
 	   playSound(thisSound);
 	   
     } else {
-	   // first, unselect any answers that are selected
+	   // first, unselect any inputList that are selected
        //var selected = ev.target.parentElement.parentElement.getElementsByClassName("flex-drag-drop-selected");
        var selected = getChildrenWhichAreSelected(ev.target.parentElement.parentElement);
 	   for (i=0; i < selected.length; i++) {
@@ -624,18 +654,21 @@ function checkAnswer(ev) {
 	var thisElement = ev.target;
 	
 	var thisAnswer = getElementValue(thisElement.nextElementSibling);
-  // var answersFlexId = flexId + "-answers";
+  // var inputListFlexId = flexId + "-inputList";
   // var questionsFlexId = flexId + "-questions";
 
 	var idQuestionsDiv = thisElement.parentElement.parentElement.id;
 
     var idAnswersDiv = idQuestionsDiv.slice(0,idQuestionsDiv.indexOf("questions")) + "answers";
+//test("hello from checkAnswer, idAnswersDiv=" + idAnswersDiv);		
 			
-    //var selectedElement = document.getElementById(idAnswersDiv).getElementsByClassName("flex-drag-drop-selected");
+    //var selectedElement = document.getElementById(idinputListDiv).getElementsByClassName("flex-drag-drop-selected");
     var selectedElement = getChildrenWhichAreSelected(document.getElementById(idAnswersDiv));
+//test("hello from checkAnswer, thisAnswer=" + thisAnswer + ",selectedElement=" + selectedElement);		
 	if (selectedElement.length == 0) {return;}
 	else {
 		var proposedAnswerElement = selectedElement[0];
+//test("hello from checkAnswer, proposedAnswer=" + proposedAnswer + ", thisAnswer=" + thisAnswer);		
 		//var proposedAnswer = getElementValue(selectedElement[0]);
 		var proposedAnswer = getElementValue(proposedAnswerElement);
 		if (proposedAnswer == thisAnswer) {
@@ -644,10 +677,10 @@ function checkAnswer(ev) {
 		   //selectedElement[0] = setUnselected(selectedElement[0]);
 		   setUnselected(proposedAnswerElement);
 //test("hello from checkAnswer, selectedElement[0]=" + selectedElement[0]);          
-	            // remove the answer from the possible answers
+	            // remove the answer from the possible inputList
 	       proposedAnswerElement.classList.add("hidden"); 
 	       var finished = dragDropFinished(thisElement);
-test("hello from checkAnswer, finished=" + finished);          
+//test("hello from checkAnswer, finished=" + finished);          
 	  
 	       if (finished) {
 	         rewardModal("Well done!"); 
@@ -690,7 +723,7 @@ function checkMatchSoundsAnswer(ev) {
 		if (proposedAnswer == thisAnswer){
            thisQueryBox.classList.add("hidden"); //make the query box invisible
            thisQueryBox.nextElementSibling.classList.remove("hidden"); // make answer box visible
-		   ev.target.classList.add("hidden");          // remove the answer from the possible answers
+		   ev.target.classList.add("hidden");          // remove the answer from the possible Answers
            setUnselected(thisQueryBox.parentElement.firstChild);
 		
 	       var finished = dragDropFinished(thisQueryBox);
@@ -753,7 +786,7 @@ function handleDrop(ev) {
        thisElement.classList.add("hidden"); //make the query box invisible
        thisElement.nextElementSibling.classList.remove("hidden"); // make answer box visible
 	   
-	        // remove the answer from the possible answers
+	        // remove the answer from the possible Answers
        var idQuestionsDiv = thisElement.parentElement.parentElement.id;
        var idAnswersDiv = idQuestionsDiv.slice(0,idQuestionsDiv.indexOf("questions")) + "answers";
        //var selectedElement = document.getElementById(idAnswersDiv).getElementsByClassName("flex-drag-drop-selected")[0];

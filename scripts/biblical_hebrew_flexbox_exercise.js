@@ -1,82 +1,35 @@
 
 "use strict";
 
-// code executed on load
-//-----------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', function() {
-    //------ code creating content----------------------------------------
-   //-------------------------------------------------------------------
-     // create the clickable flexbox lists in JS  (includes event listeners)  
-
-  var i;
-
-   var javascriptListClass = document.getElementsByClassName("javascript-list");
-   for (i = 0; i < javascriptListClass.length; i++) {
- 	  var thisSpec = javascriptListClass[i];
-      createJavascriptList(thisSpec); 
-   }
- 
-})
-//---------------------------------------------------------------------
 
 
-
-//---- flexboxes containing clickable lists of letters
+//---- flexboxes used in exercises (not alefbet)
 //----------------------------------------------------
-	
-function reCreateJavascriptList(thisSpecId){
-	// thisSpecId is the id of the element with the flexbox specifications
-	
-	// need to use this when want to shuffle lists which have dividers
-	// or select different content for a list
-  var j;
-	// first, delete existing list
-      // get the id of the flexbox list
-   var thisSpecElement = document.getElementById(thisSpecId);
-   if (thisSpecElement==null ) { return;}	
-   
-   var parameters = thisSpecElement.innerHTML.split(globalDivider1);
-   var targetId = null;
-   for (j = 0; j < parameters.length; j++) {
-		 var thisP = parameters[j].split(globalDivider2);
-		 var thisP0 = thisP[0].trim().toLowerCase();
-		 if (thisP0 == "id"){
-		    targetId = thisP[1].trim();
-			break;
-		 } 
-   }
-   if (targetId==null ) { return;}	// have to specify an id
 
-    // now remove the list if it exists
-	 
-   var thisList = document.getElementById(targetId);	 
-   if (!( thisList== null)) {
-   	   // first,turn off sound if playing because of arrow click
-       turnOffArrowSound() ;	   
-	   // remove list
-	   thisList.parentNode.removeChild(thisList);
-    }
+// Each box is a Hebrew verse  divided into (sets of) words
+// Each (set of) words clickable
+// When click correct (set of) words either :
+//   (i) red box appears around the word(s) or
+//   (ii) tooltip with translation appears below word(s) 
+// The arrow at the beginning (optional?) gives the audio for the whole verse
 
-   // now create the list again
-  createJavascriptList(thisSpecElement);
-	 
-}
 	
-function createJavascriptList(thisSpecElement){
 
-	// thisSpecElement is the paragraph containing the instructions for creating the flexbox
+function createJavascriptExerciseList(hebrew, tooltips, audio, showTooltips,
+                                      audioDir="tanakh", hebrewClass="hebrew35", tooltipsClass="flex-container-tooltip"
+									  ){
+
+	// thisSpecElementId is the id of the div containing the (hidden) instructions for creating the flexboxes
+	// The flexboxes are inserted into this div
 	
-	// 2 alternative ways of specifying hebrew and sound content
-	// (i) in single source (sourceId) with hebrew:sound pairs and separated by |
-	// (ii) in 2 sources (sourceHebrewId and sourceSoundId) either
-	//        (a)separated by | in each list
-	//           or
-	//        (b)hebrew in separate paragraphs and sounds separated by |
-	//           if hebrew in separate paras, reference must be <div> that encloses them
-	//  All methods have  optional spacers |-| eg hebrew:sound|- :-|hebrew:sound specifying spaces between items
-	// Optional tooltips (separated by | or in separate paragraphs) always in separate source
-	//                    if tooltips in separate paras, reference id must be in a <div>, not in a <p>
-	 
+	// Hebrew content each set of words in separate para, the whole enclosed in a div with class "exercise-hebrew"
+	// Tooltips for each flexbox in para divided by |  with class "exercise-tooltips"
+	//  (i) if showtooltips is false tooltip indicates correct choice ("y")
+	//  (ii) if showtooltips is true,  tooltip is translation
+	// so several tooltips in each case will be blank
+	
+	// audio for each flexbox mp3 filename (don't include .mp3 suffix) in para with class exercise-audio
+	// audioDir is the subdirectory of /audio which contains the audio files, if audioDir is null, no arrow and no audio
 
 
    var j;
@@ -84,36 +37,16 @@ function createJavascriptList(thisSpecElement){
 
    var flexboxClass = "flex-container-rtl"; // used for all hebrew flexboxes with audio arrow
    var containerClass = "flex-container-heb";  // specifies size of gap between items, default
+   var colorClass = "main-color";
    var hebrewClass = "hebrew35";  // default								   
    var tooltipsClass = "flex-container-tooltip"; // default
-   var colorClass = "main-color";
 
-   var sourceId = null;  // the id of the HTML para with the hebrew and sound combined
-   var sourceHebrewIds = null; // alternative to single source for hebrew and sound
-   var sourceSoundIds = null; 
-   var targetId = null;  // the id of the list to be created
-   var audioDir = null;  //replaces above, name of sub-directory containing audio
-   var hebrewSeparateParas = false;  // if true, Hebrew in separate paragraphs which are contained in a <div>
-                                      // default, Hebrew in single paragraph separated by |
-   var hebrewInSyllables = false;  // indicate whether each hebrew word has to be combined into a whole word
+   var sourceHebrewId = null; 
+   var tooltipsSourceId = null;
+   var sourceAudio = null; // name of file without mp3.extension
+   var audioDir = null;  
    
-   var hebrewInImage = false;  // if true, the Hebrew input is the name of the image file; used for standalone vowel marks
-   var imagesDir = null;        // if hebrewInImage, the name of the subdirectory of /images where the image files are located
-   
-   var tooltips = false;
-   var tooltipsSourceIds = null;
-   var tooltipsSeparateParas = false;  // if true, tooltips in separate paragraphs (necessary for Hebrew tooltips) which are contained in a <div>
-                                      // default, tooltips in single paragraph separated by |
-   var tooltipsShow = false; // if true, the tooltips are displayed, with no arrows to hide them
-   var tooltipsShowStress = false;  // in tooltips, show individual Hebrew syllables with stressed syllable marked
-                                    // requires tooltips to be divided by spaces into syllables 
-   var tooltipsGroupStressedSyllable = null;     // in tooltipsShowStress specification: one value for each tooltipsSourceIds, values "last" "secondlast"
-			//----------------------------------------------------------------				       
-			// this  option only used in	alephbet-exercises for consonant+vowel			 
-   var selectLetterClick = false;  // indicates whether letterclick event listener added instead of soundclick event listener
-           //---------------------------------------------------------------
-   var selection =  false;
-   var nSelection = 0;
+   //var targetId = null;  // the id of the list to be created
    var arrow = false;
  
   // get the specifications for the flexbox list
@@ -131,47 +64,21 @@ function createJavascriptList(thisSpecElement){
 		    tooltipsClass = thisP[1].trim().toLowerCase();
 		 } else if (thisP0 == "colorclass"){
 		    colorClass = thisP[1].trim();
-	     } else if (thisP0 == "source"){
-		    sourceId = thisP[1].trim();
+			
 		 } else if (thisP0 == "sourcehebrew"){
-		    //sourceHebrewId = thisP[1].trim();
-		    sourceHebrewIds = removeFirstItem(thisParameterSpec);  // now allowing for possibly multiple sources
-		 } else if (thisP0 == "sourcesound"){
-		    //sourceSoundId = thisP[1].trim();
-		    sourceSoundIds = removeFirstItem(thisParameterSpec);  // now allowing for possibly multiple sources
-		 } else if (thisP0 == "id"){
-		    targetId = thisP[1].trim();
+		    sourceHebrewId = thisP[1].trim();
+		 } else if (thisP0 == "tooltips"){
+			//tooltips=true;
+		    tooltipsSourceId = thisP[1].trim();
+			
+		 } else if (thisP0 == "sourceaudio"){
+		    sourceAudio = thisP[1].trim();
 		 } else if (thisP0 == "audio"){
 		    audioDir = thisP[1].trim();
 			
-		 } else if (thisP0 == "hebrewseparateparas"){
-		    hebrewSeparateParas = true;
-		 } else if (thisP0 == "hebrewinsyllables"){
-		    hebrewInSyllables = true;
-
-		 } else if (thisP0 == "hebrewinimage"){
-			hebrewInImage = true; 
-		    imagesDir = thisP[1].trim();
+		// } else if (thisP0 == "id"){
+		 //   targetId = thisP[1].trim();
 			
-		 } else if (thisP0 == "tooltips"){
-			tooltips=true;
-		    //tooltipsSourceId = thisP[1].trim();
-		    tooltipsSourceIds = removeFirstItem(thisParameterSpec);  // now allowing for possibly multiple sources
-		 } else if (thisP0 == "tooltipsseparateparas"){
-		    tooltipsSeparateParas = true;
-		 } else if (thisP0 == "showtooltips"){
-		    tooltipsShow = true;
-		 } else if (thisP0 == "tooltipsshowstress"){
-		    tooltipsShowStress = true;
-		    tooltipsGroupStressedSyllable = removeFirstItem(thisParameterSpec);  // allowing for possibly multiple specifications
-			   
-			   // only used in consonant+vowel exercise 
-		 } else if (thisP0 == "selectletterclick"){
-		    selectLetterClick=true;
-			   
-         } else if (thisP0 == "selection"){
-	        selection = true;
-	        nSelection = thisP[1].trim();
 		 } else if (thisP0 == "arrow"){
 		    arrow=true;
 		 } 
@@ -181,22 +88,19 @@ function createJavascriptList(thisSpecElement){
 
    // check consistency of specifications
    //-----------------------------------   
-	if (tooltips){
-		if (tooltipsShowStress) {
-		   if (tooltipsGroupStressedSyllable == null) { return;}
-		}		
-	}	
+
 
    // get contents of new flexbox
    //----------------------------
     var hebrew = [];
-    var sound = [];
-    if (tooltips) {
-		var tips = [];
-		if (tooltipsShowStress) {var tooltipsStressedSyllable = [];}
-	}	
+	var tips = [];
 
-     // read in hebrew and sounds from HTML
+
+
+// don e up to here
+
+
+     // read in hebrew and tooltips from HTML
 	//---------------------------------------
    if (sourceId != null){
 	  // hebrew and sounds in a single source

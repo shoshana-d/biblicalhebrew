@@ -9,7 +9,6 @@ function closeRewardModal(){
 	if (!( modal == null)) {modal.parentNode.removeChild(modal);}
 }	
 function rewardModal(rewardText){
-
    const modal = document.createElement("div");
    modal.classList.add("reward-modal-background");
    modal.setAttribute("id", "rewardModal");
