@@ -14,7 +14,7 @@
   <style>
    .alefbet-final-consonant{
        background-color:white;
-	} 
+	}
 	
   </style>
 </head>
@@ -23,17 +23,17 @@
 <body>
 
 <header class="w3-container-h1"> 
-  <h1>Getting started in Biblical Hebrew: pronunciation</h1>
+  <h1>Getting started in Biblical Hebrew: alefbet</h1>
 </header>  
 
 
 <!-- top menu -->
 <nav class="w3-bar w3-card-4">
-  <a href="index.html" class="w3-bar-item w3-button">About</a>
-  <a href="alefbet.html" class="w3-bar-item w3-button  menu-selected-color">Alefbet</a>
-  <a href="alefbet-exercises.html" class="w3-bar-item w3-button">Alefbet exercises</a>
-  <a href="alefbetplus.html" class="w3-bar-item w3-button">Alefbet &#xFF0B;</a>
-   <a href="resources.html" class="w3-bar-item w3-button">Resources</a>
+  <a href="index.html" class="w3-bar-item w3-button ">About</a>
+  <a href="alefbet.html" class="w3-bar-item-alefbet-selected w3-button   "  >Alefbet</a>
+  <a href="alefbet-exercises.html" class="w3-bar-item-alefbet w3-button">Alefbet exercises</a>
+  <a href="alefbetplus.html" class="w3-bar-item-alefbet w3-button">Alefbet &#xFF0B;</a>
+  <a href="resources.html" class="w3-bar-item w3-button">Resources</a>
 </nav>
 
 
@@ -876,7 +876,7 @@ In this case, <span class="hebrew-in-text">יהוה</span> is pronounced as thou
 <span class="hebrew-in-text soundclick">אֱלֹהִים</span><span class="hidden">words/w018_elohim</span>, another of the names for God in the Tanakh,
  so the pronunciation is 
 <span class="hebrew-in-text soundclick" >אֲדֹנָי יֱהוִה</span><span class="hidden">alefbet/adonaielohim</span>,
- Adonai Elohim, and <span class="hebrew-in-text">יהוה</span> is pointed with the vowels of Elohim 
+ Adonai Elohim, and <span class="hebrew-in-text">יהוה</span> is sometimes pointed with the vowels of Elohim 
 <span class="hebrew-in-text soundclick">אֱלֹהִים</span><span class="hidden">words/w018_elohim</span>.</p>
 
  <p>This is how to pronounce <span class="hebrew-in-text  soundclick">לַיהוָה</span>
@@ -1701,11 +1701,18 @@ the stressed syllable.</p>
 
 
 <!-- scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var j;
+    // only in alefbet, list with arrow created in HTML
+    var thisClass = document.getElementsByClassName("arrowclick");
+    for (j = 0; j < thisClass.length; j++) {
+	   addArrowclickEventListener(thisClass[j]);
+    }
+})	
+</script> 
 
-<!--<script>var globalThisAudioSubfolder ="alephbet";</script> -->
-<script src="scripts/biblical_hebrew_alefbet_start.js"></script>
-<script src="scripts/biblical_hebrew_utilities.js"></script>
-<script src="scripts/biblical_hebrew_hide_show.js"></script>
+<script src="scripts/biblical_hebrew_soundclick_hideshow_utilities.js"></script>
 <script src="scripts/biblical_hebrew_flexbox_list.js"></script>
 
 </body>
