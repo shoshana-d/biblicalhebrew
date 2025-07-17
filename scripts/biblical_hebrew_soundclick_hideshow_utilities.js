@@ -180,6 +180,28 @@ function playConsonants3(thisArrow,audioItems,  itemNumber){
 //------- code for hiding and showing sections of text --------------------------------------------
 //-------------------------------------------------------------------------
 
+// July 2025
+// When the user clicks on the navbar button in menu at top of page, 
+// toggle between hiding and showing the dropdown content 
+function showHideNavbarDropdown(dropdownID) {
+  document.getElementById(dropdownID).classList.toggle("hidden");
+}
+
+// Close the navbar dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  var j;
+  if (!e.target.matches('.navbar-dropbtn')) {
+    var toggleClass = document.getElementsByClassName("navbar-dropdown-content");
+    for (j = 0; j < toggleClass.length; j++) {
+	   if (!(toggleClass[j].classList.contains('hidden'))) {
+           toggleClass[j].classList.add('hidden');
+       }
+	}	
+
+  }
+}
+//----------------------------------------------------------------------------------------------
+
   // user has clicked a +/- button
   // replaces showhidenextsiblingclick
 function ShowHideParentNextSibling(element){
@@ -191,7 +213,7 @@ function ShowHideParentNextSibling(element){
 }	
 
 
-   //----------------------------------------------------------------------------------------------
+ //----------------------------------------------------------------------------------------------
 
   // user has clicked a +/- button
   // toggles next element with class nextItem
@@ -316,6 +338,7 @@ function menuContentClose(element){
 
  
    // when called from Javascript
+   // used in biblical_hebrew_lessons_start_template.js to add sound listener to consonants and vowels
 function JSshowHideJsToggle(ev){
 	var buttonId = ev.target.id;
 
@@ -344,6 +367,26 @@ function showHideJsToggle(elementId, buttonId){
 	
 }	
 
+	
+function showHideJsToggleParentParent(element){
+	// only used with onclick
+	// hides/shows child elements with class list "js-toggle" 
+	//    in the parent element of parent element of specified element
+	// toggles +/- in the specified element (should be a button)
+	// for use in flexbox list where each item is in a div
+	var j;
+
+	var parentDiv = element.parentElement.parentElement;
+
+    var toggleClass = parentDiv.getElementsByClassName("js-toggle");
+    for (j = 0; j < toggleClass.length; j++) {
+		toggleClass[j].classList.toggle("hidden");
+	}	
+	
+    element.classList.toggle("button-plus");
+    element.classList.toggle("button-minus");  
+	
+}	
 
 
 //-------------------------------------------------------------------------
