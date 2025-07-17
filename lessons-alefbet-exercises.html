@@ -1,0 +1,1119 @@
+<!-- this is a comment -->
+ <!DOCTYPE html> 
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+<html lang="en">
+
+<head>
+  <title>Biblical Hebrew Pronunciation Exercises</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="styles/biblical_hebrew_main.css">
+  <link href='https://fonts.googleapis.com/css?family=Comic Neue' rel='stylesheet'>
+  
+   <style>
+   
+   .select-letter{
+	/* used in javascript for consonant+vowel exercise */
+	/*color:red;*/
+	/* text-border */
+	border-style:solid;
+	border-color:red;
+	/* padding:0px 5px;*/ /* top/bottom right/left */
+	padding:0px 5px 2px 5px; /* top right bottom left*/
+	padding:2px; ; /* top right bottom left   for images*/
+	/*white-space:nowrap;*/
+	
+	border-width:2px;
+	}
+	
+
+	</style>
+
+
+
+</head>
+
+
+<body>
+
+<header> 
+  <h1 >Practise alefbet</h1>
+</header>  
+
+<p class="hidden" id="htmlfilename">lessons-alefbet-exercises.html</p>
+
+<!-- top menu added in JS -->
+
+<!-- main body of text -->
+<main class="main-color ">
+
+
+<!-- testing section  --> 
+<!-- 
+<p>Temporary testing section</p>
+ <p>TEST</p>
+ <p id="mytest">test</p>
+--> 
+<!--  END testing section --> 
+
+ 
+<!-- reference lists --> 
+<!--   need to create lists in Word, with left-to-right, then cut and paste into Notepad -->
+<!-- don't need to use:style="unicode-bidi: bidi-override; direction:ltr" -->
+<div style=" background-color:Ivory;">
+<p>Suggestions for different ways you could use the <span class="start-audio"></span> practice exercises:</p>
+<ul>
+  <li>Click on <span class="start-audio"></span> and listen as each item is spoken</li>
+  <li>Click on <span class="start-audio"></span> and say each item with the audio</li>
+  <li>Pronounce each item and click on the item to check </li>
+</ul>
+<p>With the matching exercises, you can either drag and drop, or point and click. Drag and drop may not work on all devices.</p>
+
+<p style="margin-top:-15px;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>How do I drag and drop in the matching exercises?</p>
+<div class="detail-item alefbet-exercise-color hidden">
+<p>On ipad or other touch screen, touch and hold the answer until it lifts up (the answer will turn green) . 
+Keeping your finger on the screen, drag the answer. Lift your finger to drop the answer.
+</p>
+<p>With non-touchscreen, hover over an answer until the cursor changes shape, left-click the answer 
+and hold the left mouse or touchpad button (the answer will turn green).
+Move your mouse pointer to drag the answer. 
+Release the left mouse button to drop the answer.</p>
+
+<p>The answer is "droppable" where the question box with dotted border
+<span class="query query-box-in-text"></span> 
+turns bright yellow (on ipad, a small + also appears). </p>
+<p>Note that "droppable" doesn't necessarily mean that the answer is correct - try dropping Answer 2 on Question 1</p>
+  <div id="example-questions-source" class="hidden"><p>Question 1</p> <p>Question 2</p> </div>
+  <div id="example-answers-source" class="hidden"><p>Answer 1</p> <p>Answer 2</p> </div>
+  <p id="cr-example-drag-drop" class="onload-flex-drag-drop  hidden ">id:example-drag-drop
+       |questions:example-questions-source   | answers: example-answers-source
+	   | questionsseparateparas |answersseparateparas
+	  |questionclass:flex-drag-drop-english |answerclass:flex-drag-drop-english 
+	  |colorClass: consonant-color</p>
+  <p>	  
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-example-drag-drop')">Refresh</span>
+</div>
+
+<p style="margin-top:-15px;"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>How do I point and click in the matching exercises?</p>
+<div class="detail-item alefbet-exercise-color hidden">
+<p>Select an answer by clicking or touching. The answer will turn green.</p>
+<p>Select the corresponding question by clicking or touching a question box with dotted border
+<span class="query query-box-in-text"></span>. </p>
+ <p id="cr-example-point-click" class="onload-flex-drag-drop  hidden ">id:example-point-click
+       |questions:example-questions-source   | answers: example-answers-source
+	   | questionsseparateparas |answersseparateparas
+	  |questionclass:flex-drag-drop-english |answerclass:flex-drag-drop-english 
+	  |colorClass: consonant-color</p>
+  <p>	  
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-example-point-click')">Refresh</span>
+</div>
+
+<p>Be sure to match the last item (there's a small "reward"). </p>
+
+</div>
+<!-- CONSONANTS--> 
+
+
+<h2 class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
+ Practise Biblical Hebrew consonants </h2>
+<div class="hidden" >
+
+<div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
+   <div id="show-consonants1"><span class="button-plus" onclick="showHideMenuItem(this,true)"></span> Consonant sounds<span class="start-audio"></span></div>
+   <div id="show-consonants2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds</div>
+   <div id="show-consonants3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds (harder)</div>
+   <div id="show-consonants4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds<span class="ear"></span></div>
+   <div id="show-consonants5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with their sounds (harder)<span class="ear"></span></div>
+   <div id="show-consonants7"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Dots in consonants<span class="start-audio"></span></div>
+   <div id="show-consonants8"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match final consonants</div>
+   <div id="show-consonants9"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with the same sound</div>
+   <div id="show-consonants10"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonants with the same sound</div>
+   <div id="show-consonants11"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Consonant letter names<span class="start-audio"></span></div>
+   <div id="show-consonants12"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match consonant letter names</div>
+</div>
+<p></p>
+
+<div id="consonants1" class="detail-item alefbet-exercise-color  hidden">
+
+<h3 >Consonant sounds <span class="btn-close"  onclick="menuContentClose(this)"></span></h3> 
+
+  <p id="consonants-hebrew-and-sounds" class="hidden">א:silence| בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch| ך:ch| ל : l
+|מ: m|ם :m| נ: n|ן:n| ס:s| ע  :silence| פּ:p| פ:f| ף: f|צ:ts| ץ:ts| ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p>
+  <p id="cr-consonants-list" class="javascript-list  hidden ">source: consonants-hebrew-and-sounds |id: consonants-list|arrow
+  | colorClass: consonant-color  |audio: alefbet_consonants_and_vowels </p>
+  
+  <p>
+  <span class="button-exercise" onclick="shuffleJavascriptList('consonants-list')">Shuffle</span>&emsp;&emsp;
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-consonants-list')">Alefbet order</span>
+ </p>
+
+</div>
+
+
+<div id="consonants2" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Match consonants with their sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Drag each consonant (or consonants) in the top row to the correct <span class="query query-box-in-text"></span>  in the bottom row.
+ <br>OR Select a consonant in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
+<div id="consonant-answers-source1" class="hidden"><p>א ע</p><p>בּ</p><p>ב ו</p><p>ג</p>
+<p>ד</p><p>ה</p><p>ז</p><p>ח כ ך</p><p>ט ת</p><p>י</p><p>כּ ק</p><p>ל</p><p>מ ם</p><p>נ ן</p>
+<p>ס שׂ</p><p>פּ</p><p>פ ף</p><p>צ ץ</p><p>ר</p><p>שׁ</p>
+</div>
+  <p id="consonant-sounds" class="hidden">silent| b| v| g| d| h| z| ch| t| y| k| l| m| n| s| p| f| ts| r| sh </p>
+  <p id="cr-match-consonants1" class="onload-flex-drag-drop  hidden ">id:match-consonants1|questions:consonant-sounds 
+  | answers: consonant-answers-source1| sounds:consonant-sounds |answersseparateparas
+  |questionclass:flex-drag-drop-english |audio: alefbet_consonants_and_vowels| colorClass: consonant-color|selection:7</p>
+  <p>
+  <!--  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-consonants1')">Shuffle</span>&emsp;&emsp; -->
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants1')">Practise again</span>
+  </p>
+ 
+</div>
+
+
+<div id="consonants3" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Match consonants with their sounds (harder)<span class="btn-close" onclick="menuContentClose(this)"></span></h3>
+ <p>Drag each consonant in the top row to the correct <span class="query query-box-in-text"></span>  in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
+<div id="consonant-answers-source2" class="hidden"><p>א:ע</p><p>בּ</p><p>ב:ו</p><p>ג</p><p>ד</p><p>ה</p>
+<p>ז</p><p>ח:כ:ך</p><p>ט:ת</p><p>י</p><p>כּ:ק</p><p>ל</p><p>מ:ם</p><p>נ:ן</p><p>ס:שׂ</p>
+<p>פּ</p><p>פ:ף</p><p>צ:ץ</p><p>ר</p><p>שׁ</p>
+</div>
+  <p id="cr-match-consonants2" class="onload-flex-drag-drop  hidden ">id:match-consonants2|questions:consonant-sounds
+  | answers: consonant-answers-source2 | sounds:consonant-sounds |answersseparateparas
+  |questionclass:flex-drag-drop-english |selection:7|audio: alefbet_consonants_and_vowels| colorClass: consonant-color</p>
+  <p>
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants2')">Practise again</span>
+  </p>
+ 
+</div>
+
+<div id="consonants4" class="detail-item alefbet-exercise-color hidden">
+
+<h3><span class="ear"></span> Match consonants with their sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="ear"></span>to hear the sound of the consonant. <br>
+ Then click on the box with the corresponding consonant (or consonants) in the top row.</p>
+ <p id="cr-match-consonants3" class="onload-flex-drag-drop  hidden ">id:match-consonants3| answers: consonant-answers-source1 
+           | answersseparateparas|sounds:consonant-sounds  | answerclass:flex-drag-drop-hebrew |selection:7|audio: alefbet_consonants_and_vowels
+		  | colorClass: consonant-color |  matchsounds</p>
+   <p>		  
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants3')">Practise again</span>
+   </p>
+ 
+ 
+</div>
+
+<div id="consonants5" class="detail-item alefbet-exercise-color hidden">
+
+<h3><span class="ear"></span> Match consonants with their sounds (harder)<span class="btn-close" onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="ear"></span>to hear the sound of the consonant. <br>
+ Then click on the corresponding consonant in the top row.</p>
+ <p id="cr-match-consonants4" class="onload-flex-drag-drop  hidden ">id:match-consonants4| answers: consonant-answers-source2
+  | answersseparateparas|sounds:consonant-sounds | answerclass:flex-drag-drop-hebrew 
+  |audio: alefbet_consonants_and_vowels  | colorClass: consonant-color |  matchsounds|selection:7</p>
+   <p>		  
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-consonants4')">Practise again</span>
+   </p>
+ 
+ 
+</div>
+
+
+<div id="consonants7" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Dots in consonants<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+  <p id="consonants-with-dots" class="hidden">
+בּ:b|ב:v|  גּ: g|ג: g|דּ:d |ד:d| זּ:z|ז:z| טּ :t|ט :t| יּ:y|י:y| כּ: k|כ: ch|
+   לּ : l|ל : l|מּ: m|מ: m|נּ : n|נ : n|סּ:s |ס:s|פּ:p|פ:f|צּ:ts|צ:ts|קּ:k|ק:k| שּׁ:sh|שׁ:sh|שּׂ:s|שׂ:s|תּ:t |ת:t
+ </p>
+  <p id="cr-dots-in-consonants" class="javascript-list  hidden ">source: consonants-with-dots |id: dots-in-consonants|arrow
+  | colorClass: consonant-color  |audio: alefbet_consonants_and_vowels </p>
+   <p>
+   <span class="button-exercise" onclick="shuffleJavascriptList('dots-in-consonants')">Shuffle</span>&emsp;&emsp;
+   <span class="button-exercise" onclick="reCreateJavascriptList('cr-dots-in-consonants')">Alefbet order</span>
+   </p>
+ 
+</div>
+
+<div id="consonants8" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Match final consonants<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+<p>Drag each consonant in the top row to the correct box in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
+  <div id="final-letters-questions-source" class="hidden"><p>כ</p> <p>מ</p> <p>נ</p> <p>פ</p> <p>צ</p></div>
+  <div id="final-letters-answers-source" class="hidden"><p>ך</p> <p>ם</p> <p>ן</p> <p>ף</p> <p>ץ</p></div>
+  <p id="final-letters-sounds-source" class="hidden">ch| m| n| f| ts</p>
+  <p id="cr-final-letters1" class="onload-flex-drag-drop  hidden ">id:final-letters1|questions:final-letters-questions-source 
+      | answers: final-letters-answers-source| sounds:final-letters-sounds-source|questionsseparateparas|answersseparateparas
+	  |audio: alefbet_consonants_and_vowels| colorClass: consonant-color</p>
+  <p>	  
+ <!--  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('final-letters1')">Practise again</span> -->
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-final-letters1')">Practise again</span>
+   </p>
+ 
+</div>
+
+<div id="consonants9" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Match consonants with the same sound (including final forms of letters)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Drag each consonant in the top row to the correct <span class="query query-box-in-text"></span> in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
+  <div id="same-sounds-source" class="hidden"><p>א:ע </p> <p>ב:ו</p> <p>ח:כ:ך</p> <p>ט:ת</p> <p>כּ:ק</p> <p>מ:ם</p> <p>נ:ן</p>
+  <p>ס:שׂ</p> <p>פ:ף</p> <p>צ:ץ</p></div>
+  <p id="same-sounds-sounds-source" class="hidden">silent|v|ch|t|k|m|n|s|f| tst</p>
+  <p id="cr-same-sounds" class="onload-flex-drag-drop  hidden ">id:same-sounds|questionsanswers:same-sounds-source 
+  |  sounds:same-sounds-sounds-source|questionsseparateparas|audio: alefbet_consonants_and_vowels | colorClass: consonant-color </p>
+  <p>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-same-sounds')">Practise again</span>
+  </p>
+ 
+</div>
+ 
+<div id="consonants10" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Match consonants with the same sound (excluding final forms of letters)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Drag each letter in the top row to the correct <span class="query query-box-in-text"></span> in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
+  <div id="same-sounds2-source" class="hidden"><p>א:ע</p> <p>ב:ו</p> <p>ח:כ</p> <p>ט:ת</p> <p>כּ:ק</p> <p>ס:שׂ</p></div>
+  <p id="same-sounds2-sounds-source" class="hidden">silent|v|ch|t|k| s</p>
+  <p id="cr-same-sounds2" class="onload-flex-drag-drop  hidden ">id:same-sounds2|questionsanswers:same-sounds2-source 
+  |  sounds:same-sounds2-sounds-source|questionsseparateparas|audio: alefbet_consonants_and_vowels | colorClass: consonant-color</p>
+  <p>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-same-sounds2')">Practise again</span>
+  </p>
+  
+</div>
+  
+ 
+ 
+    <!-- consonant letter names -->
+	<p id="allconsonants-letternames" class="hidden"> Alef|Bet|Vet|Gimmel|Dalet|Heh|Vav|Zayin|Chet|Tet|Yod| Kaf|Chaf|Final Chaf
+   |Lamed|Mem|Final Mem|Nun|Final Nun|Samech|Ayin|Pei|Fei|Final Fei|Tzadi|Final Tzadi|Kuf|Resh|Shin|Sin|Tav</p>
+
+<div id="consonants11" class="detail-item alefbet-exercise-color hidden">	
+
+<h3>Consonant letter names<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+<p>Click on <span class="button-plus"></span> under a letter to see its name</p>
+  <p id="consonants-names" class="hidden">  א:alef| בּ:bet| ב:vet| ג: gimel|ד:dalet| ה: heh|ו:vav| ז:zayin| ח:chet| ט :tet|י:yod| כּ: kaf
+  |כ:chaf| ך:final_chaf| ל : lamed|מ: mem|ם :final_mem| נ: nun|ן:final_nun| ס:samech| ע  :ayin| פּ:pei| פ:fei| ף: final_fei
+  |צ:tzadi| ץ:final_tzadi| ק:kuf| ר: resh|שׁ:shin| שׂ:sin| ת :tav  </p>
+  <p  id="cr-C4" class="javascript-list  hidden ">source: consonants-names |id: C4| tooltips:allconsonants-letternames| arrow
+  |audio:alefbet_consonants_and_vowels |colorClass: consonant-color | containerclass: flex-container-heb-with-tooltips2</p>
+  <p>
+   <span class="button-exercise" onclick="shuffleJavascriptList('C4')">Shuffle</span>&emsp;&emsp;
+   <span class="button-exercise" onclick="reCreateJavascriptList('cr-C4')">Alefbet order</span>
+  </p>
+  
+</div>
+
+<div id="consonants12" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Match consonant letter names<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Drag each letter in the top row to the correct <span class="query query-box-in-text"></span>  in the bottom row. 
+ <br>OR Select a consonant in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected consonant to hear its sound.)</p>
+  <div id="allconsonants" class="hidden"><p>א </p><p> בּ  </p><p> ב  </p><p> ג  </p><p> ד  </p><p> ה </p><p> ו  </p>
+  <p> ז  </p><p> ח </p><p> ט  </p><p> י  </p><p> כּ  </p><p> כ </p><p> ך </p><p> ל  </p><p> מ  </p><p> ם  </p>
+  <p> נ  </p><p> ן  </p><p> ס </p><p> ע  </p><p> פּ </p><p> פ  </p><p> ף  </p><p> צ </p><p> ץ </p><p> ק  </p>
+  <p> ר  </p><p> שׁ </p><p> שׂ  </p><p> ת </p>
+  </div>
+  <p id="allconsonants-sounds" class="hidden">silent|b|v|g|d|h|v|z|ch|t|y|k|ch|ch|l|m|m|n|n|s|silent|p|f|f|ts|ts|k|r|sh|s|t</p>
+  <p id="cr-letter-names" class="onload-flex-drag-drop  hidden ">id:letter-names|questions:allconsonants 
+  |questionsseparateparas   | answers: allconsonants-letternames |sounds:allconsonants-sounds 
+   |answerclass:flex-drag-drop-english |selection:7 |audio: alefbet_consonants_and_vowels| colorClass: consonant-color</p>
+   <p>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-letter-names')">Practise again</span>
+   </p>
+  
+  
+</div>
+
+</div>
+<!-- end of consonants -->
+
+
+<!-- VOWELS    --> 
+
+
+ <h2 class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise Biblical Hebrew vowels </h2>
+ <div class="hidden">
+ 
+<div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
+   <div id="show-vowels1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Vowel sounds<span class="start-audio"></span></div>
+   <div id="show-vowels2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds</div>
+   <div id="show-vowels3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds (harder)</div>
+   <div id="show-vowels4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds<span class="ear"></span></div>
+   <div id="show-vowels5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match vowels with their sounds (harder)<span class="ear"></span></div>
+</div>
+<p></p>
+ 
+ 
+<div id="vowels1" class="detail-item alefbet-exercise-color hidden">
+  <h3>Vowel sounds<span class="btn-close"  onclick="menuContentClose(this)"></span></h3> 
+  <p id="vowels-hebrew-and-sounds" class="hidden">  a1:a | a2 : a | a_or_o: a_or_o 
+   |  o1 : o | o2 : o | o3  : o |  ei1  : ei 
+   | ei2 : ei | e1 : e | e2 : e |  e3 :  e  | i1 : i  
+   |    i2 : i  | u1 : u  | u2 : u  | uh_or_silent :  uh_or_silent
+   |  ie1 : ie | ie2 : ie | oi : oi  | ui : ui </p>
+  <p id="cr-vowel-sounds1" class="javascript-list hidden">source: vowels-hebrew-and-sounds| id: vowel-sounds1| arrow
+    | colorClass: vowel-color|audio: alefbet_consonants_and_vowels 
+	| hebrewinimage: vowels | hebrewclass: vowel-image-select-exercise |containerclass: flex-container-heb-cv
+ </p>
+  <p>
+  <span class="button-exercise" onclick="shuffleJavascriptList('vowel-sounds1')">Shuffle </span>
+  </p>
+</div>  
+
+   
+
+ 
+<div id="vowels2" class="detail-item alefbet-exercise-color hidden ">
+<h3>Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+  <p>Drag each vowel in the top row to the correct <span class="query query-box-in-text"></span>  box in the bottom row. 
+ <br>OR Select a vowel in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected vowel to hear its sound.)</p>
+  <p id="vowels-hebrew2" class="hidden"> a1_and_a2 | a_or_o | o1_and_o2_and_o3 |  ei1_and_ei2 | e1_and_e2_and_e3 | i1_and_i2 | u1_and_u2
+  | ie1 | ie2 |oi  | ui  | uh_or_silent
+  </p>
+  <p id="vowels-sounds" class="hidden">a |a_or_o| o| ei | e |i | u| ie|ie_or_a|oi|ui|uh_or_silent </p>
+  <p id="vowels-sounds-questions" class="hidden">a |a or o| o| ei | e |i | u| ie|ie or a|oi|ui|uh or silent </p>
+
+  <p id="cr-vowel-sounds2" class="onload-flex-drag-drop  hidden ">id:vowel-sounds2
+  |questions:vowels-sounds-questions |questionclass:flex-drag-drop-english 
+  | answers: vowels-hebrew2 	| answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds |audio: alefbet_consonants_and_vowels| colorClass: vowel-color | selection:7</p>
+  <p>
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds2')">Practise again</span>
+  </p>
+</div> 
+
+<div id="vowels3" class="detail-item alefbet-exercise-color  hidden">
+   <h3>Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+   <p>Drag each vowel in the top row to the correct <span class="query query-box-in-text"></span>  box in the bottom row. 
+<br>OR Select a vowel in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+ <br> (You can click on a selected vowel to hear its sound.)</p>
+  <p id="vowels-hebrew3" class="hidden"> a1:a2 | a_or_o | o1:o2:o3 |  ei1:ei2 | e1:e2:e3 | i1:i2 | u1:u2
+  | ie1 | ie2 |oi  | ui  | uh_or_silent
+   <p id="cr-vowel-sounds3" class="onload-flex-drag-drop  hidden ">id:vowel-sounds3
+  |questions:vowels-sounds-questions |questionclass:flex-drag-drop-english 
+  | answers: vowels-hebrew3 	| answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds |audio: alefbet_consonants_and_vowels| colorClass: vowel-color | selection:7</p>
+   <p>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds3')">Practise again</span>
+   </p>
+ 
+</div>
+
+   
+<div id="vowels4" class="detail-item alefbet-exercise-color hidden ">
+
+<h3><span class="ear"></span> Match vowels with their sound<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="ear"></span>to hear the sound of the vowel. <br>
+ Then click on the box with the corresponding vowel (or vowels) in the top row. </p>
+  <p id="cr-vowel-sounds4" class="onload-flex-drag-drop  hidden ">id:vowel-sounds4
+  |  matchsounds
+  | answers: vowels-hebrew2 | answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds   |audio: alefbet_consonants_and_vowels  | colorClass: vowel-color | selection:7   </p>
+  <p>
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds4')">Practise again</span>
+  </p>
+ 
+</div>
+
+<div id="vowels5" class="detail-item alefbet-exercise-color  hidden">
+   <h3><span class="ear"></span> Match vowels with their sound (harder)<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+   <p>Click on <span class="ear"></span>to hear the sound of the vowel. <br>
+   Then click on the corresponding vowel in the top row.</p>
+   <p id="cr-vowel-sounds5" class="onload-flex-drag-drop  hidden ">id:vowel-sounds5
+  |  matchsounds
+  | answers: vowels-hebrew3 | answerinimage: vowels | answerclass: vowel-image-drag-drop
+  | sounds:vowels-sounds   |audio: alefbet_consonants_and_vowels| colorClass: vowel-color 
+  |selection:7 </p>
+   <p>
+   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-vowel-sounds5')">Practise again</span>
+   </p>
+ 
+</div>
+
+
+
+</div>
+
+
+
+<!-- end of vowels -->
+
+
+<!-- not used any more, vowels now images -->
+<p id="vowels-cpv"  class="hidden" >&thinsp; &#1463;:a |&thinsp; &#1458;: a |&thinsp; &#1464;: a_or_o 
+   |&thinsp; &#1459;: o | &thinsp; &#1465; : o | &#1493;&#1465;  : o |   &thinsp; &#1461;  : ei 
+   | &#1497; &#1461; : ei | &thinsp; &#1462; : e | &thinsp; &#1457; : e |  &#1497; &#1462; :  e  | &thinsp; &#1460; : i  
+   |    &#1497; &#1460; : i  |  &thinsp; &#1467; : u  | &#1493;&#1468; : u  | &thinsp; &#1456; :  uh
+   |  &#1497; &#1463; : ie | &#1497; &#1464; : ie | &#1493;&#1465;&#1497; : oi  | &#1493;&#1468;&#1497; : ui </p>
+ 
+
+
+
+
+<!-- CONSONANT PLUS VOWEL    --> 
+
+
+ <h2 class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise Biblical Hebrew consonant + vowel </h2>
+
+ <div class="hidden">
+
+<p id="yod" class="hidden">י</p>
+<p id="half-vowels"  class="hidden" >&thinsp; &#1458; |&thinsp; &#1459; |&thinsp; &#1457; </p>
+<p id="schwah" class="hidden">&thinsp; &#1456;</p>
+<p id="gutterals" class="hidden">א|ה|ח|ע</p>
+<p id="cholam" class="hidden" >&thinsp; &#1465; </p>
+<p id="vav" class="hidden" >ו</p>
+<p id="ui" class="hidden" >&#1493;&#1468;&#1497;</p>
+<p id="consonants-with-ui" class="hidden">ז | ט | ל  | נ | ס |  פּ | פ | צ | ק |  שׂ  </p>
+<p id="oy" class="hidden" >&#1493;&#1465;&#1497;</p>
+<p id="consonants-with-oy" class="hidden">א | ג |  ה </p>
+<p id="vowels-images-key" class="hidden"  >
+     &#1463; : a1 | &#1458; : a2 | &#1464;: a_or_o 
+   | &#1459; : o1 | &#1465; : o2 | &#1493;&#1465;  : o3 
+   | &#1461; : ei1 | &#1497; &#1461; : ei2 
+   | &#1462; : e1 | &#1457; : e2 |  &#1497; &#1462; :  e3  
+   | &#1460; : i1  |    &#1497; &#1460; : i2  
+   | &#1467; : u1  | &#1493;&#1468; : u2  
+   | &#1456; :  uh_or_silent
+   |  &#1497; &#1463; : ie1 | &#1497; &#1464; : ie2 
+   | &#1493;&#1465;&#1497; : oi  | &#1493;&#1468;&#1497; : ui 
+</p>
+<p id="consonants-cpv" class="hidden">א: silence | בּ:b| ב:v| ג: g|ד:d| ה: h|ו:v| ז:z| ח:ch| ט :t|י:y| כּ: k|כ:ch|  ל : l
+|מ: m| נ: n| ס:s| ע  :silence| פּ:p| פ:f| צ:ts|  ק:k| ר: r|שׁ:sh| שׂ:s| ת :t </p> 
+<div  class="detail-item alefbet-exercise-color">
+
+<h3>Select one or more <span class="consonant-color">consonants</span> and one or 
+more <span class="vowel-color2">vowels</span> to practise, then click on "Create exercises" below.<br>
+  (Click on a consonant or vowel to select or unselect) </h3>
+  
+ <span class="button-exercise"  onclick="selectAll('select-consonant')">Select all consonants</span>&emsp;
+ <span class="button-exercise" onclick="unSelectAll('select-consonant')">Unselect all consonants</span>&emsp;
+ 
+ <div onclick="hideExerciseDivs()">  
+ <p  class="javascript-list  hidden">id: select-consonant|source: consonants-cpv | colorClass: consonant-color
+  |selectletterclick |containerclass:flex-container-heb-cv</p>
+ </div>
+ 
+ <span class="button-exercise"  onclick="selectAll('select-vowel')">Select all vowels</span>&emsp;&emsp;
+ <span class="button-exercise" onclick="unSelectAll('select-vowel')">Unselect all vowels</span>
+ 
+ <div onclick="hideExerciseDivs()">  
+ <p  class="javascript-list hidden">id: select-vowel|source: vowels-hebrew-and-sounds| colorClass: vowel-color2
+    |selectletterclick |containerclass: flex-container-heb-cv
+	| hebrewinimage: vowels | hebrewclass: vowel-image-select-exercise 
+ </p>
+</div>
+ <p></p>
+ 
+ <span class="button-exercise"  onclick="crConsonantPlusVowelExercises('select-consonant', 'select-vowel','vowels-images-key')">
+ Create exercises</span>
+  <p></p>
+ </div>  
+ 
+  <div id="cpv-exercise1-div" class="detail-item alefbet-exercise-color hidden" >
+  
+    <h3> Consonant plus vowel</h3>
+  
+    <div id="cpv-exercise1-hebrew" class="hidden"><p>בַּ</p>   </div>
+    <p id="cpv-exercise1-sounds" class="hidden">ba</p>
+
+    <p  class=" hidden" id="cr-cpv-exercise1">id: cpv-exercise1
+        | sourcehebrew: cpv-exercise1-hebrew |hebrewseparateparas|sourcesound: cpv-exercise1-sounds
+        | colorClass: vocab-color|arrow
+        |audio: alefbet_consonant_plus_vowel | selection:15  </p>
+    <p>
+    <span id="btn-cpv-exercise1-shuffle" class="button-exercise" onclick="shuffleJavascriptList('cpv-exercise1')">Shuffle </span>&emsp;&emsp;
+    <span id="btn-cpv-exercise1-recreate" class="button-exercise" onclick="reCreateJavascriptList('cr-cpv-exercise1')">New selection</span>
+    </p>
+  </div>
+ 
+ 
+  <div id="cpv-exercise2-div" class="detail-item alefbet-exercise-color hidden">
+  
+    <h3><span class="ear"></span>Match consonant+vowel with its sound</h3>
+    <p>Click on <span class="ear"></span>to hear the sound of the consonant+vowel. <br>
+      Then click on the corresponding consonant+vowel in the top row.</p>
+ 
+    <div id="cpv-exercise2-hebrew" class="hidden"><p>בַּ</p>   </div>
+    <p id="cpv-exercise2-sounds" class="hidden">ba</p>
+
+    <p id="cr-cpv-exercise2"  class="hidden">id: cpv-exercise2 
+      | answers: cpv-exercise2-hebrew | answersseparateparas |sounds: cpv-exercise2-sounds
+      | colorClass: vocab-color  | answerclass:flex-drag-drop-hebrew| 
+      |audio: alefbet_consonant_plus_vowel | matchsounds| selection:10 </p>
+    <p>
+   <span class="button-exercise" onclick="crDragDropConsonantPlusVowel()">Practise again</span>
+   </p>
+ </div>
+
+
+</div>
+
+ 
+ <!-- end of consonant+vowel -->
+
+
+<!-- SYLLABLES  --> 
+
+
+ <h2 id="syllables" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise dividing  Biblical Hebrew words into syllables </h2>
+ <div class="detail-item alefbet-exercise-color hidden">
+  
+ <p>Divide each word in the dotted boxes into syllables by inserting a space between letters.
+<br> Click on a letter to insert a space to the left. 
+ <br> Click on a space to remove it.
+ <br>Click "Check" to check your answer when you are finished (for one-syllable alefbet_words you don't need to do anything
+  before clicking  "Check".) </p>
+  <p>You can hear how a word is pronounced by clicking on it.</p>
+
+ <p id="cr-syllables-exercise" class="javascript-syllables hidden"> id:syllables-exercise|
+                 | sourcesound:one-syllable-sounds: syllables-final-sounds : syllables-penultimate-sounds  | stress: last : secondlast
+                 | sourcesyllables: one-syllable-hebrew : syllables-final-hebrew : syllables-penultimate-hebrew | audio:alefbet_words | selecton:10</p>
+  <p><span class="button-exercise" onclick="reCreateSyllablesExercise('cr-syllables-exercise')">Practise again</span></p>
+
+  
+
+ </div>
+<!-- end of syllables -->
+
+
+<!-- CANTILLATION MARKS --> 
+
+
+ <h2 id="cantillation" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise  Biblical Hebrew cantillation marks indicating stressed syllable</h2>
+ <div class="hidden">
+
+ 
+<p>These cantillation marks always occur at the start or end of a word, 
+ so they do not always indicate which syllable is stressed. They are not included in the exercise.</p> 
+<div  class="flex-container-ltr flex-container-examples-no-border" style="background-color:white">
+	 <div><img src="images/vowels/segol.jpg" class="cantillation-image2"></div>
+	 <div><img src="images/vowels/zarka.jpg" class="cantillation-image2"></div>
+	 <div><img src="images/vowels/tlisha_ktana.jpg" class="cantillation-image2"></div>
+	 <div><img src="images/vowels/tlisha_gdola.jpg" class="cantillation-image2"></div>
+</div>
+
+ <p>These cantillation marks are included in the exercise. 
+ These cantillation marks always indicate which syllable is stressed. 
+ They are placed above or under the first consonant of the stressed syllable 
+ (except <img src="images/vowels/pashta.jpg" class="cantillation-image2-intext">) </p>
+<div class="flex-container-ltr flex-container-examples-no-border" style="background-color:white">
+     <div><img src="images/vowels/sofpasuk.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/etnachta.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/tipcha.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/tvir.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/mercha.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/munach.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/mapach.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/darga.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/katon.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/zakefgadol.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/azla.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/gershayim.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/pazer.jpg" class="cantillation-image"></div>
+     <div><img src="images/vowels/kadma.jpg" class="cantillation-image"></div>
+     <div><span class="example-spacing"> </span></div>
+	 <div><img src="images/vowels/pashta.jpg" class="cantillation-image2"></div>
+</div>	 
+
+ 
+ <p></p>
+ <div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
+   <div id="show-cantillation1"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Practise all cantillation marks</div>
+   <div id="show-cantillation2"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Practise 
+   <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only</div>
+ </div>
+<p></p>
+
+<div id="cantillation1" class="detail-item alefbet-exercise-color hidden">
+
+<h3>All cantillation marks <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
+ <p>For each word in the dotted boxes, click on the stressed syllable.
+ <br> You can click on the word to hear the pronunciation.</p>
+ <p id="cr-cantillation-all" class="javascript-cantillation-exercise hidden"> id:cantillation-all| whichlist: all 
+                 | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
+                 | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:alefbet_words | selecton:10</p>
+  <p><span class="button-exercise" onclick="reCreateCantillationExercise('cr-cantillation-all')">Practise again</span></p>
+
+</div>
+ 
+<div id="cantillation2" class="detail-item alefbet-exercise-color hidden">
+
+  <h3>Practise    <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> only  <span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
+  <p  ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Hints</p>
+  <p class="hidden main-color">When <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> is before the last letter in a word, 
+  this indicates the first letter of the stressed syllable.
+ <br>When <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> is at the end of a word, and there is no other 
+  <img src="images/vowels/kadma.jpg" class="cantillation-image-intext"> in the word, the last syllable is stressed.</p>
+
+  <p></p>
+  <p>For each word in the dotted boxes, click on the stressed syllable.
+  <br> You can click on the word to hear the pronunciation.</p>
+ <p id="cr-cantillation-pashta-kadma" class="javascript-cantillation-exercise hidden">id:cantillation-pashta-kadma |whichlist: pashta-kadma 
+                 | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
+                 | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:alefbet_words | selecton:10</p>
+  <p><span class="button-exercise" onclick="reCreateCantillationExercise('cr-cantillation-pashta-kadma')">Practise again</span></p>
+
+
+</div>
+
+ </div>  
+<!-- end of cantillation marks-->
+
+
+<!-- FREQUENT WORDS  --> 
+
+
+ <h2 id="frequentwords" class="w3-container w3-card" ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
+ Practise pronouncing words which occur frequently in the Tanakh </h2>
+ <div class="hidden">
+  <div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
+   <div id="show-frequent1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with only one syllable<span class="start-audio"></span> </div>
+   <div id="show-frequent2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress on final syllable<span class="start-audio"></span></div>
+   <div id="show-frequent3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress on second-last syllable<span class="start-audio"></span> </div>
+   <div id="show-frequent4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Words with stress indicated by cantillation mark<span class="start-audio"></span> </div>
+   <div id="show-frequent5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match words with their pronunciation<span class="ear"></span> </div>
+ </div>
+
+<div id="frequent1" class="detail-item alefbet-exercise-color hidden">
+
+ <h3> Words with only one syllable<span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
+  <div id="one-syllable-hebrew" class="hidden">
+<p>
+לּוֹ</p> <p>לָהּ </p> <p>לָךְ </p> <p>לִּי </p> <p>בּוֹ </p> <p>בָּהּ </p> <p>בָּךְ </p> <p>בִּי </p> 
+<p>אֵת </p> <p>מִן </p> <p>עַל </p> <p>אֵל </p> <p>כֺּל </p> <p>לֹא </p> <p>בֵּן </p> 
+<p>כִּי </p> <p> בּוֹא  </p> <p>בָּא     </p> <p>יוֹם </p> <p>אִישׁ </p> <p>בֵּית </p> 
+<p>  עַם </p><p>יָד </p> <p>הוּא </p> <p>עַד </p> <p>אָב </p> <p>זֶה </p> <p>עִיר </p> 
+<p>שׁוּב </p> <p>אִם </p> <p>עִם </p> <p>קַח </p> <p>שֵׁם </p> <p>לֵב </p> <p>מֵת </p> 
+<p> שָׁם </p> <p>אֵין </p> <p>גַּם </p> <p>כֵּן </p> <p>אַל </p> <p>אָח </p> <p>קוּם </p>
+ <p>זֺאת   </p> <p>רֺאשׁ   </p> <p>שִׂים </p> <p>בַּת    </p> <p>מֵי </p> <p>כֺּה </p><p>מָה</p>
+ <p>גּוֺי   </p> <p>הֵם </p> <p>הַר </p> <p>טוֹב </p> <p>קוֺל </p> <p>פֶּה </p> <p>פִּי </p>
+ <p> פִּיו </p><p> צַו </p><p> הִיא </p><p> חַי
+ </p>
+   </div>
+  <p id="one-syllable-sounds" class="hidden">
+w003_lo | w003_lah | w003_lach | w003_li | w004_bo | w004_bah | w004_bach | w004_bi
+ | w005_et | w006_min | w007_al | w008_el | w010_kol | w012_lo | w013_ben 
+| w014_ki | w019_bo | w019_ba | w022_yom | w023_ish | w025_beit 
+| w027_am | w028_yad | w031_hu | w033_ad | w034_av | w035_zeh | w039_ir 
+| w041_shuv | w042_im | w044_im | w046_kach | w053_shem | w054_lev | w056_met 
+| w057_sham | w060_ehn | w063_gam | w069_ken | w071_al | w076_ach | w077_kum 
+| w079_zot | w080_rosh | w081_sim | w082_bat | w083_mei | w085_koh | w086_mah
+ | w087_goy | w088_hem | w089_har | w092_tov | w097_kol | w100_peh | w100_pi
+ | w100_piv |  w102_tsav |  w104_hi | w178_chai
+ </p>
+  <p id="cr-one-syllable" class="javascript-list  hidden ">sourcehebrew: one-syllable-hebrew
+  | hebrewseparateparas|sourcesound: one-syllable-sounds | containerclass: flex-container-heb-with-tooltips
+  |id: one-syllable| arrow|colorClass: vocab-color|audio: alefbet_words | selection:10 </p>
+  <p>
+   <span class="button-exercise" onclick="reCreateJavascriptList('cr-one-syllable')">New selection</span>
+  </p>
+
+</div> 
+
+<div id="frequent2" class="detail-item alefbet-exercise-color hidden">
+
+ <h3> Words with stress on final syllable<span class="btn-close "  onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables</p>
+  <p id="syllables-final-sounds" class="hidden">
+w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w005_vuhet   |  w005_oto 
+  |  w005_otah   |  w005_etchem   |  w005_otam   |  w005_oti   |  w005_vuhotach   |  w006_mimcha  
+ |  w006_mehem   |  w007_alav   |  w007_alehem   |  w008_elav   |  w008_elai   |  w009_asher  
+ |  w010_vchol_haam   |  w010_mikol_banav   |  w010_mikol_haam   |  w011_amar   |  w011_vayomru  
+ |  w011_amart   |  w011_amuhru   |  w013_banim   |  w013_bnei   |  w013_uvanim   |  w013_lvanav  
+ |  w015_haya   |  w015_vayhi   |  w015_haytah   |  w015_hayu   |  w015_yiye   |  w016_kaasher  
+ |  w017_asah   |   w017_vayaasu   |  w018_elohim   |  w018_elohei   |  w018_velohei   |  w019_vayavo  
+ |  w019_uva   |  w020_mlachim   |  w020_malchei   |  w022_yamim   |  w022_ymei   |  w022_yamav  
+ |  w023_anashim   |  w023_anshei   |  w024_panim   |  w024_lifnei   |  w024_panav   |  w024_ufanim  
+ |  w025_habatim   |  w025_bateichem   |  w025_uvateichem   |  w026_natan   |  w026_vayiten  
+ |  w027_amim   |  w027_haam   |  w028_ydei   |  w029_halach   |  w030_davar   |  w030_dvarim  
+ |  w030_hadvarim   |  w030_udvarim   |  w032_raa   |  w032_vayar   |  w034_avot   |  w034_aviv  
+ |  w034_avi   |   w035_hazeh   |  w036_shama   |  w036_shma   |  w036_vayishma   |  w036_yishmuhu  
+ |  w037_diber    |  w037_vaydaber   |  w038_yashav   |  w039_hearim   |  w039_arei   |  w040_yatza  
+ |  w040_vayetzei   |  w038_yeshvu   |  w043_hinei   |  w043_vhinei   |   w044_imo   |   w044_imach  
+ |   w044_imcha   |   w044_imi   |   w045_echad   |   w045_achat   |   w046_lakach   |   w046_vayikach  
+ |   w047_yada   |   w049_alah   |   w049_eeleh   |   w050_itchem   |   w050_itam   |   w050_iti  
+ |  w051_shana   |  w051_shanim   |  w052_ani   |  w052_anochi   |  w053_shmo   |  w053_shmah 
+  |  w053_shmot   |  w054_lvav   |  w055_shalach   |  w055_vayshalach   |  w055_vayishluhku  
+ |  w056_vayamot   |   w058_achal   |   w058_vachalt   |   w059_avadim   |  w061_isha    |  w061_nashim  
+ |  w061_haisha    |  w061_ishtcha   |  w062_adon   |  w062_adonai   |  w065_nafshot   |   w066_cohen 
+  |   w066_hacohanim   |   w067_atah   |   w070_kara   |   w070_yikruhu   |   w070_vayikra  
+ |   w072_acharei   |   w075_nasa   |   w075_vayisa   |   w076_achiv   |   w078_shalosh   |   w078_shlosha  
+ |   w078_shloshim   |   w078_ushloshim   |   w079_hazot   |   w080_buhrosh   |  w082_banot  
+ |  w082_uvanot   |  w084_meah   |  w084_meot   |  w084_umeah   |   w087_goyim   |   w087_hagoi  
+ |   w089_heharim   |   w090_avar   |   w090_vuhavarti   |   w091_adam   |   w091_haadam  
+  |   w093_gadol   |   w094_amad   |   w094_omed   |   w096_chamesh  
+ |   w096_chamishim   |   w096_vachamisha   |   w097_bkol   |   w098_hikah   |   w099_yalad   
+|   w100_ufiv   |   w101_alafim   |   w102_tsivah   |   w102_vaytsav   |    w193_avon  
+ |   w238_mitzvot   |   w238_mitzvotai   |   w245_yishtachavu   |   w245_yishtachavu   |   w635_breishit  
+ </p>
+ <div id="syllables-final-hebrew" class="hidden">
+  <p> לְ ךָ </p>   <p> לָ הֶם </p>   <p> לָ כֶם </p>   <p> בְּ ךָ </p>   <p> בָּ הֶם </p>   <p> וְ אֵת </p> 
+  <p> אֹ תוֹ </p>   <p> אֹ תָהּ </p>   <p> אֶתְ כֶם </p>   <p> אֹ תָם </p>   <p> אֹ תִי  </p>   
+<p> וְ אֹ תָךְ </p>   <p> מִמְּ ךָ </p>   <p> מֵ הֶם </p>   <p> עָ לָיו </p>   <p> אֲ לֵי הֶם </p>  
+ <p> אֵ לָיו </p>   <p> אֵ לָי </p>   <p> אֲ שֶׁר </p>   <p> וְ כָל־ הָ עָם </p>   <p> מִ כָּל־ בָּ נָיו </p>  
+ <p> מִ כָּל־ הָ עָם </p>   <p> אָ מַר </p>   <p> וַ יֹּאמְ רוּ </p>   <p> אָ מַרְתְּ </p>   <p> אָֽ מְ רוּ  </p>  
+ <p> בָּ נִים </p>   <p> בְּ נֵי </p>   <p> וּ בָ נִים </p>   <p> לְ בָ נָיו </p>   <p> הָ יָה </p>  
+ <p> וַֽ יְ הִי </p>   <p> הָֽ יְ תָה </p>   <p> הָ יוּ </p>   <p>יִהְ יֶה</p>   <p> כּֽ͏ַ אֲ שֶׁר </p>  
+ <p> עָ שָׂה </p>   <p> וַ יַּ עֲ שׂוּ </p>   <p> אֱ לֹ הִים </p>   <p> אֱ לֹ הֵי  </p>   <p> וֵא לֹ הֵי </p> 
+  <p> וַ יָּ בֹא </p>   <p> וּ בָא </p>   <p> מְ לָ כִים </p>   <p> מַלְ כֵי  </p>   <p> יָ מִים </p>  
+ <p> יְ מֵי </p>   <p> יָ מָיו </p>   <p> אֲ נָ שִׁים </p>   <p> אַנְ שֵׁי </p>   <p>  פָּ נִים </p>  
+ <p> לִפְ נֵי </p>   <p>  פָּ נָיו </p>   <p> וּ פָ נִים </p>   <p> הַ בָּ תִּים </p>   <p> בָּ תֵּי כֶם </p> 
+  <p> וּ בָ תֵּי כֶם </p>   <p> נָ תַן </p>   <p> וַ יִּ תֵּן </p>   <p> עַ מִּים </p>   <p> הָ עָם </p>  
+ <p> יְ דֵי </p>   <p> הָ לַךְ </p>   <p> דָּ בָר </p>   <p> דְּ בָ רִים </p>   <p> הַ דְּ בָ רִים </p>  
+ <p> וּ דְ בָ רִים </p>   <p> רָ אָה </p>   <p> וַ יַּרְא </p>   <p> אֲ בוֹת </p>   <p> אָ בִיו </p>  
+ <p> אֲ בִי </p>   <p> הַ זֶּה </p>   <p> שָׁ מַע </p>   <p> שְׁ מַע </p>   <p> וַ יִּשְׁ מַע  </p> 
+  <p> יִשְׁ מְ עוּ </p>   <p> דִּ בֶּר </p>   <p> וַ יְ דַ בֵּר </p>   <p> יָ שַׁב </p>   <p> הֶ עָ רִים </p> 
+  <p> עָ רֵי </p>   <p> יָ צָא </p>   <p> וַ יֵּ צֵא </p>   <p> יֵשְׁ בוּ </p>   <p> הִ נֵּה </p> 
+  <p>  וְ הִ נֵּה </p>   <p> עִ מּוֹ </p>   <p>  עִ מָּךְ </p>   <p> עִמְּ ךָ </p>   <p> עִ מִּ </p> 
+  <p> אֶ חָד </p>   <p> אַ חַת </p>   <p> לָ קַח </p>   <p> וַ יִּ קַּח </p>   <p> יָ דַע </p>  
+ <p> עָ לָה </p>   <p> אֶֽ עֱ לֶה </p>   <p> אִתְּ כֶם </p>   <p> אִ תָּם </p>   <p> אִ תִּי </p> 
+  <p> שָׁ נָה </p>   <p> שָׁ נִים </p>   <p> אֲ נִי </p>   <p> אָֽ נֹ כִי </p>   <p>  שְׁ מוֹ </p> 
+  <p> שְׁ מָהּ </p>   <p> שְׁ מוֹת </p>   <p> לְ בַב </p>   <p> שַׁ לַּח </p>   <p> וַ יְ שַׁ לַּח </p> 
+  <p> וַ יִּשְׁ לְ חוּ </p>   <p>   וַ יָּ מֹת   </p>   <p> אָ כַל </p>   <p> וְ אָ כַלְתְּ </p>   <p> עֲ בָ דִים </p> 
+  <p> אִ שָּׁה </p>   <p> נָ שִׁים </p>   <p> הָֽ אִ שָּׁה </p>   <p> אִשְׁ תְּ ךָ </p>   <p> אֲ דוֹן </p> 
+  <p> אֲ דוֹ נָי </p>   <p> נַפְ שׁוֹת </p>   <p> כֺּ הֵן </p>   <p> הַ כֹּ הֲ נִים </p>   <p> אַ תָּה </p>  
+ <p> קָ רָא </p>   <p> יִקְ רְ אוּ </p>   <p> וַ יִּקְ רָא </p>   <p> אַ חֲ רֵי </p>   <p> נָ שָֹא </p> 
+  <p> וַ יִּ שָּׂא </p>   <p> אָ חִיו </p>   <p> שָׁ לֺשׁ </p>   <p> שְׁ לֹ שָׁה </p>   <p> שְׁ לֹ שִׁים </p> 
+  <p> וּ שְׁ לֹ שִׁים </p>   <p> הַ זֹּאת </p>   <p>  בְּ רֹאשׁ </p>   <p> בָּ נוֺת </p>   <p> וּ בָ נוֹת </p>  
+ <p> מֵ אָה </p>   <p> מֵ אוֹת </p>   <p> וּ מֵ אָה </p>   <p> גּוֹ יִם </p>   <p> הַ גּוֹי </p>  
+ <p> הֽ͏ֶ הָ רִים </p>   <p> עָ בַר </p>   <p> וְ עָ בַרְ תִּי </p>   <p> אָ דָם </p>   <p> הָֽ אָ דָם </p>  
+   <p> גָּ דוֹל </p>   <p> עָ מַד </p>   <p> עֹ מֵד </p>   <p> חָ מֵשׁ </p> 
+  <p> חֲ מִ שִּׁים </p>   <p>  וַ חֲ מִ שָּׁה </p>   <p> בְּ קוֹל </p>   <p> הִ כָּה </p>   <p> יָ לַד </p>  
+ <p> וּ פִיו </p>   <p> אֲ לָ פִים </p>   <p> צִ וָּה </p>   <p> וַ יְ צַו </p>   
+  <p> עֲ וֺן </p>   <p> מִצְ וֺת </p>   <p> מִצְ וֺ תָי </p>   <p> יִשְׁ תַּ חֲ וּוּ </p>   <p>  יִשְׁ תַּ חֲ ווּ </p>  
+ <p> בְּ רֵא שִׁית </p> 
+ </div>
+ <p id="cr-syllables-final" class="javascript-list  hidden ">sourcehebrew: syllables-final-hebrew |hebrewseparateparas
+ |hebrewinsyllables  | sourcesound: syllables-final-sounds   |id: syllables-final|tooltips:syllables-final-hebrew
+ |tooltipsclass:flex-container-heb30-tooltip  |tooltipsseparateparas |tooltipsshowstress: last
+ | arrow|colorClass: vocab-color 
+ | containerclass: flex-container-heb-with-tooltips
+  |audio: alefbet_words | selection:10</p>
+  <p>
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-final')">New selection</span>
+  </p>
+
+</div> 
+
+<div id="frequent3" class="detail-item alefbet-exercise-color hidden">
+
+ <h3> Words with stress on second-last syllable <span class="btn-close "  onclick="menuContentClose(this)"></span> </h3>
+ <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables</p>
+ <div id="syllables-penultimate-hebrew" class="hidden">
+   <p>לָּ נוּ</p>     <p>אֹ תָ נוּ</p>     <p>מִ מֶּ נּוּ</p>     <p>כָּל־ הָ אָ רֶץ</p>     <p>בְּ כָל־ הָ אָ רֶץ</p>     
+<p>וּ בְ כָל־ הָ אָ רֶץ</p>     <p>לְ כָל־ מִצְ רַ יִם</p>     <p>וּ לְ כָל־ מִצְ רָ יִם</p>     <p>וַ יֹּא מֶר</p>     <p>וַ תֹּא מֶר</p>
+     <p>אָ מַרְ תָּ</p>     <p>הָ יִי תִי</p>     <p>הָ יִי נוּ</p>     <p>וְ הָ יִי תָ</p>     <p>כָּ מוֹ ךָ</p>     <p>עָ שִׂי נוּ</p>
+     <p>עָ שִׂי תָ</p>     <p>עָ שִׂי תִי</p>     <p>אֱ לֹ הֵי נוּ</p>     <p>בָּ אוּ</p>     <p>בָּא נוּ</p>     <p>יָ בֹ אוּ</p> 
+    <p>מֶ לֶךְ</p>     <p>וּ מֶ לֶךְ</p>     <p>אֶ רֶץ</p>     <p>הָ אָ רֶץ</p>     <p>וְ הָ אָ רֶץ</p>     <p>הַ בַּ יִת</p> 
+    <p>יָ דֶי הָ</p>     <p>וַ יֵּ לֶךְ</p>     <p>רָ אִי תִי</p>     <p>רָ אִי נוּ</p>     <p>אָ בִי נוּ</p>     <p>וַ יֵּ שֶׁב</p>
+     <p>וַ יָּ שֻׁ בוּ</p>     <p>עִ מָּ נוּ</p>     <p>יָ דַ עַתְּ</p>     <p>עַ יִן</p>     <p>עֵי נַ יִם</p>     <p>אִ תָּ נוּ</p>
+     <p>מָ וֶת</p>     <p>עֶ בֶד</p>     <p>שְׁ נַ יִם</p>     <p>שְׁ תַּ יִם</p>     <p>וּ שְׁ נַ יִם</p>     <p>נֶ פֶשׁ</p> 
+    <p>אֵ לֶּה</p>     <p>הָ אֵ לֶּה</p>     <p>דֶּ רֶךְ</p>     <p>הַ דֶּ רֶךְ</p>     <p>וַ יָּ שֶׂם</p>     <p>מַ יִם</p>
+     <p>וּ מַ יִם</p>     <p>מָא תַ יִם</p>     <p>תַּ חַת</p>     <p>מִ תַּ חַת</p>     <p>וַ תֵּ לֶד</p>     <p>אֶ לֶף</p>
+     <p>עֶ שֶׂר</p>     <p>קֹ דֶשׁ</p>     <p>שָׁ מַ יִם</p>     <p>לָיְ לָה</p>   
+  </div>
+ <p id="syllables-penultimate-sounds" class="hidden">
+ w003_lanu    | w005_otanu    | w006_mimenu    | w010_kol_haaretz    | w010_bchol_haaretz   
+ | w010_uvchol_haaretz    | w010_lchol_mitzraim    | w010_ulchol_mitzraim    | w011_vayomer  
+  | w011_vatomer    | w011_amarta    | w015_hayiti    | w015_hayinu    | w015_vhayita    | w016_kamocha 
+   | w017_asinu    | w017_asita    | w017_asiti    | w018_eloheinu    | w019_bau    | w019_banu   
+ | w019_yavou    | w020_melech    | w020_umelech    | w021_eretz    | w021_haaretz    | w021_vhaaretz  
+  | w025_habayit    | w028_yadeiha    | w029_vayelech    | w032_raiti    | w032_rainu    | w034_avinu  
+  | w038_vayeshev    | w041_vayashuvu    | w044_imanu    | w047_yadaat    | w048_ayin  
+  | w048_ehnayim    | w050_itanu    | w056_mavet    | w059_eved    | w064_shnayim    | w064_shtayim  
+  | w064_ushnayim    | w065_nefesh    | w068_eleh    | w068_haeleh    | w073_derech    | w073_haderech  
+  | w081_vayasem    | w083_mayim    | w083_umayim    | w084_matayim    | w095_tachat   
+ | w095_mitachat    | w099_vateled    | w101_elef    | w103_eser    | w108_kodesh    | w118_shamayim  
+  | w192_layla   
+</p>
+
+  <p id="cr-syllables-penultimate" class="javascript-list  hidden ">id: syllables-penultimate
+  |sourcehebrew: syllables-penultimate-hebrew |hebrewinsyllables  
+  |hebrewseparateparas  |sourcesound: syllables-penultimate-sounds  
+  |tooltips:syllables-penultimate-hebrew 
+  |tooltipsclass:flex-container-heb30-tooltip| tooltipsseparateparas |tooltipsshowstress: secondlast
+  |colorClass: vocab-color | arrow  
+  |audio: alefbet_words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
+  <p>
+  <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-penultimate')">New selection</span>
+  </p>
+
+</div> 
+ 
+ <div id="frequent4" class="detail-item alefbet-exercise-color hidden">
+
+<h3> Words with stress indicated by cantillation mark<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="button-plus"></span> under a word to see how the word divides into syllables and which syllable is stressed.</p>
+ <p id="cr-syllables-cantillation" class="javascript-cantillation-list  hidden ">id: syllables-cantillation
+   |sourcehebrew: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
+   | cantillation: last:last:secondlast 
+   |sourcesound: one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds   
+   |tooltips: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
+   |tooltipsshowstress: last:last:secondlast 
+  |audio: alefbet_words| selection:10</p>
+  <p>
+  <span class="button-exercise" onclick="reCreateCantillationJavascriptList('cr-syllables-cantillation')">New selection</span>
+  </p>
+
+</div> 
+
+ 
+ 
+<div id="frequent5" class="detail-item alefbet-exercise-color hidden">
+
+ <h3>Match words with their pronunciation<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="ear"></span>to hear the pronunciation of the word. <br>
+ Then click on the corresponding word in the top row.</p>
+ 
+ <div id="one-syllable-hebrew-noduplicates" class="hidden">
+<p>לָהּ </p> <p>לָךְ </p> <p>לִּי </p> <p>בָּךְ </p> <p>בִּי </p> 
+<p>אֵת </p> <p>מִן </p> <p>אֵל </p> <p>בֵּן </p> 
+<p>כִּי </p> <p>יוֹם </p> <p>אִישׁ </p> <p>בֵּית </p> 
+<p>  עַם </p><p>יָד </p> <p>הוּא </p> <p>עַד </p> <p>אָב </p> <p>זֶה </p> <p>עִיר </p> 
+<p>שׁוּב </p> <p>קַח </p> <p>שֵׁם </p> <p>לֵב </p> <p>מֵת </p> 
+<p> שָׁם </p> <p>אֵין </p> <p>גַּם </p> <p>כֵּן </p> <p>אָח </p> <p>קוּם </p>
+ <p>זֺאת   </p> <p>רֺאשׁ   </p> <p>שִׂים </p> <p>בַּת    </p> <p>מֵי </p> <p>כֺּה </p><p>מָה</p>
+ <p>גּוֺי   </p> <p>הֵם </p> <p>הַר </p> <p>טוֹב </p> <p>פֶּה </p> <p>פִּי </p>
+ <p> פִּיו </p><p> צַו </p><p> הִיא </p><p> חַי
+ </p>
+   </div>
+
+  <p id="one-syllable-sounds-noduplicates" class="hidden">
+w003_lah | w003_lach | w003_li | w004_bach | w004_bi
+ | w005_et | w006_min | w008_el | w013_ben 
+| w014_ki | w022_yom | w023_ish | w025_beit 
+| w027_am | w028_yad | w031_hu | w033_ad | w034_av | w035_zeh | w039_ir 
+| w041_shuv | w046_kach | w053_shem | w054_lev | w056_met 
+| w057_sham | w060_ehn | w063_gam | w069_ken | w076_ach | w077_kum 
+| w079_zot | w080_rosh | w081_sim | w082_bat | w083_mei | w085_koh | w086_mah
+ | w087_goy | w088_hem | w089_har | w092_tov | w100_peh | w100_pi
+ | w100_piv |  w102_tsav |  w104_hi | w178_chai
+ </p>
+
+ <div id="one-syllable-hebrew-duplicates" class="hidden">
+<p>לּוֹ  :  לֹא </p> <p>בָּהּ  :   בָּא </p> <p>בּוֹ :  בּוֹא </p> <p>אִם  :    עִם </p> <p>עַל  :    אַל </p> <p>כֺּל :   קוֺל </p> 
+</div>
+<p id="one-syllable-sounds-duplicates" class="hidden">
+w003_lo | w004_bah | w004_bo |w042_im | w007_al | w010_kol 
+</p> 
+   <p id="cr-match-words" class="onload-flex-drag-drop  hidden ">id:match-words
+   | answers: one-syllable-hebrew-noduplicates :one-syllable-hebrew-duplicates :syllables-final-hebrew: syllables-penultimate-hebrew 
+    |sounds:one-syllable-sounds-noduplicates :one-syllable-sounds-duplicates : syllables-final-sounds : syllables-penultimate-sounds  
+  |answersinsyllables   | answersseparateparas   | answerclass:flex-drag-drop-hebrew 
+   |audio: alefbet_words   | colorClass: vocab-color | matchsounds | selection:10</p>
+   <p>		  
+<!--  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-words')">Shuffle</span>&emsp;&emsp; -->
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-words')">Practise again</span>
+  </p>
+
+</div> 
+
+ 
+
+
+ 
+</div>  
+<!-- end of frequently occurring words -->
+
+
+<!-- PEOPLE AND PLACES  --> 
+
+
+ <h2 id="header-names-and-places" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
+ Practise names of people and places in the Tanakh </h2>
+ <div class="hidden">
+  <div class="flex-container-ltr flex-container-menu-items alefbet-exercise-menu-color">
+   <div id="show-people1"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of people in the Torah<span class="start-audio"></span> </div>
+   <div id="show-people2"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of people in later books<span class="start-audio"></span> </div>
+   <div id="show-people3"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Names of places<span class="start-audio"></span> </div>
+   <div id="show-people4"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match names and places</div>
+   <div id="show-people6"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match names and places<span class="ear"></span></div>
+   <div id="show-people5"><span class="button-plus" onclick="showHideMenuItem(this, true)"></span> Match names and places<span class="ear"></span></div>
+ </div>
+
+
+<div id="people1" class="detail-item alefbet-exercise-color hidden">
+
+  <h3>Names of people in the Torah<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+  <p>Click on <span class="button-plus"></span> under a word to see the name</p>
+
+  <div id="torah-names-hebrew"  class="hidden"><p>  אָדָם </p><p>    חַוָּה     </p><p> קַיִן      </p><p>  הֶבֶל </p><p>    נֹחַ     </p><p>  שֵׁם </p>
+  <p> חָם     </p><p>  יָףֶת      </p><p>  אַבְרָם </p><p> שָׂרַי      </p><p>      לוֹט </p><p>  הָגָר        </p><p>     יׅשְׁמָעֵאל     </p><p>  אַבְרָהָם </p>
+  <p>    שָׂרָה      </p><p>  יִצְחָק </p><p>   רׅבְקָה      </p><p>  עֵשָׂו </p><p> יַעֲקֹב      </p><p>  רָחֵל </p><p>  לֵאָה    </p> <p>    רְאוּבֵן </p>
+  <p>   שִׁמְעוֺן    </p>   <p>    לֵוִי   </p>  <p> יְהוּדָה  </p> <p>  יוֺסֵף    </p><p>     בִּנְיָמִין  </p>      <p> יִשְׂרָאֵל     </p>   <p> פַּרְעֹה     </p> 
+  <p>     מֺשֶׁה </p>  <p>  אַהֲרֺן    </p>  <p>   מִרְיָם    </p>  <p>   יְהוֺשֻׁעַ   </p>   
+  </div>
+  <p id="torah-names-sounds" class="hidden">adam| chava |kayin|hevel|noach| shem| ham| yafet| avram| sarai| lot | hagar| yishmael|avraham
+  |sarah| yitzchak| rivka| esav| yaakov| rachel| leah|reuven|shimon|levi|  yhudah| yosef| binyamin| yisrael| paroh| moshe
+  |aharon|miryam|yhoshua</p>
+  <p id="torah-names-tooltips" class="hidden">Adam|Eve|Cain|Abel|Noah|Shem|Ham|Japheth|Abram|Sarai|Lot|Hagar|Ishmael|Abraham|Sarah
+  |Isaac|Rebecca|Esau|Jacob|Rachel|Leah|Reuben|Simeon|Levi| Judah | Joseph | Benjamin|Israel |Pharaoh|Moses|Aaron|Miriam|Joshua  </p>
+  <p id="cr-torah1" class="javascript-list  hidden ">sourcehebrew: torah-names-hebrew |hebrewSeparateParas
+  |sourcesound: torah-names-sounds |id: torah1|tooltips:torah-names-tooltips| arrow|colorClass: vocab-color 
+  |audio: alefbet_people_places | containerclass: flex-container-heb-with-tooltips</p>
+ <p>
+ <span class="button-exercise" onclick="shuffleJavascriptList('torah1')">Shuffle</span>&emsp;&emsp;
+ <span class="button-exercise" onclick="reCreateJavascriptList('cr-torah1')">In order of appearance </span>
+ </p>
+
+</div> 
+
+<div id="people2" class="detail-item alefbet-exercise-color hidden">
+
+<h3>Names of people in later books<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+<p>Click on <span class="button-plus"></span> under a word to see the name</p>
+  <div id="later-names-hebrew"  class="hidden">
+   <p>  דְּבוֹרָה</p><p>   חַנָּה</p><p>  שְׁמוּאֵל</p><p>  שָׁאוּל</p><p>  יוֹנָתָן</p><p>דָּוִד</p><p>גָּלְיָת  </p><p>   נָתָן</p>
+   <p>  אַבְשָׁלוֹם</p>
+   <p>   בַּת־שֶׁבֶע</p>
+   <p>  שְׁלֹמֹה </p><p>   מַֽלְכַּת־שְׁבָא</p><p>אֵלִיָּהוּ </p><p> אֱלִישָׁע</p>
+   <p> יְשַׁעְיָהוּ </p><p> יוֹנָה</p><p>אִיּוֹב</p><p>נָעֳמִי</p><p>רוּת</p><p>אֶסְתֵּר</p><p> מָרְדֳּכָי </p><p> הָמָן </p>
+  </div>
+  <p id="later-names-sounds" class="hidden">
+    dvorah |chanah | shmuel | shaul | jonatan | david | golyat | natan | avshalom | batsheve | shelomo 
+    | malkatshva | eliyahu | elisha | yshayahu | yonah | yov | noomi | rut | ester | mordochai|haman  </p>
+  <p id="later-names-tooltips" class="hidden">
+    Deborah| Hannah|Samuel|Saul|Jonathan|David|Goliath| Nathan|Absalom|Bathsheba|Solomon|Queen of Sheba|Elijah|Elisha|Isaiah
+    | Jonah|Job |Naomi |Ruth| Esther|Mordecai|Haman  </p>
+  <p  id="cr-later1" class="javascript-list  hidden ">sourcehebrew: later-names-hebrew |hebrewSeparateParas
+  |sourcesound: later-names-sounds |id: later1|tooltips:later-names-tooltips| arrow|colorClass: vocab-color 
+  |audio: alefbet_people_places | containerclass: flex-container-heb-with-tooltips</p>
+ <p>
+ <span class="button-exercise" onclick="shuffleJavascriptList('later1')">Shuffle</span>&emsp;&emsp;
+ <span class="button-exercise" onclick="reCreateJavascriptList('cr-later1')">In order of appearance </span>
+ </p>
+
+</div> 
+
+<div id="people3" class="detail-item alefbet-exercise-color hidden">
+
+  <h3>Names of places<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+  <p>Click on <span class="button-plus"></span> under a word to see the name of the place</p>
+  <div id="places-hebrew"  class="hidden">
+  <p> גַן־עֵדֶן </p> <p> בָּבֶל </p> <p> כְּנָעַן </p> <p> הַנֶּגֶב </p> <p> מִצְרַיִם </p><p> סְדֹם </p> <p> עֲמֹרָה </p> <p> בֵּֽית־לֶחֶם </p>
+  <p> יַּרְדֵּן </p> <p> סִינַי </p><p> יְרֵחוֹ  </p><p> לְבָנוֹן </p> <p> יְרוּשָׁלִַם </p> 
+  </div>
+  <p id="places-sounds" class="hidden">
+  ganeden | bavel | knaan | hanegev | mitzrayim | sdom | amorah | betlechem | yarden | sinai 
+  | yrecho | lvanon | yrushalayim   </p>
+  <p id="places-tooltips" class="hidden">
+  Garden of Eden | Babel/Babylon | Canaan | The Negeb | Egypt | Sodom | Gomorrah 
+  | Bethlehem | Jordan | Sinai | Jericho | Lebanon | Jerusalem </p>
+  <p  id="cr-places" class="javascript-list  hidden ">sourcehebrew: places-hebrew |hebrewSeparateParas
+  |sourcesound: places-sounds |id: places|tooltips:places-tooltips| arrow|colorClass: vocab-color 
+  |audio: alefbet_people_places | containerclass: flex-container-heb-with-tooltips</p>
+  <p>
+ <span class="button-exercise" onclick="shuffleJavascriptList('places')">Shuffle</span>&emsp;&emsp;
+ <span class="button-exercise" onclick="reCreateJavascriptList('cr-places')">In order of appearance </span>
+ </p>
+
+</div> 
+ 
+<div id="people4" class="detail-item alefbet-exercise-color hidden">
+
+ <h3>Match names and places<span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+  <p>Drag each Hebrew word in the top row to the correct <span class="query query-box-in-text"></span>  box in the bottom row.
+<br>OR Select a Hebrew word in the top row and then select the corresponding <span class="query query-box-in-text"></span>  box.
+<br>  You can hear the pronunciation by clicking on the selected Hebrew word.</p>
+   <p id="cr-names-and-places" class="onload-flex-drag-drop  hidden ">id:names-and-places
+   |questions:torah-names-tooltips :later-names-tooltips : places-tooltips
+   | answers:torah-names-hebrew : later-names-hebrew :places-hebrew
+   | sounds: torah-names-sounds : later-names-sounds : places-sounds
+   |  answersseparateparas 
+   |answerclass:flex-drag-drop-hebrew |questionclass:flex-drag-drop-english     |selection:7|audio: alefbet_people_places
+   | colorClass: vocab-color</p>
+   <p>
+ <!-- <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('names-and-places')">Shuffle</span>&emsp;&emsp; -->
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-names-and-places')">Practise agsin</span>
+  </p>
+
+</div> 
+
+
+<div id="people5" class="detail-item alefbet-exercise-color hidden">
+
+<h3><span class="ear"></span> Match names and places <span class="btn-close" onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="ear"></span>to hear the name or place. <br>
+ Then click on the corresponding name or place in the top row. </p>
+ 
+ <p id="cr-names-and-places2" class="onload-flex-drag-drop  hidden ">id:names-and-places2
+   |answers:torah-names-tooltips :later-names-tooltips : places-tooltips
+    | sounds: torah-names-sounds : later-names-sounds : places-sounds
+   |answerclass:flex-drag-drop-english     |selection:7|audio: alefbet_people_places
+   | colorClass: vocab-color |  matchsounds</p>
+ <p>
+   <p>
+ <!-- <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('names-and-places2')">Shuffle</span>&emsp;&emsp; -->
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-names-and-places2')">Practise agsin</span>
+  </p>
+
+
+</div>
+
+
+<div id="people6" class="detail-item alefbet-exercise-color hidden">
+
+<h3><span class="ear"></span> Match names and places <span class="btn-close"  onclick="menuContentClose(this)"></span></h3>
+ <p>Click on <span class="ear"></span>to hear the name or place. <br>
+ Then click on the corresponding name or place in the top row.</p>
+ 
+ <p id="cr-names-and-places3" class="onload-flex-drag-drop  hidden ">id:names-and-places3
+   |answers:torah-names-hebrew :later-names-hebrew : places-hebrew
+   | answersseparateparas 
+   | sounds: torah-names-sounds : later-names-sounds : places-sounds
+   |answerclass:flex-drag-drop-hebrew     |selection:7|audio: alefbet_people_places
+   | colorClass: vocab-color |  matchsounds</p>
+ <p>
+   <p>
+<!--  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('names-and-places3')">Shuffle</span>&emsp;&emsp; -->
+  <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-names-and-places3')">Practise again</span>
+  </p>
+
+
+</div>
+
+
+ </div>  
+<!-- end of names and places -->
+
+
+</main>
+
+
+<footer>
+ <p >&#169; 2023 Susan Donath  </p>
+</footer>
+
+<!-- scripts -->
+
+
+<script>
+</script>
+
+<script src="scripts/biblical_hebrew_cr_top_menu.js"></script>
+
+<script src="scripts/biblical_hebrew_soundclick_hideshow_utilities.js"></script>
+
+<script src="scripts/biblical_hebrew_flexbox_list.js"></script>
+<script src="scripts/biblical_hebrew_drag_drop.js"></script>
+<script src="scripts/biblical_hebrew_alefbet_exercises.js"></script>
+
+<script src="scripts/biblical_hebrew_modal_popups.js"></script>
+
+
+</body>
+</html>
+
