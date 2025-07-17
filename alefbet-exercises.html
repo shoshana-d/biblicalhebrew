@@ -37,19 +37,13 @@
 
 <body>
 
-<header class="w3-container-h1 " > 
-  <h1 >Getting started in Biblical Hebrew: alefbet exercises</h1>
+<header > 
+  <h1 >Alefbet exercises</h1>
 </header>  
 
-<!-- top menu -->
-<nav class="w3-bar w3-card-4 ">
-  <a href="index.html" class="w3-bar-item w3-button">About</a>
-  <a href="alefbet.html" class="w3-bar-item-alefbet w3-button   "  >Alefbet</a>
-  <a href="alefbet-exercises.html" class="w3-bar-item-alefbet-selected w3-button">Alefbet exercises</a>
-  <a href="alefbetplus.html" class="w3-bar-item-alefbet w3-button">Alefbet &#xFF0B;</a>
-  <a href="resources.html" class="w3-bar-item w3-button  ">Resources</a>
-</nav>
+<p class="hidden" id="htmlfilename">alefbet-exercises.html</p>
 
+<!-- top menu added in JS -->
 
 <!-- main body of text -->
 <main class="main-color ">
@@ -574,19 +568,19 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
 <!-- SYLLABLES  --> 
 
 
- <h2 id="syllables" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise dividing  Biblical Hebrew words into syllables </h2>
+ <h2 id="syllables" class="w3-container w3-card " ><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> Practise dividing  Biblical Hebrew alefbet_words into syllables </h2>
  <div class="detail-item alefbet-exercise-color hidden">
   
  <p>Divide each word in the dotted boxes into syllables by inserting a space between letters.
 <br> Click on a letter to insert a space to the left. 
  <br> Click on a space to remove it.
- <br>Click "Check" to check your answer when you are finished (for one-syllable words you don't need to do anything
+ <br>Click "Check" to check your answer when you are finished (for one-syllable alefbet_words you don't need to do anything
   before clicking  "Check".) </p>
   <p>You can hear how a word is pronounced by clicking on it.</p>
 
  <p id="cr-syllables-exercise" class="javascript-syllables hidden"> id:syllables-exercise|
                  | sourcesound:one-syllable-sounds: syllables-final-sounds : syllables-penultimate-sounds  | stress: last : secondlast
-                 | sourcesyllables: one-syllable-hebrew : syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
+                 | sourcesyllables: one-syllable-hebrew : syllables-final-hebrew : syllables-penultimate-hebrew | audio:alefbet_words | selecton:10</p>
   <p><span class="button-exercise" onclick="reCreateSyllablesExercise('cr-syllables-exercise')">Practise again</span></p>
 
   
@@ -650,7 +644,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
  <br> You can click on the word to hear the pronunciation.</p>
  <p id="cr-cantillation-all" class="javascript-cantillation-exercise hidden"> id:cantillation-all| whichlist: all 
                  | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
-                 | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
+                 | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:alefbet_words | selecton:10</p>
   <p><span class="button-exercise" onclick="reCreateCantillationExercise('cr-cantillation-all')">Practise again</span></p>
 
 </div>
@@ -669,7 +663,7 @@ more <span class="vowel-color2">vowels</span> to practise, then click on "Create
   <br> You can click on the word to hear the pronunciation.</p>
  <p id="cr-cantillation-pashta-kadma" class="javascript-cantillation-exercise hidden">id:cantillation-pashta-kadma |whichlist: pashta-kadma 
                  | sourcesound: syllables-final-sounds:syllables-penultimate-sounds  | stress: last : secondlast
-                 | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:words | selecton:10</p>
+                 | sourcesyllables: syllables-final-hebrew : syllables-penultimate-hebrew | audio:alefbet_words | selecton:10</p>
   <p><span class="button-exercise" onclick="reCreateCantillationExercise('cr-cantillation-pashta-kadma')">Practise again</span></p>
 
 
@@ -852,7 +846,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
   |tooltips:syllables-penultimate-hebrew 
   |tooltipsclass:flex-container-heb30-tooltip| tooltipsseparateparas |tooltipsshowstress: secondlast
   |colorClass: vocab-color | arrow  
-  |audio: words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
+  |audio: alefbet_words| containerclass: flex-container-heb-with-tooltips | selection:10</p>
   <p>
   <span class="button-exercise" onclick="reCreateJavascriptList('cr-syllables-penultimate')">New selection</span>
   </p>
@@ -869,7 +863,7 @@ w003_lcha   |  w003_lahem   |  w003_lachem   |  w004_bcha   |  w004_bahem   |  w
    |sourcesound: one-syllable-sounds : syllables-final-sounds : syllables-penultimate-sounds   
    |tooltips: one-syllable-hebrew : syllables-final-hebrew: syllables-penultimate-hebrew 
    |tooltipsshowstress: last:last:secondlast 
-  |audio: words| selection:10</p>
+  |audio: alefbet_words| selection:10</p>
   <p>
   <span class="button-exercise" onclick="reCreateCantillationJavascriptList('cr-syllables-cantillation')">New selection</span>
   </p>
@@ -919,7 +913,7 @@ w003_lo | w004_bah | w004_bo |w042_im | w007_al | w010_kol
    | answers: one-syllable-hebrew-noduplicates :one-syllable-hebrew-duplicates :syllables-final-hebrew: syllables-penultimate-hebrew 
     |sounds:one-syllable-sounds-noduplicates :one-syllable-sounds-duplicates : syllables-final-sounds : syllables-penultimate-sounds  
   |answersinsyllables   | answersseparateparas   | answerclass:flex-drag-drop-hebrew 
-   |audio: words   | colorClass: vocab-color | matchsounds | selection:10</p>
+   |audio: alefbet_words   | colorClass: vocab-color | matchsounds | selection:10</p>
    <p>		  
 <!--  <span class="button-exercise" onclick="shuffleExistingFlexDragDrop('match-words')">Shuffle</span>&emsp;&emsp; -->
   <span class="button-exercise" onclick="reCreateFlexDragDrop('cr-match-words')">Practise again</span>
@@ -1107,9 +1101,12 @@ w003_lo | w004_bah | w004_bo |w042_im | w007_al | w010_kol
 
 <script>
 </script>
+
+<script src="scripts/biblical_hebrew_cr_top_menu_alefbet.js"></script>
+
 <script src="scripts/biblical_hebrew_soundclick_hideshow_utilities.js"></script>
 
-<script src="scripts/biblical_hebrew_flexbox_list.js"></script>
+<script src="scripts/biblical_hebrew_alefbet_flexbox_list.js"></script>
 <script src="scripts/biblical_hebrew_drag_drop.js"></script>
 <script src="scripts/biblical_hebrew_alefbet_exercises.js"></script>
 

@@ -11,24 +11,26 @@
   <link rel="stylesheet" href="styles/biblical_hebrew_main.css">
   <link href='https://fonts.googleapis.com/css?family=Comic Neue' rel='stylesheet'>
   <meta name="google-site-verification" content="KKfS8dbt7xn4X0UohkHo2FT6ZGmh4vpkSIx0ReSN4pA" />
+
+  
+<style>  
+ .index-indented-text{
+   margin-left:25px;
+   margin-right:25px;
+} 
+</style> 
+
 </head>
 
 <body>
 
-<header class="w3-container-h1 " > 
-  <h1 >Getting started in Biblical Hebrew</h1>
+<header> 
+  <h1 >About this website</h1>
 </header>  
 
+<p class="hidden" id="htmlfilename">index.html</p>
 
-
-<!-- top menu -->
-<nav class="w3-bar w3-card-4 ">
-  <a href="index.html" class="w3-bar-item w3-button   menu-selected-color">About</a>
-  <a href="alefbet.html" class="w3-bar-item-alefbet w3-button ">Alefbet</a>
-  <a href="alefbet-exercises.html" class="w3-bar-item-alefbet w3-button">Alefbet exercises</a>
-  <a href="alefbetplus.html" class="w3-bar-item-alefbet w3-button">Alefbet &#xFF0B;</a>
-  <a href="resources.html" class="w3-bar-item w3-button  ">Resources</a>
-</nav>
+<!-- top menu added in JS -->
 
 <!-- main body of text -->
 <main class="main-color ">
@@ -40,17 +42,17 @@
  <span style="background-color:LightBlue"> <strong>Tanakh </strong></span>.
  </p>
  
-<div  class="nextItem hidden indented-text" style="background-color:LightBlue"> 
+<div  class="nextItem hidden index-indented-text" style="background-color:LightBlue"> 
    <p ><strong>Tanakh</strong> 
    is the Jewish name for the Hebrew Bible. It is an acronym based on the traditional Jewish division of
  the Hebrew Bible into: </p>
  
    <ul >
-   <li><span class="underline"><strong>T</strong>orah</span> (Teaching: Genesis, Exodus, Leviticus, Numbers, Deuteronomy), 
-   <li><span class="underline"><strong>N</strong>evi’im</span> (Prophets: Joshua, Judges, Samuel, Kings, Isaiah, Jeremiah, Ezekiel, 
+   <li><span style="text-decoration:underline"><strong>T</strong>orah</span> (Teaching: Genesis, Exodus, Leviticus, Numbers, Deuteronomy), 
+   <li><span style="text-decoration:underline"><strong>N</strong>evi’im</span> (Prophets: Joshua, Judges, Samuel, Kings, Isaiah, Jeremiah, Ezekiel, 
     and 12 minor prophets), 
     and 
-  <li><span class="underline"><strong>K</strong>etuvim</span> (Writings: Psalms, Proverbs, Job, Song of Songs, Ruth, 
+  <li><span style="text-decoration:underline"><strong>K</strong>etuvim</span> (Writings: Psalms, Proverbs, Job, Song of Songs, Ruth, 
  Lamentations, Ecclesiastes, Esther, Daniel, Ezra, Nehemiah, Chronicles)
    </ul>
  </div>
@@ -79,7 +81,7 @@ Audio is a feature of this site. You can click on every Hebrew word to hear it p
  
  
  <h3 style="margin-left:10px;"><a href="alefbet.html" >Alefbet<a></h3>
- <div  class="indented-text">
+ <div  class="index-indented-text">
  <p>This page has the information you need to pronounce words in Biblical Hebrew correctly:
  the alefbet (consonants) and vowels; how to pronounce words by breaking them into syllables, and which syllable is stressed (emphasised).</p>
  <p>There is also information about cantillation marks. It is really worthwhile making the extra effort to learn about these. 
@@ -88,7 +90,7 @@ Audio is a feature of this site. You can click on every Hebrew word to hear it p
 </div>
  
  <h3 style="margin-left:10px;"><a href="alefbet-exercises.html" >Alefbet exercises</a></h3> 
- <div class="indented-text" >
+ <div class="index-indented-text" >
 <p>This page has lots of exercises to help you learn to pronounce  words in Biblical Hebrew.
 Every Hebrew word in the exercises has audio so you can immediately check your pronunciation.
 </p>
@@ -106,7 +108,7 @@ from the Tanakh. Each time you do these exercises, the exercise consists of a se
 	
 	
  <h3 style="margin-left:10px;"><a href="alefbetplus.html" >Alefbet &#xFF0B;</a></h3>
- <div class="indented-text" >
+ <div class="index-indented-text" >
 <p>This page contains extra information, deeper dives and background about Biblical Hebrew pronunciation.
 
 I have concentrated on things that puzzled me when I started learning.
@@ -117,7 +119,7 @@ still puzzles me...) If you're just beginning your Biblical Hebrew journey you s
 
 
 <h3 style="margin-left:10px;"><a href="resources.html">Resources</a></h3> 
- <div class="indented-text" >
+ <div class="index-indented-text" >
 
 <p>This page has the text of the blessing before Torah study, and a few links to free internet resources related to pronunciation. </p>
 </div>
@@ -154,6 +156,9 @@ Many people find it helpful to have a study buddy (a "chaver" in the Jewish trad
 <!-- scripts -->
 
 <!--<script>var globalThisAudioSubfolder ="alephbet";</script> -->
+
+<script src="scripts/biblical_hebrew_cr_top_menu_alefbet.js"></script>
+
 <script src="scripts/biblical_hebrew_soundclick_hideshow_utilities.js"></script>
 
 </body>

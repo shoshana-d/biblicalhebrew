@@ -12,7 +12,12 @@
   <link href='https://fonts.googleapis.com/css?family=Comic Neue' rel='stylesheet'>
   
    <style>
-   .flex-container-heb-vowel-names > div {
+.alefbetplus-audio-indicator{
+	border-bottom:dotted;
+	border-width:3px;
+	border-color:blue;
+}	
+.flex-container-heb-vowel-names > div {
       margin: 10px 0 3px 11px; /* top right bottom left */
       text-align: center;
    }
@@ -53,19 +58,14 @@
 
 <body>
 
-<header class="w3-container-h1 "> 
-  <h1>Getting started in Biblical Hebrew: alefbet&#xFF0B;</h1>
+<header> 
+  <h1>Alefbet&#xFF0B;</h1>
 </header>  
 
 
-<!-- top menu -->
-<nav class="w3-bar w3-card-4 ">
-  <a href="index.html" class="w3-bar-item w3-button">About</a>
-  <a href="alefbet.html" class="w3-bar-item-alefbet w3-button   "  >Alefbet</a>
-  <a href="alefbet-exercises.html" class="w3-bar-item-alefbet w3-button">Alefbet exercises</a>
-  <a href="alefbetplus.html" class="w3-bar-item-alefbet-selected w3-button">Alefbet &#xFF0B;</a>
-  <a href="resources.html" class="w3-bar-item w3-button ">Resources</a>
-</nav>
+<p class="hidden" id="htmlfilename">alefbetplus.html</p>
+
+<!-- top menu added in JS -->
 
 <!-- main body of text -->
 <main class="main-color ">
@@ -125,7 +125,7 @@
  are those with a primary place of articulation near the back of the oral cavity, 
 where it is difficult to distinguish a sound's place of articulation and its phonation. In modern Hebrew, some speakers still pronounce 
 <span class="hebrew30">ע</span> as a gutteral consonant, others pronounce both
-these consonants as a <span class="soundclick audio-indicator">glottal stop</span><span hidden>alefbet_consonants_and_vowels/Glottal_stop.ogg</span> 
+these consonants as a <span class="soundclick alefbetplus-audio-indicator">glottal stop</span><span hidden>alefbet_consonants_and_vowels/Glottal_stop.ogg</span> 
 , similar to the sound   in the middle of "uh-oh", and 
 others do not pronounce these consonants at all. 
  </p>
@@ -137,20 +137,20 @@ According to the Wikipedia page <a href="https://en.wikipedia.org/wiki/Resh"> ht
 </a> there are several different ways of pronouncing this consonant: </p>
 <ul>
 <li>In Modern Hebrew, the most common pronunciation is the 
-<span class=" soundclick audio-indicator">voiced uvular fricative</span>
+<span class=" soundclick alefbetplus-audio-indicator">voiced uvular fricative</span>
 <span class="hidden">alefbet_consonants_and_vowels/Voiced_uvular_fricative.ogg</span>
 </li>
 <li>Sephardic and Mizrahi, and some Ashkenazi use a 
-<span class=" soundclick audio-indicator">uvular trill</span>
+<span class=" soundclick alefbetplus-audio-indicator">uvular trill</span>
 <span class="hidden">alefbet_consonants_and_vowels/Uvular_trill.ogg</span>
 or an 
-<span class=" soundclick audio-indicator">alveolar trill</span>
+<span class=" soundclick alefbetplus-audio-indicator">alveolar trill</span>
 <span class="hidden">alefbet_consonants_and_vowels/Alveolar_trill.ogg</span>
 </li>
 <li>
  These sounds are difficult for many native English-speakers, so <span class="hebrew30">ר</span> 
  is often pronounced by them as an 
-<span class=" soundclick audio-indicator">alveolar approximant</span>
+<span class=" soundclick alefbetplus-audio-indicator">alveolar approximant</span>
 <span class="hidden">alefbet_consonants_and_vowels/Alveolar_approximant.ogg</span>.
  (Note that this is the sound presented in <a href="alefbet.html">alefbet</a>.)
 
@@ -175,10 +175,10 @@ This may be closer to the original biblical pronunciation, which is believed to 
  Modern Israeli Hebrew doesn't distinguish between these 2 vowels. An alternative acceptable 
  pronunciation for Biblical Hebrew is to pronounce them both  as "e". </p>
  <p>In North America, the vowel <img src="images/vowels/ei1.jpg" class=" vowel-image-intext"> is often pronounced as a diphthong (ie 2 sounds, eh-ee)
- <span class="soundclick audio-indicator"> "ey"</span><span hidden>alefbet_consonants_and_vowels/north_american_ei</span></p>
+ <span class="soundclick alefbetplus-audio-indicator"> "ey"</span><span hidden>alefbet_consonants_and_vowels/north_american_ei</span></p>
  <p>The North American pronunciation of <img src="images/vowels/o2.jpg" class="soundclick vowel-image-intext"> and 
  <span class="hebrew40 ">&thinsp; &#1493;&#1465; &thinsp;</span> is also a diphthong 
- <span class="soundclick audio-indicator">"o"</span><span hidden>alefbet_consonants_and_vowels/north_american_o</span> .</p>
+ <span class="soundclick alefbetplus-audio-indicator">"o"</span><span hidden>alefbet_consonants_and_vowels/north_american_o</span> .</p>
 
  <p> </p>
 
@@ -275,10 +275,10 @@ commandment not to take God’s name in vain — is not entirely clear.
 Some attribute it to a Temple practice in which only the High Priest was allowed to utter the name, and only when in the Temple 
  and reciting the priestly blessing. Because of this prohibition, a variety of pseudonyms are used, 
  such as Adonai (Lord), Elohim (God) and HaShem (The Name). Other possibilities, less gendered than Adonai, are 
- El <span class="hebrew-in-text soundclick">אֵל</span><span class="hidden">words/w188_el </span> or  
+ El <span class="hebrew-in-text soundclick">אֵל</span><span class="hidden">alefbet_words/w188_el </span> or  
  Yah  
  <span class="hebrew-in-text soundclick">יָהּ</span><span class="hidden">alefbet/yah </span>  both of which are words used for God in the Tanakh, 
- or Ruach <span class="hebrew-in-text soundclick">רוּחַ</span><span class="hidden">words/w129_ruach </span> meaning  spirit, wind, breath. </p>
+ or Ruach <span class="hebrew-in-text soundclick">רוּחַ</span><span class="hidden">alefbet_words/w129_ruach </span> meaning  spirit, wind, breath. </p>
  <p>When vowel marks were added to the biblical text in the first millenium, the Tetragrammaton was written with the 
  vowels of "Adonai" to remind the reader to 
 pronounce "Adonai" instead of the Tetragrammaton. A Christian scribe of the Middle Ages misunderstood this 
@@ -389,19 +389,19 @@ This confused form entered English usage in several translations of the Bible.
 
       <p>The most frequently occurring pattern is:</p>
      <table style="margin-top:-15px;">
-	  <tr ><td style="text-align:center;">
+	  <tr ><td style="text-align:center;width:130px;">
 	  <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	  <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;margin-bottom:15px;">
 	  <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;"></td>
 	      <td>
           <div class="flex-container-ltr flex-container-examples ">
-          <div><span class="hebrew30 soundclick">אֶרֶץ</span><span class="hidden">words/w021_eretz </span> </div>
-          <div><span class="hebrew30 soundclick"> מֶלֶךְ </span><span class="hidden">words/w020_melech </span> </div>
-          <div><span class="hebrew30 soundclick">  עֶבֶד </span><span class="hidden">words/w059_eved </span> </div>
-          <div><span class="hebrew30 soundclick"> נֶפֶשׁ </span><span class="hidden">words/w065_nefesh </span>  </div>
-          <div><span class="hebrew30 soundclick"> דֶּרֶךְ </span><span class="hidden">words/w073_derech </span>  </div>
-          <div><span class="hebrew30 soundclick"> אֶלֶף </span><span class="hidden">words/w101_elef </span>  </div>
-          <div><span class="hebrew30 soundclick"> עֶשֶׂר</span><span class="hidden">words/w103_eser </span>  </div>
+          <div><span class="hebrew30 soundclick">אֶרֶץ</span><span class="hidden">alefbet_words/w021_eretz </span> </div>
+          <div><span class="hebrew30 soundclick"> מֶלֶךְ </span><span class="hidden">alefbet_words/w020_melech </span> </div>
+          <div><span class="hebrew30 soundclick">  עֶבֶד </span><span class="hidden">alefbet_words/w059_eved </span> </div>
+          <div><span class="hebrew30 soundclick"> נֶפֶשׁ </span><span class="hidden">alefbet_words/w065_nefesh </span>  </div>
+          <div><span class="hebrew30 soundclick"> דֶּרֶךְ </span><span class="hidden">alefbet_words/w073_derech </span>  </div>
+          <div><span class="hebrew30 soundclick"> אֶלֶף </span><span class="hidden">alefbet_words/w101_elef </span>  </div>
+          <div><span class="hebrew30 soundclick"> עֶשֶׂר</span><span class="hidden">alefbet_words/w103_eser </span>  </div>
           </div> <!-- flex-container-examples -->
        </td></tr>
 	  </table>
@@ -413,17 +413,17 @@ This confused form entered English usage in several translations of the Bible.
 	            <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 	            <img src="images/vowels/ei1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 
-             <span class="hebrew30 soundclick dotted-border example-spacing"> אֵלֶּה </span><span class="hidden">words/w068_eleh </span> 
+             <span class="hebrew30 soundclick dotted-border example-spacing"> אֵלֶּה </span><span class="hidden">alefbet_words/w068_eleh </span> 
 	      </div>
 		  <div>  <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	            <img src="images/vowels/e1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 	            <img src="images/vowels/o2.jpg" class=" vowel-image-intext" style="margin-left:-10px;"> 
-             <span class="hebrew30 soundclick dotted-border example-spacing"> קֹדֶשׁ </span><span class="hidden">words/w108_kodesh</span>
+             <span class="hebrew30 soundclick dotted-border example-spacing"> קֹדֶשׁ </span><span class="hidden">alefbet_words/w108_kodesh</span>
 	      </div>
           <div> <span style="font-family:'Times New Roman';font-size:40px;vertical-align:-6%">&#x25CC; </span>
 	            <img src="images/vowels/a1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
 	            <img src="images/vowels/a1.jpg" class=" vowel-image-intext" style="margin-left:-10px;">
-             <span class="hebrew30 soundclick dotted-border example-spacing"> תַּחַת	 </span><span class="hidden">words/w095_tachat</span> 
+             <span class="hebrew30 soundclick dotted-border example-spacing"> תַּחַת	 </span><span class="hidden">alefbet_words/w095_tachat</span> 
            </div>
         </div> <!-- flex-container-examples -->
   </div>   
@@ -432,30 +432,30 @@ This confused form entered English usage in several translations of the Bible.
  Nouns ending in <span class="hebrew30">יִם </span>
 				<img src="images/vowels/a1.jpg" class=" vowel-image-intext2" style="margin-left:-5px;"</p>
  <div class="hidden" style="margin-left:30px;">
-     <table class="example-table">
+     <table>
 	  <tr><td>Examples:</td>
 	  <td>
        <div class="flex-container-ltr flex-container-examples ">
            <div><span class="hebrew30 soundclick"> עֵינַיִם </span>
-		        <span class="hidden">words/w048_ehnayim</span> 
+		        <span class="hidden">alefbet_words/w048_ehnayim</span> 
            </div>
           <div><span class="hebrew30 soundclick"> שְׁנַיִם	 </span>
-		        <span class="hidden">words/w064_shnayim</span> 
+		        <span class="hidden">alefbet_words/w064_shnayim</span> 
            </div>
            <div><span class="hebrew30 soundclick"> שְׁתַּיִם	 </span>
-		        <span class="hidden">words/w064_shtayim</span> 
+		        <span class="hidden">alefbet_words/w064_shtayim</span> 
            </div>
            <div><span class="hebrew30 soundclick">מַיִם	 </span>
-		        <span class="hidden">words/w083_mayim</span> 
+		        <span class="hidden">alefbet_words/w083_mayim</span> 
            </div>
            <div><span class="hebrew30 soundclick"> מָאתַיִם	 </span>
-		        <span class="hidden">words/w084_matayim</span> 
+		        <span class="hidden">alefbet_words/w084_matayim</span> 
            </div>
            <div><span class="hebrew30 soundclick"> מִצְרַיִם	 </span>
 		        <span class="hidden">alefbet_people_places/mitzrayim </span> 
            </div>
            <div><span class="hebrew30 soundclick"> שָׁמַיִם	 </span>
-		        <span class="hidden">words/w118_shamayim </span> 
+		        <span class="hidden">alefbet_words/w118_shamayim </span> 
            </div>
      </div> <!-- flex-container-examples -->
      </td></tr></table>
@@ -469,32 +469,32 @@ This confused form entered English usage in several translations of the Bible.
  <p> <span class="hebrew-in-text">נוּ</span>- occurs frequently added to the end of a word.
      It can mean "our", "us", or "we" depending on the word it's added to.						
  </p>
-      <table class="example-table">
+      <table >
 	  <tr><td>Examples:</td>
 	  <td>
        <div class="flex-container-ltr flex-container-examples ">
            <div><span class="hebrew30 soundclick">לָּנוּ  </span>
-		        <span class="hidden">words/w003_lanu</span> 
+		        <span class="hidden">alefbet_words/w003_lanu</span> 
 				<br>to us
            </div>
            <div><span class="hebrew30 soundclick"> מִמֶּנּוּ	 </span>
-		        <span class="hidden">words/w006_mimenu</span> 
+		        <span class="hidden">alefbet_words/w006_mimenu</span> 
 				<br>from us
            </div>
            <div><span class="hebrew30 soundclick"> אֱלֹהֵינוּ	 </span>
-		        <span class="hidden">words/w018_eloheinu</span> 
+		        <span class="hidden">alefbet_words/w018_eloheinu</span> 
 				<br>our God
            </div>
            <div><span class="hebrew30 soundclick"> אָבִינוּ 	 </span>
-		        <span class="hidden">words/w034_avinu</span> 
+		        <span class="hidden">alefbet_words/w034_avinu</span> 
 				<br>our father
            </div>
             <div><span class="hebrew30 soundclick">הָיִינוּ	 </span>
-		        <span class="hidden">words/w015_hayinu</span> 
+		        <span class="hidden">alefbet_words/w015_hayinu</span> 
  				<br>we were
           </div>
           <div><span class="hebrew30 soundclick">בָּאנוּ </span>
-		        <span class="hidden">words/w019_banu</span> 
+		        <span class="hidden">alefbet_words/w019_banu</span> 
 				<br>we came
            </div>
      </div> <!-- flex-container-examples -->
@@ -502,36 +502,35 @@ This confused form entered English usage in several translations of the Bible.
   <p></p>
   
   <p></p>(An apparent exception is  <span class="hebrew-in-text soundclick"> נָתְנוּ 	 </span> 
-	                     <span class="hidden">words/w026_natuhnu</span>, 
+	                     <span class="hidden">alefbet_words/w026_natuhnu</span>, 
 		which has stress on the final syllable, but this word means "they gave", not "we gave").				 
  </div>
  
   <p  style="margin-top:0;margin-bottom:0"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span> 
  Verbs ending in &thinsp;<span class="hebrew30"> תִי- </span> meaning "I"</p>
  <div class="hidden" style="margin-left:30px;">
-       <table class="example-table">
+       <table >
 	  <tr><td>Examples:</td>
 	  <td>
        <div class="flex-container-ltr flex-container-examples ">
            <div><span class="hebrew30 soundclick"> הָיִיתִי </span>
-		        <span class="hidden">words/w015_hayiti</span> 
+		        <span class="hidden">alefbet_words/w015_hayiti</span> 
 				<br>I was
            </div>
            <div><span class="hebrew30 soundclick">	   עָשִׂיתִי</span>
-		        <span class="hidden">words/w017_asiti</span> 
+		        <span class="hidden">alefbet_words/w017_asiti</span> 
 				<br>I made
            </div>
            <div><span class="hebrew30 soundclick">   רָאִיתִי </span>
-		        <span class="hidden">words/w032_raiti</span> 
+		        <span class="hidden">alefbet_words/w032_raiti</span> 
 				<br>I saw
            </div>
-           <div><span class="hebrew30 soundclick">     שָׁמַעְתִּי
-	 </span>
-		        <span class="hidden">words/w036_shamati </span> 
+           <div><span class="hebrew30 soundclick">     שָׁמַעְתִּי	 </span>
+		        <span class="hidden">alefbet_words/w036_shamati </span> 
 				<br>I heard
            </div>
             <div><span class="hebrew30 soundclick">יָדַעְתִּי</span>
-		        <span class="hidden">words/w047_yadati</span> 
+		        <span class="hidden">alefbet_words/w047_yadati</span> 
  				<br>I knew
           </div>
      </div> <!-- flex-container-examples -->
@@ -571,21 +570,21 @@ When it's added to a noun it means "and". It also often occurs as the first lett
  <div class="hidden" style="margin-left:30px;">
   
  <div class="flex-container-ltr flex-container-examples ">
-   <div> <span class="hebrew30 soundclick">בָּנִים</span><span class="hidden">words/w013_banim </span> (sons) 
-   &emsp;<span class="hebrew30 soundclick">וּבָנִים</span><span class="hidden">words/w013_uvanim </span> (and sons) 
+   <div> <span class="hebrew30 soundclick">בָּנִים</span><span class="hidden">alefbet_words/w013_banim </span> (sons) 
+   &emsp;<span class="hebrew30 soundclick">וּבָנִים</span><span class="hidden">alefbet_words/w013_uvanim </span> (and sons) 
     </div>
    <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">בָּנוֺת</span><span class="hidden">words/w082_banot</span> (daughters) 
-   &emsp;<span class="hebrew30 soundclick">וּבָנוֹת</span><span class="hidden">words/w082_uvanot </span> (and daughters) 
+   <div> <span class="hebrew30 soundclick">בָּנוֺת</span><span class="hidden">alefbet_words/w082_banot</span> (daughters) 
+   &emsp;<span class="hebrew30 soundclick">וּבָנוֹת</span><span class="hidden">alefbet_words/w082_uvanot </span> (and daughters) 
     </div>
    <div class="flex-container-spacer"></div>
-   <div><span class="hebrew30 soundclick">בָּתֵּיכֶם</span><span class="hidden">words/w025_bateichem </span> (your households) 
+   <div><span class="hebrew30 soundclick">בָּתֵּיכֶם</span><span class="hidden">alefbet_words/w025_bateichem </span> (your households) 
    &emsp;<span class="hebrew30 soundclick">וּבָתֵּיכֶם
-   </span><span class="hidden">words/w025_uvateichem   </span> (and your households)
+   </span><span class="hidden">alefbet_words/w025_uvateichem   </span> (and your households)
    </div>
    <div class="flex-container-spacer"></div>
-  <div>   <span class="hebrew30 soundclick">בָּא</span><span class="hidden">words/w019_ba </span> (he went) 
-    &emsp;<span class="hebrew30 soundclick">וּבָא</span><span class="hidden">words/w019_uva </span> (he will go) 
+  <div>   <span class="hebrew30 soundclick">בָּא</span><span class="hidden">alefbet_words/w019_ba </span> (he went) 
+    &emsp;<span class="hebrew30 soundclick">וּבָא</span><span class="hidden">alefbet_words/w019_uva </span> (he will go) 
    </div>
   </div> <!--flex-container -->
   <p>(Note that the <span class="hebrew30 soundclick"> בּ </span><span hidden>alefbet_consonants_and_vowels/b</span>  becomes 
@@ -596,16 +595,16 @@ When it's added to a noun it means "and". It also often occurs as the first lett
  <span class="hebrew35 ">מ</span></p>
  <div class="hidden" style="margin-left:30px;">
   <div class="flex-container-ltr flex-container-examples ">
-   <div>   <span class="hebrew30 soundclick"> מַיִםָ</span><span class="hidden">words/w083_mayim</span> (water) 
-   &emsp;<span class="hebrew30 soundclick">וּמַיִם    </span><span class="hidden">words/w083_umayim   </span> (and water)
+   <div>   <span class="hebrew30 soundclick"> מַיִםָ</span><span class="hidden">alefbet_words/w083_mayim</span> (water) 
+   &emsp;<span class="hebrew30 soundclick">וּמַיִם    </span><span class="hidden">alefbet_words/w083_umayim   </span> (and water)
     </div>
    <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">מֶלֶךְ</span><span class="hidden">words/w020_melech</span> (King) 
-   &emsp;<span class="hebrew30 soundclick">וּמֶלֶךְ</span><span class="hidden">words/w020_umelech </span> (and King) 
+   <div> <span class="hebrew30 soundclick">מֶלֶךְ</span><span class="hidden">alefbet_words/w020_melech</span> (King) 
+   &emsp;<span class="hebrew30 soundclick">וּמֶלֶךְ</span><span class="hidden">alefbet_words/w020_umelech </span> (and King) 
     </div>
    <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">מֵאָה</span><span class="hidden">words/w084_meah</span> (a hundred) 
-   &emsp;<span class="hebrew30 soundclick">וּמֵאָה</span><span class="hidden">words/w084_umeah </span> (and a hundred) 
+   <div> <span class="hebrew30 soundclick">מֵאָה</span><span class="hidden">alefbet_words/w084_meah</span> (a hundred) 
+   &emsp;<span class="hebrew30 soundclick">וּמֵאָה</span><span class="hidden">alefbet_words/w084_umeah </span> (and a hundred) 
     </div>
 
   </div> <!--flex-container -->
@@ -621,12 +620,12 @@ When it's added to a noun it means "and". It also often occurs as the first lett
    &emsp;<span class="hebrew30 soundclick">וּפַרְעֹה   </span><span class="hidden">alefbet/ufaroh    </span> (and pharaoh)
     </div>
    <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">פִּיו</span><span class="hidden">words/w100_piv</span> (his mouth) 
-   &emsp;<span class="hebrew30 soundclick">וּפִיו</span><span class="hidden">words/w100_ufiv </span> (and his mouth) 
+   <div> <span class="hebrew30 soundclick">פִּיו</span><span class="hidden">alefbet_words/w100_piv</span> (his mouth) 
+   &emsp;<span class="hebrew30 soundclick">וּפִיו</span><span class="hidden">alefbet_words/w100_ufiv </span> (and his mouth) 
     </div>
     <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">פָּנִים</span><span class="hidden">words/w024_panim</span> (a face) 
-   &emsp;<span class="hebrew30 soundclick">וּפָנִים</span><span class="hidden">words/w024_ufanim</span> (and a face) 
+   <div> <span class="hebrew30 soundclick">פָּנִים</span><span class="hidden">alefbet_words/w024_panim</span> (a face) 
+   &emsp;<span class="hebrew30 soundclick">וּפָנִים</span><span class="hidden">alefbet_words/w024_ufanim</span> (and a face) 
     </div> 
 
   </div> <!--flex-container -->
@@ -641,16 +640,16 @@ When it's added to a noun it means "and". It also often occurs as the first lett
  <div class="hidden" style="margin-left:30px;">
   <div class="flex-container-ltr flex-container-examples ">
    <div>      
-   <span class="hebrew30 soundclick">שְׁנַיִם</span><span class="hidden">words/w064_shnayim </span> (two) 
-    &emsp;<span class="hebrew30 soundclick">וּשְׁנַיִם</span><span class="hidden">words/w064_ushnayim </span> (and two)    
+   <span class="hebrew30 soundclick">שְׁנַיִם</span><span class="hidden">alefbet_words/w064_shnayim </span> (two) 
+    &emsp;<span class="hebrew30 soundclick">וּשְׁנַיִם</span><span class="hidden">alefbet_words/w064_ushnayim </span> (and two)    
 	</div>
    <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">דְּבָרִים</span><span class="hidden">words/w030_dvarim </span> (words) 
-    &emsp;<span class="hebrew30 soundclick">וּדְבָרִים   </span><span class="hidden">words/w030_udvarim    </span> (and words)
+   <div> <span class="hebrew30 soundclick">דְּבָרִים</span><span class="hidden">alefbet_words/w030_dvarim </span> (words) 
+    &emsp;<span class="hebrew30 soundclick">וּדְבָרִים   </span><span class="hidden">alefbet_words/w030_udvarim    </span> (and words)
     </div>
    <div class="flex-container-spacer"></div>
-   <div> <span class="hebrew30 soundclick">שְׁלֹשִׁים</span><span class="hidden">words/w078_shloshim </span> (thirty) 
-    &emsp;<span class="hebrew30 soundclick">וּשְׁלֹשִׁים  </span><span class="hidden">words/w078_ushloshim   </span> (and thirty)
+   <div> <span class="hebrew30 soundclick">שְׁלֹשִׁים</span><span class="hidden">alefbet_words/w078_shloshim </span> (thirty) 
+    &emsp;<span class="hebrew30 soundclick">וּשְׁלֹשִׁים  </span><span class="hidden">alefbet_words/w078_ushloshim   </span> (and thirty)
     </div>
 
   </div> <!--flex-container -->
@@ -695,15 +694,15 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 				 in a <strong>Consonant-Vowel</strong>  syllable (short "uh" sound)</p>
  <div class="hidden" style="margin-left:30px;">
        <div class="flex-container-ltr flex-container-examples ">
-	   <div><span class="hebrew30 soundclick">לְבַב</span><span class="hidden">words/w054_lvav</span> 
+	   <div><span class="hebrew30 soundclick">לְבַב</span><span class="hidden">alefbet_words/w054_lvav</span> 
 	   	    <br>
        	    <span class="hebrew30">לְ</span> <span class="hebrew30 unmarked-text"> בַב</span>  
 	   </div>
-	   <div><span class="hebrew30 soundclick"> שְׁמוֹ</span><span class="hidden">words/w053_shmo</span>
+	   <div><span class="hebrew30 soundclick"> שְׁמוֹ</span><span class="hidden">alefbet_words/w053_shmo</span>
 	   	    <br>
        	    <span class="hebrew30"> שְׁ </span> <span class="hebrew30 unmarked-text">מוֹ</span>  
 	   </div> 
-	   <div><span class="hebrew30 soundclick">דְּבָרִים</span><span class="hidden">words/w030_dvarim  </span> 
+	   <div><span class="hebrew30 soundclick">דְּבָרִים</span><span class="hidden">alefbet_words/w030_dvarim  </span> 
 	   	    <br>
        	    <span class="hebrew30">דְּ</span> <span class="hebrew30 unmarked-text"> בָ רִים</span>  
 	   </div>
@@ -716,15 +715,15 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
  				   <strong>Consonant-Vowel-Consonant</strong> syllable (no sound)</p>
  <div class="hidden" style="margin-left:30px;">
         <div class="flex-container-ltr flex-container-examples ">
-		<div><span class="hebrew30 soundclick">מֶלֶךְ </span><span class="hidden">words/w020_melech</span>
+		<div><span class="hebrew30 soundclick">מֶלֶךְ </span><span class="hidden">alefbet_words/w020_melech</span>
 	   	    <br>
        	    <span class="hebrew30 unmarked-text">מֶ </span> <span class="hebrew30"> לֶךְ</span>  
 		</div>
-		<div><span class="hebrew30 soundclick"> הָלַךְ </span><span class="hidden">words/w029_halach</span>
+		<div><span class="hebrew30 soundclick"> הָלַךְ </span><span class="hidden">alefbet_words/w029_halach</span>
 	   	    <br>
        	    <span class="hebrew30 unmarked-text">הָ </span> <span class="hebrew30">לַךְ</span>  
 		</div>
-		<div><span class="hebrew30 soundclick"> יָדַעַתְּ </span><span class="hidden">words/w047_yadaat</span>
+		<div><span class="hebrew30 soundclick"> יָדַעַתְּ </span><span class="hidden">alefbet_words/w047_yadaat</span>
 	   	    <br>
        	    <span class="hebrew30 unmarked-text">יָ דַ </span> <span class="hebrew30"> עַתְּ</span>  
 		</div>
@@ -733,7 +732,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	   end of a word <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" ><img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > , 
 	   they mark the end of a syllable that looks like Consonant-Vowel-Consonant-Consonant (both silent)
        <div class="flex-container-ltr flex-container-examples ">
-		<div><span class="hebrew30 soundclick"> אָמַרְתְּ </span><span class="hidden">words/w011_amart</span>
+		<div><span class="hebrew30 soundclick"> אָמַרְתְּ </span><span class="hidden">alefbet_words/w011_amart</span>
 	   	    <br>
        	    <span class="hebrew30 unmarked-text">אָ </span> <span class="hebrew30"> מַרְתְּ</span>  
  	   </div>
@@ -751,15 +750,15 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		the first one is the end of a Consonant-Vowel-Consonant syllable (silent) and the second one is the vowel 
 		in a Consonant-Vowel syllable (short "uh" sound). </p>	
        <div class="flex-container-ltr flex-container-examples ">
-	   <div><span class="hebrew30 soundclick">יִקְרְאוּ	</span><span class="hidden">words/w070_yikruhu </span>
+	   <div><span class="hebrew30 soundclick">יִקְרְאוּ	</span><span class="hidden">alefbet_words/w070_yikruhu </span>
 	   	    <br>
        	    <span class="hebrew30">יִקְ רְ </span> <span class="hebrew30 unmarked-text"> אוּ</span>  
 	   </div> 
-	   <div><span class="hebrew30 soundclick">יִשְׁמְעוּ</span><span class="hidden">words/w036_yishmuhu </span>
+	   <div><span class="hebrew30 soundclick">יִשְׁמְעוּ</span><span class="hidden">alefbet_words/w036_yishmuhu </span>
 	   	    <br>
        	    <span class="hebrew30">יִשְׁ מְ </span> <span class="hebrew30 unmarked-text">  עוּ</span>  
 	   </div> 
-	   <div><span class="hebrew30 soundclick">אִשְׁתְּךָָ</span><span class="hidden">words/w061_ishtcha </span>
+	   <div><span class="hebrew30 soundclick">אִשְׁתְּךָָ</span><span class="hidden">alefbet_words/w061_ishtcha </span>
 	   	    <br>
       	    <span class="hebrew30">אִשְׁ תְּ </span> <span class="hebrew30 unmarked-text">  ךָ</span>  
 	   </div> 
@@ -771,15 +770,15 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
               the <img src="images/vowels/uh_or_silent.jpg" class=" vowel-image-intext2" > syllable is Consonant-Vowel (short "uh"sound) </p>
 		<p>(The <img src="images/vowels/meteg_blue.jpg" class=" vowel-image-intext2" > mark indicates that a syllable is Consonant-Vowel) </p>
        <div class="flex-container-ltr flex-container-examples ">
-       <div><span class="hebrew30 soundclick">אָֽמְרוּ</span><span class="hidden">words/w011_amuhru  </span>
+       <div><span class="hebrew30 soundclick">אָֽמְרוּ</span><span class="hidden">alefbet_words/w011_amuhru  </span>
 	   	    <br>
        	    <span class="hebrew30">אָֽ מְ </span> <span class="hebrew30 unmarked-text">  רוּ </span>  
 	   </div> 
-       <div><span class="hebrew30 soundclick"> וַֽיְהִי</span><span class="hidden">words/w015_vayhi  </span>
+       <div><span class="hebrew30 soundclick"> וַֽיְהִי</span><span class="hidden">alefbet_words/w015_vayhi  </span>
 	   	    <br>
        	    <span class="hebrew30">וַֽ יְ</span> <span class="hebrew30 unmarked-text">  הִי </span>  
 	   </div> 
-        <div><span class="hebrew30 soundclick">נָֽתְנוּ</span><span class="hidden">words/w026_natuhnu  </span>
+        <div><span class="hebrew30 soundclick">נָֽתְנוּ</span><span class="hidden">alefbet_words/w026_natuhnu  </span>
 	   	    <br>
        	    <span class="hebrew30">נָֽ תְ </span> <span class="hebrew30 unmarked-text">  נוּ  </span>  
 		</div> 
@@ -787,17 +786,17 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
     <li><p><span class="hebrew30"> יְ </span>&thinsp; is Consonant-Vowel (short "uh" sound)
      </p>
         <div class="flex-container-ltr flex-container-examples ">
-       <div><span class="hebrew30 soundclick">וַיְהִי</span><span class="hidden">words/w015_vayhi  </span>
+       <div><span class="hebrew30 soundclick">וַיְהִי</span><span class="hidden">alefbet_words/w015_vayhi  </span>
 	   	    <br>
  			  <span class="hebrew30 unmarked-text">וַ</span> 
       	   <span class="hebrew30"> יְ </span>  <span class="hebrew30 unmarked-text"> הִי</span> 
 		</div> 	  
-       <div><span class="hebrew30 soundclick"> הָיְתָה</span><span class="hidden">words/w015_haytah   </span>
+       <div><span class="hebrew30 soundclick"> הָיְתָה</span><span class="hidden">alefbet_words/w015_haytah   </span>
 	   	    <br>
        	   <span class="hebrew30 unmarked-text">הָ </span>  <span class="hebrew30"> יְ </span> 
 			  <span class="hebrew30 unmarked-text">תָה</span> 
 		</div> 	  
-       <div><span class="hebrew30 soundclick">וַיְדַבֵּר</span><span class="hidden">words/w037_vaydaber  </span> 
+       <div><span class="hebrew30 soundclick">וַיְדַבֵּר</span><span class="hidden">alefbet_words/w037_vaydaber  </span> 
 	   	    <br>
        	   <span class="hebrew30 unmarked-text"> וַ</span>  <span class="hebrew30"> יְ </span> 
 			  <span class="hebrew30 unmarked-text">דַ בֵּר</span> 
@@ -828,14 +827,14 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
    </ul>	  
          
      <div  class="flex-container-ltr flex-container-examples ">
-      <div><span class="hebrew30 soundclick"> חָכְמָה   </span><span class="hidden">words/w271_chochma </span>
+      <div><span class="hebrew30 soundclick"> חָכְמָה   </span><span class="hidden">alefbet_words/w271_chochma </span>
 	       <br>
              <span class="hebrew30 ">חָכְ מָה</span> 
 	       <br>
 	       ch<strong>o</strong>ch-ma  
 	 </div>
      <div> but </div>
-     <div><span class="hebrew30 soundclick"> נָתְנוּ </span><span class="hidden">words/w026_natuhnu </span> 
+     <div><span class="hebrew30 soundclick"> נָתְנוּ </span><span class="hidden">alefbet_words/w026_natuhnu </span> 
 	       <br>
              <span class="hebrew30 ">נָ תְ נוּ </span>	 
            <br> n<strong>a</strong>-tuh-nu 
@@ -871,8 +870,8 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
    <li><p>It's also almost always pronounced <strong>"a"</strong> in a <strong>Consonant-Vowel syllable</strong> (there's one infrequently occurring
  exception, marked * in the table below). </p>
    <li><p>It is only pronounced <strong>"o"</strong> in an <strong>unstressed Consonant-Vowel-Consonant syllable</strong>. By far the most frequent occurrence of the "o" pronunciation is    
- <span class="hebrew30 main-color soundclick">כָל־</span><span class="hidden">words/w010_chol</span> /  
-	<span class="hebrew30 main-color soundclick">כָּל־</span><span class="hidden">words/w010_kol</span> &emsp;</p>
+ <span class="hebrew30 main-color soundclick">כָל־</span><span class="hidden">alefbet_words/w010_chol</span> /  
+	<span class="hebrew30 main-color soundclick">כָּל־</span><span class="hidden">alefbet_words/w010_kol</span> &emsp;</p>
  </ul>
  <p>It's therefore mostly straightforward to decide whether 
  <img src="images/vowels/a_or_o.jpg" class=" vowel-image-intext2" > should be pronounced "a" or "o".</p>
@@ -886,9 +885,9 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
        <div class="flex-container-ltr flex-container-examples ">
-        <div><span class="hebrew30 soundclick">הָֽאָדָם</span>	<span class="hidden">words/w091_haadam</span> </div>
-        <div><span class="hebrew30 soundclick">הָֽאִשָּׁה</span>	<span class="hidden">words/w061_haisha</span> </div>
-        <div> <span class="hebrew30 soundclick">שָֽׁמְעוּ</span><span class="hidden">words/w036_shamuhu</span>  </div>
+        <div><span class="hebrew30 soundclick">הָֽאָדָם</span>	<span class="hidden">alefbet_words/w091_haadam</span> </div>
+        <div><span class="hebrew30 soundclick">הָֽאִשָּׁה</span>	<span class="hidden">alefbet_words/w061_haisha</span> </div>
+        <div> <span class="hebrew30 soundclick">שָֽׁמְעוּ</span><span class="hidden">alefbet_words/w036_shamuhu</span>  </div>
        </div> <!-- flex-container-examples -->
 	  </div>
     </td>
@@ -901,9 +900,9 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
        <div class="flex-container-ltr flex-container-examples ">
-        <div><span class="hebrew30 soundclick">יָד</span>	<span class="hidden">words/w028_yad</span> </div>
-        <div><span class="hebrew30 soundclick">אָב</span>	<span class="hidden">words/w034_av</span> </div>
-        <div> <span class="hebrew30 soundclick"> שָׁם</span><span class="hidden">words/w057_sham</span>  </div>
+        <div><span class="hebrew30 soundclick">יָד</span>	<span class="hidden">alefbet_words/w028_yad</span> </div>
+        <div><span class="hebrew30 soundclick">אָב</span>	<span class="hidden">alefbet_words/w034_av</span> </div>
+        <div> <span class="hebrew30 soundclick"> שָׁם</span><span class="hidden">alefbet_words/w057_sham</span>  </div>
        </div> <!-- flex-container-examples -->
 	  </div>
     </td>
@@ -915,33 +914,33 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
       <div class="flex-container-ltr flex-container-examples ">
-         <div><p><span class="hebrew30 soundclick">לְךָ</span> <span class="hidden">words/w003_lcha</span></p>
+         <div><p><span class="hebrew30 soundclick">לְךָ</span> <span class="hidden">alefbet_words/w003_lcha</span></p>
 	          <p><span class="hebrew30 unmarked-text">לְ</span> <span class="hebrew30">ךָ</span></p>
 	          <p><span class="unmarked-text">l'-</span><span class="stressed-syllable">cha</span></p>
 	     </div>
-         <div><p><span class="hebrew30 soundclick">הָאָרֶץ</span> <span class="hidden">words/w021_haaretz</span></p>
+         <div><p><span class="hebrew30 soundclick">הָאָרֶץ</span> <span class="hidden">alefbet_words/w021_haaretz</span></p>
 	         <p><span class="hebrew30 unmarked-text">הָ</span> <span class="hebrew30">אָ</span> 
 			 <span class="hebrew30 unmarked-text">רֶץ</span></p> 
 	         <p><span class="unmarked-text">ha-</span><span class="stressed-syllable">a</span><span class="unmarked-text">-retz</span></p>
 	     </div>     
-         <div><p><span class="hebrew30 soundclick">אֹתָנוּ</span> <span class="hidden">words/w005_otanu</span></p>
+         <div><p><span class="hebrew30 soundclick">אֹתָנוּ</span> <span class="hidden">alefbet_words/w005_otanu</span></p>
 	         <p><span class="hebrew30 unmarked-text">אֹ</span> <span class="hebrew30">תָ</span> 
 			 <span class="hebrew30 unmarked-text">נוּ</span></p> 
 	         <p><span class="unmarked-text">o-</span><span class="stressed-syllable">ta</span><span class="unmarked-text">-nu</span></p>
 	     </div>     
-         <div><p><span class="hebrew30 soundclick">אִשָּׁה	</span><span class="hidden">words/w061_isha</span></p>
+         <div><p><span class="hebrew30 soundclick">אִשָּׁה	</span><span class="hidden">alefbet_words/w061_isha</span></p>
        	     <p><span class="hebrew30 unmarked-text">אִ</span> <span class="hebrew30">שָּׁה</span></p>  
 	         <p><span class="unmarked-text">i-</span><span class="stressed-syllable">sha</span></p>
 	     </div>
-         <div><p><span class="hebrew30 soundclick">דָּבָר</span><span class="hidden">words/w030_davar</span></p> 
+         <div><p><span class="hebrew30 soundclick">דָּבָר</span><span class="hidden">alefbet_words/w030_davar</span></p> 
 	        <p><span class="hebrew30 unmarked-text">דָּ</span> <span class="hebrew30">בָר</span> </p>
 	        <p><span class="unmarked-text">da-</span><span class="stressed-syllable">var</span></p>
 	     </div>
-         <div><p><span class="hebrew30 soundclick">אָדָם</span><span class="hidden">words/w091_adam</span></p>  
+         <div><p><span class="hebrew30 soundclick">אָדָם</span><span class="hidden">alefbet_words/w091_adam</span></p>  
 	        <p><span class="hebrew30 unmarked-text">אָ</span> <span class="hebrew30">דָם</span></p>
 	        <p><span class="unmarked-text">a-</span><span class="stressed-syllable">dam</span></p>
 	     </div>     
-	     <div><p><span class="hebrew30 soundclick">אֶחָד</span><span class="hidden">words/w045_echad</span></p> 
+	     <div><p><span class="hebrew30 soundclick">אֶחָד</span><span class="hidden">alefbet_words/w045_echad</span></p> 
 	        <p><span class="hebrew30 unmarked-text">אֶ</span> <span class="hebrew30">חָד</span></p>  
 	        <p><span class="unmarked-text">e-</span><span class="stressed-syllable">chad</span></p>
 	     </div>
@@ -955,33 +954,33 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	  <div class="hidden">
 	  <span class="example">Examples:</span>
       <div class="flex-container-ltr flex-container-examples ">
-	    <div><p><span class="hebrew30 soundclick">הָיָה</span><span class="hidden">words/w015_haya</span></p>
+	    <div><p><span class="hebrew30 soundclick">הָיָה</span><span class="hidden">alefbet_words/w015_haya</span></p>
            <p><span class="hebrew30">הָ</span> <span class="hebrew30 unmarked-text">יָה</span></p> 
 	       <p><span>ha</span>-<span class="unmarked-text">ya</span></p>
 	    </div>
-        <div><p><span class="hebrew30 soundclick">אָדָם</span><span class="hidden">words/w091_adam</span></p>
+        <div><p><span class="hebrew30 soundclick">אָדָם</span><span class="hidden">alefbet_words/w091_adam</span></p>
 	       <p><span class="hebrew30">אָ</span> <span class="hebrew30 unmarked-text">דָם</span></p>	 
  	       <p><span>a</span>-<span class="unmarked-text">dam</span></p>
 	    </div>     
-        <div><p><span class="hebrew30 soundclick">אֲנָשִׁים</span><span class="hidden">words/w023_anashim</span></p>
+        <div><p><span class="hebrew30 soundclick">אֲנָשִׁים</span><span class="hidden">alefbet_words/w023_anashim</span></p>
 	       <p><span class="hebrew30 unmarked-text">אֲ</span> <span class="hebrew30">נָ</span> 
 		   <span class="hebrew30  unmarked-text">שִׁים</span></p> 
  	       <p><span class="unmarked-text"> a-</span><span>na</span>-<span class="unmarked-text">shim</span></p>
 	    </div>     
-        <div><p><span class="hebrew30 soundclick">הַדְּבָרִים</span><span class="hidden">words/w030_hadvarim</span></p>
+        <div><p><span class="hebrew30 soundclick">הַדְּבָרִים</span><span class="hidden">alefbet_words/w030_hadvarim</span></p>
 	       <p><span class="hebrew30 unmarked-text">הַדְּ</span> <span class="hebrew30">בָ</span> <span class="hebrew30  unmarked-text">רִים</span></p> 
 	       <p><span class="unmarked-text">had-</span><span>va</span>-<span class="unmarked-text">rim</span></p>
 	    </div>     
-        <div><p><span class="hebrew30 soundclick">לְךָ</span> <span class="hidden">words/w003_lcha</span></p>
+        <div><p><span class="hebrew30 soundclick">לְךָ</span> <span class="hidden">alefbet_words/w003_lcha</span></p>
 	        <p><span class="hebrew30 unmarked-text">לְ</span> <span class="hebrew30">ךָ</span></p>
 	        <p><span class="unmarked-text">l'-</span>cha</p>
 	    </div>
-        <div><p><span class="hebrew30 soundclick">הָאָרֶץ</span> <span class="hidden">words/w021_haaretz</span></p>
+        <div><p><span class="hebrew30 soundclick">הָאָרֶץ</span> <span class="hidden">alefbet_words/w021_haaretz</span></p>
 	         <p><span class="hebrew30 ">הָ אָ</span> 
 			 <span class="hebrew30 unmarked-text">רֶץ</span> </p>
 	         <p>ha-a<span class="unmarked-text">-retz</span></p>
 	     </div>     
-         <div><p><span class="hebrew30 soundclick">אֹתָנוּ</span> <span class="hidden">words/w005_otanu</span></p>
+         <div><p><span class="hebrew30 soundclick">אֹתָנוּ</span> <span class="hidden">alefbet_words/w005_otanu</span></p>
 	         <p><span class="hebrew30 unmarked-text">אֹ</span> <span class="hebrew30">תָ</span> 
 			 <span class="hebrew30 unmarked-text">נוּ</span> </p>
 	         <p><span class="unmarked-text">o-</span>ta<span class="unmarked-text">-nu</span></p>
@@ -1008,7 +1007,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
        <div><span id="btn-kamatzo" class="button-plus" onclick="showHideJsToggle('kamatzo','btn-kamatzo')"></span>
 	   </div>	   
        <div>
-	      <p><span class="hebrew30 soundclick">צָהֳרָיִם</span><span class="hidden">words/w1161_tsohorayim</span>
+	      <p><span class="hebrew30 soundclick">צָהֳרָיִם</span><span class="hidden">alefbet_words/w1161_tsohorayim</span>
  	      </p>
  	      <p class="hebrew30 hidden  js-toggle"> <span>צָ הֳ </span>
 			<span class="stressed-syllable">רָ</span> <span class="unmarked-text">יִם</span></p>
@@ -1016,13 +1015,13 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		  <p>noon</p>
       </div>	
 	  <div>
-	     <p><span class="hebrew30 soundclick">אָהֳלוֹ</span><span class="hidden">words/w139_oholo</span> </p>
+	     <p><span class="hebrew30 soundclick">אָהֳלוֹ</span><span class="hidden">alefbet_words/w139_oholo</span> </p>
  	     <p class="hebrew30 hidden js-toggle"><span>אָ הֳ </span><span class="stressed-syllable">לוֹ</span> </p>
          <p class="hidden js-toggle">o-ho-<span class="stressed-syllable">lo</span></p>
 		 <p>his tent	</p>
 	  </div>
 	  <div>
-	      <p><span class="hebrew30 soundclick">הַֽמָּחֳרָת</span><span class="hidden">words/w927_hamochorat</span> </p>
+	      <p><span class="hebrew30 soundclick">הַֽמָּחֳרָת</span><span class="hidden">alefbet_words/w927_hamochorat</span> </p>
  	      <p class="hebrew30 hidden js-toggle"><span class="unmarked-text">הַֽ </span> <span>מָּ חֳ </span>
 			<span class="stressed-syllable">רָת</span> </p>
           <p class="hidden js-toggle"> <span class="unmarked-text">ha</span>-mo-cho-<span class="stressed-syllable">rat</span></p>
@@ -1051,17 +1050,17 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
   <p>where the word ending in a Consonant-Vowel-Consonant syllable is attached to next word, 
   so none of the syllables in the word are stressed</p>
    <p>This occurs most frequently with the word 
-   <span class="hebrew30 main-color soundclick">כָל־</span><span class="hidden">words/w010_chol</span> /  
-	<span class="hebrew30 main-color soundclick">כָּל־</span><span class="hidden">words/w010_kol</span> &emsp;
+   <span class="hebrew30 main-color soundclick">כָל־</span><span class="hidden">alefbet_words/w010_chol</span> /  
+	<span class="hebrew30 main-color soundclick">כָּל־</span><span class="hidden">alefbet_words/w010_kol</span> &emsp;
    </p>
    <p class="example">Some examples:</p>
      <div class="flex-container-ltr flex-container-examples ">
-     <div><span class="hebrew30 soundclick">כָּל־הָאָרֶץ</span><span class="hidden">words/w010_kol_haaretz </span><br> all the land</div>
-     <div><span class="hebrew30 soundclick">וְכָל־הָעָם</span><span class="hidden">words/w010_vchol_haam</span><br> and all the people</div>
-     <div><span class="hebrew30 soundclick">בְּכָל־הָאָרֶץ</span><span class="hidden">words/w010_bchol_haaretz </span><br> in all the land </div>
-     <div><span class="hebrew30 soundclick">וּבְכָל־הָאָרֶץ</span><span class="hidden">words/w010_uvchol_haaretz </span><br>and in all the land</div>
-     <div><span class="hebrew30 soundclick">מִכָּל־בָּנָיו</span><span class="hidden">words/w010_mikol_banav </span><br> from all his sons</div>
-     <div><span class="hebrew30 soundclick">לְכָל־מִצְרַיִם</span><span class="hidden">words/w010_lchol_mitzraim</span><br> to all Egypt</div>
+     <div><span class="hebrew30 soundclick">כָּל־הָאָרֶץ</span><span class="hidden">alefbet_words/w010_kol_haaretz </span><br> all the land</div>
+     <div><span class="hebrew30 soundclick">וְכָל־הָעָם</span><span class="hidden">alefbet_words/w010_vchol_haam</span><br> and all the people</div>
+     <div><span class="hebrew30 soundclick">בְּכָל־הָאָרֶץ</span><span class="hidden">alefbet_words/w010_bchol_haaretz </span><br> in all the land </div>
+     <div><span class="hebrew30 soundclick">וּבְכָל־הָאָרֶץ</span><span class="hidden">alefbet_words/w010_uvchol_haaretz </span><br>and in all the land</div>
+     <div><span class="hebrew30 soundclick">מִכָּל־בָּנָיו</span><span class="hidden">alefbet_words/w010_mikol_banav </span><br> from all his sons</div>
+     <div><span class="hebrew30 soundclick">לְכָל־מִצְרַיִם</span><span class="hidden">alefbet_words/w010_lchol_mitzraim</span><br> to all Egypt</div>
      </div> <!-- flex-container-examples -->
 
    <li>   
@@ -1072,7 +1071,7 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
         <div><span id="btn-kamatzo2" class="button-plus" onclick="showHideJsToggle('kamatzo2','btn-kamatzo2')"></span>
 	    </div>	   
         <div>
-		   <p><span class="hebrew30 soundclick"> וַיָּשָׁב</span><span class="hidden">words/w041_vayashov</span> 
+		   <p><span class="hebrew30 soundclick"> וַיָּשָׁב</span><span class="hidden">alefbet_words/w041_vayashov</span> 
 		   </p>
 	       <p class="hebrew30 hidden  js-toggle"><span class="hebrew30 unmarked-text">וַ יָּ</span> <span class="hebrew30">שָׁב</span>
 	       </p>
@@ -1081,31 +1080,31 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 		   <p>he returned</p>
 		 </div>
          <div>
-		   <p><span class="hebrew30  soundclick"> וַתָּשָׁב</span><span class="hidden">words/w041_vatashov</span></p>
+		   <p><span class="hebrew30  soundclick"> וַתָּשָׁב</span><span class="hidden">alefbet_words/w041_vatashov</span></p>
 	       <p class="hebrew30 hidden  js-toggle"><span class="hebrew30 unmarked-text">וַ תָּ </span> <span class="hebrew30">שָׁב</span></p>
 	       <p class="hidden  js-toggle"><span class="unmarked-text">va-</span><span class="stressed-syllable">ta</span>-shov </p>
 		   <p>she returned</p>
 		 </div>
           <div> 
-		    <p><span class="hebrew30  soundclick">וַיָּמָת</span><span class="hidden">words/w056_vayamot_penultimate</span></p> 
+		    <p><span class="hebrew30  soundclick">וַיָּמָת</span><span class="hidden">alefbet_words/w056_vayamot_penultimate</span></p> 
 	        <p class="hebrew30 hidden  js-toggle"><span class="hebrew30 unmarked-text">וַ יָּ </span> <span class="hebrew30">מָת</span></p> 
 	        <p class="hidden  js-toggle"><span class="unmarked-text">va-</span><span class="stressed-syllable">ya</span>-mot</p>
 			<p>he died</p>
  		 </div>
         <div> 
-		    <p> <span class="hebrew30 soundclick"> וַתָּמָת</span><span class="hidden">words/w056_vatamot</span> </p>
+		    <p> <span class="hebrew30 soundclick"> וַתָּמָת</span><span class="hidden">alefbet_words/w056_vatamot</span> </p>
             <p class="hebrew30 hidden  js-toggle"><span class="hebrew30 unmarked-text">וַ תָּ </span> <span class="hebrew30">מָת</span></p> 
 	        <p class="hidden  js-toggle"> <span class="unmarked-text">va-</span><span class="stressed-syllable">ta</span>-mot</p>
 			<p>she died</p>
 		 </div>
          <div>
-		    <p> <span class="hebrew30 soundclick"> וַיָּקָם</span><span class="hidden">words/w077_vayakom</span></p> 
+		    <p> <span class="hebrew30 soundclick"> וַיָּקָם</span><span class="hidden">alefbet_words/w077_vayakom</span></p> 
 	        <p class="hebrew30 hidden  js-toggle"><span class="hebrew30 unmarked-text">וַ יָּ </span> <span class="hebrew30">קָם</span> </p>
 	        <p class="hidden  js-toggle"><span class="unmarked-text">va-</span><span class="stressed-syllable">ya</span>-kom</p> 
 			<p>he got up</p> 
 		 </div>
          <div>
-		    <p><span class="hebrew30  soundclick">וַתָּקָם</span><span class="hidden">words/w077_vatakom</span></p> 
+		    <p><span class="hebrew30  soundclick">וַתָּקָם</span><span class="hidden">alefbet_words/w077_vatakom</span></p> 
 	        <p class="hebrew30 hidden  js-toggle"><span class="hebrew30 unmarked-text">וַ תָּ  </span> <span class="hebrew30">קָם</span></p> 
 	        <p class="hidden  js-toggle"><span class="unmarked-text">va-</span><span class="stressed-syllable">ta</span>-kom </p>
 		    <p>she got up</p> 
@@ -1163,12 +1162,12 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
        </ul>	  
     <div class="example-spacing"> </div>  
     <div  class="flex-container-ltr flex-container-examples " style="padding:0;">
-      <div><p><span class="hebrew30 soundclick"> חָכְמָה   </span><span class="hidden">words/w271_chochma </span></p>
+      <div><p><span class="hebrew30 soundclick"> חָכְמָה   </span><span class="hidden">alefbet_words/w271_chochma </span></p>
             <p><span class="hebrew30 ">חָכְ מָה</span></p> 
 	       <p>ch<strong>o</strong>ch-ma</p>  
 	 </div>
      <div> but </div>
-     <div><p><span class="hebrew30 soundclick"> נָתְנוּ </span><span class="hidden">words/w026_natuhnu </span></p> 
+     <div><p><span class="hebrew30 soundclick"> נָתְנוּ </span><span class="hidden">alefbet_words/w026_natuhnu </span></p> 
 	       <p><span class="hebrew30 ">נָ תְ נוּ </span></p>	 
            <p> n<strong>a</strong>-tuh-nu</p> 
 	 </div>
@@ -1193,22 +1192,22 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 
 	  <span class="example">Examples:</span>
       <div class="flex-container-ltr flex-container-examples ">
-	    <div><p><span class="hebrew30 soundclick"> וְנָתְנוּ</span><span class="hidden">words/w026_vnatuhnu</span></p>
+	    <div><p><span class="hebrew30 soundclick"> וְנָתְנוּ</span><span class="hidden">alefbet_words/w026_vnatuhnu</span></p>
  	       <p>they will give</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">הָלְכוּ</span><span class="hidden">words/w029_haluhchu</span></p>
+	    <div><p><span class="hebrew30 soundclick">הָלְכוּ</span><span class="hidden">alefbet_words/w029_haluhchu</span></p>
  	       <p>they went</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick"> שָׁמְעוּ</span><span class="hidden">words/w036_shamuhu </span></p>
+	    <div><p><span class="hebrew30 soundclick"> שָׁמְעוּ</span><span class="hidden">alefbet_words/w036_shamuhu </span></p>
  	         <p>they heard</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">יָשְׁבוּ</span><span class="hidden">words/w038_yashvu</span></p>
+	    <div><p><span class="hebrew30 soundclick">יָשְׁבוּ</span><span class="hidden">alefbet_words/w038_yashvu</span></p>
  	         <p>they dwelled</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">יָצְאוּ</span><span class="hidden">words/w040_yatsuhu</span></p>
+	    <div><p><span class="hebrew30 soundclick">יָצְאוּ</span><span class="hidden">alefbet_words/w040_yatsuhu</span></p>
  	         <p>they went out</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">וְאָֽכְלוּ</span><span class="hidden">words/w058_vachuhlu</span></p>
+	    <div><p><span class="hebrew30 soundclick">וְאָֽכְלוּ</span><span class="hidden">alefbet_words/w058_vachuhlu</span></p>
  	         <p>they will eat</p>
 	    </div>
       </div> <!-- flex-container-examples -->
@@ -1229,22 +1228,22 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	 
 	 <span class="example">Examples:</span>
       <div class="flex-container-ltr flex-container-examples ">
-	    <div><p><span class="hebrew30 soundclick"> נָתְנָה</span><span class="hidden">words/w026_natuhna</span></p>
+	    <div><p><span class="hebrew30 soundclick"> נָתְנָה</span><span class="hidden">alefbet_words/w026_natuhna</span></p>
  	       <p>she gave</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">שָׁמְעָה</span><span class="hidden">words/w036_shama </span></p>
+	    <div><p><span class="hebrew30 soundclick">שָׁמְעָה</span><span class="hidden">alefbet_words/w036_shama </span></p>
  	         <p>she heard</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">וְיָֽשְׁבָה</span><span class="hidden">words/w038_vyashva </span></p>
+	    <div><p><span class="hebrew30 soundclick">וְיָֽשְׁבָה</span><span class="hidden">alefbet_words/w038_vyashva </span></p>
  	         <p>she will dwell</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">וְיָצְאָה</span><span class="hidden">words/w040_vyatsa </span></p>
+	    <div><p><span class="hebrew30 soundclick">וְיָצְאָה</span><span class="hidden">alefbet_words/w040_vyatsa </span></p>
  	         <p>she will go out</p>
 	    </div>
       </div> <!-- flex-container-examples -->
    <p>This verb ending also occasionally occurs with the meaning of the imperative, for example,
    in Genesis 27:19 where Jacob is urging his father Isaac to eat the food his mother Rebekah has prepared 
-     <span class="hebrew30 soundclick">וְאָכְלָה</span><span class="hidden">words/w058_vachuhla</span> "eat!" </p>
+     <span class="hebrew30 soundclick">וְאָכְלָה</span><span class="hidden">alefbet_words/w058_vachuhla</span> "eat!" </p>
     </div>
 	</td>		
  </tr>
@@ -1260,31 +1259,31 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	 
 	 <span class="example">Examples:</span>
      <div class="flex-container-ltr flex-container-examples ">
-	    <div><p><span class="hebrew30 soundclick"> יָד</span><span class="hidden">words/w028_yad </span> </p>
+	    <div><p><span class="hebrew30 soundclick"> יָד</span><span class="hidden">alefbet_words/w028_yad </span> </p>
  	       <p>hand</p>
-           <p><span class="hebrew30 soundclick"> יָדְךָ</span><span class="hidden">words/w028_yadcha</span> </p>
+           <p><span class="hebrew30 soundclick"> יָדְךָ</span><span class="hidden">alefbet_words/w028_yadcha</span> </p>
            <p>your hand</p>		   
 		</div>
-	    <div><p><span class="hebrew30 soundclick">דָּבָר</span><span class="hidden">words/w030_davar</span> </p>
+	    <div><p><span class="hebrew30 soundclick">דָּבָר</span><span class="hidden">alefbet_words/w030_davar</span> </p>
  	       <p>word</p>
-           <p><span class="hebrew30 soundclick">דְבָרְךָ</span><span class="hidden">words/w030_dvarcha</span> </p>
+           <p><span class="hebrew30 soundclick">דְבָרְךָ</span><span class="hidden">alefbet_words/w030_dvarcha</span> </p>
            <p>your word</p>		   
 		</div>
-	    <div><p><span class="hebrew30 soundclick">לְבַב</span><span class="hidden">words/w054_lvav</span> </p>
+	    <div><p><span class="hebrew30 soundclick">לְבַב</span><span class="hidden">alefbet_words/w054_lvav</span> </p>
  	       <p>heart</p>
-           <p><span class="hebrew30 soundclick">לְבָבְךָ</span><span class="hidden">words/w054_lvavcha</span> </p>
+           <p><span class="hebrew30 soundclick">לְבָבְךָ</span><span class="hidden">alefbet_words/w054_lvavcha</span> </p>
            <p>your heart</p>		   
 		</div>
-	    <div><p><span class="hebrew30 soundclick">בָּשָׂר</span><span class="hidden">words/w175_basar</span> </p>
+	    <div><p><span class="hebrew30 soundclick">בָּשָׂר</span><span class="hidden">alefbet_words/w175_basar</span> </p>
  	       <p>flesh</p>
-           <p><span class="hebrew30 soundclick">בְּשָׂרְךָ</span><span class="hidden">words/w175_bsarcha</span> </p>
+           <p><span class="hebrew30 soundclick">בְּשָׂרְךָ</span><span class="hidden">alefbet_words/w175_bsarcha</span> </p>
            <p>your flesh</p>		   
 		</div>
       </div> <!-- flex-container-examples -->
       <p>Occasionally this combination of letters occurs at the end of a verb, in which case the meaning is "you", for example Ex 2:14
-	  <span class="hebrew30 soundclick">שָׂמְךָ</span><span class="hidden">words/w081_samcha</span>	"he put you"" </p>
+	  <span class="hebrew30 soundclick">שָׂמְךָ</span><span class="hidden">alefbet_words/w081_samcha</span>	"he put you"" </p>
 	  <p>There are a few (rare) exceptions  where the pronunciation is "o", for example, Gen 2:17,
-       <span class="hebrew30 soundclick">אֲכָלְךָ</span><span class="hidden">words/w058_acholcha</span>	"your eating" </p>
+       <span class="hebrew30 soundclick">אֲכָלְךָ</span><span class="hidden">alefbet_words/w058_acholcha</span>	"your eating" </p>
 	 
 	 </div>
      </td>
@@ -1297,13 +1296,13 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
       <div id="kamatzschwaho" class="flex-container-ltr flex-container-examples ">
         <div><span id="btn-kamatzschwaho" class="button-plus" onclick="showHideJsToggle('kamatzschwaho','btn-kamatzschwaho')"></span>
 	    </div>	   
-        <div><p><span class="hebrew30 soundclick">חָכְמָה</span><span class="hidden">words/w271_chochma</span></p>
+        <div><p><span class="hebrew30 soundclick">חָכְמָה</span><span class="hidden">alefbet_words/w271_chochma</span></p>
 			<p>wisdom</p>	
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">קָרְבָּן</span><span class="hidden">words/w446_korban</span></p> 
+	    <div><p><span class="hebrew30 soundclick">קָרְבָּן</span><span class="hidden">alefbet_words/w446_korban</span></p> 
  			<p>gift</p>	
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">אָכְלָה</span><span class="hidden">words/w1320_ochlah</span> </p>
+	    <div><p><span class="hebrew30 soundclick">אָכְלָה</span><span class="hidden">alefbet_words/w1320_ochlah</span> </p>
  			<p>food	</p>
 	    </div>
          <div><p><span class="hebrew30 soundclick">מָרְדֳּכָי </span><span class="hidden">alefbet_people_places/mordochai</span></p>
@@ -1312,31 +1311,31 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
 	     <div><p><span class="hebrew30 soundclick">גָּלְיָת</span><span class="hidden">alefbet_people_places/golyat</span></p> 
  			<p>Goliath</p>	
 	     </div>
-        <div><p><span class="hebrew30 soundclick">קָדְשְׁךָ</span><span class="hidden">words/w108_kodshuhcha</span></p>
+        <div><p><span class="hebrew30 soundclick">קָדְשְׁךָ</span><span class="hidden">alefbet_words/w108_kodshuhcha</span></p>
 			<p>your holiness</p>				
-		    <p class=" hidden js-toggle"><span class="hebrew30 soundclick">קֹדֶשׁ</span><span class="hidden">words/w108_kodesh</span></p>
+		    <p class=" hidden js-toggle"><span class="hebrew30 soundclick">קֹדֶשׁ</span><span class="hidden">alefbet_words/w108_kodesh</span></p>
 			<p class=" hidden js-toggle">holiness</p>
 	    </div>
-        <div><p><span class="hebrew30 soundclick">קָדְשׁוֹ   </span><span class="hidden">words/w108_kodsho</span></p>
+        <div><p><span class="hebrew30 soundclick">קָדְשׁוֹ   </span><span class="hidden">alefbet_words/w108_kodsho</span></p>
 			<p>his holiness</p>				
-		    <p class=" hidden js-toggle"><span class="hebrew30 soundclick">קֹדֶשׁ</span><span class="hidden">words/w108_kodesh</span></p>
+		    <p class=" hidden js-toggle"><span class="hebrew30 soundclick">קֹדֶשׁ</span><span class="hidden">alefbet_words/w108_kodesh</span></p>
 			<p class=" hidden js-toggle">holiness</p>
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">חָדְשֵׁיכֶם</span><span class="hidden">words/w167_chodsheichem</span></p>
+	    <div><p><span class="hebrew30 soundclick">חָדְשֵׁיכֶם</span><span class="hidden">alefbet_words/w167_chodsheichem</span></p>
 			<p>your months</p>				
-            <p class=" hidden js-toggle"><span class="hebrew30 soundclick">חֹדֶשׁ</span><span class="hidden">words/w167_chodesh</span></p> 
+            <p class=" hidden js-toggle"><span class="hebrew30 soundclick">חֹדֶשׁ</span><span class="hidden">alefbet_words/w167_chodesh</span></p> 
  			<p class=" hidden js-toggle">month</p>	
 	    </div>
-	    <div><p><span class="hebrew30 soundclick">בְּאָזְנֵיהֶם</span><span class="hidden">words/w233_bozneichem</span></p>
+	    <div><p><span class="hebrew30 soundclick">בְּאָזְנֵיהֶם</span><span class="hidden">alefbet_words/w233_bozneichem</span></p>
 			<p>in their ears</p>				
-            <p class=" hidden js-toggle"><span class="hebrew30 soundclick">אֹזֶן</span><span class="hidden">words/w233_ozen</span></p> 
+            <p class=" hidden js-toggle"><span class="hebrew30 soundclick">אֹזֶן</span><span class="hidden">alefbet_words/w233_ozen</span></p> 
  			<p class=" hidden js-toggle">ear</p>	
 	    </div>
 		
 	  </div>
 	  <p>Note especially that when a suffix (for example <span class="hebrew30">&#1498;&#1464;</span>) is added to a word with the sound "o"
-	  such as <span class="hebrew30 soundclick">קֹדֶשׁ</span><span class="hidden">words/w108_kodesh</span>, the "o" sound is retained
-	   (<span class="hebrew30 soundclick">קָדְשְׁךָ</span><span class="hidden">words/w108_kodshuhcha</span>).
+	  such as <span class="hebrew30 soundclick">קֹדֶשׁ</span><span class="hidden">alefbet_words/w108_kodesh</span>, the "o" sound is retained
+	   (<span class="hebrew30 soundclick">קָדְשְׁךָ</span><span class="hidden">alefbet_words/w108_kodshuhcha</span>).
 	  </div>
 	  </td>
 
@@ -1345,7 +1344,9 @@ a vowel with "uh" sound and in other words indicates that there is no sound. </p
   </table>
 
 </div>
+
 <!-- kametz a or o -->
+
 
 <!--
   translations of Hebrew example words
@@ -1670,6 +1671,9 @@ list are by no means all the possible translations for every word.</p>
 <!-- scripts -->
 
 <!--<script>var globalThisAudioSubfolder ="alephbet";</script> -->
+
+<script src="scripts/biblical_hebrew_cr_top_menu_alefbet.js"></script>
+
 <script src="scripts/biblical_hebrew_soundclick_hideshow_utilities.js"></script>
 
 </body>
