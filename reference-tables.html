@@ -1,0 +1,282 @@
+<!-- this is a comment -->
+ <!DOCTYPE html> 
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Biblical Hebrew Pronunciation Basics</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="styles/biblical_hebrew_main.css">
+  <link href='https://fonts.googleapis.com/css?family=Comic Neue' rel='stylesheet'>
+  
+  <style>
+      /* marks a div which is a detail that shows when menuitem clicked in references    
+    - position relative required to make following close button position correctly'*/	  
+   .reference-detail-item{
+	 border-style:solid;
+	  border-color:Gray;
+	  border-width:1px;
+	  padding-left:5px;
+	  padding-right:5px;
+	  padding-bottom:5px;
+	  margin-bottom:30px;
+
+	  position:relative;
+   }	
+
+
+  
+  
+  </style>
+</head>
+
+
+<body>
+
+<header> 
+  <h1>Reference tables</h1>
+</header>  
+
+
+<!-- top menu -->
+
+<nav class="w3-card-4 navbar">
+  <a href="lessons-index.html">About</a>  
+  <div class="navbar-dropdown">
+  <button class="navbar-dropbtn " onclick="showHideNavbarDropdown('navbarDropdown1')">Alefbet
+  </button>
+  <div class="navbar-dropdown-content hidden" id="navbarDropdown1">
+    <a href="lessons-alefbet.html" >Learn alefbet</a>
+    <a href="lessons-alefbet-exercises.html">Practise alefbet</a>
+    <a href="lessons-alefbetplus.html" >Alefbet extra</a>
+  </div>
+  </div> 
+  <a href="lessons.html"  >Lessons</a>
+  <a href="lessons-extra-vocabulary.html" >Extra vocabulary</a>
+  <a href="reference-tables.html"  class="this-page">Reference tables</a>
+  <a href="lessons-resources.html" >Resources</a>
+</nav>
+
+
+
+<!-- main body of text -->
+<main class="main-color">
+
+<!-- testing section  --> 
+ <p>Temporary testing section</p>
+ <p>TEST</p>
+ <p id="mytest">test</p>
+<!--  END testing section --> 
+
+<!-- content -->
+
+
+
+
+<h2  class="w3-container w3-card-4"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
+ Prepositions with object suffixes (me, you, him, her, us, them) </h2>
+ <div class="hidden">
+  <div  class="onload-object-suffix-on-preposition-table" style="overflow-x:auto; overflow-y:hidden">  </div>
+ 
+ </div>
+
+
+
+
+ <h2  class="w3-container w3-card-4"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
+ Possessive suffixes (my, your, his, her, our, their)</h2>
+ <div class="hidden">
+  <div  class="onload-possessive-suffix-table" style="overflow-x:auto; overflow-y:hidden">  </div>
+</div>
+
+
+
+
+<h2  class="w3-container w3-card-4"><span class="button-plus" onclick="ShowHideParentNextSibling(this)"></span>
+ Verbs</h2>
+ <div class="hidden">
+
+ 
+<div class="flex-container-ltr flex-container-menu-items " style="background-color:MintCream">
+   <div id="show-generic1"><span class="button-plus" onclick="showHideMenuItem(this)"></span> Generic</div>
+   <div id="show-amar"><span class="button-plus" onclick="showHideMenuItem(this)"></span> אָמַר</span> to speak</div>
+   <div id="show-haya"><span class="button-plus" onclick="showHideMenuItem(this)"></span> הָיָה</span> to be </div>
+</div>
+
+<div id="generic1" class="reference-detail-item hidden">
+  <h2>Generic <span class="btn-close"  onclick="menuContentClose(this)"></span></span></h2>
+  <div  class="onload-generic-verb-reference-table " style="overflow-x:auto; overflow-y:hidden">  </div>
+</div>
+
+<div id="haya" class="reference-detail-item  hidden">
+  <h2><span class="hebrew30">הָיָה</span> to be  <span class="btn-close"  onclick="menuContentClose(this)"></span></span></h2>
+  <div  class="onload-verb-reference-table haya " style="overflow-x:auto; overflow-y:hidden"></div>
+</div>
+
+<div id="amar" class="reference-detail-item hidden ">
+  <h2><span class="hebrew30">אָמַר</span> to speak<span class="btn-close"  onclick="menuContentClose(this)"></span></span></h2>
+  <div class="onload-verb-reference-table amar" style="overflow-x:auto; overflow-y:hidden"></div>
+</div>
+
+
+<hr>
+
+
+<div style="overflow-x:auto; overflow-y:hidden">
+ <p style="line-height:20px;">Qatal: past action / perfect tense / completed action</p>
+ <p style="line-height:20px;">Weqatal: future action / habitual or incompleted actions</p>
+ <p style="line-height:20px;">Yiktol: future action / imperfect tense / incompleted actions</p>
+ <p style="line-height:20px;">Wayyiktol: past action / completed actions</p>
+
+
+</div>
+
+<hr>
+
+<h2>Test verb table - html</h2>
+<div style="overflow-x:auto; overflow-y:hidden">
+<table  style="border-collapse:collapse;">
+ <tr>  <td>Singular</td> </tr>
+
+ <tr  style="border-bottom:solid; border-width:thin;">
+  <td  style="border-bottom:hidden;"></td>
+  <td>I said, I say, I will say</td>
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30" >תִּי</span></td>
+  <td><span class="hebrew30 stressed-syllable" >רְ</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td ><span class="hebrew30 stressed-syllable">אָ</span></td>
+  <td style="padding-right:10px;"><span class="hebrew30 "></span></td>
+  <td><span class="start-audio soundclick"></span><span class="hidden">words/w003_lanu</span></td>
+
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30" >תִּי</span></td>
+  <td><span class="hebrew30 stressed-syllable">רְ</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td><span class="hebrew30 stressed-syllable">אָ</span></td>
+  <td style="padding-right:10px;"><span class="hebrew30">וְ</span></td>
+  <td><span class="start-audio"></span></td>
+
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30" ></span></td>
+  <td><span class="hebrew30 stressed-syllable">ר</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td ><span class="hebrew30 stressed-syllable"></span></td>
+  <td style="padding-right:10px;"><span class="hebrew30 ">אֹ</span></td>
+  <td><span class="start-audio"></span></td>
+
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30"  ></span></td>
+  <td><span class="hebrew30 stressed-syllable">ר</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td ><span class="hebrew30 stressed-syllable"></span></td>
+  <td style="padding-right:10px;"><span class="hebrew30 ">וָאֹ</span></td>
+  <td style="border-right:solid; border-width:thin;"><span class="start-audio"></span></td>
+  </tr>
+  
+ <tr>
+  <td></td>
+  <td>You said, you say, you will say (addressing 1 male)</td>
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30" >תָּ</span></td>
+  <td><span class="hebrew30 stressed-syllable">רְ</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td ><span class="hebrew30 stressed-syllable">אָ</span></td>
+  <td style="padding-right:10px;"><span class="hebrew30 "></span></td>
+  <td><span class="start-audio"></span></td>
+
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30 ">תָּ</span></td>
+  <td><span class="hebrew30 stressed-syllable">רְ</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td><span class="hebrew30 stressed-syllable">אָ</span></td>
+  <td style="padding-right:10px;"><span class="hebrew30">וְ</span></td>
+  <td><span class="start-audio"></span></td>
+
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30" ></span></td>
+  <td><span class="hebrew30 stressed-syllable">ר</span></td>
+   <td><span class="hebrew30 stressed-syllable">מַ</span></td>
+  <td ><span class="hebrew30 stressed-syllable">א</span></td>
+  <td style="padding-right:10px;"><span class="hebrew30 ">תֺּ</span></td>
+  <td><span class="start-audio"></span></td>
+
+  <td style="border-left:solid; border-width:thin;padding-left:10px;text-align:right;"><span class="hebrew30 "></span></td>
+  <td><span class="hebrew30 stressed-syllable">ר</span></td>
+   <td><span class="hebrew30 stressed-syllable">מֶ</span></td>
+  <td ><span class="hebrew30 stressed-syllable">א</span></td>
+  <td style="padding-right:10px;"><span class="hebrew30 ">וַתֹֹּ</span></td>
+  <td style="border-right:solid; border-width:thin;"><span class="start-audio"></span></td>
+  </tr>
+ 
+ 
+</table>
+</div>
+
+
+<hr>
+</div>
+
+</main> 
+
+
+<footer>
+ <p>&#169; 2023 Susan Donath  </p>
+</footer>
+
+
+<!-- scripts -->
+<!------------->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+"use strict";
+var i;
+
+    // verb reference tables
+   //----------------------
+    // create generic verb reference table
+   var onloadTable = document.getElementsByClassName("onload-generic-verb-reference-table");
+   for (i = 0; i < onloadTable.length; i++) {
+	  var thisDiv = onloadTable[i];
+      crGenericVerbReferenceTable(thisDiv);
+    }
+
+    // create  verb reference tables
+
+   var onloadTable = document.getElementsByClassName("onload-verb-reference-table");
+   for (i = 0; i < onloadTable.length; i++) {
+	  var thisDiv = onloadTable[i];
+	// amar  	  
+	  if (onloadTable[i].classList.contains("amar")) {  crAmarVerbReferenceTable(thisDiv);}
+	  else if (onloadTable[i].classList.contains("haya")) {  crHayaVerbReferenceTable(thisDiv);}
+ 
+	}
+	
+    // object pronouns on prepositions table
+   //----------------------
+   var onloadTable = document.getElementsByClassName("onload-object-suffix-on-preposition-table");
+   for (i = 0; i < onloadTable.length; i++) {
+	  var thisDiv = onloadTable[i];
+      crObjectSuffixOnPrepositionReferenceTable(thisDiv);
+   }
+   
+   // noun possessive suffixes table
+   //------------------------------
+   var onloadTable = document.getElementsByClassName("onload-possessive-suffix-table");
+   for (i = 0; i < onloadTable.length; i++) {
+	  var thisDiv = onloadTable[i];
+      crPossessiveSuffixTable(thisDiv);
+   }
+	
+})	
+</script>
+
+<!--<script>var globalThisAudioSubfolder = "part1";-->
+
+<script src="scripts/biblical_hebrew_soundclick_hideshow_utilities.js"></script>
+<script src="scripts/biblical_hebrew_flexbox_list.js"></script>
+
+<script src="scripts/biblical_hebrew_reference_tables_utilities.js"></script>
+<script src="scripts/biblical_hebrew_reference_tables_verbs.js"></script>
+<script src="scripts/biblical_hebrew_reference_tables.js"></script>
+
+
+</body>
+</html>
+
