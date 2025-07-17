@@ -8,14 +8,63 @@ document.addEventListener('DOMContentLoaded', function() {
    var i;
 
  //------------------ create page template ------------------------------
- 
  // get first div 
    var firstDiv= document.getElementById("firstdiv");
 	
- // get lesson Number from first (hidden) para in first div
-   var lessonNum = firstDiv.firstElementChild.innerHTML;
-
- // top menubar
+ // get lesson Title from first (hidden) para in first div
+   var lessonTitle = firstDiv.firstElementChild.innerHTML;
+   
+   
+  // top menubar
+   var topMenu = document.createElement("nav");
+   topMenu.classList.add("navbar");
+   topMenu.classList.add("w3-card-4");
+   
+   var a = document.createElement('a');
+   var reftext = document.createTextNode("About");
+   a.appendChild(reftext); 
+   a.href = "lessons-index.html"; 
+   topMenu.appendChild(a);
+   
+   var dropdown = document.createElement('div');
+   dropdown.classList.add("navbar-dropdown");
+   var dropdownbtn = document.createElement('button');
+   dropdownbtn.classList.add("navbar-dropbtn");
+   var btntext = document.createTextNode("alefbet");
+   dropdownbtn.appendChild(btntext); 
+   dropdownbtn.onclick = function() {showHideNavbarDropdown('navbarDropdown1')};
+   dropdown.appendChild(dropdownbtn);
+   
+   var dropdowncontent = document.createElement('div');
+   dropdowncontent.classList.add("navbar-dropdown-content");
+   dropdowncontent.classList.add("hidden");
+   dropdowncontent.id = 'navbarDropdown1';
+   var dropdownRefs = ["lessons-alefbet.html","lessons-alefbet-exercises.html","lessons-alefbet-plus.html"];
+   var dropdownRefsTexts = ["Learn alefbet","Practise alefbet","alefbet extra"];
+   for (i=0; i < dropdownRefs.length; i++){
+      var a = document.createElement('a');
+      var reftext = document.createTextNode(dropdownRefsTexts[i]);
+      a.appendChild(reftext); 
+      a.href = dropdownRefs[i]; 
+      dropdowncontent.appendChild(a);
+   }
+   dropdown.appendChild(dropdowncontent); 
+   topMenu.appendChild(dropdown);
+   
+   var otherRefs = ["lessons.html","lessons-extra-vocabulary.html","reference-tables.html","lessons-resources.html"];
+   var otherRefsTexts = ["Lessons","Extra vocabulary","Reference tables","Resources"];
+   for (i=0; i < otherRefs.length; i++){
+      var a = document.createElement('a');
+      var reftext = document.createTextNode(otherRefsTexts[i]);
+      a.appendChild(reftext); 
+      a.href = otherRefs[i]; 
+	  if (i==0){a.classList.add("this-page")};
+      topMenu.appendChild(a);
+   }	   
+   document.body.prepend(topMenu);
+ 
+ 
+ /* old menu 
    var topMenu = document.createElement("nav");
    topMenu.classList.add("w3-bar");
    topMenu.classList.add("w3-card-4");
@@ -35,61 +84,63 @@ document.addEventListener('DOMContentLoaded', function() {
 	   topMenu.appendChild(a);
    }   
    document.body.prepend(topMenu);
-   
+ */  
+
  // header
    var header = document.createElement("header");
-   header.classList.add("w3-container-h1"); 
+   //header.classList.add("w3-container-h1"); 
    var headerText = document.createElement("h1");
-   headerText.innerHTML = "Getting started in Biblical Hebrew: Lesson " +  lessonNum;
+   headerText.innerHTML = lessonTitle;
    header.appendChild(headerText);
    document.body.prepend(header);
- 
+
  // main
    var main = document.getElementsByTagName("main")[0];
    main.classList.add("main-color" );
    
    
   // lists of consonants, vowels, cantillation marks
-   var listDiv = document.createElement("div");
-   listDiv.classList.add("flex-container-ltr");
-   listDiv.classList.add("flex-container-menu-items");
-   listDiv.classList.add("lessons-lists-menu-color");
+//   var listDiv = document.createElement("div");
+//   listDiv.classList.add("flex-container-ltr");
+//   listDiv.classList.add("flex-container-menu-items");
+//   listDiv.classList.add("lessons-lists-menu-color");
    
-   var btnIds = ["btn-consonants","btn-vowels","btn-cantillation"];
-   var menuTexts = ["Consonants", "Vowels", "Cantillation marks"];
-   var listIds = ["consonants","vowels","cantillation"];
+//   var btnIds = ["btn-consonants","btn-vowels","btn-cantillation"];
+//   var menuTexts = ["Consonants", "Vowels", "Cantillation marks"];
+//   var listIds = ["consonants","vowels","cantillation"];
 
-   for (i=0; i < btnIds.length; i++){
-      var thisDiv = document.createElement("div");
-      var btn = document.createElement("span");
-	  btn.setAttribute("id", btnIds[i]);
-	  btn.classList.add("button-plus");
-	  btn.addEventListener("click", function(){JSshowHideJsToggle(event)});
-	  thisDiv.appendChild(btn);
-	  var thisText = document.createElement("span");
-	  thisText.innerHTML = menuTexts[i];
-      thisDiv.appendChild(thisText);
-      listDiv.appendChild(thisDiv);
-    }
+//   for (i=0; i < btnIds.length; i++){
+//      var thisDiv = document.createElement("div");
+//      var btn = document.createElement("span");//
+//	  btn.setAttribute("id", btnIds[i]);
+//	  btn.classList.add("button-plus");
+//	  btn.addEventListener("click", function(){JSshowHideJsToggle(event)});
+//	  thisDiv.appendChild(btn);
+//	  var thisText = document.createElement("span");
+//	  thisText.classList.add("lessons-help-lists");
+//	  thisText.innerHTML = menuTexts[i];
+//      thisDiv.appendChild(thisText);
+//      listDiv.appendChild(thisDiv);
+//    }
 	
-   firstDiv.appendChild(listDiv);
+//   firstDiv.appendChild(listDiv);
    
-   for (i=0; i < btnIds.length; i++){
-	  var thisListDiv = document.createElement("div");
-      thisListDiv.setAttribute("id",listIds[i]);
-	  if (listIds[i] == "consonants") {
-		  var thisDiv = crConsonantsList();
-	  } else if (listIds[i] == "vowels") {
-		  var thisDiv = crVowelsList();
-	  } else if (listIds[i] == "cantillation") {
-		  var thisDiv = crCantillationList();
-      }
-      thisDiv.classList.add("js-toggle");
-      thisDiv.classList.add("hidden");
+//   for (i=0; i < btnIds.length; i++){
+//	  var thisListDiv = document.createElement("div");
+//      thisListDiv.setAttribute("id",listIds[i]);
+//	  if (listIds[i] == "consonants") {
+//		  var thisDiv = crConsonantsList();
+//	  } else if (listIds[i] == "vowels") {
+//		  var thisDiv = crVowelsList();
+//	  } else if (listIds[i] == "cantillation") {
+//		  var thisDiv = crCantillationList();
+ //     }
+//      thisDiv.classList.add("js-toggle");
+//      thisDiv.classList.add("hidden");
 		  
-	  thisListDiv.appendChild(thisDiv)
- 	  firstDiv.appendChild(thisListDiv);
-   }
+//	  thisListDiv.appendChild(thisDiv)
+// 	  firstDiv.appendChild(thisListDiv);
+//   }
 
    
  // footer

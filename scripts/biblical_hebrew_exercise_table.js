@@ -3,7 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     var i;
-   // create the exercise tables in JS  (includes event listeners) 
+   // create the exercise tables in JS on load (includes event listeners) 
    var onloadExerciseTablesClass = document.getElementsByClassName("onload-exercise-table");
    for (i = 0; i < onloadExerciseTablesClass.length; i++) {
       var thisSpec = onloadExerciseTablesClass[i];
@@ -13,12 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
 })	
 
 
-// when user clicks on correct answer word it is outlined
+// -when user clicks on correct answer word it is outlined
 // and if there is a translation it is displayed beneath
 
 function exerciseTableAnswerEventListener(ev, tableid){
 	var thisElement = ev.target;
-
 	if (thisElement.nextSibling != null){ 
        thisElement.nextSibling.classList.remove("hidden");
     }
@@ -29,12 +28,20 @@ function exerciseTableAnswerEventListener(ev, tableid){
 	var thisTable = document.getElementById(tableid);
 	var nUnchecked = thisTable.getElementsByClassName("notchecked").length;
     if (nUnchecked == 0) {
-	   rewardModal("Well done!"); 
+	   var nWrong = thisTable.getElementsByClassName("lesson-exercise-wrong-answer").length;	
+	   rewardModalExerciseTable(nWrong); 
     }	  
 }	
 
-// when user clicks the button if there are any translations they are shown
+// -when user clicks on wrong answer class lesson-exercise-wrong-answer is added to the word
+function exerciseTableWrongAnswerEventListener(ev, tableid){
+	var thisElement = ev.target;
+	if (!(thisElement.classList.contains("lesson-exercise-wrong-answer"))){
+		thisElement.classList.add("lesson-exercise-wrong-answer");
+	}	
+}	
 
+// this not currently enabled
 function exerciseTableShowTranslationEventListener(ev){
 	var i;
 	
@@ -158,7 +165,7 @@ function createExerciseTable(thisDiv){
               if (thisAnswerList[i].classList.contains("js-answer")) {
 		         para.addEventListener("click", function(){exerciseTableAnswerEventListener(event, thisTable.id);});
 			     para.classList.add("notchecked");
-			  }
+			  }	  
 		      thisAnswerDiv.appendChild(para);
 			  
 			  if (thisAnswerWordsList.length > 1) {
@@ -178,6 +185,7 @@ function createExerciseTable(thisDiv){
 			  
 		  } else {
 		      para.innerHTML = thisAnswerList[i].innerHTML;
+ 	          para.addEventListener("click", function(){exerciseTableWrongAnswerEventListener(event, thisTable.id);});
 		      thisAnswerDiv.appendChild(para);
 		  }
 

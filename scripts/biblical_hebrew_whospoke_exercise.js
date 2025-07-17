@@ -3,6 +3,22 @@
 var globalWhoSpokenItems = 7;
 var globalOverallWhoSpokeExerciseId = null;
 
+document.addEventListener('DOMContentLoaded', function() {
+   var i;
+
+   //------ code creating content----------------------------------------
+//---------------------------------------------------------------------------
+
+     // create Who spoke to whom exercise    
+   var onloadExercise = document.getElementsByClassName("onload-whospoke-exercise");
+   for (i = 0; i < onloadExercise.length; i++) {
+	  var thisDiv = onloadExercise[i];
+      createWhoSpokeExercise(thisDiv);
+   }	
+ 
+
+})
+
 function reCreateWhoSpokeExercise(thisId){
   // first, delete existing test
   var overallExercise = document.getElementById(thisId);
